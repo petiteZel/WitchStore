@@ -1,97 +1,116 @@
-html,body{
-    width: 100%;
-    margin: 0px;
-    padding: 0px;
+html,
+body {
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
 }
 
-a{
-    text-decoration: none;
+a {
+  text-decoration: none;
 }
 
-.navbar{
-    font-size: 50px;
-    background-color:#0E1335;
-    width: 100%;
-    height: 100px;
-    position: absolute;
-    top: 0;
+/*header*/
+
+.navbar {
+  font-size: 50px;
+  background-color: #0e1335;
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  top: 0;
 }
-.navbar-item{
-    color: #FFD74B;
+.navbar-item {
+  color: #ffd74b;
 }
 
-.container.mt-3{
-    color: #FFD74B;
-    margin: 0px;
-    padding: 0px 5%;
-    height: 100%;
-    width: 90%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.container.mt-3 {
+  color: #ffd74b;
+  margin: 0px;
+  padding: 0px 5%;
+  height: 100%;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-#navbar{
-    font-size: 20px;
-    color: white;
-    display: flex;
-    width: 300px;
-    justify-content: space-between;
-    list-style: none;
+#navbar {
+  font-size: 20px;
+  color: white;
+  display: flex;
+  width: 300px;
+  justify-content: space-between;
+  list-style: none;
 }
 
-.navbar.drop{
-    height: 70px;
-    font-size: 20px;
-    position: fixed;
-    animation: dropfix 0.3;
+.navbar.drop {
+  height: 70px;
+  font-size: 20px;
+  position: fixed;
+  animation: dropfix 0.3;
 }
 
 @keyframes dropfix {
-    0% {
-        top: -5rem;
-    }
-    100% {
-        top : 0;
-    }
+  0% {
+    top: -5rem;
+  }
+  100% {
+    top: 0;
+  }
 }
 
-.container{
-    display: flex;
-    padding-top: 100px;
-    width: 100%;
-}
-.side-bar{
-    width: 25%;
-    height: 1000px;
-    background-color: yellow;
+/* main(container) */
+
+.container {
+  display: flex;
+  padding-top: 100px;
+  width: 100%;
 }
 
+/*side-bar*/
 
-#menuBtn:checked ~ .submenu{
-    display : block;
-}
-#menuBtn{
-    display: none;
-}
-
-.menu{
-    list-style: none;
-}
-.submenu{ 
-    display : none; /* 소메뉴 안보이게 하기 none | block */
-    background-color : white;
-    list-style: none;
-}
-.product-list{
-    width: 75%;
-    height: 1000px;
-    background-color: aqua;
+.side-bar {
+  width: 25%;
+  height: 1000px;
+  background-color: yellow;
 }
 
+.menu {
+  list-style: none;
+  padding-left: 50%;
+}
 
-.footer{
-    width: 100%;
-    height: 200px;
-    background-color: red;
+.menuBtn {
+  display: none;
+}
+
+.submenu {
+  display: none;
+  background-color: white;
+  list-style: none;
+}
+#menuBtn1:checked ~ #submenu1 {
+  display: block;
+}
+#menuBtn2:checked ~ #submenu2 {
+  display: block;
+}
+#menuBtn3:checked ~ #submenu3 {
+  display: block;
+}
+
+/*product-list*/
+
+.product-list {
+  width: 75%;
+  height: 1000px;
+  background-color: aqua;
+}
+
+/*footer*/
+
+.footer {
+  width: 100%;
+  height: 200px;
+  background-color: red;
 }
