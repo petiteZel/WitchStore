@@ -17,3 +17,8 @@
   padding: 10px;
   margin-left: 3rem;
 }
+
+.has-text-link {
+  font-family: 'Ultra', serif;
+  color:#FFD84B
+}
