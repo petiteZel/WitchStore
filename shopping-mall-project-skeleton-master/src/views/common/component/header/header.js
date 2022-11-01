@@ -17,12 +17,12 @@ window.onscroll = ()=>{
   }
 }
 
-//쇼핑으로 이동
-const shopBtn = document.querySelector("#shop-btn")
-shopBtn.addEventListener('click',()=>{
-  //이동
-  console.log("이동")
-})
+// //쇼핑으로 이동
+// const shopBtn = document.querySelector("#shop-btn")
+// shopBtn.addEventListener('click',()=>{
+//   //이동
+//   console.log("이동")
+// })
 
 // import * as Api from "/api.js";
 // import { randomId } from "/useful-functions.js";
