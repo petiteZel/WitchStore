@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>쇼핑-데모</title>
+    <title>회원가입</title>
     <!-- 아이콘 -->
     <link
       rel="icon"
@@ -11,11 +11,7 @@
       sizes="16x16"
       href="/elice-rabbit-favicon.png"
     />
-    <!-- bulma css 관련 -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
-    />
+    
     <!-- 폰트 어썸: 아이콘 -->
     <script
       defer
@@ -32,51 +28,45 @@
   </head>
   <body>
     <!-- 헤더 -->
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-      <div class="container mt-3">
-        <div class="navbar-brand">
-          <a class="navbar-item" href="/">
-            <img src="/elice-rabbit.png" width="30" height="30" />
-            <span class="has-text-link">쇼핑-데모</span>
-          </a>
+    <header id="header">
+      <div class="header-container">
 
-          <a
-            role="button"
-            class="navbar-burger"
-            aria-label="menu"
-            aria-expanded="false"
-            data-target="navbarBasicExample"
-          >
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-          </a>
-        </div>
+          <h1 class="logo">
+              <a href="../home/home.html"><p class="en">THE WITCH STORE</p></a>
+          </h1>
 
-        <div id="navbarBasicExample" class="navbar-menu">
-          <div class="navbar-end breadcrumb my-auto" aria-label="breadcrumbs">
-            <ul id="navbar">
-              <li><a href="/login">로그인</a></li>
-              <li>
-                <a href="/cart" aria-current="page">
-                  <span class="icon">
-                    <i class="fas fa-cart-shopping"></i>
-                  </span>
-                  <span>카트</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
+          <nav class="user-nav">
+              <div class="user-info-box">
+                  <div class="user-info">
+                        <!-- 로그인 헤더 -->
+                      <label for="login-head" class="login-head en"> login</label>
+                      <label for="sign-up-head" class="sign-up-head en"> sign up</label>
+                  </div>
+                  
+                  <div class="user-menu-box">
+                      <ul class="user-menu">
+                          <li><a href="#">주문내역</a></li>
+                          <li><a href="#">계정관리</a></li>
+                          <li><a href="#">로그아웃</a></li>
+                      </ul>
+                  </div>
+              </div>
+
+              <a href="#" class="user-cart-btn"><i class="fa-solid fa-cart-shopping"></i></a>
+          </nav>
+
       </div>
-    </nav>
+  </header><!-- header end -->
 
+  <main id="login-area">
+      <!-- 배경 별 -->
+    <div class="background-image">
     <!-- 회원가입 폼(Form) -->
     <div class="register-user-form-container">
       <form class="box register-user-form-box" id="registerUserForm">
-        <p class="title is-5 has-text-primary">환영합니다!</p>
+        <p class="title en">Welcome!</p>
         <div class="field">
-          <label class="label" for="fullNameInput">이름</label>
+          <label class="label en" for="fullNameInput">name</label>
           <div class="control">
             <input
               class="input"
@@ -89,7 +79,7 @@
         </div>
 
         <div class="field">
-          <label class="label" for="emailInput">이메일</label>
+          <label class="label en" for="emailInput">email</label>
           <div class="control">
             <input
               class="input"
@@ -102,7 +92,7 @@
         </div>
 
         <div class="field">
-          <label class="label" for="passwordInput">비밀번호</label>
+          <label class="label en" for="passwordInput">password</label>
           <div class="control">
             <input
               class="input"
@@ -115,7 +105,7 @@
         </div>
 
         <div class="field mb-5">
-          <label class="label" for="passwordConfirmInput">비밀번호 확인</label>
+          <label class="label en" for="passwordConfirmInput">password confirm</label>
           <div class="control">
             <input
               class="input"
@@ -128,9 +118,37 @@
         </div>
 
         <button class="button is-primary is-fullwidth" id="submitButton">
-          회원가입하기
+          sign up!
         </button>
       </form>
+      </div>
+
+   </div>
+ </main>
+ <!-- main end -->
+     <!-- main end -->
+
+  <footer id="footer">
+    <div class="footer-container">
+        
+        <div class="footer-box">
+            <div class="footer-copy-box">
+                <p>
+                    서울특별시 강남구 선릉로 433, 신관 6층<br>
+                     team K1ng의 모든 컨텐츠는 저작권의 보호를 받고 있습니다.<br>
+                    Copyright © 2022 team K1ng all rights Reserved.
+                </p>
+            </div>
+
+            <div class="footer-sns-box">
+                <a href="#"><i class="fa-brands fa-square-youtube"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+            </div>
+        </div>
+        
     </div>
+</footer>
+
   </body>
 </html>
