@@ -15,36 +15,38 @@
       defer
     ></script>
 
-    <title>쇼핑완료</title>
+    <title>주문완료</title>
   </head>
   <body>
-    <!-- 헤더 -->
-  <div class="first">
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="container mt-3">
-          <div class="navbar-brand">
-            <a class="navbar-item" href="/">
-              <span class="has-text-link" id="brandName">THE WITCH STORE</span>
-            </a>
-          </div>
-  
-          <div class="navbar-end">
-            <ul id="navbar">
-              <!--  -->
-              <li><a href="/login">로그인</a></li>
-              <li><a href="/register">회원가입</a></li>
-              <li>
-                <a href="#cart" aria-current="page">
-                  <span class="icon">
-                    <i class="fas fa-cart-shopping"></i>
-                  </span>
-                  <span>카트</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+    <header id="header">
+      <div class="header-container">
+
+          <h1 class="logo">
+              <a href="../home/home.html"><p class="en">THE WITCH STORE</p></a>
+          </h1>
+
+          <nav class="user-nav">
+              <div class="user-info-box">
+                  <div class="user-info">
+                      <label for="user-name" class="user-name en">User</label>
+                      <button class="user-info-btn"><i class="fa-solid fa-caret-down"></i></button>
+                  </div>
+                  
+                  <div class="user-menu-box">
+                      <ul class="user-menu">
+                          <li><a href="#">주문내역</a></li>
+                          <li><a href="#">계정관리</a></li>
+                          <li><a href="#">로그아웃</a></li>
+                      </ul>
+                  </div>
+              </div>
+
+              <a href="#" class="user-cart-btn"><i class="fa-solid fa-cart-shopping"></i></a>
+          </nav>
+
+      </div>
+  </header><!-- header end -->
+
      <!-- 중앙페이지-->
         <div class="main"> <!-- main 간격 조정하면 finish text도 조정됨.-->
           <div class="finish_text">
