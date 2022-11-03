@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>회원가입</title>
+    <title>계정관리</title>
     <!-- 아이콘 -->
     <link
       rel="icon"
@@ -23,7 +23,7 @@
     <!-- 카카오 OAuth -->
     <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
     <!-- 커스텀 css, js -->
-    <link rel="stylesheet" href="register.css" />
+    <link rel="stylesheet" href="changing-info.css" />
     <script src="register.js" type="module" defer></script>
   </head>
   <body>
@@ -39,8 +39,9 @@
               <div class="user-info-box">
                   <div class="user-info">
                         <!-- 로그인 헤더 -->
-                      <label for="login-head" class="login-head en"> login</label>
-                      <label for="sign-up-head" class="sign-up-head en"> sign up</label>
+                        <label for="user-name" class="user-name en">User</label>
+                        <button class="user-info-btn"><i class="fa-solid fa-caret-down"></i></button>
+
                   </div>
                   
                   <div class="user-menu-box">
@@ -58,28 +59,17 @@
       </div>
   </header><!-- header end -->
 
-  <main id="login-area">
-      <!-- 배경 별 -->
-    <div class="background-image">
-    <!-- 회원가입 폼(Form) -->
-    <div class="register-user-form-container">
-      <form class="box register-user-form-box" id="registerUserForm">
-        <p class="title en">Welcome!</p>
-        <div class="field">
-          <label class="label en" for="fullNameInput">name</label>
-          <div class="control">
-            <input
-              class="input"
-              id="fullNameInput"
-              type="text"
-              placeholder="유재석"
-              autocomplete="on"
-            />
-          </div>
-        </div>
+  <main id="administer">
+
+    <!-- 정보 리스트 -->
+    <div class="information">
+        <h3 class="administer">계정관리</h3>
+    </div>
+    <div class="change-user-form-container">
+      <form class="box change-user-form-box" id="changeUserForm">
 
         <div class="field">
-          <label class="label en" for="emailInput">email</label>
+          <label class="label " for="fullNameInput">이메일</label>
           <div class="control">
             <input
               class="input"
@@ -92,34 +82,53 @@
         </div>
 
         <div class="field">
-          <label class="label en" for="passwordInput">password</label>
+          <label class="label " for="emailInput">이름</label>
           <div class="control">
             <input
               class="input"
-              id="passwordInput"
-              type="password"
-              placeholder="********"
+              id="nameInput"
+              type="text"
+              placeholder="유재석"
+              autocomplete="on"
+            />
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label" for="passwordInput">전화번호</label>
+          <div class="control">
+            <input
+              class="input"
+              id="telInput"
+              type="tel"
+              placeholder="010-111-2222"
               autocomplete="off"
             />
           </div>
         </div>
 
         <div class="field mb-5">
-          <label class="label en" for="passwordConfirmInput">password confirm</label>
+          <label class="label" for="passwordConfirmInput">주소</label>
           <div class="control">
             <input
               class="input"
-              id="passwordConfirmInput"
-              type="password"
-              placeholder="********"
+              id="addressInput"
+              type="address"
+              placeholder="호그와트 해리동 슬리데린 아파트"
               autocomplete="off"
             />
           </div>
         </div>
+        <div class="buttons">
+            <button class="button" id="exitButton">
+                탈퇴하기
+              </button>
 
-        <button class="button is-primary is-fullwidth" id="submitButton">
-          sign up!
-        </button>
+              <button class="button" id="submitButton">
+                회원정보수정
+              </button>
+        </div>
+
       </form>
       </div>
 
