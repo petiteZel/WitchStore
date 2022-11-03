@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Ultra&display=swap');
+
 * 
 { margin: 0; 
   padding: 0; 
@@ -94,7 +96,6 @@ body {
 
 .user-info > label{
   margin-left : 20px;
-  font-weight: bold;
 
 }
 
@@ -136,7 +137,6 @@ body {
   color: #FFD84B;
   font-family: 'Ultra';
   font-style: normal;
-  font-weight: bolder;
   font-size: 30px;
   line-height: 38px;
 
@@ -149,7 +149,6 @@ body {
 
   font-family: 'Ultra';
   font-style: normal;
-  font-weight: 400;
   font-size: 20px;
   line-height: 26px;
 }
@@ -179,7 +178,6 @@ body {
   border-radius: 81px;
   background-color: #FFD84B;
   text-align: center;
-  font-weight: bold;
   font-size: 20px;
   color: black;
 }
