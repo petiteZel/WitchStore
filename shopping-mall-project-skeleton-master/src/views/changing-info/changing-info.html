@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>계정관리</title>
+    <!-- 아이콘 -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/elice-rabbit-favicon.png"
+    />
+    
+    <!-- 폰트 어썸: 아이콘 -->
+    <script
+      defer
+      src="https://kit.fontawesome.com/9daa42bcef.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- 구글 OAuth -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <!-- 카카오 OAuth -->
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <!-- 커스텀 css, js -->
+    <link rel="stylesheet" href="changing-info.css" />
+    <script src="register.js" type="module" defer></script>
+  </head>
+  <body>
+    <!-- 헤더 -->
+    <header id="header">
+      <div class="header-container">
+
+          <h1 class="logo">
+              <a href="../home/home.html"><p class="en">THE WITCH STORE</p></a>
+          </h1>
+
+          <nav class="user-nav">
+              <div class="user-info-box">
+                  <div class="user-info">
+                        <!-- 로그인 헤더 -->
+                        <label for="user-name" class="user-name en">User</label>
+                        <button class="user-info-btn"><i class="fa-solid fa-caret-down"></i></button>
+
+                  </div>
+                  
+                  <div class="user-menu-box">
+                      <ul class="user-menu">
+                          <li><a href="#">주문내역</a></li>
+                          <li><a href="#">계정관리</a></li>
+                          <li><a href="#">로그아웃</a></li>
+                      </ul>
+                  </div>
+              </div>
+
+              <a href="#" class="user-cart-btn"><i class="fa-solid fa-cart-shopping"></i></a>
+          </nav>
+
+      </div>
+  </header><!-- header end -->
+
+  <main id="administer">
+
+    <!-- 정보 리스트 -->
+    <div class="information">
+        <h3 class="administer">계정관리</h3>
+    </div>
+    <div class="change-user-form-container">
+      <form class="box change-user-form-box" id="changeUserForm">
+
+        <div class="field">
+          <label class="label " for="fullNameInput">이메일</label>
+          <div class="control">
+            <input
+              class="input"
+              id="emailInput"
+              type="email"
+              placeholder="abc@example.com"
+              autocomplete="on"
+            />
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label " for="emailInput">이름</label>
+          <div class="control">
+            <input
+              class="input"
+              id="nameInput"
+              type="text"
+              placeholder="유재석"
+              autocomplete="on"
+            />
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label" for="passwordInput">전화번호</label>
+          <div class="control">
+            <input
+              class="input"
+              id="telInput"
+              type="tel"
+              placeholder="010-111-2222"
+              autocomplete="off"
+            />
+          </div>
+        </div>
+
+        <div class="field mb-5">
+          <label class="label" for="passwordConfirmInput">주소</label>
+          <div class="control">
+            <input
+              class="input"
+              id="addressInput"
+              type="address"
+              placeholder="호그와트 해리동 슬리데린 아파트"
+              autocomplete="off"
+            />
+          </div>
+        </div>
+        <div class="buttons">
+            <button class="button" id="exitButton">
+                탈퇴하기
+              </button>
+
+              <button class="button" id="submitButton">
+                회원정보수정
+              </button>
+        </div>
+
+      </form>
+      </div>
+
+   </div>
+ </main>
+ <!-- main end -->
+     <!-- main end -->
+
+  <footer id="footer">
+    <div class="footer-container">
+        
+        <div class="footer-box">
+            <div class="footer-copy-box">
+                <p>
+                    서울특별시 강남구 선릉로 433, 신관 6층<br>
+                     team K1ng의 모든 컨텐츠는 저작권의 보호를 받고 있습니다.<br>
+                    Copyright © 2022 team K1ng all rights Reserved.
+                </p>
+            </div>
+
+            <div class="footer-sns-box">
+                <a href="#"><i class="fa-brands fa-square-youtube"></i></a>
+                <a href="#"><i class="fa-brands bfa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+            </div>
+        </div>
+        
+    </div>
+</footer>
+
+  </body>
+</html>

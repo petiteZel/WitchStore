@@ -1,0 +1,217 @@
+* 
+{ margin: 0; 
+  padding: 0; 
+  box-sizing: border-box;}
+
+ol, ul, dl
+ { list-style: none;}
+
+a { 
+  text-decoration: none;
+  color: #FFFFFF; 
+  cursor: pointer;}
+
+button{ 
+  all: unset; 
+  cursor: pointer;}
+
+.en{ 
+    font-family: 'Ultra', serif; 
+}
+
+body {
+    background: #0E1335;
+    font-family: 'Roboto', sans-serif;
+    color: #FFFFFF;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+/* common property */
+
+
+#header{
+    margin: 0 auto;
+    max-width: 1240px;
+}
+#header .header-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0;
+    margin-bottom: 80px;
+    padding: 0 20px;
+}
+#header .header-container .logo {
+    font-size: 24px;
+    letter-spacing: 2px;
+}
+#header .header-container .logo a p{
+    color: #FFD84B;
+}
+#header .header-container .user-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#header .header-container .user-nav .user-info-box{
+    position: relative;
+    margin-right: 20px;
+}
+
+#header .header-container .user-nav .user-info-box .user-info{
+    display: flex;
+    align-items: center;
+}
+#header .header-container .user-nav .user-info-box .login-head .sign-up-head{
+    margin-right: 14px;
+}
+#header .header-container .user-nav .user-info-box .user-info-btn i{
+    font-size: 26px;
+}
+#header .header-container .user-nav .user-info-box .user-info-btn i:hover{
+    color: #FFD84B;
+}
+#header .header-container .user-nav .user-menu-box{
+    position: absolute;
+    right: 0;
+    margin-top: 10px;
+    padding: 10px 10px 2px 10px;
+    width: 120px;
+    border-radius: 8px;
+    background-color: #454DBC;
+    z-index: 100;
+    display: none;
+}
+#header .header-container .user-nav .user-menu-box .user-menu li{
+    margin-bottom: 8px;
+    text-align: center;
+}
+#header .header-container .user-nav .user-cart-btn i{
+    font-size: 20px;
+}
+#header .header-container .user-nav .user-cart-btn i:hover{
+    color: #FFD84B;
+}
+
+.user-info > label{
+  margin-left : 20px;
+  font-weight: bold;
+
+}
+
+.login-head{
+  color:#FFD84B;
+}
+/* header end */
+
+.administer{
+    font-family: 'Noto Sans';
+ font-style: normal;
+ font-weight: 700;
+ font-size: 30px;
+ line-height: 41px;
+}
+
+/* 로그인 */
+
+.change-form-container {
+  display: flex;
+  border-radius: 81px;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  height: 502px;
+  background-color: #454DBC;
+  margin: auto;
+}
+
+.change-form-box {
+  width: 400px;
+  margin: auto;
+}
+
+/*welcome*/
+.change-form-box .title {
+  text-align: center;
+  margin-bottom: 35px;
+  color: #FFD84B;
+  font-family: 'Ultra';
+  font-style: normal;
+  font-weight: bolder;
+  font-size: 30px;
+  line-height: 38px;
+
+}
+
+/*아이디, 비번*/
+.field {
+
+  padding-bottom: 40px;
+
+  font-family: 'Ultra';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 26px;
+}
+
+/*아이디, 비번 넣는 곳*/
+.control .input{
+  width: 400px;
+  height: 66px;
+  background-color: #F7F7FF;
+  border-radius: 9px;
+  padding-left: 10px;
+
+  
+ font-family: 'Ultra';
+ font-style: normal;
+ font-weight: 400;
+ font-size: 20px;
+ line-height: 26px;
+}
+
+/*로그인 버튼*/
+.change-form-box .button {
+  width: 187px;
+  height: 51px;
+  margin-top: 30px;
+  margin-left: 110px;
+  border-radius: 81px;
+  background-color: #FFD84B;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  color: black;
+}
+
+
+/*로그인 end*/
+
+#footer{
+  background-color: #060a1f;
+}
+#footer .footer-container{
+  margin: 0 auto;
+  max-width: 1240px;
+}
+#footer .footer-container .footer-box{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 40px;
+  padding: 60px 20px;
+}
+#footer .footer-container .footer-copy-box p{
+  font-size: 12px;
+  line-height: 24px;
+  color: #8d8d8d;
+}
+#footer .footer-container .footer-sns-box a i{
+  margin-left: 10px;
+  font-size: 24px;
+  text-align: right;
+  color: #8d8d8d;
+}
+#footer .footer-container .footer-sns-box a i:hover{
+  color: #FFD84B;
+}
