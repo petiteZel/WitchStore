@@ -29,12 +29,9 @@ body {
     margin-bottom: 80px;
     padding: 0 20px;
 }
-#header .header-container .logo {
-    font-size: 24px;
-    letter-spacing: 2px;
-}
-#header .header-container .logo a p{
-    color: #FFD84B;
+#header  .header-container .logo img{
+    display: block;
+    height: 16px;
 }
 #header .header-container .user-nav{
     display: flex;
