@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="product.css" />
+    <script
+      src="../common/component/header/header.js"
+      type="module"
+      defer
+    ></script>
+
+    <title>제품 상세 페이지</title>
+  </head>
+  <body>
+    <!-- 헤더 -->
+    <!-- 사이드바(카테고리) -->
+    <!-- 제품 목록 -->
+    <!-- 푸터 -->
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="container mt-3">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="/">
+            <img src="/elice-rabbit.png" width="30" height="30" />
+            <span class="has-text-link" id="brandName">쇼핑-n팀</span>
+          </a>
+        </div>
+
+        <div class="navbar-end">
+          <ul id="navbar">
+            <!--  -->
+            <li><a href="/login">로그인</a></li>
+            <li><a href="/register">회원가입</a></li>
+            <li>
+              <a href="#cart" aria-current="page">
+                <span class="icon">
+                  <i class="fas fa-cart-shopping"></i>
+                </span>
+                <span>카트</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="side-bar">
+        <ul class="menu">
+          <li>
+            <input type="checkbox" class="menuBtn" id="menuBtn1" />
+            <label for="menuBtn1" class="labelBtn" onclick="">메뉴1</label>
+            <ul class="submenu" id="submenu1">
+              <li><a href="#">소메뉴1</a></li>
+              <li><a href="#">소메뉴2</a></li>
+              <li><a href="#">소메뉴3</a></li>
+              <li><a href="#">소메뉴4</a></li>
+            </ul>
+          </li>
+          <li>
+            <input type="checkbox" class="menuBtn" id="menuBtn2" />
+            <label for="menuBtn2" class="labelBtn" onclick="">메뉴2</label>
+            <ul class="submenu" id="submenu2">
+              <li><a href="#">소메뉴1</a></li>
+              <li><a href="#">소메뉴2</a></li>
+              <li><a href="#">소메뉴3</a></li>
+              <li><a href="#">소메뉴4</a></li>
+            </ul>
+          </li>
+          <li>
+            <input type="checkbox" class="menuBtn" id="menuBtn3" />
+            <label for="menuBtn3" class="labelBtn" onclick="">메뉴3</label>
+            <ul class="submenu" id="submenu3">
+              <li><a href="#">소메뉴1</a></li>
+              <li><a href="#">소메뉴2</a></li>
+              <li><a href="#">소메뉴3</a></li>
+              <li><a href="#">소메뉴4</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="product-list"></div>
+    </div>
+    <div class="footer"></div>
+  </body>
+</html>
