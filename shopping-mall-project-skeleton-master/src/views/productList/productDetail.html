@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    
+    <!--폰트  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ultra&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- 아이콘 -->
+    <script
+      defer
+      src="https://kit.fontawesome.com/9daa42bcef.js"
+      crossorigin="anonymous"
+    ></script>
+
+
+    <link rel="stylesheet" href="product.css" />
+    <script
+      src="../common/component/header/header.js"
+      type="module"
+      defer
+    ></script>
+
+    <title>제품 상세 페이지</title>
+  </head>
+  <body>
+    <!-- 헤더 -->
+    <!-- 사이드바(카테고리) -->
+    <!-- 제품 목록 -->
+    <!-- 푸터 -->
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-container">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="/">
+            <span class="has-text-link" id="brandName">THE WITCH STORE</span>
+          </a>
+        </div>
+
+        <div class="navbar-end">
+          <ul id="navbar-info">
+            <!--  -->
+            <li><a href="/login">login</a></li>
+            <li><a href="/register">sign up</a></li>
+            <li>
+              <a href="#cart" aria-current="page">
+                <span class="icon">
+                  <i class="fas fa-cart-shopping"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="side-bar">
+        <ul class="menu">
+          <li>
+            <input type="checkbox" class="menuBtn" id="menuBtn1" />
+            <label for="menuBtn1" class="labelBtn" onclick="">제품별</label>
+            <ul class="submenu" id="submenu1">
+              <li><a href="#">All</a></li>
+              <li><a href="#">Category1</a></li>
+              <li><a href="#">Category2</a></li>
+              <li><a href="#">Category3</a></li>
+            </ul>
+          </li>
+          <li>
+            <input type="checkbox" class="menuBtn" id="menuBtn2" />
+            <label for="menuBtn2" class="labelBtn" onclick="">유형별</label>
+            <ul class="submenu" id="submenu2">
+              <li><a href="#">Type1</a></li>
+              <li><a href="#">Type2</a></li>
+              <li><a href="#">Type3</a></li>
+              <li><a href="#">Type4</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="product-list"></div>
+    </div>
+    <div class="footer"></div>
+  </body>
+</html>
