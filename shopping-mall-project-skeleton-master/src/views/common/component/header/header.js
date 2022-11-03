@@ -4,6 +4,7 @@
 
 // 헤더 고정
 const header = document.querySelector(".navbar");
+const headerContain = document.querySelector(".navbar-container");
 const headerHeight = header.offsetHeight;
 
 window.onscroll = ()=>{
@@ -11,9 +12,11 @@ window.onscroll = ()=>{
 
   if(windowTop >= headerHeight){
     header.classList.add("drop");
+    headerContain.classList.add("drop");
   }
   else{
     header.classList.remove("drop");
+    headerContain.classList.remove("drop");
   }
 }
 
