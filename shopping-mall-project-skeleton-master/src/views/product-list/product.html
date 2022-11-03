@@ -5,23 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    
     <!--폰트  -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ultra&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ultra&display=swap"
+      rel="stylesheet"
+    />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- 아이콘 -->
     <script
       defer
       src="https://kit.fontawesome.com/9daa42bcef.js"
       crossorigin="anonymous"
     ></script>
-
 
     <link rel="stylesheet" href="product.css" />
     <script
@@ -48,10 +52,10 @@
         <div class="navbar-end">
           <ul id="navbar-info">
             <!--  -->
-            <li><a href="/login">login</a></li>
-            <li><a href="/register">sign up</a></li>
+            <li><a href="../login/login.html">login</a></li>
+            <li><a href="../register/register.html">sign up</a></li>
             <li>
-              <a href="#cart" aria-current="page">
+              <a href="../shoppingcart/shoppingcart.html" aria-current="page">
                 <span class="icon">
                   <i class="fas fa-cart-shopping"></i>
                 </span>
@@ -65,8 +69,8 @@
       <div class="side-bar">
         <ul class="menu">
           <li>
-            <input type="checkbox" class="menuBtn" id="menuBtn1" />
-            <label for="menuBtn1" class="labelBtn" onclick="">제품별</label>
+            <input type="checkbox" class="menu-btn" id="menu-btn1" />
+            <label for="menu-btn1" class="label-btn" onclick="">제품별</label>
             <ul class="submenu" id="submenu1">
               <li><a href="#">All</a></li>
               <li><a href="#">Category1</a></li>
@@ -75,8 +79,8 @@
             </ul>
           </li>
           <li>
-            <input type="checkbox" class="menuBtn" id="menuBtn2" />
-            <label for="menuBtn2" class="labelBtn" onclick="">유형별</label>
+            <input type="checkbox" class="menu-btn" id="menu-btn2" />
+            <label for="menu-btn2" class="label-btn" onclick="">유형별</label>
             <ul class="submenu" id="submenu2">
               <li><a href="#">Type1</a></li>
               <li><a href="#">Type2</a></li>
@@ -86,7 +90,18 @@
           </li>
         </ul>
       </div>
-      <div class="product-list"></div>
+      <div class="product-list">
+        <div class="category"></div>
+        <div class="product-item-container">
+          <div class="product-item">
+            <div class="product-item-img"><img /></div>
+            <div class="product-item-info">
+              <div class="product-item-name">Product1</div>
+              <div class="product-item-price">18,000</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="footer"></div>
   </body>
