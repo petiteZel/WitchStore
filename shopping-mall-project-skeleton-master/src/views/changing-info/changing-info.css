@@ -27,7 +27,6 @@ body {
 }
 /* common property */
 
-
 #header{
     margin: 0 auto;
     max-width: 1240px;
@@ -56,12 +55,11 @@ body {
     position: relative;
     margin-right: 20px;
 }
-
 #header .header-container .user-nav .user-info-box .user-info{
     display: flex;
     align-items: center;
 }
-#header .header-container .user-nav .user-info-box .login-head .sign-up-head{
+#header .header-container .user-nav .user-info-box .user-name{
     margin-right: 14px;
 }
 #header .header-container .user-nav .user-info-box .user-info-btn i{
@@ -92,73 +90,60 @@ body {
     color: #FFD84B;
 }
 
-.user-info > label{
-  margin-left : 20px;
-  font-weight: bold;
-
-}
-
-.sign-up-head{
-  color:#FFD84B;
-}
 /* header end */
 
-/* 배경 - 시간되면 넓게 이미지 만들기*/
-.background-image{
-  background-image: url("../image/stars.png");
-  width: 100%;
-  height: 688px;
-  
+
+/*계정관리*/
+.information{
+    margin: 0 auto auto 30px;
+    max-width: 1240px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #454DBC;
+    align-items: center;
 }
 
 
-/*회원가입*/
+.change-user-form-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0;
 
-.register-user-form-container {
-  display: flex;
-  border-radius: 81px;
-  align-items: center;
-  justify-content: center;
-  width: 500px;
-  height: 675px;
-  background-color: #454DBC;
+
+}
+
+
+.change-user-form-box {
+  width: 700px;
   margin: auto;
 }
 
-.register-user-form-box {
-  width: 400px;
-  margin: auto;
-}
-
-.register-user-form-box .title {
-  text-align: center;
-  margin-bottom: 35px;
-  color: #FFD84B;
-  font-family: 'Ultra';
-  font-style: normal;
-  font-weight: bolder;
-  font-size: 30px;
-  line-height: 38px;
-}
 
 /*정보*/
 .field {
 
+    display: flex;
+    justify-content: space-between;
+    white-space:nowrap;
+    align-items: center;
+    margin: 30px 0;
+
   padding-bottom: 20px;
 
-  font-family: 'Ultra';
   font-style: normal;
-  font-weight: 400;
+  font-weight: 700;
   font-size: 20px;
-  line-height: 26px;
+  line-height: 27px;
 }
 
 /*정보 넣는 곳*/
 .control .input{
-  width: 400px;
-  height: 66px;
+  
+  width: 657px;
+  height: 52px;
   background-color: #F7F7FF;
   border-radius: 9px;
+  margin-left: 20px;
   padding-left: 10px;
   
  font-family: 'Ultra';
@@ -169,20 +154,28 @@ body {
 }
 
 
-.register-user-form-box .button {
+.change-user-form-box .button{
   width: 187px;
   height: 51px;
   margin-top: 30px;
   margin-left: 110px;
   border-radius: 81px;
-  background-color: #FFD84B;
   text-align: center;
   font-weight: bold;
   font-size: 20px;
   color: black;
 }
 
-.register-user-form-box .input:focus {
+#exitButton{
+   background-color: #D9D9D9;
+}
+
+#submitButton{
+    background-color: #FFD84B;
+ }
+
+
+.change-user-form-box .input:focus {
   border-color: #00d1b2;
   box-shadow: 0 0 0 0.125em rgba(0, 209, 178, 0.25);
 }
