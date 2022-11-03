@@ -24,7 +24,7 @@
     <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
     <!-- 커스텀 css, js -->
     <link rel="stylesheet" href="changing-info.css" />
-    <script src="register.js" type="module" defer></script>
+    <script src="changing-info.js" type="module" defer></script>
   </head>
   <body>
     <!-- 헤더 -->
@@ -48,12 +48,12 @@
                       <ul class="user-menu">
                           <li><a href="../oderdetail/orderdetail.html">주문내역</a></li>
                           <li><a href="../changing-info/changing-info.html">계정관리</a></li>
-                          <li><a href="#">로그아웃</a></li>
+                          <li><a href="../product-list/product.html">로그아웃</a></li>
                       </ul>
                   </div>
               </div>
 
-              <a href="#" class="user-cart-btn"><i class="fa-solid fa-cart-shopping"></i></a>
+              <a href="../shopping-cart/shopping-cart.html" class="user-cart-btn"><i class="fa-solid fa-cart-shopping"></i></a>
           </nav>
 
       </div>
@@ -123,7 +123,7 @@
             <button class="button" id="exitButton">
                 탈퇴하기
               </button>
-
+                  <!-- input버튼 활성화일때, 아닐때 나눠서 표기 -->
               <button class="button" id="submitButton">
                 회원정보수정
               </button>
