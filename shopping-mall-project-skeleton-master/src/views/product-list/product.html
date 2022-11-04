@@ -28,12 +28,12 @@
     <link rel="stylesheet" href="product.css" />
     <link rel="stylesheet" href="footer.css" />
 
-    <script src="./seperate.js"></script>
-    <script
+    <!-- <script src="./seperate.js"></script> -->
+    <!-- <script
     src="../common/component/pro-header/pro-header.js"
     type="module"
     defer
-  ></script>
+  ></script> -->
 
     <title>제품 상세 페이지</title>
   </head>
@@ -42,10 +42,10 @@
     <!-- 사이드바(카테고리) -->
     <!-- 제품 목록 -->
     <!-- 푸터 -->
-    <header include-html="../common/component/pro-header/pro-header.html"></header>
+    <header common-include="../common/component/pro-header/pro-header.html"></header>
 
     <div class="container">
-      <div class="side-bar" include-html="../common/component/side-bar/side-bar.html"></div>
+      <div class="side-bar" common-include="../common/component/side-bar/side-bar.html"></div>
       
       <!-- db 받아와야함 -->
       <div class="product-list">
@@ -93,10 +93,12 @@
 
       </div>
     </div>
-    <div class="footer" include-html="../common/component/footer/footer.html"></div>
+    <div class="footer" common-include="../common/component/footer/footer.html"></div>
 
-    <script>
-      includeHTML()
-    </script>
+    <script
+      src="..\common\component\common-include.js"
+      type="module"
+      defer
+    ></script>
   </body>
 </html>
