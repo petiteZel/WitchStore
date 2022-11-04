@@ -26,10 +26,11 @@
 
     <link rel="stylesheet" href="product-total.css" />
     <link rel="stylesheet" href="product.css" />
+    <link rel="stylesheet" href="footer.css" />
 
     <script src="./seperate.js"></script>
     <script
-    src="../common/component/header/header.js"
+    src="../common/component/pro-header/pro-header.js"
     type="module"
     defer
   ></script>
@@ -41,7 +42,7 @@
     <!-- 사이드바(카테고리) -->
     <!-- 제품 목록 -->
     <!-- 푸터 -->
-    <header include-html="../common/component/header/header.html"></header>
+    <header include-html="../common/component/pro-header/pro-header.html"></header>
 
     <div class="container">
       <div class="side-bar" include-html="../common/component/side-bar/side-bar.html"></div>
@@ -92,7 +93,7 @@
 
       </div>
     </div>
-    <div class="footer"></div>
+    <div class="footer" include-html="../common/component/footer/footer.html"></div>
 
     <script>
       includeHTML()
