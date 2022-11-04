@@ -7,6 +7,11 @@ const ProductSchema = new Schema(
         ref: 'category',
         required: true,
     },
+    personType: {
+        type: Schema.Types.ObjectId, // person type = 1유형, 2유형, 3유형
+        ref: 'personType', 
+        required: true,
+    },
     brand: {
         type: String,
         required: true,
