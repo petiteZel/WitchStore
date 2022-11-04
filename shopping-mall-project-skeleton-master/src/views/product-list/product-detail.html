@@ -11,87 +11,101 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Ultra&display=swap"
       rel="stylesheet"
-    />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap"
+      />
+      <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap"
       rel="stylesheet"
     />
 
     <!-- 아이콘 -->
     <script
-      defer
-      src="https://kit.fontawesome.com/9daa42bcef.js"
-      crossorigin="anonymous"
+    defer
+    src="https://kit.fontawesome.com/9daa42bcef.js"
+    crossorigin="anonymous"
     ></script>
-
-    <link rel="stylesheet" href="product.css" />
-    <script
-      src="../common/component/header/header.js"
-      type="module"
-      defer
-    ></script>
-
+    
+    <!-- 삭제 예정 -->
+    <!-- <script src="./seperate.js"></script> -->
+    <!-- <script
+    src="../common/component/pro-header/pro-header.js"
+    type="module"
+    defer
+  ></script> -->
+    <!-- <link rel="stylesheet" href="../common/component/header/common-header.css" /> -->
+    
+    <link rel="stylesheet" href="product-total.css" />
+    <link rel="stylesheet" href="product-detail.css" />
+    <link rel="stylesheet" href="footer.css" />
+    
+    
     <title>제품 상세 페이지</title>
   </head>
   <body>
-    <!-- 헤더 -->
-    <!-- 사이드바(카테고리) -->
-    <!-- 제품 목록 -->
-    <!-- 푸터 -->
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-      <div class="navbar-container">
-        <div class="navbar-brand">
-          <a class="navbar-item" href="/">
-            <span class="has-text-link" id="brandName">THE WITCH STORE</span>
-          </a>
-        </div>
-
-        <div class="navbar-end">
-          <ul id="navbar-info">
-            <!--  -->
-            <li><a href="../login/login.html">login</a></li>
-            <li><a href="../register/register.html">sign up</a></li>
-            <li>
-              <a href="../shoppingcart/shoppingcart.html" aria-current="page">
-                <span class="icon">
-                  <i class="fas fa-cart-shopping"></i>
-                </span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    
+    <header common-include="../common/component/pro-header/pro-header.html"></header>
     <div class="container">
-      <div class="side-bar">
-        <ul class="menu">
-          <li>
-            <input type="checkbox" class="menu-btn" id="menu-btn1" />
-            <label for="menu-btn1" class="label-btn" onclick="">제품별</label>
-            <ul class="submenu" id="submenu1">
-              <li><a href="#">All</a></li>
-              <li><a href="#">Category1</a></li>
-              <li><a href="#">Category2</a></li>
-              <li><a href="#">Category3</a></li>
-            </ul>
-          </li>
-          <li>
-            <input type="checkbox" class="menu-btn" id="menu-btn2" />
-            <label for="menu-btn2" class="label-btn" onclick="">유형별</label>
-            <ul class="submenu" id="submenu2">
-              <li><a href="#">Type1</a></li>
-              <li><a href="#">Type2</a></li>
-              <li><a href="#">Type3</a></li>
-              <li><a href="#">Type4</a></li>
-            </ul>
-          </li>
-        </ul>
+      <div class="side-bar" common-include="../common/component/side-bar/side-bar.html"></div>
+
+      <div class="product-list">
+        <div class="detail-item-container">
+          <div class="detail-item-img">
+            <img src="../image/item1.jpg" />
+          </div>
+          <div class="detail-item-info">
+            <div class="store"><h3>The witch store</h3></div>
+            
+            <div class="item-info">
+              <div class="info-box" id="item-name">
+                <div class="info-title">상품명</div>
+                <div class="info-content">Product 1</div>
+              </div>
+              <div class="info-box" id="item-info-detail">
+                <div class="info-title">설명</div>
+                <div class="info-content">
+                  이 제품은 어떤 특징을 가지고 있어서 어디에 어떻게 뭐가 이렇게
+                  저렇게 좋습니다.
+                </div>
+              </div>
+            </div>
+
+            <div class="item-info">
+              <div class="info-box" id="item-price">
+                <div class="info-title">가격</div>
+                <div class="info-content">18,000</div>
+                
+                <div class="count">
+                  <button class="plus-btn">
+                    <i class="fa-solid fa-circle-plus"></i>
+                  </button>
+                  <div id="count-number">0</div>
+                  <button class="minus-btn">
+                    <i class="fa-solid fa-circle-minus"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            
+            <div class="item-info">
+              <div class="info-box" id="total-price">
+                <div class="info-title">합계</div>
+                <div class="info-content">36,000</div>
+              </div>
+            </div>
+            
+            <div class="cart-btn-box">
+              <button class="cart-btn">장바구니 담기</button>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="product-list"></div>
     </div>
-    <div class="footer"></div>
+    <div class="footer" common-include="../common/component/footer/footer.html"></div>
+    
+    <script
+      src="..\common\component\common-include.js"
+      type="module"
+      defer
+    ></script>
   </body>
-</html>
+  </html>
+  

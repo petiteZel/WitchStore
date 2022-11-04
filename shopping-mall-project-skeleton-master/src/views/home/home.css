@@ -1,8 +1,10 @@
+
+
 html{
   width: 100%;
 }
 body{
-  /* background-color: aqua; */
+  font-family: 'Noto Sans',sans-serif;
   color: #FFD74B;
 
   background-color: #454DBC;
@@ -12,7 +14,138 @@ body{
   justify-content: center;
 
   width: 100%;
+  margin: 0;
+  padding: 0;
 }
+
+.header{
+  width: 100%;
+}
+
+
+
+
+
+.div-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100vw;
+  height: 700px;
+  
+  font-family: "Ultra", serif;
+  font-weight: lighter;
+
+}
+.background {
+  background-image: url("../image/bg_unit.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 690px;
+  
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome-box{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  
+  font-size: 35px;
+  
+  height: 50%;
+  color:#FFD84B;
+  margin-bottom: 5%;
+}
+
+.home-title-first{
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  margin: 0;
+  padding: 0;
+  
+}
+.home-title-first-text{
+  display: flex;
+  margin: 0;
+  padding: 0;
+  
+}
+.home-title-first-text > h1{
+  line-height:130%;
+  font-weight: lighter;
+  
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+}
+
+.welcome-img{
+  display: flex;
+  height: 90%;
+}
+.home-title-second{
+  margin: 0;
+}
+
+.btn-box{
+  display: flex;
+  justify-content: center;
+  
+  width: 60%;
+  height: 15%;
+}
+
+.btn{
+  border-radius: 81px;
+  border: none;
+  width: 30%;
+  height: 80%;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* 심리테스트 활성화 -> none 제거 */
+#test-btn{
+  display: none;
+  background-color: #FFD74B;
+  color: black;
+  margin-right: 5%;
+}
+#test-btn:hover{
+  background-color: black;
+  color: #FFD74B;
+}
+
+
+#shop-btn{
+  color: #1E1E1E;
+  background-color: #D9D9D9;
+}
+#shop-btn:hover{
+  background-color: black;
+  color: #d9d9d9;
+}
+
+.div-footer{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+
+/*
+헤더 애니메이션 (삭제 예정)
 
 a{
   cursor: pointer;
@@ -24,7 +157,6 @@ a{
   color: #FFD74B;
 }
 .navbar{
-  /* background-color: yellow; */
   font-size: 20px;
   background-color:transparent;
   width: 100%;
@@ -64,67 +196,4 @@ a{
   100% {
     top : 0;
   }
-}
-.div-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100vw;
-  height: 860px;
-}
-.background {
-  background-image: url("../image/bg_unit.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 90%;
-  height: 80%;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.welcome-box{
-  height: 70%;
-  font-size: 40px;
-  display: flex;
-}
-
-.welcome-text{
-  margin: 10% 0 0 10%;
-}
-
-.btn-box{
-  display: flex;
-  justify-content: space-around;
-  width: 50%;
-  height: 30%;
-}
-
-.btn{
-  border-radius: 81px;
-  border: none;
-  width: 300px;
-  height: 80%;
-}
-
-#test-btn{
-  background-color: #FFD74B;
-  color: white;
-}
-
-#shop-btn{
-  background-color: #D9D9D9;
-}
-
-.div-footer{
-  background-color: #0E1335;
-  width: 100%;
-  height: 200px;
-}
-.has-text-link {
-  font-family: 'Ultra', serif;
-  color:#FFD84B
-}
+} */
