@@ -96,20 +96,27 @@ body {
 
 
 /*계정관리*/
+
+#administer{
+  margin: 0 auto;
+  max-width: 1240px;
+}
 .information{
-    margin: 0 auto auto 30px;
-    max-width: 1240px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #454DBC;
-    align-items: center;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 
 .change-user-form-container {
+
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 30px 0;
+    margin: 20px 0;
+    padding: 20px 40px;
+    border-top: 1px solid #454DBC;
 
 
 }
