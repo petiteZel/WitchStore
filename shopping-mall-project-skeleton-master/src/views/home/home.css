@@ -1,53 +1,3 @@
-/* a{
-  cursor: pointer;
-  color: white;
-  text-decoration: none;
-}
-
-.navbar-item{
-  color: #FFD74B;
-}
-.navbar{
-  font-size: 20px;
-  background-color:transparent;
-  width: 100%;
-  position: absolute;
-  top: 0;
-}
-
-.container.mt-3{
-  color: #FFD74B;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0px 100px;
-}
-
-#navbar{
-  font-size: 20px;
-  color: white;
-  display: flex;
-  width: 300px;
-  justify-content: space-between;
-  list-style: none;
-}
-
-
-
-
-.navbar.drop{
-  position: fixed;
-  animation: dropfix 0.3;
-}
-
-@keyframes dropfix {
-  0% {
-    top: -5rem;
-  }
-  100% {
-    top : 0;
-  }
-} */
 
 
 html{
@@ -82,7 +32,7 @@ body{
   justify-content: center;
   width: 100vw;
   height: 700px;
-
+  
   font-family: "Ultra", serif;
   font-weight: lighter;
 
@@ -94,7 +44,7 @@ body{
   background-position: center;
   width: 100%;
   height: 690px;
-
+  
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
@@ -131,7 +81,7 @@ body{
 .home-title-first-text > h1{
   line-height:130%;
   font-weight: lighter;
-
+  
   height: 100%;
   margin: 0;
   padding: 0;
@@ -193,3 +143,57 @@ body{
   width: 100%;
 }
 
+
+/*
+헤더 애니메이션 (삭제 예정)
+
+a{
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+}
+
+.navbar-item{
+  color: #FFD74B;
+}
+.navbar{
+  font-size: 20px;
+  background-color:transparent;
+  width: 100%;
+  position: absolute;
+  top: 0;
+}
+
+.container.mt-3{
+  color: #FFD74B;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 100px;
+}
+
+#navbar{
+  font-size: 20px;
+  color: white;
+  display: flex;
+  width: 300px;
+  justify-content: space-between;
+  list-style: none;
+}
+
+
+
+
+.navbar.drop{
+  position: fixed;
+  animation: dropfix 0.3;
+}
+
+@keyframes dropfix {
+  0% {
+    top: -5rem;
+  }
+  100% {
+    top : 0;
+  }
+} */
