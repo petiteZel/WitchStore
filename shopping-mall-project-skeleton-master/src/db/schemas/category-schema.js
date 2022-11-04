@@ -6,15 +6,11 @@ const CategorySchema = new Schema(
         type: String,
         required: true
       },
-    description: {
-        type: String,
-        required: true
-      },
-    },
-    {
+  },
+  {
       collection: 'categories',
       timestamps: true,
-    }
-  );
+  }
+);
   
-  export { CategorySchema };
+export { CategorySchema };
