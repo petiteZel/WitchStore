@@ -29,7 +29,7 @@ body {
 }
 /* common property */
 
-
+/* 
 #header{
     margin: 0 auto;
     max-width: 1240px;
@@ -101,7 +101,7 @@ body {
 
 .login-head{
   color:#FFD84B;
-}
+} */
 /* header end */
 
 /* 배경 - 시간되면 넓게 이미지 만들기*/
@@ -184,32 +184,3 @@ body {
 
 
 /*로그인 end*/
-
-#footer{
-  background-color: #060a1f;
-}
-#footer .footer-container{
-  margin: 0 auto;
-  max-width: 1240px;
-}
-#footer .footer-container .footer-box{
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-top: 40px;
-  padding: 60px 20px;
-}
-#footer .footer-container .footer-copy-box p{
-  font-size: 12px;
-  line-height: 24px;
-  color: #8d8d8d;
-}
-#footer .footer-container .footer-sns-box a i{
-  margin-left: 10px;
-  font-size: 24px;
-  text-align: right;
-  color: #8d8d8d;
-}
-#footer .footer-container .footer-sns-box a i:hover{
-  color: #FFD84B;
-}

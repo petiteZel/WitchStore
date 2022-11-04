@@ -29,87 +29,29 @@ body {
 }
 /* common property */
 
-#header{
-    margin: 0 auto;
-    max-width: 1240px;
-}
-#header .header-container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 30px 0;
-    margin-bottom: 80px;
-    padding: 0 20px;
-}
-#header .header-container .logo {
-    font-size: 24px;
-    letter-spacing: 2px;
-}
-#header .header-container .logo a p{
-    color: #FFD84B;
-}
-#header .header-container .user-nav{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-#header .header-container .user-nav .user-info-box{
-    position: relative;
-    margin-right: 20px;
-}
-#header .header-container .user-nav .user-info-box .user-info{
-    display: flex;
-    align-items: center;
-}
-#header .header-container .user-nav .user-info-box .user-name{
-    margin-right: 14px;
-}
-#header .header-container .user-nav .user-info-box .user-info-btn i{
-    font-size: 26px;
-}
-#header .header-container .user-nav .user-info-box .user-info-btn i:hover{
-    color: #FFD84B;
-}
-#header .header-container .user-nav .user-menu-box{
-    position: absolute;
-    right: 0;
-    margin-top: 10px;
-    padding: 10px 10px 2px 10px;
-    width: 120px;
-    border-radius: 8px;
-    background-color: #454DBC;
-    z-index: 100;
-    display: none;
-}
-#header .header-container .user-nav .user-menu-box .user-menu li{
-    margin-bottom: 8px;
-    text-align: center;
-}
-#header .header-container .user-nav .user-cart-btn i{
-    font-size: 20px;
-}
-#header .header-container .user-nav .user-cart-btn i:hover{
-    color: #FFD84B;
-}
-
-/* header end */
-
 
 /*계정관리*/
+
+#administer{
+  margin: 0 auto;
+  max-width: 1240px;
+}
 .information{
-    margin: 0 auto auto 30px;
-    max-width: 1240px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #454DBC;
-    align-items: center;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 
 .change-user-form-container {
+
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 30px 0;
+    margin: 20px 0;
+    padding: 20px 40px;
+    border-top: 1px solid #454DBC;
 
 
 }
@@ -155,8 +97,8 @@ body {
  line-height: 26px;
 }
 
-.input{
-    float: left;
+.label{
+  padding-right: 100px;
 }
 
 
@@ -186,34 +128,3 @@ body {
   box-shadow: 0 0 0 0.125em rgba(0, 209, 178, 0.25);
 }
 
-/*회원가입 end*/
-
-#footer{
-  background-color: #060a1f;
-}
-#footer .footer-container{
-  margin: 0 auto;
-  max-width: 1240px;
-}
-#footer .footer-container .footer-box{
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-top: 40px;
-  padding: 60px 20px;
-}
-#footer .footer-container .footer-copy-box p{
-  font-size: 12px;
-  line-height: 24px;
-  color: #8d8d8d;
-}
-#footer .footer-container .footer-sns-box a i{
-  margin-left: 10px;
-  font-size: 24px;
-  text-align: right;
-  color: #8d8d8d;
-}
-#footer .footer-container .footer-sns-box a i:hover{
-  color: #FFD84B;
-
-}
