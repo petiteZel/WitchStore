@@ -5,39 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="order-detail.css">
+    <link rel="stylesheet" href="../common/component/header/common-header.css">
+    <link rel="stylesheet" href="../common/component/footer/footer.css">
+    <script defer src="../common/component/common-include.js"></script>
     <script defer src="https://kit.fontawesome.com/d1371e05f7.js" crossorigin="anonymous"></script>
-    <title>Document</title>
+    <title>The Witch Store</title>
 </head>
 <body>
 
-    <header id="header">
-        <div class="header-container">
-
-            <h1 class="logo">
-                <a href="../home/home.html"><img src="../image/logo.png" alt="logo"></a>
-            </h1>
-
-            <nav class="user-nav">
-                <div class="user-info-box">
-                    <div class="user-info">
-                        <label for="user-name" class="user-name en">User</label>
-                        <button class="user-info-btn"><i class="fa-solid fa-caret-down"></i></button>
-                    </div>
-                    
-                    <div class="user-menu-box">
-                        <ul class="user-menu">
-                            <li><a href="#">주문내역</a></li>
-                            <li><a href="#">계정관리</a></li>
-                            <li><a href="#">로그아웃</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <a href="../shopping-cart/shopping-cart.html" class="user-cart-btn"><i class="fa-solid fa-cart-shopping"></i></a>
-            </nav>
-
-        </div>
-    </header><!-- header end -->
+    <header common-include="../common/component/header/common-header.html"></header>
 
     <main id="order-detail">
         <section id="track-package">
@@ -130,27 +106,7 @@
 
     </main>
 
-    <footer id="footer">
-        <div class="footer-container">
-            
-            <div class="footer-box">
-                <div class="footer-copy-box">
-                    <p>
-                        서울특별시 강남구 선릉로 433, 신관 6층<br>
-                         team K1ng의 모든 컨텐츠는 저작권의 보호를 받고 있습니다.<br>
-                        Copyright © 2022 team K1ng all rights Reserved.
-                    </p>
-                </div>
-    
-                <div class="footer-sns-box">
-                    <a href="#"><i class="fa-brands fa-square-youtube"></i></a>
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
-                </div>
-            </div>
-            
-        </div>
-    </footer><!-- footer end -->
+    <footer common-include="../common/component/footer/footer.html"></footer>
     
 </body>
 </html>
