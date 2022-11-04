@@ -17,71 +17,6 @@ body {
 /* common property */
 
 
-#header{
-    margin: 0 auto;
-    max-width: 1240px;
-}
-#header .header-container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 30px 0;
-    margin-bottom: 80px;
-    padding: 0 20px;
-}
-#header .header-container .logo {
-    font-size: 24px;
-    letter-spacing: 2px;
-}
-#header .header-container .logo a p{
-    color: #FFD84B;
-}
-#header .header-container .user-nav{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-#header .header-container .user-nav .user-info-box{
-    position: relative;
-    margin-right: 20px;
-}
-#header .header-container .user-nav .user-info-box .user-info{
-    display: flex;
-    align-items: center;
-}
-#header .header-container .user-nav .user-info-box .user-name{
-    margin-right: 14px;
-}
-#header .header-container .user-nav .user-info-box .user-info-btn i{
-    font-size: 26px;
-}
-#header .header-container .user-nav .user-info-box .user-info-btn i:hover{
-    color: #FFD84B;
-}
-#header .header-container .user-nav .user-menu-box{
-    position: absolute;
-    right: 0;
-    margin-top: 10px;
-    padding: 10px 10px 2px 10px;
-    width: 120px;
-    border-radius: 8px;
-    background-color: #454DBC;
-    z-index: 100;
-    display: none;
-}
-#header .header-container .user-nav .user-menu-box .user-menu li{
-    margin-bottom: 8px;
-    text-align: center;
-}
-#header .header-container .user-nav .user-cart-btn i{
-    font-size: 20px;
-}
-#header .header-container .user-nav .user-cart-btn i:hover{
-    color: #FFD84B;
-}
-/* header end */
-
-
 #shopping-cart{
     margin: 0 auto;
     max-width: 1240px;
@@ -209,33 +144,3 @@ body {
     color: #0E1335;
 }
 /* order-btn end */
-
-
-#footer{
-    background-color: #060a1f;
-}
-#footer .footer-container{
-    margin: 0 auto;
-    max-width: 1240px;
-}
-#footer .footer-container .footer-box{
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-top: 40px;
-    padding: 60px 20px;
-}
-#footer .footer-container .footer-copy-box p{
-    font-size: 12px;
-    line-height: 24px;
-    color: #8d8d8d;
-}
-#footer .footer-container .footer-sns-box a i{
-    margin-left: 10px;
-    font-size: 24px;
-    text-align: right;
-    color: #8d8d8d;
-}
-#footer .footer-container .footer-sns-box a i:hover{
-    color: #FFD84B;
-}
