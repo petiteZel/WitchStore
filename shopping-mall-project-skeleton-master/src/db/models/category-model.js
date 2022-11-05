@@ -4,28 +4,28 @@ import { CategorySchema } from '../schemas/category-schema';
 const Category = model('category', CategorySchema);
 
 export class CategoryModel {
-  // 카테고리 상세
-  async findByCategoryId(categoryId) {
-    const category = await Category.findOne({ _id: categoryId });
-    return category;
+  // 1. 새로운 카테고리 추가
+  async addCategory(categoryInfo) {
+    const newCategory = await Category.create(categoryInfo);
+    return newCategory;
   }
-  // 카테고리명으로 찾기
+  // 2. 카테고리 검색 - 이름
   async findByCategoryName(categoryName) {
     const category = await Category.findOne({ categoryName });
     return category;
   }
-  // 카테고리 추가
-  async create(categoryInfo) {
-    const createdNewCategory = await Category.create(categoryInfo);
-    return createdNewCategory;
+  // 3. 카테고리 검색 - id
+  async findByCategoryId(categoryId) {
+    const category = await Category.findById(categoryId)
+    return category;
   }
-  // 전체 카테고리 조회
-  async findAll() {
+  // 4. 전체 카테고리 조회
+  async findAllCategories() {
     const categories = await Category.find({});
     return categories;
   }
-  // 카테고리 수정
-  async update({ categoryId, update }) {
+  // 5. 카테고리 수정
+  async updateCategory({ categoryId, update }) {
     const filter = { _id: categoryId };
     const option = { returnOriginal: false };
     const updatedCategory = await Category.findOneAndUpdate(
@@ -35,8 +35,8 @@ export class CategoryModel {
     );
     return updatedCategory;
   }
-  // 카테고리 삭제
-  async delete(categoryId) {
+  // 6. 카테고리 삭제
+  async deleteCategory(categoryId) {
     const category = await Category.findOneAndDelete({ _id: categoryId });
     return category;
   }
