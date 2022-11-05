@@ -10,17 +10,17 @@ const Product = model('products', ProductSchema);
 
 export class ProductModel {
     
-    // 1. 전체 상품 목록 조회 기능
+    // 1. 전체 상품 조회
     async findAllProducts() {
         const productList = await Product.find({});
         return productList;
     }
-    // 2. 카테고리별 상품 조회 기능
+    // 2. 카테고리별 상품 조회
     async findByCategory(category){
         const productList = await Product.find({category: category});
         return productList;
     }
-    // 3. 상품 상세 정보 조회 기능??
+    // 3. 상품 상세 정보
     async findById(productId) {
         // const product = await Product.findOne({_id: productId});
         
@@ -31,13 +31,13 @@ export class ProductModel {
         const updatedProduct = await Product.findOneAndUpdate(filter, update, option);
         return updatedProduct;
     }
-    // 4. 상품 추가 기능
+    // 4. 상품 등록 (추가)
     async create(productInfo) {
         const createdNewProduct = await Product.create(productInfo);
 
         return createdNewProduct;
     }
-    // 5. 상품 수정 기능
+    // 5. 상품 정보 수정
     async updateProduct(productId, update) {
         const filter = {_id: productId};
         const option = { returnOriginal : false };
@@ -45,13 +45,13 @@ export class ProductModel {
         const updatedProduct = await Product.findByIdAndUpdate(productId, update, option).exec();
         return updatedProduct;
     }
-    // 6. 상품 삭제 기능
+    // 6. 상품 삭제
     async deleteProduct(productId) {
         const deletedProduct = await Product.deleteOne({ _id: productId });
         return deletedProduct;
     }
 
-    // 7. 상품 조회 페이지네이션 기능
+    // 7. 상품 조회 페이지네이션 (페이지 넘기는것)
     async getPaginatedProducts (query, page, perPage) {
 
         const [total, productList] = await Promise.all([
