@@ -1,16 +1,16 @@
 import { Schema } from 'mongoose';
 
-const PersonTypeSchema = new Schema(
+const comfortTypeSchema = new Schema(
   {
-    personType: {
+    comfortType: {
         type: String,
         required: true
       },
   },
   {
-      collection: 'personTypes',
+      collection: 'comfortTypes',
       timestamps: true,
   }
 );
   
-export { PersonTypeSchema };
+export { comfortTypeSchema };
