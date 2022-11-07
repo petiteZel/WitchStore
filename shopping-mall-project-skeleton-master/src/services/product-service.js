@@ -39,30 +39,38 @@ class ProductService {
         return product;
     }
 
- // 4. 상품 등록??
- async addedProduct(productInfo){
+ // 4. 상품 등록
+    async addedProduct(productInfo){
 
-    const addedProduct = await this.productModel.create(productInfo);
+      const addedProduct = await this.productModel.create(productInfo);
 
-    return addedProduct;
+      return addedProduct;
 }
 
     // 5. 상품 수정
-    async updateProduct(productId){
-        const updatedProduct = await this.productModel.updateProduct(productId);
-        return updatedProduct;
+    async setProduct(productId, toUpdate) {
+      let product = await this.productModel.findById(productId);
+      if (!product) {
+        throw new customError(404, '해당 상품의 id가 없습니다. 다시 한 번 확인해 주세요.');
+      }
+      const updatedProduct = await this.productModel.update({
+        productId,
+        update: toUpdate,
+      });
+  
+      return updatedProduct;
     }
+  
 
     // 6.상품 삭제
     async deleteProduct(productId) {
-      let product = await this.productModel.findById(productId);
-
+      let product = await productModel.delete(productId);
       if (!product) {
-          throw new Error('상품 내역이 없습니다. 다시 한 번 확인해 주세요.');
+        throw new customError(404, '해당 상품의 id가 없습니다. 다시 한 번 확인해 주세요.');
       }
-
-      return await this.productModel.delete({ productId });
-  }
+  
+      return product;
+    }
 
 
 
