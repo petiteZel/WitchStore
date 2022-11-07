@@ -57,30 +57,22 @@ async function deleteUserData(e) {
 }
 
 // Modal 창 열기
-function show(){
-  document.querySelector(".modal-background").className = "modal-background show";
+
+function openModal(e) {
+  if (e) {
+    e.preventDefault();
+  }
+  modal.classList.add("is-active");
 }
-
-
-// function openModal(e) {
-//   if (e) {
-//     e.preventDefault();
-//   }
-//   modal.classList.add("is-active");
-// }
 
 // Modal 창 닫기
-function close () {
-  document.querySelector(".modal-background").className = "modal-background show";
+
+function closeModal(e) {
+  if (e) {
+    e.preventDefault();
+  }
+  modal.classList.remove("is-active");
 }
-
-
-// function closeModal(e) {
-//   if (e) {
-//     e.preventDefault();
-//   }
-//   modal.classList.remove("is-active");
-// }
 
 // 키보드로 Modal 창 닫기
 function keyDownCloseModal(e) {
