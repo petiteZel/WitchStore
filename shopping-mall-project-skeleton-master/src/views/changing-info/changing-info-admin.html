@@ -4,14 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>회원 정보 관리</title>
-    <!-- 아이콘 -->
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/elice-rabbit-favicon.png"
-    />
-    
+
     <!-- 폰트 어썸: 아이콘 -->
     <script
       defer
@@ -87,7 +80,7 @@
     </div>
   </div>
 
-  <div class="field mb-5">
+  <div class="field field-second">
     <label class="label" for="addressInput">주소</label>
     <div class="control">
       <input
@@ -98,7 +91,24 @@
         autocomplete="off"
       />
     </div>
+    <div>
+      <button class="button-address" id="searchAddressButton">
+        주소찾기
+      </button>
+    </div>
   </div>
+  <div class="field address1Input">
+    <div class="control">
+      <input class="input" 
+      id="address1Input" 
+      type="text"
+      placeholder="슬리데린 아파트 203동 1111호" 
+      autocomplete="on" >
+    </div>
+  </div>
+
+
+
   <div class="buttons">
     <button class="button" id="exitButton">
         탈퇴하기
@@ -120,4 +130,5 @@
 
 </body>
 </html>
+
 
