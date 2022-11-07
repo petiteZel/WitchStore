@@ -1,50 +1,63 @@
-/*router의 역할 (컨트롤러)
-사용자로부터 요청을 받아서 사용자에게 요청에 대한 응답을 전해주는 계층*/
-
 import { Router } from 'express';
 import { productService } from '../services/product-service';
 
 const productRouter = Router();
 
-// 1. 상품 목록
+// 1. 전체 상품 목록
 productRouter.get('/', async (req, res, next) => {
     try {
-        const { category, page, perPage } = req.query;
+        const findAll = await productService.findAllProducts()
 
-        const [productList, totalPage] = await productService.findAllProducts(
-            category,
-            page,
-            perPage,
-        );
-
-        res.status(200).json({ productList, totalPage });
+        res.status(200).json(findAll);
     } catch (error) {
         next(error);
     }
 });
 
-// 2. 장바구니 내에 있는 상품 상세 정보
-productRouter.post('/cart', async (req, res, next) => {
+// 2. 카테고리별 상품 조회
+productRouter.get('/:category', async (req, res, next) => {
     try {
-        const { productIds } = req.body;
+        const category = req.params.category;
+        const findByCategory = await productService.findByCategory(category)
 
-        const productList = await productService.getProductsInCart(productIds);
-
-        res.status(200).json(productList);
+        res.status(200).json(findByCategory);
     } catch (error) {
         next(error);
     }
 });
+
+
 
 // 3. 상품 상세 정보
 productRouter.get('/:productId', async (req, res, next) => {
     try {
-        const { productId } = req.params;
+        const productId = req.params.productId;
+        console.log(productId);
+     
         const product = await productService.findById(productId);
         res.status(200).json(product);
     } catch (error) {
         next(error);
     }
 });
+
+ // 4. 상품 등록 ??
+ productRouter.post('/register', async (req, res, next) => {
+    try {
+
+        const {category, personType, brand, productName, image, price, shortDescription, detailDescription} = req.body;
+        const addedProduct = {category, personType, brand, productName, image, price, shortDescription, detailDescription}
+        const findByCategory = await productService.addedProduct(addedProduct)
+
+        res.status(200).json(findByCategory);
+    } catch (error) {
+        next(error);
+    }
+});
+
+//5. 상품 수정 admin 한정
+
+
+
 
 export { productRouter };
