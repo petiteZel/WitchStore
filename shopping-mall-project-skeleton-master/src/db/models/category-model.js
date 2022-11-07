@@ -64,4 +64,4 @@ export class CategoryModel {
 
 const categoryModel = new CategoryModel();
 
-export { categoryModel }
+export { categoryModel };
