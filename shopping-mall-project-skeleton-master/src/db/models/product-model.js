@@ -35,22 +35,20 @@ export class ProductModel {
     }
 
         // 5. 상품 수정
-        async updateProduct(productId) {
-            const filter = {_id: productId};
-            const option = { returnOriginal : false };
-    
-            const updatedProduct = await Product.findByIdAndUpdate(productId, update, option).exec();
-            return updatedProduct;
-        }
-    
+       async update({ productId, update }) {
+    const option = { returnOriginal: false };
+    return await Product.findOneAndUpdate({ shortId: productId }, update, option);
+  }
+
+  
             // 6. 상품 삭제
-    async delete({ productId }) {
-        const filter = { productId };
-        //findOneAndDelete
-        return await Product.deleteOne(filter);
-    }
+            async delete(productId) {
+                return await Product.findOneAndDelete({ shortId: productId });
+              }
 
     }
+
+
 
 
     const productModel = new ProductModel();

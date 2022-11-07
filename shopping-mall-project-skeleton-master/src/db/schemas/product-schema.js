@@ -3,12 +3,12 @@ import { Schema } from "mongoose";
 const ProductSchema = new Schema(
   {    
     category: {
-        type: Schema.Types.ObjectId, // categories = DOLL, PERFUME, ETC
+        type: String, // categories = DOLL, PERFUME, ETC
         ref: 'category',
         required: true,
     },
     personType: {
-        type: Schema.Types.ObjectId, // person type = 1유형, 2유형, 3유형
+        type: String, // person type = 1유형, 2유형, 3유형
         ref: 'personType', 
         required: true,
     },
