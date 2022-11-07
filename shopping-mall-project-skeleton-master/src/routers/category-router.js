@@ -7,7 +7,7 @@ import { categoryService } from '../services';
 const categoryRouter = Router();
 
 // 1. 카테고리등록 api (아래는 /register이지만, 실제로는 /api/register로 요청해야 함.)
-categoryRouter.post('/register', async (req, res, next) => {
+categoryRouter.post('/category', adminOnly, async (req, res, next) => {
   try {
     // 1-1. Content-Type: application/json 설정을 안 한 경우, 에러를 만들도록 함.
     // 1-2. application/json 설정을 프론트에서 안 하면, body가 비어 있게 됨.
@@ -35,20 +35,20 @@ categoryRouter.post('/register', async (req, res, next) => {
   }
 });
 
-// 전체 카테고리 목록을 가져옴 (배열 형태임)
-categoryRouter.get('/list', async function (req, res, next) {
+// 2. 전체 카테고리 목록을 가져오기.
+categoryRouter.get('/categories', async function (req, res, next) {
   try {
     // 전체 카테고리 목록을 얻음
-    const categories = await categoryService.getCategories();
-    // 카테고리 목록(배열)을 JSON 형태로 프론트에 보냄
+    const categories = await categoryService.findAllCategories();
+    // 카테고리 목록을 JSON 형태로 프론트에 보냄
     res.status(200).json(categories);
   } catch (error) {
     next(error);
   }
 });
 
-// 특정 카테고리 정보 불러오기
-categoryRouter.get('/info/:categoryId', async function (req, res, next) {
+// 3. 특정 카테고리 정보 불러오기
+categoryRouter.get('/info/:categoryId', loginRequired, async function (req, res, next) {
   try {
     const categoryInfo = await categoryService.getCategoryInfo(
       req.params.categoryId
