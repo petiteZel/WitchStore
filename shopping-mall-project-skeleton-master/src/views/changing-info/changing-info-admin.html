@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>회원가입</title>
+    <title>회원 정보 관리</title>
     <!-- 아이콘 -->
     <link
       rel="icon"
@@ -23,47 +23,33 @@
     <!-- 카카오 OAuth -->
     <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
     <!-- 커스텀 css, js -->
-    <link rel="stylesheet" href="register.css" />
-    <script src="register.js" type="module" defer></script>
-
+    <link rel="stylesheet" href="changing-info-admin.css" />
+    <script src="changing-info.js" type="module" defer></script>
     <!--header,footer css-->
     <link rel="stylesheet" href="../common/component/header/common-header.css">
     <link rel="stylesheet" href="../common/component/footer/footer.css">
     <script defer src="../common/component/common-include.js"></script>
 
-    
     <!--common css-->
     <link rel="stylesheet" href="../common/component/css/common.css">
-    
+
   </head>
   <body>
+    <!-- 헤더 -->
     <header common-include="../common/component/header/common-header.html"></header>
 
-      </div> 
-  </header><!-- header end -->
+  <main id="administer">
 
-  <main id="login-area">
-      <!-- 배경 별 -->
-    <div class="background-image">
-    <!-- 회원가입 폼(Form) -->
-    <div class="register-user-form-container">
-      <form class="box register-user-form-box" id="registerUserForm">
-        <p class="title en">Welcome!</p>
+    <!-- 정보 리스트 -->
+    <!---요 부분 같은 클래스 주고 width 값을 똑같이 주라고 하셨어요!-->
+    <div class="information">
+        <h3 class="administer">계정관리</h3>
+    </div>
+    <div class="change-user-form-container">
+      <form class="box change-user-form-box" id="changeUserForm">
+
         <div class="field">
-          <label class="label en" for="fullNameInput">name</label>
-          <div class="control">
-            <input
-              class="input"
-              id="fullNameInput"
-              type="text"
-              placeholder="유재석"
-              autocomplete="on"
-            />
-          </div>
-        </div>
-        
-        <div class="field">
-          <label class="label en" for="emailInput">email</label>
+          <label class="label " for="emailInput">이메일</label>
           <div class="control">
             <input
               class="input"
@@ -76,43 +62,61 @@
         </div>
 
         <div class="field">
-          <label class="label en" for="passwordInput">password</label>
+          <label class="label " for="nameInput">이름</label>
           <div class="control">
             <input
               class="input"
-              id="passwordInput"
-              type="password"
-              placeholder="********"
-              autocomplete="off"
+              id="nameInput"
+              type="text"
+              placeholder="유재석"
+              autocomplete="on"
             />
           </div>
         </div>
 
         <div class="field">
-          <label class="label en" for="passwordConfirmInput">password confirm</label>
+          <label class="label" for="telInput">전화번호</label>
           <div class="control">
             <input
               class="input"
-              id="passwordConfirmInput"
-              type="password"
-              placeholder="********"
+              id="telInput"
+              type="tel"
+              placeholder="010-111-2222"
               autocomplete="off"
             />
           </div>
         </div>
 
-        <button class="button en" id="submitButton">
-          sign up!
-        </button>
+        <div class="field mb-5">
+          <label class="label" for="addressInput">주소</label>
+          <div class="control">
+            <input
+              class="input"
+              id="addressInput"
+              type="address"
+              placeholder="호그와트 해리동 슬리데린 아파트"
+              autocomplete="off"
+            />
+          </div>
+        </div>
+        <div class="buttons">
+          <button class="button" id="exitButton">
+              탈퇴하기
+            </button>
+                <!-- input버튼 활성화일때, 아닐때 나눠서 표기 -->
+            <button class="button" id="submitButton">
+              회원정보수정
+            </button>
+      </div>
+
       </form>
       </div>
 
    </div>
  </main>
  <!-- main end -->
-     <!-- main end -->
 
-     <footer common-include="../common/component/footer/footer.html"></footer>
+ <footer common-include="../common/component/footer/footer.html"></footer>
 
   </body>
 </html>
