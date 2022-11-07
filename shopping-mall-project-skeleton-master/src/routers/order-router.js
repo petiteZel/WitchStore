@@ -29,31 +29,6 @@ orderRouter.post('/register', adminOnly, async (req, res, next) => {
     const orderRequest = req.body.orderRequest;
     const orderStatus = req.body.orderStatus;
 
-    // 재고 확인 후 매진 시 오류 발생시키기
-    // 재고 문제가 없다면 db에 입력
-    // orderList의 모든 주문을 찾아서 돌려야 함
-    let currentStock;
-    for (let i = 0; i < orderList.length; i++) {
-      currentStock = (
-        await productService.getProductInfo(orderList[i].productId)
-      ).inventory;
-      if (orderList[i].quantity > currentStock) {
-        // 주문 가능한 수량을 초과 했습니다. 주문을 다시 확인해주시기 바랍니다.
-        throw new Error(
-          `주문 가능한 수량을 초과 했습니다. [${orderList[i].productName}] 상품을 다시 확인해주시기 바랍니다.`
-        );
-      } else if (orderList[i].quantity == 0) {
-        throw new Error(
-          `주문 수량이 없습니다. [${orderList[i].productName}] 상품을 다시 확인해주시기 바랍니다.`
-        );
-      } else {
-        // 주문 갯수만큼 db에서 재고 감소시킴
-        productService.setProduct(orderList[i].productId, {
-          inventory: currentStock - orderList[i].quantity,
-        });
-      }
-    }
-
     // 위 데이터를 주문 db에 추가하기
     const newOrder = await orderService.putOrder({
       ordererUserId,
