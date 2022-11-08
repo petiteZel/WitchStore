@@ -17,59 +17,59 @@
     
     <header common-include="../common/component/header/common-header.html"></header>
     
-    <main id="shopping-cart">
+    <main class="shopping-cart">
 
-        <section id="cart">
+        <section class="cart">
             <div class="cart-container">
                 
                 <h3 class="cart-title">장바구니</h3>
                 
                 <div class="cart-list-box">
                     <div class="cart-list">
-                        <button class="select-btn"><i class="fa-solid fa-circle-check"></i></button>
+                        <button type="button"class="select-btn"><i class="fa-solid fa-circle-check"></i></button>
                         <div class="product-img"><p>product imge</p></div>
-                        <p class="product-name">Procuct Name</p>
+                        <p class="product-name">Product Name</p>
                         <div class="count-box">
-                            <button class="minus-btn"><i class="fa-solid fa-circle-minus"></i></button>
+                            <button type="button" class="minus-btn"><i class="fa-solid fa-circle-minus"></i></button>
                             <p class="count-number">1</p>
-                            <button class="plus-btn"><i class="fa-solid fa-circle-plus"></i></button>
+                            <button type="button" class="plus-btn"><i class="fa-solid fa-circle-plus"></i></button>
                         </div>
                         <p class="product-price">36,000</p>
-                        <button class="deleteBtn"><i class="fa-solid fa-x"></i></i></button>
+                        <button type="button" class="deleteBtn"><i class="fa-solid fa-x"></i></i></button>
                     </div>
-                    
+
                     <div class="cart-list">
-                        <button class="select-btn"><i class="fa-solid fa-circle-check"></i></button>
+                        <button type="button"class="select-btn"><i class="fa-solid fa-circle-check"></i></button>
                         <div class="product-img"><p>product imge</p></div>
-                        <p class="product-name">Procuct Name</p>
+                        <p class="product-name">Product Name</p>
                         <div class="count-box">
-                            <button class="minus-btn"><i class="fa-solid fa-circle-minus"></i></button>
+                            <button type="button" class="minus-btn"><i class="fa-solid fa-circle-minus"></i></button>
                             <p class="count-number">1</p>
-                            <button class="plus-btn"><i class="fa-solid fa-circle-plus"></i></button>
+                            <button type="button" class="plus-btn"><i class="fa-solid fa-circle-plus"></i></button>
                         </div>
                         <p class="product-price">36,000</p>
-                        <button class="deleteBtn"><i class="fa-solid fa-x"></i></i></button>
+                        <button type="button" class="deleteBtn"><i class="fa-solid fa-x"></i></i></button>
                     </div>
-    
+
                     <div class="cart-list">
-                        <button class="select-btn"><i class="fa-solid fa-circle-check"></i></button>
+                        <button type="button"class="select-btn"><i class="fa-solid fa-circle-check"></i></button>
                         <div class="product-img"><p>product imge</p></div>
-                        <p class="product-name">Procuct Name</p>
+                        <p class="product-name">Product Name</p>
                         <div class="count-box">
-                            <button class="minus-btn"><i class="fa-solid fa-circle-minus"></i></button>
+                            <button type="button" class="minus-btn"><i class="fa-solid fa-circle-minus"></i></button>
                             <p class="count-number">1</p>
-                            <button class="plus-btn"><i class="fa-solid fa-circle-plus"></i></button>
+                            <button type="button" class="plus-btn"><i class="fa-solid fa-circle-plus"></i></button>
                         </div>
                         <p class="product-price">36,000</p>
-                        <button class="deleteBtn"><i class="fa-solid fa-x"></i></i></button>
+                        <button type="button" class="deleteBtn"><i class="fa-solid fa-x"></i></i></button>
                     </div>
                 </div>
     
                 <div class="cart-edit-box">
                     <div class="cart-edit-btn">
-                        <button class="all-select-btn"><i class="fa-solid fa-circle-check"></i></button>
-                        <button class="all-delete-btn">전체 삭제</button>
-                        <button class="select-delete-btn">선택 삭제</button>
+                        <button type="button" class="all-select-btn"><i class="fa-solid fa-circle-check"></i></button>
+                        <button type="button" class="all-delete-btn">전체 삭제</button>
+                        <button type="button" class="select-delete-btn">선택 삭제</button>
                     </div>
     
                     <div class="cart-price">
@@ -80,38 +80,10 @@
     
             </div>
         </section><!-- cart end -->
-        
-        <section id="orderer-info">
-            <div class="orderer-info-container">
-    
-                <h3 class="orderer-info-title">주문자 정보</h3>
-    
-                <div class="oderer-info-box">
-                    <div class="orderer-info-list-box">
-    
-                        <div class="orderer-info-title">
-                            <p>이름</p>
-                            <p>전화번호</p>
-                            <p>주소</p>
-                        </div>
-                        
-                        <div class="orderer-info-contetns">
-                            <p class="name">User</p>
-                            <p class="phon-number">010-0000-0000</p>
-                            <p class="adress">서울 성동구 아차산로 17길 48 성수낙낙</p>
-                        </div>
-                    </div>
-                    
-                    <div class="oderer-edit-btn-box">
-                        <button class="oderer-info-edit-btn">수정</button>
-                    </div>
-                </div>
-    
-            </div>
-        </section><!-- oderer info end -->
 
-        <section id="order-btn">
-            <button class="order-btn">주문하기</button>
+        <section class="order-btn">
+            <button type="button" class="nonmember-order-btn"><a href="../order/order.html">비회원 주문하기</a></button>
+            <button type="button" class="member-order-btn"><a href="../order/order.html">주문하기</a></button>
         </section>
         
     </main><!-- shopping cart end -->
