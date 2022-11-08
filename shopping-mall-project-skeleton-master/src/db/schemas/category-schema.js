@@ -6,7 +6,7 @@ const CategorySchema = new Schema(
         type: String,
         required: true
       },
-      imageUrl: {
+    imageUrl: {
         type: String,
         required: true,
       },
