@@ -1,8 +1,41 @@
 import * as Api from "../api.js";
+const products = [
+  {
+    id: 1,
+    category: "인형",
+    brand: "WitchA",
+    productName: "재인 인형",
+    image: "",
+    price: "18000",
+    description: "어쩌구 저쩌구 훌라 훌라 훌라 나는야~~ 멋진 토마토 빰빰@!",
+    type: "A",
+  },
+  {
+    id: 2,
+    category: "인형",
+    brand: "WitchA",
+    productName: "갑열 인형",
+    image: "",
+    price: "18000",
+    description: "어쩌구 저쩌구 훌라 훌라 훌라 나는야~~ 멋진 토마토 빰빰@!",
+    type: "B",
+  },
+  {
+    id: 3,
+    category: "인형",
+    brand: "WitchB",
+    productName: "은비 인형",
+    image: "",
+    price: "18000",
+    description: "어쩌구 저쩌구 훌라 훌라 훌라 나는야~~ 멋진 토마토 빰빰@!",
+    type: "C",
+  }
+];
 
 
 async function addProductList() {
   const productContainer = document.querySelector(".product-item-container");
+  // const products = await Api.get('url')
   const urlSerch = new URLSearchParams(location.search);
   const categoryId = urlSerch.get("category");
   const typeId = urlSerch.get("type");
@@ -32,40 +65,7 @@ async function addProductList() {
                   </div>`;
     });
   }
-  // const products = await Api.get('url')
   
-  const products = [
-    {
-      id: 1,
-      category: "인형",
-      brand: "WitchA",
-      productName: "재인 인형",
-      image: "",
-      price: "18000",
-      description: "어쩌구 저쩌구 훌라 훌라 훌라 나는야~~ 멋진 토마토 빰빰@!",
-      type: "A",
-    },
-    {
-      id: 2,
-      category: "인형",
-      brand: "WitchA",
-      productName: "갑열 인형",
-      image: "",
-      price: "18000",
-      description: "어쩌구 저쩌구 훌라 훌라 훌라 나는야~~ 멋진 토마토 빰빰@!",
-      type: "B",
-    },
-    {
-      id: 3,
-      category: "인형",
-      brand: "WitchB",
-      productName: "은비 인형",
-      image: "",
-      price: "18000",
-      description: "어쩌구 저쩌구 훌라 훌라 훌라 나는야~~ 멋진 토마토 빰빰@!",
-      type: "C",
-    }
-  ];
 
   if(categoryId){
     const filterProducts = products.filter(cat => cat.category===categoryId);
@@ -73,6 +73,8 @@ async function addProductList() {
   }else if(typeId){
     const filterProducts = products.filter(ty => ty.type===typeId);
     rending(filterProducts)
+  }else{
+    rending(products)
   }
 
 }
