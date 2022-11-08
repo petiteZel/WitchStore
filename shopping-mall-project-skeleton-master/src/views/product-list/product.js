@@ -1,44 +1,14 @@
 import * as Api from "../api.js";
-const products = [
-  {
-    id: 1,
-    category: "인형",
-    brand: "WitchA",
-    productName: "재인 인형",
-    image: "",
-    price: "18000",
-    description: "어쩌구 저쩌구 훌라 훌라 훌라 나는야~~ 멋진 토마토 빰빰@!",
-    type: "A",
-  },
-  {
-    id: 2,
-    category: "인형",
-    brand: "WitchA",
-    productName: "갑열 인형",
-    image: "",
-    price: "18000",
-    description: "어쩌구 저쩌구 훌라 훌라 훌라 나는야~~ 멋진 토마토 빰빰@!",
-    type: "B",
-  },
-  {
-    id: 3,
-    category: "인형",
-    brand: "WitchB",
-    productName: "은비 인형",
-    image: "",
-    price: "18000",
-    description: "어쩌구 저쩌구 훌라 훌라 훌라 나는야~~ 멋진 토마토 빰빰@!",
-    type: "C",
-  }
-];
+import { products } from "./product-data.js"
 
 
-async function addProductList() {
+
+async function productList() {
   const productContainer = document.querySelector(".product-item-container");
   // const products = await Api.get('url')
-  const urlSerch = new URLSearchParams(location.search);
-  const categoryId = urlSerch.get("category");
-  const typeId = urlSerch.get("type");
+  const urlSearch = new URLSearchParams(location.search);
+  const categoryId = urlSearch.get("category");
+  const typeId = urlSearch.get("type");
   
   // 질문1 함수 안에 함수 괜찮나요??
   const rending = async (pro) =>{
@@ -51,11 +21,11 @@ async function addProductList() {
         image,
         price,
         description,
-        type,
+        personType,
       } = product;
   
       productContainer.innerHTML += `<div class="product-item">
-                <a href="./product-detail.html">
+                <a href="../product-detail/product-detail.html?id=${id}">
                   <div class="product-item-img"><img src="${image}" /></div>
                   <div class="product-item-info">
                     <div class="product-item-name">${productName}</div>
@@ -70,12 +40,15 @@ async function addProductList() {
   if(categoryId){
     const filterProducts = products.filter(cat => cat.category===categoryId);
     rending(filterProducts)
-  }else if(typeId){
-    const filterProducts = products.filter(ty => ty.type===typeId);
+  }
+  if(typeId){
+    const filterProducts = products.filter(ty => ty.personType===typeId);
     rending(filterProducts)
-  }else{
+    console.log(filterProducts)
+  }
+  if(!typeId && !categoryId){
     rending(products)
   }
 
 }
-addProductList();
+productList();
