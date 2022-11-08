@@ -41,7 +41,7 @@
   <main id="administer">
 
     <!-- 정보 리스트 -->
-    <!---요 부분 같은 클래스 주고 width 값을 똑같이 주라고 하셨어요!-->
+   
     <div class="information">
         <h3 class="administer">회원 정보 관리</h3>
     </div>
@@ -87,7 +87,7 @@
           </div>
         </div>
 
-        <div class="field mb-5">
+        <div class="field field-second">
           <label class="label" for="addressInput">주소</label>
           <div class="control">
             <input
@@ -98,7 +98,24 @@
               autocomplete="off"
             />
           </div>
+          <div>
+            <button class="button-address" id="searchAddressButton">
+              주소찾기
+            </button>
+          </div>
         </div>
+        <div class="field address1Input">
+          <div class="control">
+            <input class="input" 
+            id="address1Input" 
+            type="text"
+            placeholder="슬리데린 아파트 203동 1111호" 
+            autocomplete="on" >
+          </div>
+        </div>
+
+
+
         <div class="buttons">
           <button class="button" id="exitButton">
               탈퇴하기
