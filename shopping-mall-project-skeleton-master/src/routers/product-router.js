@@ -91,8 +91,6 @@ async function (req, res, next) {
   try {
     // params로부터 id를 가져옴
     const { productId } = req.body;
-console.log(productId);
-
     // id에 맞는 상품을 삭제함
     const deleteProduct = await productService.deleteProduct(productId);
 
