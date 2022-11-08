@@ -49,14 +49,16 @@ class ProductService {
 
     // 5. 상품 수정
     async setProduct(productId, toUpdate) {
+      const inf = {_id: productId}
       let product = await this.productModel.findById(productId);
       if (!product) {
         throw new customError(404, '해당 상품의 id가 없습니다. 다시 한 번 확인해 주세요.');
       }
+      console.log(toUpdate);
       const updatedProduct = await this.productModel.update({
         productId,
-        update: toUpdate,
-      });
+        update:toUpdate,
+    });
   
       return updatedProduct;
     }
@@ -65,9 +67,9 @@ class ProductService {
     // 6.상품 삭제
     async deleteProduct(productId) {
       let product = await productModel.delete(productId);
-      if (!product) {
-        throw new customError(404, '해당 상품의 id가 없습니다. 다시 한 번 확인해 주세요.');
-      }
+      // if (!product) {
+      //   throw new customError(404, '해당 상품의 id가 없습니다. 다시 한 번 확인해 주세요.');
+      // }
   
       return product;
     }
