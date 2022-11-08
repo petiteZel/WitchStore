@@ -35,15 +35,26 @@ export class ProductModel {
     }
 
         // 5. 상품 수정
+<<<<<<< HEAD
+       async update({productId, update}) {
+        const filter = {_id: productId};
+    const option = { returnOriginal: false };
+    return await Product.findOneAndUpdate(filter, update, option);
+=======
        async update({ productId, update }) {
     const option = { returnOriginal: false };
     return await Product.findOneAndUpdate({ shortId: productId }, update, option);
+>>>>>>> b2ef5c36d4ad56e3baf1447b431ac22f0e48a0bf
   }
 
   
             // 6. 상품 삭제
             async delete(productId) {
+<<<<<<< HEAD
+                return await Product.deleteOne({_id:productId });
+=======
                 return await Product.findOneAndDelete({ shortId: productId });
+>>>>>>> b2ef5c36d4ad56e3baf1447b431ac22f0e48a0bf
               }
 
     }

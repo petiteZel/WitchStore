@@ -62,7 +62,11 @@ productRouter.patch('/update/:productId',
     async (req, res, next) => {
         try {
             // req의 params와 body에서 데이터 가져옴
+<<<<<<< HEAD
+            const { productId } = req.params.productId;
+=======
             const { productId } = req.params;
+>>>>>>> b2ef5c36d4ad56e3baf1447b431ac22f0e48a0bf
             const { category, personType, brand, productName, image, price, shortDescription, detailDescription } = req.body;
 
             // 데이터를 상품 db에 반영하기
@@ -85,11 +89,19 @@ productRouter.patch('/update/:productId',
 );
 
 // 6.상품 정보 삭제 (/api/product/:productId) ⇒ admin 한정
+<<<<<<< HEAD
+productRouter.delete('/', 
+async function (req, res, next) {
+  try {
+    // params로부터 id를 가져옴
+    const { productId } = req.body;
+=======
 productRouter.delete('/:productId', 
 async function (req, res, next) {
   try {
     // params로부터 id를 가져옴
     const { productId } = req.params;
+>>>>>>> b2ef5c36d4ad56e3baf1447b431ac22f0e48a0bf
     // id에 맞는 상품을 삭제함
     const deleteProduct = await productService.deleteProduct(productId);
 
