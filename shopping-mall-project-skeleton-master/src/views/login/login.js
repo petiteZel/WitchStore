@@ -19,6 +19,7 @@ function addAllEvents() {
 
 // 로그인 진행
 async function handleSubmit(e) {
+  console.log("버튼");
   e.preventDefault();
 
   const email = emailInput.value;
@@ -38,8 +39,9 @@ async function handleSubmit(e) {
   try {
     const data = { email, password };
 
-    const result = await Api.post('/api/user/login', data);
-    const userData = await Api.get(`/api/user/email/${email}`);
+    const result = await Api.post('/api/login', data);
+    console.log(result);
+    const userData = await Api.get(`/api/users${email}`);
     const token = result.token;
 
     // 로그인 성공, 토큰을 세션 스토리지에 저장
