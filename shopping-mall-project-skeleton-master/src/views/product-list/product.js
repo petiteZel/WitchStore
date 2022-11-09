@@ -1,16 +1,54 @@
-const productContainer = document.querySelector(".product-item-container");
-fetch("./product.json")
-  .then((res) => res.json())
-  .then((data) =>
-    data.forEach((e) => {
+import * as Api from "../api.js";
+import { products } from "./product-data.js"
+
+
+
+async function productList() {
+  const productContainer = document.querySelector(".product-item-container");
+  // const products = await Api.get('url')
+  const urlSearch = new URLSearchParams(location.search);
+  const categoryId = urlSearch.get("category");
+  const typeId = urlSearch.get("type");
+  
+  // 질문1 함수 안에 함수 괜찮나요??
+  const rending = async (pro) =>{
+    pro.forEach(async (product) => {
+      const {
+        id,
+        category,
+        brand,
+        productName,
+        image,
+        price,
+        description,
+        personType,
+      } = product;
+  
       productContainer.innerHTML += `<div class="product-item">
-            <a href="./product-detail.html">
-              <div class="product-item-img"><img src="${e.image}" /></div>
-              <div class="product-item-info">
-                <div class="product-item-name">${e.productName}</div>
-                <div class="product-item-price">${e.price}</div>
-              </div>
-              </a>
-              </div>`;
-    })
-  );
+                <a href="../product-detail/product-detail.html?id=${id}">
+                  <div class="product-item-img"><img src="${image}" /></div>
+                  <div class="product-item-info">
+                    <div class="product-item-name">${productName}</div>
+                    <div class="product-item-price">${price}</div>
+                  </div>
+                  </a>
+                  </div>`;
+    });
+  }
+  
+
+  if(categoryId){
+    const filterProducts = products.filter(cat => cat.category===categoryId);
+    rending(filterProducts)
+  }
+  if(typeId){
+    const filterProducts = products.filter(ty => ty.personType===typeId);
+    rending(filterProducts)
+    console.log(filterProducts)
+  }
+  if(!typeId && !categoryId){
+    rending(products)
+  }
+
+}
+productList();
