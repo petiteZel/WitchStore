@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="../common/component/header/common-header.css">
     <link rel="stylesheet" href="../common/component/footer/footer.css">
     <script defer src="../common/component/common-include.js"></script>
-    
+    <!--header,footer css-->
+    <script defer src="order.js"></script>
     <script src="https://kit.fontawesome.com/d1371e05f7.js" crossorigin="anonymous"></script>
     <title>The Witch Store</title>
 </head>
@@ -29,17 +30,17 @@
 
                         <div class="order-info-box">
                             <label for="order-name" class="label">이름</label>
-                            <input class="order-name"type="text" placeholder="이름을 입력해 주세요." autocomplete="on">
+                            <input class="order-name" id="receiverName" type="text" placeholder="이름을 입력해 주세요." autocomplete="on">
                         </div>
                         
                         <div class="order-info-box">
                             <label for="order-phon-number" class="label">전화번호</label>
-                            <input class="order-phon-number" type="text" placeholder="010-0000-0000" autocomplete="on">
+                            <input class="order-phon-number"  id="receiverPhoneNumber" type="text" placeholder="010-0000-0000" autocomplete="on">
                         </div>
                         
                         <div class="order-info-box">
                             <label for="order-adress" class="label">주소</label>
-                            <input class="order-adress" type="text" placeholder="주소를 입력해 주세요." autocomplete="on">
+                            <input class="order-adress" id="address" type="text" placeholder="주소를 입력해 주세요." autocomplete="on">
                         </div>
                     </div>
 
@@ -54,28 +55,26 @@
                 <div class="info">
                     <p class="info-title">주문 상품</p>
                     <div class="product-list">
-                        <p class="product">Product Name / 1</p>
-                        <p class="product">Product Name / 2</p>
-                        <p class="product">Product Name / 3</p>
+                        <p class="product" id="productsTitle"></p>
                     </div>
                 </div>
                 <div class="info">
                     <p class="info-title">상품 금액</p>
-                    <p id="order-total">36,000</p>
+                    <p id="productsTotal"></p>
                 </div>
                 <div class="info">
                     <p class="info-title">배송비</p>
-                    <p id="delivery">3,000</p>
+                    <p id="deliveryFee">3,000</p>
                 </div>
 
                 <div class="total">
                     <p>총 결제금액</p>
-                    <p class="total-price">39,000</p>
+                    <p class="total-price" id="orderTotal">39,000</p>
                 </div>
             </div>
 
             <div class="pay-btn-box">
-                <button type="button" class="pay-btn"><a href="">결제하기</a></button>
+                <button type="button" class="pay-btn" id="checkoutButton"><a href="../finish-shopping/finish-shopping.html">결제하기</a></button>
             </div>
         </section>
 
