@@ -146,5 +146,5 @@ export const randomPick = (items) => {
   return items[randomKey];
 };
 
-// // 주변 다른 파일 것도 여기서 일괄 export 함
-// export { createNavbar } from "./navbar.js";
+// 주변 다른 파일 것도 여기서 일괄 export 함
+export { createNavbar } from "./navbar.js";

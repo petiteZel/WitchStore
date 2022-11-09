@@ -3,7 +3,7 @@ import {
   blockIfLogin,
   getUrlParams,
   validateEmail,
-  // createNavbar,
+  createNavbar,
 } from "../useful-functions.js";
 
 // 요소(element), input 혹은 상수
