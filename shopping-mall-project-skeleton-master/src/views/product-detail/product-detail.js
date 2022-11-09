@@ -1,8 +1,8 @@
 import * as Api from "../api.js"
 import {products} from "../product-list/product-data.js"
 
-const user = require('../../db/models/user-model')
-console.log(user)
+// const user = require('../../db/models/user-model')
+// console.log(user)
 
 function cartIn(key, value){
     localStorage.setItem(key, value)
@@ -79,7 +79,7 @@ async function productDetail(){
     </div>
     
     <div class="cart-btn-box">
-    <button class="cart-btn" onclick="${await cartIn(id,selectItem)}">장바구니 담기</button>
+    <button class="cart-btn" onclick="${()=>cartIn(id,selectItem)}">장바구니 담기</button>
     </div>
     </div>`
     
