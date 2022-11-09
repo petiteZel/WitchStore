@@ -5,9 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="order-detail.css">
+    <!-- header, footer css -->
     <link rel="stylesheet" href="../common/component/header/common-header.css">
     <link rel="stylesheet" href="../common/component/footer/footer.css">
     <script defer src="../common/component/common-include.js"></script>
+    <!-- header, footer css -->
+    <script defer src="order-detail.js"></script>
     <script defer src="https://kit.fontawesome.com/d1371e05f7.js" crossorigin="anonymous"></script>
     <title>The Witch Store</title>
 </head>
@@ -15,8 +18,8 @@
 
     <header common-include="../common/component/header/common-header.html"></header>
 
-    <main id="order-detail">
-        <section id="track-package">
+    <main class="order-detail">
+        <section class="track-package">
             <div class="track-package-container">
 
                 <h2 class="track-package-title">상품 현황</h2>
@@ -41,29 +44,21 @@
             </div>
         </section>
         
-        <section id="order-detail-list">
+        <section class="order-detail-list">
             <div class="order-detail-list-container">
     
                 <h3 class="order-detail-list-title">주문내역</h3>
     
-                <div class="order-detail-list-box">
-                    <div class="order-detail-list">
-                        <div class="product-img"><p>product imge</p></div>
-                        <p class="product-name">Procuct Name</p>
-                        <p class="count-number">1</p>
-                        <p class="product-price">36,000</p>
-                    </div>
-                    <div class="order-detail-list">
-                        <div class="product-img"><p>product imge</p></div>
-                        <p class="product-name">Procuct Name</p>
-                        <p class="count-number">1</p>
-                        <p class="product-price">36,000</p>
-                    </div>
-                    <div class="order-detail-list">
-                        <div class="product-img"><p>product imge</p></div>
-                        <p class="product-name">Procuct Name</p>
-                        <p class="count-number">1</p>
-                        <p class="product-price">36,000</p>
+                <div class="order-product-box" id="ordersContainer">
+                        <!-- 결제한 상품들의 html 요소(카드 형태)가 주입되는 곳 -->
+                    <div class="order-product" id="productItem-${_id}">
+                        <figure class="product-img">
+                            <img id="image-${_id}" src="${imageUrl}"alt="product-image"/>
+                        </figure>
+
+                        <p class="product-name" id="title-${_id}">${compressString(title)}</p>
+                        <p class="count-number" id="quantityInput-${_id}">1</p>
+                        <p class="product-price" id="total-${_id}">${addCommas(quantity * price)}원</p>
                     </div>
                 </div>
 
@@ -75,7 +70,7 @@
             </div>
         </section><!-- cart end -->
 
-        <section id="orderer-info">
+        <section class="orderer-info">
             <div class="orderer-info-container">
     
                 <h3 class="orderer-info-title">주문자 정보</h3>
@@ -100,7 +95,7 @@
             </div>
         </section><!-- oderer info end -->
     
-        <section id="order-cancle">
+        <section class="order-cancle">
             <button class="order-cancle-btn">주문 취소하기</button>
         </section>
 

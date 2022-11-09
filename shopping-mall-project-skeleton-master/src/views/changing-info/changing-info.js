@@ -4,17 +4,12 @@ import * as Api from "../../api.js";
 // 요소(element), input 혹은 상수
 const securityTitle = document.querySelector("#securityTitle");
 const fullNameInput = document.querySelector("#fullNameInput");
-// const fullNameToggle = document.querySelector("#fullNameToggle");
 const passwordInput = document.querySelector("#passwordInput");
-// const passwordToggle = document.querySelector("#passwordToggle");
-// const passwordConfirmInput = document.querySelector("#passwordConfirmInput");
 const postalCodeInput = document.querySelector("#postalCodeInput");
 const searchAddressButton = document.querySelector("#searchAddressButton");
-// const addressToggle = document.querySelector("#addressToggle");
 const address1Input = document.querySelector("#address1Input");
 const address2Input = document.querySelector("#address2Input");
 const phoneNumberInput = document.querySelector("#phoneNumberInput");
-// const phoneNumberToggle = document.querySelector("#phoneNumberToggle");
 const saveButton = document.querySelector("#submitButton");
 // const modal = document.querySelector("#modal");
 // const modalBackground = document.querySelector("#modalBackground");
@@ -34,10 +29,6 @@ function addAllElements() {
 
 // 여러 개의 addEventListener들을 묶어주어서 코드를 깔끔하게 하는 역할임.
 function addAllEvents() {
-  fullNameToggle.addEventListener("change", toggleTargets);
-  passwordToggle.addEventListener("change", toggleTargets);
-  addressToggle.addEventListener("change", toggleTargets);
-  phoneNumberToggle.addEventListener("change", toggleTargets);
   searchAddressButton.addEventListener("click", searchAddress);
   saveButton.addEventListener("click", openModal);
   modalBackground.addEventListener("click", closeModal);
@@ -46,63 +37,13 @@ function addAllEvents() {
   saveCompleteButton.addEventListener("click", saveUserData);
 }
 
-// input 및 주소찾기 버튼의 disabled <-> abled 상태를 토글함.
-function toggleTargets(e) {
-  const toggleId = e.target.id;
-  const isChecked = e.target.checked;
 
-  // 어떤 요소들의 토글인지 확인
-  let targets;
-
-  if (toggleId.includes("fullName")) {
-    targets = [fullNameInput];
-  }
-  if (toggleId.includes("password")) {
-    targets = [passwordInput, passwordConfirmInput];
-  }
-  if (toggleId.includes("address")) {
-    targets = [
-      postalCodeInput,
-      address1Input,
-      address2Input,
-      searchAddressButton,
-    ];
-  }
-  if (toggleId.includes("phoneNumber")) {
-    targets = [phoneNumberInput];
-  }
-
-  // 여러 개의 타겟이 있을 때, 첫 타겟만 focus 시키기 위한 flag
-  let isFocused;
-
-  // 토글 진행
-  for (const target of targets) {
-    if (isChecked) {
-      target.removeAttribute("disabled");
-
-      !isFocused && target.focus();
-      isFocused = true;
-
-      continue;
-    }
-  }
-
-  // 열림 토글인 경우는 여기서 끝
-  if (isChecked) {
-    return;
-  }
-
-  // 닫힘 토글인 경우임. disabled 처리를 위해 다시 한번 for 루프 씀.
-  for (const target of targets) {
-    target.setAttribute("disabled", "");
-  }
-}
 
 // 페이지 로드 시 실행
 // 나중에 사용자가 데이터를 변경했는지 확인하기 위해, 전역 변수로 userData 설정
 let userData;
 async function insertUserData() {
-  userData = await Api.get("/api/user");
+  userData = await Api.get("/api/users");
 
   // 객체 destructuring
   const { fullName, email, address, phoneNumber } = userData;

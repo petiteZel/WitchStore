@@ -32,7 +32,7 @@ const UserSchema = new Schema(
       required: false,
     },
     role: {
-      type: String,
+      type: Number,
       required: false,
       default: "basic-user",
     },
