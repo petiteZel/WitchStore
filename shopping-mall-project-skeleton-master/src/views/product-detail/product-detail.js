@@ -1,12 +1,5 @@
 import * as Api from "../api.js"
 
-// function cartIn(key, value){
-//     localStorage.setItem(key, JSON.stringify(value))
-//     if(confirm("장바구니로 이동하시겠습니까?")){
-//         location.href='/shopping-cart/shopping-cart.html'
-//     }
-// }
-
 async function productDetail(){
     const products = await Api.get('/api/product');
     const detailContainer = document.querySelector('.detail-item-container');
