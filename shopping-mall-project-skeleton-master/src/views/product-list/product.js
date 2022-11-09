@@ -1,20 +1,21 @@
 import * as Api from "../api.js";
-import { products } from "./product-data.js"
+// import { products } from "./product-data.js"
 
 
 
 async function productList() {
   const productContainer = document.querySelector(".product-item-container");
-  // const products = await Api.get('url')
+  const products = await Api.get('/api/product')
   const urlSearch = new URLSearchParams(location.search);
   const categoryId = urlSearch.get("category");
   const typeId = urlSearch.get("type");
+  console.log(products)
   
   // 질문1 함수 안에 함수 괜찮나요??
   const rending = async (pro) =>{
     pro.forEach(async (product) => {
       const {
-        id,
+        _id,
         category,
         brand,
         productName,
@@ -23,9 +24,8 @@ async function productList() {
         description,
         personType,
       } = product;
-  
       productContainer.innerHTML += `<div class="product-item">
-                <a href="../product-detail/product-detail.html?id=${id}">
+                <a href="../product-detail/product-detail.html?productId=${_id}">
                   <div class="product-item-img"><img src="${image}" /></div>
                   <div class="product-item-info">
                     <div class="product-item-name">${productName}</div>

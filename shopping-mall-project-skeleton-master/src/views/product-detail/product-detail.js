@@ -1,31 +1,25 @@
 import * as Api from "../api.js"
-import {products} from "../product-list/product-data.js"
-
-// const user = require('../../db/models/user-model')
-// console.log(user)
 
 function cartIn(key, value){
-    localStorage.setItem(key, value)
+    localStorage.setItem(key, JSON.stringify(value))
     if(confirm("장바구니로 이동하시겠습니까?")){
-        location.href='/shopping-mall-project-skeleton-master/src/views/shopping-cart/shopping-cart.html'
+        location.href='/shopping-cart/shopping-cart.html'
     }
 }
 
 async function productDetail(){
-
+    const products = await Api.get('/api/product');
     const detailContainer = document.querySelector('.detail-item-container');
     const urlSearch = new URLSearchParams(location.search);
-    const itemId = urlSearch.get("id")
-    
-    // const products = await Api.get('url')
+    const itemId = urlSearch.get("productId")
     
     function findData(it,itemId){
-        return it.id==itemId;
+        return it._id==itemId;
     }
     
     const selectItem = products.find(e=>findData(e,itemId))
     const {
-        id,
+        _id,
         category,
         brand,
         productName,
@@ -79,9 +73,12 @@ async function productDetail(){
     </div>
     
     <div class="cart-btn-box">
-    <button class="cart-btn" onclick="${()=>cartIn(id,selectItem)}">장바구니 담기</button>
+    <button class="cart-btn">장바구니 담기</button>
     </div>
     </div>`
+
+    const cartBtn = document.querySelector('.cart-btn')
+    cartBtn.addEventListener('click',()=>cartIn(_id,selectItem))
     
 }
 
