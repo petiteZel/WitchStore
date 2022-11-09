@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import { productService } from '../services/product-service';
+import { loginRequired } from '../middlewares'
 
 const productRouter = Router();
 
@@ -41,7 +42,7 @@ productRouter.get('/:productId', async (req, res, next) => {
     }
 });
 
- // 4. 상품 등록 ??
+ // 4. 상품 등록
  productRouter.post('/register', async (req, res, next) => {
     try {
 
@@ -56,7 +57,48 @@ productRouter.get('/:productId', async (req, res, next) => {
 });
 
 //5. 상품 수정 admin 한정
+productRouter.patch('/update/:productId',
+    //loginRequired,
+    async (req, res, next) => {
+        try {
+            // req의 params와 body에서 데이터 가져옴
+            const { productId } = req.params;
+            const { category, personType, brand, productName, image, price, shortDescription, detailDescription } = req.body;
 
+            // 데이터를 상품 db에 반영하기
+            const updateProduct = await productService.setProduct(productId, {
+              category,
+              personType,
+              brand,
+              productName,
+              image,
+              price,
+              shortDescription,
+              detailDescription
+            });
+
+            res.status(201).json(updateProduct);
+        } catch (error) {
+            next(error);
+        }
+    }
+);
+
+// 6.상품 정보 삭제 (/api/product/:productId) ⇒ admin 한정
+
+productRouter.delete('/', 
+async function (req, res, next) {
+  try {
+    // params로부터 id를 가져옴
+    const { productId } = req.body;
+    // id에 맞는 상품을 삭제함
+    const deleteProduct = await productService.deleteProduct(productId);
+
+    res.status(200).json(deleteProduct);
+  } catch (error) {
+    next(error);
+  }
+});
 
 
 
