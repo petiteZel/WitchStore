@@ -23,10 +23,11 @@ export class ProductModel {
         }
         
         // 3. 상품 상세 정보
-    async findById(productId) {
-      const findById = await Product.find(productId);
-        return findById;
-    }
+        async findById(productName){
+            const inf = {productName: productName}
+            const product = await this.productModel.findById(inf);
+            return product;
+        }
             // 4. 상품 등록 (추가) ??
     async create(productInfo) {
         const createdNewProduct = await Product.create(productInfo);
@@ -34,23 +35,30 @@ export class ProductModel {
         return createdNewProduct;
     }
 
-        // 5. 상품 수정
-        async updateProduct(productId) {
-            const filter = {_id: productId};
-            const option = { returnOriginal : false };
-    
-            const updatedProduct = await Product.findByIdAndUpdate(productId, update, option).exec();
-            return updatedProduct;
-        }
-    
+               // 5. 상품 수정
+               async update({ productId, update }) {
+                const filter = { _id: productId };
+                const option = { returnOriginal: false };
+            
+                const updatedProduct = await Product.findOneAndUpdate(
+                  filter,
+                  update,
+                  option
+                );
+                return updatedProduct;
+              }
+            
+            
+
+  
             // 6. 상품 삭제
-    async delete({ productId }) {
-        const filter = { productId };
-        //findOneAndDelete
-        return await Product.deleteOne(filter);
-    }
+            async delete(productId) {
+                return await Product.deleteOne({_id:productId });
+              }
 
     }
+
+
 
 
     const productModel = new ProductModel();
