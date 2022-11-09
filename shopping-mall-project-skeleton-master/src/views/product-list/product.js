@@ -9,7 +9,6 @@ async function productList() {
   const urlSearch = new URLSearchParams(location.search);
   const categoryId = urlSearch.get("category");
   const typeId = urlSearch.get("type");
-  console.log(products)
   
   // 질문1 함수 안에 함수 괜찮나요??
   const rending = async (pro) =>{
@@ -44,7 +43,6 @@ async function productList() {
   if(typeId){
     const filterProducts = products.filter(ty => ty.personType===typeId);
     rending(filterProducts)
-    console.log(filterProducts)
   }
   if(!typeId && !categoryId){
     rending(products)
