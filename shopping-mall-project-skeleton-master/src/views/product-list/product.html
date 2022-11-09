@@ -26,7 +26,9 @@
 
     <link rel="stylesheet" href="product-total.css" />
     <link rel="stylesheet" href="product.css" />
-    <link rel="stylesheet" href="footer.css" />
+    <!-- <link rel="stylesheet" href="./footer.css" /> -->
+    <link rel="stylesheet" href="../common/component/header/common-header.css">
+    <link rel="stylesheet" href="../common/component/css/common.css">
 
     <!--자바스크립트 변경 (삭제 예정) -->
     <!-- <script src="./seperate.js"></script> -->
@@ -35,62 +37,65 @@
     type="module"
     defer
   ></script> -->
+    <script type="module" src="./product.js" defer></script>
 
     <title>제품 상세 페이지</title>
   </head>
   <body>
 
-    <header common-include="../common/component/pro-header/pro-header.html"></header>
+    <header common-include="../common/component/header/common-header.html"></header>
+    <div class="containerBox">
+      <div class="brandTitle en"><a class="brandLogo" href='../home/home.html'>THE WITCH STORE</a></div>
 
-    <div class="container">
-      <div class="side-bar" common-include="../common/component/side-bar/side-bar.html"></div>
-      
-      <!-- db 받아와야함 -->
-      <div class="product-list">
-
-        <div class="category"><h2>Type1</h2></div>
+      <div class="container">
+        <div class="side-bar" common-include="../common/component/side-bar/side-bar.html"></div>
         
-        <div class="product-item-container">
+        <!-- db 받아와야함 -->
+        <div class="product-list">
+
+          <div class="category"><h2>Type1</h2></div>
           
-          <div class="product-item">
-            <a href="./product-detail.html">
+          <div class="product-item-container">
+            
+            <!-- <div class="product-item">
+              <a href="./product-detail.html">
+                <div class="product-item-img"><img src="../image/item1.jpg" /></div>
+                <div class="product-item-info">
+                  <div class="product-item-name">Product1</div>
+                  <div class="product-item-price">18,000</div>
+                </div>
+              </a>
+            </div>
+            
+            <div class="product-item">
               <div class="product-item-img"><img src="../image/item1.jpg" /></div>
               <div class="product-item-info">
                 <div class="product-item-name">Product1</div>
                 <div class="product-item-price">18,000</div>
               </div>
-            </a>
-          </div>
-          
-          <div class="product-item">
-            <div class="product-item-img"><img src="../image/item1.jpg" /></div>
-            <div class="product-item-info">
-              <div class="product-item-name">Product1</div>
-              <div class="product-item-price">18,000</div>
             </div>
-          </div>
-          
-          <div class="product-item">
-            <div class="product-item-img"><img src="../image/item1.jpg" /></div>
-            <div class="product-item-info">
-              <div class="product-item-name">Product1</div>
-              <div class="product-item-price">18,000</div>
+            
+            <div class="product-item">
+              <div class="product-item-img"><img src="../image/item1.jpg" /></div>
+              <div class="product-item-info">
+                <div class="product-item-name">Product1</div>
+                <div class="product-item-price">18,000</div>
+              </div>
             </div>
+
+            <div class="product-item">
+              <div class="product-item-img"><img src="../image/item1.jpg" /></div>
+              <div class="product-item-info">
+                <div class="product-item-name">Product1</div>
+                <div class="product-item-price">18,000</div>
+              </div>
+            </div> -->
+
           </div>
 
-          <div class="product-item">
-            <div class="product-item-img"><img src="../image/item1.jpg" /></div>
-            <div class="product-item-info">
-              <div class="product-item-name">Product1</div>
-              <div class="product-item-price">18,000</div>
-            </div>
-          </div>
 
         </div>
-
-
       </div>
-    </div>
     <div class="footer" common-include="../common/component/footer/footer.html"></div>
 
     <script

@@ -4,13 +4,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>계정관리</title>
-    <!-- 아이콘 -->
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/elice-rabbit-favicon.png"
-    />
     
     <!-- 폰트 어썸: 아이콘 -->
     <script
@@ -30,6 +23,8 @@
     <link rel="stylesheet" href="../common/component/footer/footer.css">
     <script defer src="../common/component/common-include.js"></script>
 
+    <!--common css-->
+    <link rel="stylesheet" href="../common/component/css/common.css">
 
   </head>
   <body>
@@ -39,15 +34,15 @@
   <main id="administer">
 
     <!-- 정보 리스트 -->
-    <!---요 부분 같은 클래스 주고 width 값을 똑같이 주라고 하셨어요!-->
+   
     <div class="information">
-        <h3 class="administer">계정관리</h3>
+        <h3 class="administer" id="#securityTitle">회원 정보 관리</h3>
     </div>
     <div class="change-user-form-container">
       <form class="box change-user-form-box" id="changeUserForm">
 
         <div class="field">
-          <label class="label " for="fullNameInput">이메일</label>
+          <label class="label " for="emailInput">이메일</label>
           <div class="control">
             <input
               class="input"
@@ -60,7 +55,7 @@
         </div>
 
         <div class="field">
-          <label class="label " for="emailInput">이름</label>
+          <label class="label " for="nameInput">이름</label>
           <div class="control">
             <input
               class="input"
@@ -73,7 +68,7 @@
         </div>
 
         <div class="field">
-          <label class="label" for="passwordInput">전화번호</label>
+          <label class="label" for="telInput">전화번호</label>
           <div class="control">
             <input
               class="input"
@@ -85,8 +80,8 @@
           </div>
         </div>
 
-        <div class="field mb-5">
-          <label class="label" for="passwordConfirmInput">주소</label>
+        <div class="field field-second">
+          <label class="label" for="addressInput">주소</label>
           <div class="control">
             <input
               class="input"
@@ -96,16 +91,63 @@
               autocomplete="off"
             />
           </div>
+          <div>
+            <button class="button-address" id="searchAddressButton">
+              주소찾기
+            </button>
+          </div>
         </div>
+        <div class="field address1Input">
+          <div class="control">
+            <input class="input" 
+            id="address1Input" 
+            type="text"
+            placeholder="슬리데린 아파트 203동 1111호" 
+            autocomplete="on" >
+          </div>
+        </div>
+
+
+
         <div class="buttons">
-            <button class="button" id="exitButton">
-                탈퇴하기
-              </button>
-                  <!-- input버튼 활성화일때, 아닐때 나눠서 표기 -->
-              <button class="button" id="submitButton">
-                회원정보수정
-              </button>
-        </div>
+          <button class="button" id="exitButton">
+              탈퇴하기
+            </button>
+                <!-- input버튼 활성화일때, 아닐때 나눠서 표기 -->
+            <button class="button" id="submitButton">
+              회원정보수정
+            </button>
+      </div>
+
+                  <!-- 정보 수정을 완료하기 위해, 현재 비밀번호를 입력할 Modal 창 -->
+                  <div id="modal" class="modal">
+                    <div class="modal-background" id="modalBackground"></div>
+                    <div class="modal-content">
+                      <button
+                        class="delete is-large"
+                        id="modalCloseButton"
+                        aria-label="close"
+                      ></button>
+                      <div class="box">
+                        <p class="mb-3">현재 비밀번호를 입력해 주세요.</p>
+    
+                        <input
+                          class="input is-link mb-3"
+                          id="currentPasswordInput"
+                          type="password"
+                          placeholder=""
+                          autocomplete="on"
+                        />
+                        <button
+                          class="button is-link mt-5"
+                          id="saveCompleteButton"
+                          aria-label="close"
+                        >
+                          저장 완료하기
+                        </button>
+                      </div>
+                    </div>
+                  </div>
 
       </form>
       </div>
