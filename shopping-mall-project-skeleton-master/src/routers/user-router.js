@@ -4,6 +4,7 @@ import is from "@sindresorhus/is";
 import { loginRequired } from "../middlewares";
 import { userService } from "../services";
 
+
 const userRouter = Router();
 
 // 회원가입 api (아래는 /register이지만, 실제로는 /api/register로 요청해야 함.)
@@ -28,7 +29,6 @@ userRouter.post("/register", async (req, res, next) => {
       email,
       password,
     });
-
     // 추가된 유저의 db 데이터를 프론트에 다시 보내줌
     // 물론 프론트에서 안 쓸 수도 있지만, 편의상 일단 보내 줌
     res.status(201).json(newUser);
