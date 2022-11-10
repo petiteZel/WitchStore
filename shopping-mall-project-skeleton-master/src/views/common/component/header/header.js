@@ -48,7 +48,7 @@ async function header(callback) {
                         </div>
                         <div class="user-menu-box">
                           <ul class="user-menu">
-                              <li><a href="/admin-main/admin-main.html">페이지 관리</a></li>
+                              <li><a href="/admin-main/admin-webservice.html">페이지 관리</a></li>
                               <li><a href="/changing-info/changing-info.html">계정관리</a></li>
                               <li><a href='/' id ="logoutBtn">로그아웃</a></li>
                           </ul>
