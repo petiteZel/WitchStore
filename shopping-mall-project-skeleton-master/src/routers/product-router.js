@@ -58,7 +58,7 @@ productRouter.get('/:productId', async (req, res, next) => {
 
 //5. 상품 수정 admin 한정
 productRouter.patch('/update/:productId',
-    //loginRequired,
+    loginRequired,
     async (req, res, next) => {
         try {
             // req의 params와 body에서 데이터 가져옴
