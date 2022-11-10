@@ -145,4 +145,21 @@ userRouter.put(
   }
 );
 
+userRouter.delete(
+  "/users/:userId",
+  loginRequired,
+  async function (req, res, next) {
+    try {
+      // params로부터 id를 가져옴
+      const userId = req.params.userId;
+
+      const deleteResult = await userService.deleteUserData(userId);
+
+      res.status(200).json(deleteResult);
+    } catch (error) {
+      next(error);
+    }
+  }
+);
+
 export { userRouter };

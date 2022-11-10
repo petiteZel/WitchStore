@@ -86,7 +86,7 @@ class UserService {
 
     return user;
   }
-  
+
   // 사용자 목록을 받음.
   async getUsers() {
     const users = await this.userModel.findAll();
@@ -138,6 +138,16 @@ class UserService {
     });
 
     return user;
+  }
+  async deleteUserData(userId) {
+    const { deletedCount } = await this.userModel.deleteById(userId);
+
+    // 삭제에 실패한 경우, 에러 메시지 반환
+    if (deletedCount === 0) {
+      throw new Error(`${userId} 사용자 데이터의 삭제에 실패하였습니다.`);
+    }
+
+    return { result: "success" };
   }
 }
 
