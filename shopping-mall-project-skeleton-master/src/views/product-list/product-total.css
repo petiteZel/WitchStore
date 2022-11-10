@@ -43,17 +43,16 @@ header{
 /* main(container) */
 
 .product-list {
-  width: 75%;
-  padding: 0 2.5%;
+  width: 100%;
   min-height: 1000px;
 }
 
 .container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   width: 80%;
-  padding-left: 10%;
-  padding-right: 10%;
+  padding-left: 5%;
+  padding-right: 5%;
   padding-top: 40px;
   padding-bottom: 40px;
 }

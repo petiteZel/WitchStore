@@ -51,6 +51,7 @@ async function handleSubmit(e) {
 
     // 로그인 성공, 토큰을 세션 스토리지에 저장
     sessionStorage.setItem("token", token);
+    sessionStorage.setItem("email", data.email);
 
     alert(`정상적으로 로그인되었습니다.`);
 

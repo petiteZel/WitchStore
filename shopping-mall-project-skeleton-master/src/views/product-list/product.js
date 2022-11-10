@@ -1,20 +1,23 @@
 import * as Api from "../api.js";
-import { products } from "./product-data.js"
+// import { products } from "./product-data.js"
 
 
 
 async function productList() {
   const productContainer = document.querySelector(".product-item-container");
-  // const products = await Api.get('url')
+  const products = await Api.get('/api/product')
   const urlSearch = new URLSearchParams(location.search);
   const categoryId = urlSearch.get("category");
   const typeId = urlSearch.get("type");
+  // if(!categoryId){
+  //   categoryId = All;
+  // }
+  const category = document.querySelector('.category')
   
-  // 질문1 함수 안에 함수 괜찮나요??
   const rending = async (pro) =>{
     pro.forEach(async (product) => {
       const {
-        id,
+        _id,
         category,
         brand,
         productName,
@@ -23,12 +26,11 @@ async function productList() {
         description,
         personType,
       } = product;
-  
       productContainer.innerHTML += `<div class="product-item">
-                <a href="../product-detail/product-detail.html?id=${id}">
+                <a href="../product-detail/product-detail.html?productId=${_id}">
                   <div class="product-item-img"><img src="${image}" /></div>
                   <div class="product-item-info">
-                    <div class="product-item-name">${productName}</div>
+                  <div class="product-item-name">${productName}</div>
                     <div class="product-item-price">${price}</div>
                   </div>
                   </a>
@@ -40,15 +42,31 @@ async function productList() {
   if(categoryId){
     const filterProducts = products.filter(cat => cat.category===categoryId);
     rending(filterProducts)
+    category.innerHTML = `<h2>${categoryId}</h2>`
   }
   if(typeId){
     const filterProducts = products.filter(ty => ty.personType===typeId);
     rending(filterProducts)
-    console.log(filterProducts)
+    category.innerHTML = `<h2>${typeId}</h2>`
   }
   if(!typeId && !categoryId){
     rending(products)
+    category.innerHTML = `<h2>All</h2>`
   }
 
 }
+
+async function sidBar(){
+  const api = Api.get('/api/category/categories')
+  setTimeout(()=>{
+  api.then(data=>data.forEach(e=>{
+      const categories = document.querySelector('#submenu1')
+      categories.innerHTML += `<li><a href="/product-list/product.html?category=${e.categoryName}">${e.categoryName}</a></li>`
+  }))
+}
+,1000)
+  
+};
+
+sidBar();
 productList();
