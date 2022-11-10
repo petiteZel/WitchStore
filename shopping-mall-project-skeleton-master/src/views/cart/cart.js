@@ -1,14 +1,10 @@
 import * as Api from "../api.js"
-// import { orders } from "./cart-data.js";
-
 
 const allSelectCheckbox = document.querySelector("#allSelectCheckbox");
 const partialDeleteLabel = document.querySelector("#partialDeleteLabel");
 const orderTotalElem = document.querySelector("#orderTotal");
 
 async function insertProductsfromCart(){
-  // const products = await getFromDb("cart");
-  // const { selectedIds } = await getFromDb("order", "summary");
   const localLength = localStorage.length;
   const orders = []
   for(let i=1;i<localLength+1;i++){
@@ -18,8 +14,6 @@ async function insertProductsfromCart(){
   }
   
   const cartProductsContainer = document.querySelector("#cartProductsContainer");
-  const purchaseButton = document.querySelector("#purchaseButton");
-
   orders.forEach(async (product) => {
       const {
         _id,
@@ -61,29 +55,29 @@ async function insertProductsfromCart(){
               </button>
           </div>
           
-          <p class="product-price" id="product-price">${price}</p>
+          <p class="product-price" id="product-price">${(price*amount).toLocaleString('ko-KR')}</p>
           <button type="button" class="deleteBtn" id="delete-btn"><i class="fa-solid fa-x"></i></button>
           </div>`
 
-  const cartBtn = document.querySelector('.cart-btn')
-  const plusBtn = document.querySelector('#plus-btn')
-  const minusBtn = document.querySelector('#minus-btn')
-  const amountTxt = document.querySelector('#amount')
-  const productPrice = document.querySelector('#product-price')
+    const plusBtn = document.querySelector('#plus-btn')
+    const minusBtn = document.querySelector('#minus-btn')
+    const amountTxt = document.querySelector('#amount')
+    const productPrice = document.querySelector('#product-price')
+    const orderTotal = document.querySelector('#orderTotal')
 
   
-  plusBtn.addEventListener('click',()=>{
-      amountTxt.value = Number(amountTxt.value)+1;
-      productPrice.innerHTML = (price * Number(amountTxt.value)).toLocaleString('ko-KR')
+    plusBtn.addEventListener('click',()=>{
+        amountTxt.value = Number(amountTxt.value)+1;
+        productPrice.innerHTML = (price * Number(amountTxt.value)).toLocaleString('ko-KR')
+    });
+
+    minusBtn.addEventListener('click',()=>{
+        amountTxt.value = Number(amountTxt.value)-1;
+        productPrice.innerHTML = (price * Number(amountTxt.value)).toLocaleString('ko-KR')
+    });
   });
 
-  minusBtn.addEventListener('click',()=>{
-      amountTxt.value = Number(amountTxt.value)-1;
-      productPrice.innerHTML = (price * Number(amountTxt.value)).toLocaleString('ko-KR')
-  });
-//   cartBtn.addEventListener('click',()=>cartIn(selectItem,amountTxt.innerHTML))
-});
-
+  const purchaseButton = document.querySelector("#purchaseButton");
   purchaseButton.addEventListener("click", () => {
     return location.href = "/order/order.html";
   });
