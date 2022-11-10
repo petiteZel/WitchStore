@@ -1,50 +1,47 @@
-import { Schema } from 'mongoose';
-// 주문자, 수취인, 주문목록(상품, 수량, 가격)
+import { Schema } from "mongoose";
+
 const OrderSchema = new Schema(
   {
-    orderer: {
-      userId: { type: String, required: true },
+    userId: {
+      type: Schema.Types.ObjectId,
+      ref: "users",
+      required: true,
     },
-    recipient: {
-      fullName: { type: String, required: true },
-      phoneNumber: { type: String, required: true },
-      address: {
-        type: new Schema(
-          {
-            postalCode: { type: String, required: true },
-            address1: { type: String, required: true },
-            address2: String,
-          },
-          {
-            _id: false,
-          }
-        ),
-        required: true,
-      },
+    summaryTitle: {
+      type: String,
+      required: true,
     },
-    order: {
-      orderList: {
-        type: [
-          new Schema(
-            {
-              productId: { type: String, required: true },
-              productName: { type: String, required: true },
-              quantity: { type: Number, required: true },
-              price: { type: Number, required: true },
-            },
-            {
-              _id: false,
-            }
-          ),
-        ],
-        required: true,
-      },
-      request: { type: String, required: true },
-      status: { type: String, required: true, default: '상품 준비중' },
+    totalPrice: {
+      type: Number,
+      required: true,
+    },
+    address: {
+      type: new Schema(
+        {
+          postalCode: String,
+          address1: String,
+          address2: String,
+          receiverName: String,
+          receiverPhoneNumber: String,
+        },
+        {
+          _id: false,
+        }
+      ),
+      required: true,
+    },
+    request: {
+      type: String,
+      required: true,
+    },
+    status: {
+      type: String,
+      required: false,
+      default: "상품 준비중",
     },
   },
   {
-    collection: 'orders',
+    collection: "orders",
     timestamps: true,
   }
 );

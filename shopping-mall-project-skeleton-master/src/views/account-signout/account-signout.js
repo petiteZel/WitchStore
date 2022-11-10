@@ -3,9 +3,6 @@ import { createNavbar } from "../../useful-functions.js";
 
 // 요소(element), input 혹은 상수
 const passwordInput = document.querySelector("#passwordInput");
-const modal = document.querySelector("#modal");
-const modalBackground = document.querySelector("#modalBackground");
-const modalCloseButton = document.querySelector("#modalCloseButton");
 const deleteCompleteButton = document.querySelector("#deleteCompleteButton");
 const deleteCancelButton = document.querySelector("#deleteCancelButton");
 
@@ -20,8 +17,6 @@ async function addAllElements() {
 // 여러 개의 addEventListener들을 묶어주어서 코드를 깔끔하게 하는 역할임.
 function addAllEvents() {
   submitButton.addEventListener("click", openModal);
-  modalBackground.addEventListener("click", closeModal);
-  modalCloseButton.addEventListener("click", closeModal);
   document.addEventListener("keydown", keyDownCloseModal);
   deleteCompleteButton.addEventListener("click", deleteUserData);
   deleteCancelButton.addEventListener("click", closeModal);
@@ -40,7 +35,7 @@ async function deleteUserData(e) {
     const { _id } = userToDelete;
 
     // 삭제 진행
-    await Api.delete("/api/users", _id);
+    await Api.delete("/api/user", _id);
 
     // 삭제 성공
     alert("회원 정보가 안전하게 삭제되었습니다.");
@@ -52,32 +47,5 @@ async function deleteUserData(e) {
   } catch (err) {
     alert(`회원정보 삭제 과정에서 오류가 발생하였습니다: ${err}`);
 
-    closeModal();
-  }
-}
-
-// Modal 창 열기
-
-function openModal(e) {
-  if (e) {
-    e.preventDefault();
-  }
-  modal.classList.add("is-active");
-}
-
-// Modal 창 닫기
-
-function closeModal(e) {
-  if (e) {
-    e.preventDefault();
-  }
-  modal.classList.remove("is-active");
-}
-
-// 키보드로 Modal 창 닫기
-function keyDownCloseModal(e) {
-  // Esc 키
-  if (e.keyCode === 27) {
-    closeModal();
   }
 }

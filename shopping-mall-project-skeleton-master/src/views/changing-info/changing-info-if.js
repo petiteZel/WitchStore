@@ -5,9 +5,17 @@ import * as Api from "../../api.js";
 const securityTitle = document.querySelector("#securityTitle");
 const fullNameInput = document.querySelector("#fullNameInput");
 const emailInput = document.querySelector("#emailInput");
+// const passwordInput = document.querySelector("#passwordInput");
 const postalCodeInput = document.querySelector("#postalCodeInput");
+// const searchAddressButton = document.querySelector("#searchAddressButton");
 const address1Input = document.querySelector("#address1Input");
+// const address2Input = document.querySelector("#address2Input");
 const phoneNumberInput = document.querySelector("#phoneNumberInput");
+// const saveButton = document.querySelector("#submitButton");
+// const modal = document.querySelector("#modal");
+// const modalBackground = document.querySelector("#modalBackground");
+// const modalCloseButton = document.querySelector("#modalCloseButton");
+// const currentPasswordInput = document.querySelector("#currentPasswordInput");
 const saveCompleteButton = document.querySelector("#saveCompleteButton");
 
 checkLogin();
@@ -37,7 +45,7 @@ function addAllEvents() {
 let userData;
 async function insertUserData() {
   //api/users/abc12345 로 요청 필요..?
-  userData = await Api.get("/api/user");
+  userData = await Api.get("/api/users");
   console.log("get완료")
 
   // 객체 destructuring
@@ -47,7 +55,6 @@ async function insertUserData() {
   // 나중에 사용자가 비밀번호 변경을 위해 입력했는지 확인하기 위함임.
   // userData.password = "";
 
-  //확인필요!
   // securityTitle.innerText = `회원정보 관리 (${email})`;
   emailInput.value = email;
   fullNameInput.value = fullName;
@@ -76,29 +83,86 @@ async function insertUserData() {
 
 function disableForm() {
   fullNameInput.setAttribute("disabled", "");
+  // fullNameToggle.checked = false;
+  // passwordInput.setAttribute("disabled", "");
+  // // passwordToggle.checked = false;
+  // passwordConfirmInput.setAttribute("disabled", "");
   postalCodeInput.setAttribute("disabled", "");
+  // addressToggle.checked = false;
   searchAddressButton.setAttribute("disabled", "");
   address1Input.setAttribute("disabled", "");
+  // address2Input.setAttribute("disabled", "");
+  // phoneNumberToggle.checked = false;
   phoneNumberInput.setAttribute("disabled", "");
 }
 
+// Daum 주소 API (사용 설명 https://postcode.map.daum.net/guide)
+// function searchAddress(e) {
+//   e.preventDefault();
+
+//   new daum.Postcode({
+//     oncomplete: function (data) {
+//       let addr = "";
+//       let extraAddr = "";
+
+//       if (data.userSelectedType === "R") {
+//         addr = data.roadAddress;
+//       } else {
+//         addr = data.jibunAddress;
+//       }
+
+//       if (data.userSelectedType === "R") {
+//         if (data.bname !== "" && /[동|로|가]$/g.test(data.bname)) {
+//           extraAddr += data.bname;
+//         }
+//         if (data.buildingName !== "" && data.apartment === "Y") {
+//           extraAddr +=
+//             extraAddr !== "" ? ", " + data.buildingName : data.buildingName;
+//         }
+//         if (extraAddr !== "") {
+//           extraAddr = " (" + extraAddr + ")";
+//         }
+//       } else {
+//       }
+
+//       postalCodeInput.value = data.zonecode;
+//       address1Input.value = `${addr} ${extraAddr}`;
+//       address2Input.placeholder = "상세 주소를 입력해 주세요.";
+//       address2Input.focus();
+//     },
+//   }).open();
+// }
 
 // db에 정보 저장
 async function saveUserData(e) {
   e.preventDefault();
 
-  const fullName = fullNameInput.value;;
+  const fullName = fullNameInput.value;
+  // const password = passwordInput.value;
+  // const passwordConfirm = passwordConfirmInput.value;
   const postalCode = postalCodeInput.value;
   const address1 = address1Input.value;
+  // const address2 = address2Input.value;
   const phoneNumber = phoneNumberInput.value;
+  // const currentPassword = currentPasswordInput.value;
 
-
+  // const isPasswordLong = password.length >= 4;
+  // const isPasswordSame = password === passwordConfirm;
   const isPostalCodeChanged =
     postalCode !== (userData.address?.postalCode || "");
   const isAddress1Changed = address1 !== (userData.address?.address1 || "");
   const isAddressChanged = isPostalCodeChanged || isAddress1Changed;
 
-//확인필요!
+  // // 비밀번호를 새로 작성한 경우
+  // if (password && !isPasswordLong) {
+  //   closeModal();
+  //   return alert("비밀번호는 4글자 이상이어야 합니다.");
+  // }
+  // if (password && !isPasswordSame) {
+  //   closeModal();
+  //   return alert("비밀번호와 비밀번호확인이 일치하지 않습니다.");
+  // }
+
   const data = { emailInput};
 
   // 초기값과 다를 경우 api 요청에 사용할 data 객체에 넣어줌
@@ -133,7 +197,7 @@ async function saveUserData(e) {
   try {
     const { _id } = userData;
     // db에 수정된 정보 저장
-    await Api.patch("/api/user", _id, data);
+    await Api.patch("/api/users", _id, data);
 
     alert("회원정보가 안전하게 저장되었습니다.");
     disableForm();
@@ -142,3 +206,27 @@ async function saveUserData(e) {
   }
 }
 
+// // Modal 창 열기
+// function openModal(e) {
+//   e.preventDefault();
+
+//   modal.classList.add("is-active");
+//   currentPasswordInput.focus();
+// }
+
+// // Modal 창 닫기
+// function closeModal(e) {
+//   if (e) {
+//     e.preventDefault();
+//   }
+
+//   modal.classList.remove("is-active");
+// }
+
+// // 키보드로 Modal 창 닫기
+// function keyDownCloseModal(e) {
+//   // Esc 키
+//   if (e.keyCode === 27) {
+//     closeModal();
+//   }
+// }

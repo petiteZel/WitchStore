@@ -1,0 +1,65 @@
+
+/* 배경 - 시간되면 넓게 이미지 만들기*/
+.background-image{
+    background-image: url("../image/stars.png");
+    width: 100%;
+    height: 688px;
+    
+  }
+  
+  
+  /*심리테스트*/
+  
+  .question-title .question{
+    text-align: center;
+    margin-bottom: 35px;
+    color: #FFD84B;
+    font-family: 'Ultra';
+    font-style: normal;
+    font-size: 30px;
+    line-height: 38px;
+  }
+  
+  /*정보*/
+  .field {
+  
+    padding-bottom: 20px;
+  
+    font-family: 'Ultra';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 26px;
+  }
+  
+  
+  
+  .select-a-box {
+    width: 272px;
+    height: 276px;
+    margin-top: 30px;
+    margin-left: 110px;
+    border-radius: 81px;
+    background-color: #FFD84B;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    color: black;
+  }
+
+  .select-b-box {
+    width: 272px;
+    height: 276px;
+    margin-top: 30px;
+    margin-left: 110px;
+    border-radius: 81px;
+    background-color: #454DBC;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    color: black;
+  }
+  
+  
+  /*회원가입 end*/
+  

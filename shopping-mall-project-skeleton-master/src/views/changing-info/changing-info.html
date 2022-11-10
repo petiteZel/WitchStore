@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>계정관리</title>
+    <title>회원 정보 수정</title>
     
     <!-- 폰트 어썸: 아이콘 -->
     <script
@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="../common/component/header/common-header.css">
     <link rel="stylesheet" href="../common/component/footer/footer.css">
     <script defer src="../common/component/common-include.js"></script>
+    <script src="../common/component/header/header.js" type="module" defer></script>
 
     <!--common css-->
     <link rel="stylesheet" href="../common/component/css/common.css">
@@ -55,11 +56,11 @@
         </div>
 
         <div class="field">
-          <label class="label " for="nameInput">이름</label>
+          <label class="label " for="fullNameInput">이름</label>
           <div class="control">
             <input
               class="input"
-              id="nameInput"
+              id="fullNameInput"
               type="text"
               placeholder="유재석"
               autocomplete="on"
@@ -68,24 +69,24 @@
         </div>
 
         <div class="field">
-          <label class="label" for="telInput">전화번호</label>
+          <label class="label" for="phoneNumberInput">전화번호</label>
           <div class="control">
             <input
               class="input"
-              id="telInput"
+              id="phoneNumberInput"
               type="tel"
-              placeholder="010-111-2222"
+              placeholder="- 없이 입력해 주세요."
               autocomplete="off"
             />
           </div>
         </div>
 
         <div class="field field-second">
-          <label class="label" for="addressInput">주소</label>
+          <label class="label" for="postalCodeInput">주소</label>
           <div class="control">
             <input
               class="input"
-              id="addressInput"
+              id="postalCodeInput"
               type="address"
               placeholder="호그와트 해리동 슬리데린 아파트"
               autocomplete="off"
@@ -114,41 +115,10 @@
               탈퇴하기
             </button>
                 <!-- input버튼 활성화일때, 아닐때 나눠서 표기 -->
-            <button class="button" id="submitButton">
+            <button class="button saveCompleteButton" id="saveCompleteButton">
               회원정보수정
             </button>
       </div>
-
-                  <!-- 정보 수정을 완료하기 위해, 현재 비밀번호를 입력할 Modal 창 -->
-                  <div id="modal" class="modal">
-                    <div class="modal-background" id="modalBackground"></div>
-                    <div class="modal-content">
-                      <button
-                        class="delete is-large"
-                        id="modalCloseButton"
-                        aria-label="close"
-                      ></button>
-                      <div class="box">
-                        <p class="mb-3">현재 비밀번호를 입력해 주세요.</p>
-    
-                        <input
-                          class="input is-link mb-3"
-                          id="currentPasswordInput"
-                          type="password"
-                          placeholder=""
-                          autocomplete="on"
-                        />
-                        <button
-                          class="button is-link mt-5"
-                          id="saveCompleteButton"
-                          aria-label="close"
-                        >
-                          저장 완료하기
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-
       </form>
       </div>
 
