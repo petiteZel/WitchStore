@@ -37,7 +37,7 @@ async function header(callback) {
         </div>
               
               </div>
-              <a href="../shopping-cart/shopping-cart.html" class="user-cart-btn"><i class="fa-solid fa-cart-shopping"></i></a>`;
+              <a href="../cart/cart.html" class="user-cart-btn"><i class="fa-solid fa-cart-shopping"></i></a>`;
               callback();
             }else{
               header.innerHTML = `<div class="user-info-box"> 
@@ -56,7 +56,7 @@ async function header(callback) {
                     </div>
                     
                     </div>
-                    <a href="../shopping-cart/shopping-cart.html" class="user-cart-btn"><i class="fa-solid fa-cart-shopping"></i></a>`;
+                    <a href="../cart/cart.html" class="user-cart-btn"><i class="fa-solid fa-cart-shopping"></i></a>`;
                     callback()
             }
             
@@ -68,7 +68,7 @@ async function header(callback) {
       <button class="login-btn en"><a href="/login">login</a></button>
       <button class="signup-btn en"><a href="/register">sign up</a></button>
     </div>
-    <a href="../shopping-cart/shopping-cart.html" class="user-cart-btn"><i class="fa-solid fa-cart-shopping"></i></a>`;
+    <a href="../cart/cart.html" class="user-cart-btn"><i class="fa-solid fa-cart-shopping"></i></a>`;
     },200);
   }
 }
