@@ -3,36 +3,37 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>회원 정보 관리</title>
-
+    <title>Shopping Mall</title>
+    <!-- 아이콘 -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/elice-rabbit-favicon.png"
+    />
+    
     <!-- 폰트 어썸: 아이콘 -->
     <script
       defer
       src="https://kit.fontawesome.com/9daa42bcef.js"
       crossorigin="anonymous"
     ></script>
-
-    <!-- 구글 OAuth -->
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
-    <!-- 카카오 OAuth -->
-    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <!-- Daum 주소 API 사용하기 위한 파일 -->
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <!-- 커스텀 css, js -->
-    <link rel="stylesheet" href="changing-info-admin.css" />
-    <script src="changing-info.js" type="module" defer></script>
-    <!--header,footer css-->
+    <link rel="stylesheet" href="changing-info-test.css" />
+    <script src="changing-info-test.js" type="module" defer></script>
+
     <link rel="stylesheet" href="../common/component/header/common-header.css">
     <link rel="stylesheet" href="../common/component/footer/footer.css">
     <script defer src="../common/component/common-include.js"></script>
 
-    <!--common css-->
-    <link rel="stylesheet" href="../common/component/css/common.css">
-    <script defer src="changing-info-admin.js"></script>
-
   </head>
   <body>
     <!-- 헤더 -->
+    
     <header common-include="../common/component/header/common-header.html"></header>
-
+    <!-- 회원정보 박스 -->
     <section class="section">
       <div class="container">
         <div class="block account-header">
@@ -219,10 +220,7 @@
         </div>
       </div>
     </section>
+    <footer common-include="../common/component/footer/footer.html"></footer>
 
-<footer common-include="../common/component/footer/footer.html"></footer>
-
-</body>
+  </body>
 </html>
-
-
