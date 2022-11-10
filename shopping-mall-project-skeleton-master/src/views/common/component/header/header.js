@@ -1,21 +1,17 @@
 import * as Api from "../../../api.js";
 
 async function header() {
-  const header = document.querySelector(".nav");
   const token = sessionStorage.getItem("token");
   const admin = sessionStorage.getItem("admin");
 
   if (token) {
     const email = sessionStorage.getItem("email");
-    let userId = "";
-    if (admin) {
-      userId += "admin";
-    } else {
-      userId += email.split("@")[0];
-    }
+    const userId = admin? "admin" : email.split("@")[0]
+
     setTimeout(() => {
+      const header = document.querySelector("#selectNav");
       header.innerHTML = `<div class="user-info-box"> 
-            <div class="user-info">
+        <div class="user-info">
                 <label for="user-name" class="user-name en">${userId}</label>
                 <button class="user-info-btn"><i class="fa-solid fa-caret-down"></i></button>
             </div>
@@ -27,15 +23,22 @@ async function header() {
                     <li><a href="#">로그아웃</a></li>
                 </ul>
             </div>
-        </div>`;
-    }, 1000);
+            </div>
+            <a href="../shopping-cart/shopping-cart.html" class="user-cart-btn"><i class="fa-solid fa-cart-shopping"></i></a>`;
+    },200);
   } else {
     setTimeout(() => {
+      const header = document.querySelector("#selectNav");
       header.innerHTML = `<div class="login-signup-box"> 
-        <button class="login-btn en"><a href="/login">login</a></button>
-        <button class="signup-btn en"><a href="/register">sign up</a></button>
-    </div>`;
-    });
+      <button class="login-btn en"><a href="/login">login</a></button>
+      <button class="signup-btn en"><a href="/register">sign up</a></button>
+    </div>
+    <a href="../shopping-cart/shopping-cart.html" class="user-cart-btn"><i class="fa-solid fa-cart-shopping"></i></a>`;
+    },200);
   }
 }
+
+
+
+
 header();

@@ -68,9 +68,11 @@ body {
 }
 #header .header-container .nav .user-info-box .user-name{
     margin-right: 14px;
+    color: #FFFFFF;
 }
 #header .header-container .nav .user-info-box .user-info-btn i{
     font-size: 26px;
+    color: #D9D9D9;
 }
 #header .header-container .nav .user-info-box .user-info-btn i:hover{
     color: #FFD84B;

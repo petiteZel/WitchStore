@@ -34,6 +34,7 @@ async function submitInfo(e){
     try {
         const imageKey = await addImageToS3(uploading, category)
         const imageUrl = await getImageUrl(imageKey)
+        console.log(imageUrl)
         
         const data = {
             category:category,
@@ -45,7 +46,7 @@ async function submitInfo(e){
             shortDescription: shortDescription,
             detailDescription:description,
         }
-        await Api.post('/api/product/register',data)
+        // await Api.post('/api/product/register',data)
         // console.log(data)
 
         alert(`정상적으로 ${productName}이 등록되었습니다.`)

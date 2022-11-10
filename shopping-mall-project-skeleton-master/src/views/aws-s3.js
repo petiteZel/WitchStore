@@ -1,9 +1,9 @@
 import { randomId } from "./useful-functions.js";
-
+// https://witchstore.s3.ap-northeast-2.amazonaws.com/otter_vanGogh.png
 // aws-s3 사이트에서의 설정값들
-const s3BucketName = "elice-shopping";
+const s3BucketName = "witchstore";
 const bucketRegion = "ap-northeast-2"; // 한국은 항상 ap-northeast-2임.
-const IdentityPoolId = "ap-northeast-2:e328a1b0-7264-4923-8606-a8f0a5dbc995";
+const IdentityPoolId = "ap-northeast-2:fba201fa-3ca4-4ed2-b9bb-7f250432abbf";
 
 // aws 공식문서 그대로 가져옴
 AWS.config.update({
@@ -32,9 +32,11 @@ async function addImageToS3(fileInputElement, album) {
   // 파일 input 요소에서 사진파일 추출 등 AWS S3로의 업로드 준비
   const file = files[0];
   // 유니크한 사진파일 주소를 만들 수 있게 함.
-  const fileName = randomId() + "_" + file.name;
-  const albumPhotosKey = encodeURIComponent(album) + "/";
-  const photoKey = albumPhotosKey + fileName;
+  const fileName = file.name;
+  // const fileName = randomId() + "_" + file.name;
+  console.log(fileName)
+  // const albumPhotosKey = encodeURIComponent(album) + "/";
+  const photoKey = fileName;
 
   const upload = new AWS.S3.ManagedUpload({
     params: {
