@@ -6,12 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
+    <!-- aws -->
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.410.0.min.js"></script>
+
     <!-- js -->
     <script
       src="..\common\component\common-include.js"
       type="module"
       defer
     ></script>
+    <script src="./add-product.js" type="module" defer></script>
 
     <!-- css -->
     <link rel="stylesheet" href="../add-category/add-category.css" />
@@ -68,10 +72,10 @@
               <div class="select-box">
                 <select class="select-content" id="content-type">
                   <option value="인형">선택</option>
-                  <option value="인형">A</option>
-                  <option value="인형">B</option>
-                  <option value="인형">C</option>
-                  <option value="인형">D</option>
+                  <option value="인형">1유형</option>
+                  <option value="인형">2유형</option>
+                  <option value="인형">3유형</option>
+                  <option value="인형">4유형</option>
                 </select>
                 <i class="fa-solid fa-chevron-down"></i>
               </div>
@@ -83,6 +87,19 @@
                   class="info-content"
                   id="content-brandName"
                   placeholder="THE WITCH STORE"
+                  autocomplete="on"
+                />
+              </div>
+            </div>
+            <div class="field">
+              <label for="content-shortDescription" class="info-title"
+                >한 줄 소개</label
+              >
+              <div>
+                <input
+                  class="info-content"
+                  id="content-shortDescription"
+                  placeholder="한 줄 소개"
                   autocomplete="on"
                 />
               </div>
@@ -117,17 +134,6 @@
                   </div>
                   <div class="upload-content">사진파일 (png, jpg, jpeg)</div>
                 </label>
-              </div>
-            </div>
-            <div class="field">
-              <label for="content-amount" class="info-title">재고 수</label>
-              <div>
-                <input
-                  class="info-content"
-                  id="content-amount"
-                  placeholder="100"
-                  autocomplete="on"
-                />
               </div>
             </div>
             <div class="field">

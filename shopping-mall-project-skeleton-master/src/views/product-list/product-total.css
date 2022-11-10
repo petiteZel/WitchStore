@@ -43,8 +43,7 @@ header{
 /* main(container) */
 
 .product-list {
-  width: 75%;
-  padding: 0 2.5%;
+  width: 100%;
   min-height: 1000px;
 }
 

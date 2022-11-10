@@ -1,12 +1,5 @@
 import * as Api from "../api.js"
 
-// function cartIn(key, value){
-//     localStorage.setItem(key, JSON.stringify(value))
-//     if(confirm("장바구니로 이동하시겠습니까?")){
-//         location.href='/shopping-cart/shopping-cart.html'
-//     }
-// }
-
 async function productDetail(){
     const products = await Api.get('/api/product');
     const detailContainer = document.querySelector('.detail-item-container');
@@ -26,7 +19,8 @@ async function productDetail(){
         productName,
         image,
         price,
-        description,
+        shortDescription,
+        detailDescription,
         personType,
     } = selectItem
     
@@ -37,45 +31,51 @@ async function productDetail(){
     <div class="store"><h3>${brand}</h3></div>
     
     <div class="item-info">
-    <div class="info-box" id="item-name">
-    <div class="info-title">상품명</div>
-    <div class="info-content">${productName}</div>
-    </div>
-    <div class="info-box" id="item-info-detail">
-    <div class="info-title">설명</div>
-    <div class="info-content">
-    ${description}
-    </div>
-    </div>
+        <div class="info-box" id="item-name">
+            <div class="info-title">상품명</div>
+            <div class="info-content">${productName}</div>
+        </div>
+
+        <div class="info-box" id="item-info-detail">
+            <div class="info-title">한 줄 소개</div>
+            <div class="info-content">
+                ${shortDescription}
+            </div>
+        </div>
+        <div class="info-box">
+            <div class="info-title">상세 설명</div>
+            <div class="info-content">
+                ${detailDescription}
+            </div>
+        </div>
     </div>
     
     <div class="item-info">
-      <div class="info-box" id="item-price">
-        <div class="info-title">가격</div>
-        <div class="info-content">${price.toLocaleString('ko-KR')}</div>
+        <div class="info-box" id="item-price">
+            <div class="info-title">가격</div>
+            <div class="info-content">${price.toLocaleString('ko-KR')}</div>
         
-        <div class="count">
-        <button class="plus-btn">
-            <i class="fa-solid fa-circle-plus" id='plus'></i>
-            </button>
-            <div id="count-number"> 0 </div>
-            <button class="minus-btn">
-            <i class="fa-solid fa-circle-minus"></i>
-            </button>
-        </div>
+            <div class="count">
+                <button class="plus-btn">
+                    <i class="fa-solid fa-circle-plus" id='plus'></i>
+                    </button>
+                    <div id="count-number"> 0 </div>
+                    <button class="minus-btn">
+                    <i class="fa-solid fa-circle-minus"></i>
+                </button>
+            </div>
         </div>
     </div>
     
     <div class="item-info">
-    <div class="info-box" id="total-price">
-    <div class="info-title">합계</div>
-    <div class="info-content total-price"> 0 </div>
-    </div>
+        <div class="info-box" id="total-price">
+            <div class="info-title">합계</div>
+            <div class="info-content total-price"> 0 </div>
+        </div>
     </div>
     
     <div class="cart-btn-box">
-    <button class="cart-btn">장바구니 담기</button>
-    </div>
+        <button class="cart-btn">장바구니 담기</button>
     </div>`
 
     const cartBtn = document.querySelector('.cart-btn')
@@ -86,14 +86,22 @@ async function productDetail(){
 
     if (amount.innerHTML == 0){
         minusBtn.disabled = true;
-        cartBtn.disabled = true;
+        // cartBtn.disabled = true;
     }
     
     plusBtn.addEventListener('click',()=>{
+        if(amount.innerHTML==0){
+            minusBtn.disabled=false;
+            // cartBtn.disabled=false;
+        }
         amount.innerHTML = Number(amount.innerHTML)+1;
         totalPrice.innerHTML = (price * Number(amount.innerHTML)).toLocaleString('ko-KR')
     })
     minusBtn.addEventListener('click',()=>{
+        if(amount.innerHTML==1){
+            minusBtn.disabled = true;
+            // cartBtn.disabled = true;
+        }
         amount.innerHTML = Number(amount.innerHTML)-1;
         totalPrice.innerHTML = (price * Number(amount.innerHTML)).toLocaleString('ko-KR')
     })
@@ -101,7 +109,6 @@ async function productDetail(){
     
 }
 
-productDetail();
 
 
 function cartIn(selectItem,amountText){
@@ -118,17 +125,18 @@ function cartIn(selectItem,amountText){
     } = selectItem
 
     const amount = Number(amountText);
-
+    
+    
     let index = 0;
     let isSame = false;
     let localCount = 0;
     if (localStorage.length > 0) {
         for (let i = 0; i < localStorage.length; i++) {
             if (Number(index) < Number(localStorage.key(i))) {
-            index = localStorage.key(i);
-            const cartItem = JSON.parse(localStorage.getItem(localStorage.key(i)));
-            if (
-                JSON.stringify(cartItem._id) == JSON.stringify(_id)) {
+                index = localStorage.key(i);
+                const cartItem = JSON.parse(localStorage.getItem(localStorage.key(i)));
+                if (
+                    JSON.stringify(cartItem._id) == JSON.stringify(_id)) {
                 isSame = true;
                 localCount = cartItem.amount;
                 break;
@@ -144,7 +152,7 @@ function cartIn(selectItem,amountText){
         amount: localCount + amount,
         price: price,
     };
-    } else {
+} else {
     index = Number(index) + 1;
     value = {
         _id: _id,
@@ -153,10 +161,31 @@ function cartIn(selectItem,amountText){
         amount: amount,
         price: price,
     };
-    }
+}
 
-    localStorage.setItem(index, JSON.stringify(value)); 
-    if(confirm("장바구니로 이동하시겠습니까?")){
-        location.href='/shopping-cart/shopping-cart.html'
+if (amount === 0){
+        alert(`물건을 수량을 선택해주세요`)
+    }else{
+        localStorage.setItem(index, JSON.stringify(value)); 
+        if(confirm("장바구니로 이동하시겠습니까?")){
+            location.href='/shopping-cart/shopping-cart.html'
+        }
     }
 }
+
+async function sidBar(){
+    const api = Api.get('/api/category/categories')
+    setTimeout(()=>{
+    api.then(data=>data.forEach(e=>{
+        const categories = document.querySelector('#submenu1')
+        categories.innerHTML += `<li><a href="/product-list/product.html?category=${e.categoryName}">${e.categoryName}</a></li>`
+    }))
+  }
+  ,1000)
+    
+  };
+
+
+
+productDetail();
+sidBar();
