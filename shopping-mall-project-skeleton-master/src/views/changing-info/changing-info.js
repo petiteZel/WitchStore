@@ -48,18 +48,18 @@ async function insertUserData() {
   // }
   phoneNumberInput.value = phoneNumber;
 
+  postalCodeInput.value = address;
 
 
+  // if (address) {
+  //   const { postalCode, address1} = address;
 
-  if (address) {
-    const { postalCode, address1} = address;
-
-    postalCodeInput.value = postalCode;
-    address1Input.value = address1;
-  } else {
-    // 나중에 입력 여부를 확인하기 위해 설정함
-    userData.address = { postalCode: "", address1: "" };
-  }
+  //   postalCodeInput.value = postalCode;
+  //   address1Input.value = address1;
+  // } else {
+  //   // 나중에 입력 여부를 확인하기 위해 설정함
+  //   userData.address = { postalCode: "", address1: "" };
+  // }
 
   if (phoneNumber) {
     phoneNumberInput.value = phoneNumber;
@@ -88,6 +88,7 @@ async function saveUserData(e) {
 
   const isPostalCodeChanged =
     postalCode !== (userData.address?.postalCode || "");
+    
   const isAddress1Changed = address1 !== (userData.address?.address1 || "");
   const isAddressChanged = isPostalCodeChanged || isAddress1Changed;
 
@@ -106,7 +107,7 @@ const data = {};
     return alert("주소를 모두 입력해 주세요.");
   }
 
-  if (isAddressChanged) {
+  if ( isPostalCodeChanged) {
     data.address = {
       postalCode,
       address1,
@@ -127,7 +128,7 @@ const data = {};
   try {
     const { _id } = userData;
     // db에 수정된 정보 저장
-    await Api.patch("/api/user", _id, data);
+    await Api.patch("/api/users", _id, data);
 
     alert("회원정보가 안전하게 저장되었습니다.");
     disableForm();

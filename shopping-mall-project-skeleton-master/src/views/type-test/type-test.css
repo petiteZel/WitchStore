@@ -78,5 +78,63 @@
   }
   
   
-  /*회원가입 end*/
+ /*결과*/
+ 
+ .result-answer{
+  width: 70%;
+  margin:auto;
+  text-align: center;
+
+  margin-bottom: 35px;
+  color: #FFD84B;
+  font-style: normal;
+  line-height: 38px;
+}
+
+
+ .result-title {
+  width: 70%;
+  margin:100px auto 50px auto;
+  text-align: center;
+  /* display:flex; */
+
+  margin-bottom: 35px;
+  font-style: normal;
+  line-height: 38px;
+}
+.result-select-box{
+  margin: 0 auto;
+  display:flex;
+  justify-content: space-around;
+  width: 50%;
+  height: 30%;
+  text-align: center;
+}
+
+
+.result-box{
+  margin:50px auto 150px auto;
+  border-radius: 81px;
+  border: none;
+  width: 200px;
+  height: 30%;
+}
+
+.shopping-btn{
+  background-color: #FFD74B;
+  text-align: center;
+  font-size: 1em;
+  font-weight: bold;
+  color: black;
+  height:40px;
+}
+
+.try-again-btn{
+  background-color: #D9D9D9;
+  text-align: center;
+  font-size: 1em;
+  font-weight: bold;
+  color: black;
+  height:40px;
+}
   
