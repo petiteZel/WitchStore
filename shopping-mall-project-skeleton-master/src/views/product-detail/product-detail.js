@@ -185,5 +185,7 @@ async function sidBar(){
     
   };
 
+
+
 productDetail();
 sidBar();
