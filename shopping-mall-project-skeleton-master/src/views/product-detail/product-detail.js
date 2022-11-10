@@ -163,12 +163,13 @@ function cartIn(selectItem,amountText){
     };
 }
 
-if (amount === 0){
+if (amount ===0){
+
         alert(`물건을 수량을 선택해주세요`)
     }else{
         localStorage.setItem(index, JSON.stringify(value)); 
         if(confirm("장바구니로 이동하시겠습니까?")){
-            location.href='/shopping-cart/shopping-cart.html'
+            location.href='/cart/cart.html'
         }
     }
 }

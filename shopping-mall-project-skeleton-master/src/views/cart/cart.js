@@ -1,5 +1,5 @@
 import * as Api from "../api.js"
-import { orders } from "./cart-data.js";
+// import { orders } from "./cart-data.js";
 
 
 const allSelectCheckbox = document.querySelector("#allSelectCheckbox");
@@ -9,7 +9,13 @@ const orderTotalElem = document.querySelector("#orderTotal");
 async function insertProductsfromCart(){
   // const products = await getFromDb("cart");
   // const { selectedIds } = await getFromDb("order", "summary");
-  const product = localStorage.getItem('value') 
+  const localLength = localStorage.length;
+  const orders = []
+  for(let i=1;i<localLength+1;i++){
+    if(localStorage.getItem(String(i))){
+        orders.push(JSON.parse(localStorage.getItem(String(i))))
+    }
+  }
   
   const cartProductsContainer = document.querySelector("#cartProductsContainer");
   const purchaseButton = document.querySelector("#purchaseButton");
@@ -18,9 +24,9 @@ async function insertProductsfromCart(){
       const {
         _id,
         productName,
-        quantity,
-        totalPrice,
-        img,
+        amount,
+        price,
+        image,
       } = product
 
       cartProductsContainer.innerHTML += 
@@ -29,7 +35,7 @@ async function insertProductsfromCart(){
               <input type="checkbox" id="checkbox-${_id}" />
           </label>
           <figure class="product-img">
-              <img id="image-${_id}" src=${img} alt="product-image"/>
+              <img id="image-${_id}" src=${image} alt="product-image"/>
           </figure>
           <p class="product-name" id="title-${_id}">${productName}</p>
   
@@ -44,7 +50,7 @@ async function insertProductsfromCart(){
               <input
                   class="count-number"
                   id="amount"
-                  value="${quantity}"
+                  value="${amount}"
               />
               <button 
                   type="button" 
@@ -55,27 +61,27 @@ async function insertProductsfromCart(){
               </button>
           </div>
           
-          <p class="product-price" id="product-price"></p>
+          <p class="product-price" id="product-price">${price}</p>
           <button type="button" class="deleteBtn" id="delete-btn"><i class="fa-solid fa-x"></i></button>
           </div>`
 
   const cartBtn = document.querySelector('.cart-btn')
   const plusBtn = document.querySelector('#plus-btn')
   const minusBtn = document.querySelector('#minus-btn')
-  const amount = document.querySelector('#amount')
+  const amountTxt = document.querySelector('#amount')
   const productPrice = document.querySelector('#product-price')
 
   
   plusBtn.addEventListener('click',()=>{
-      amount.innerHTML = Number(amount.innerHTML)+1;
-      productPrice.innerHTML = (price * Number(amount.innerHTML)).toLocaleString('ko-KR')
+      amountTxt.value = Number(amountTxt.value)+1;
+      productPrice.innerHTML = (price * Number(amountTxt.value)).toLocaleString('ko-KR')
   });
 
   minusBtn.addEventListener('click',()=>{
-      amount.innerHTML = Number(amount.innerHTML)-1;
-      productPrice.innerHTML = (price * Number(amount.innerHTML)).toLocaleString('ko-KR')
+      amountTxt.value = Number(amountTxt.value)-1;
+      productPrice.innerHTML = (price * Number(amountTxt.value)).toLocaleString('ko-KR')
   });
-  cartBtn.addEventListener('click',()=>cartIn(selectItem,amount.innerHTML))
+//   cartBtn.addEventListener('click',()=>cartIn(selectItem,amountTxt.innerHTML))
 });
 
   purchaseButton.addEventListener("click", () => {
