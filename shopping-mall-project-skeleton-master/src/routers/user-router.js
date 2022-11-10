@@ -90,13 +90,15 @@ userRouter.get("/user", loginRequired, async function (req, res, next) {
 
 // 사용자 정보 수정
 // (예를 들어 /api/users/abc12345 로 요청하면 req.params.userId는 'abc12345' 문자열로 됨)
-userRouter.put(
+userRouter.patch(
   "/users/:userId",
   loginRequired,
   async (req, res, next) => {
+
     try {
       // content-type 을 application/json 로 프론트에서
       // 설정 안 하고 요청하면, body가 비어 있게 됨.
+      console.log("tryyyyy",req.body);
       if (is.emptyObject(req.body)) {
         throw new Error(
           "headers의 Content-Type을 application/json으로 설정해주세요"
@@ -132,11 +134,13 @@ userRouter.put(
         ...(role && { role }),
       };
 
-      // 사용자 정보를 업데이트함.
+      console.log("객체삽입");
+      //사용자 정보를 업데이트함.
       const updatedUserInfo = await userService.setUser(
         userInfoRequired,
         toUpdate
       );
+      console.log("업데이트");
 
       // 업데이트 이후의 유저 데이터를 프론트에 보내 줌
       res.status(200).json(updatedUserInfo);

@@ -77,6 +77,31 @@
     box-shadow: 0 2px 7px rgba(0, 0, 0, 0.3);
   }
   
+  .show-result-box{
+    margin: 0 auto;
+    display:flex;
+    justify-content: space-around;
+    width: 50%;
+    height: 30%;
+    text-align: center;
+
+  }
+
+
+  .show-result-btn{
+    background-color: #FFD74B;
+    text-align: center;
+    font-size: 1em;
+    font-weight: bold;
+    color: black;
+    height:60px;
+    width: 100px;
+    margin:100px auto 50px auto;
+    border-radius: 81px;
+    border: none;
+
+  }
+  
   
  /*결과*/
  
