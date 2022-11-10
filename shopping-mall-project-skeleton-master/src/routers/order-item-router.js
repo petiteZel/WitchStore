@@ -4,8 +4,9 @@ import { adminOnly, loginRequired } from "../middlewares";
 import { orderItemService } from "../services";
 
 const orderItemRouter = Router();
-
-orderItemRouter.post("/orderitem", loginRequired, async (req, res, next) => {
+// 바꿔야 함
+// loginRequired,
+orderItemRouter.post("/orderitem", async (req, res, next) => {
   try {
     // application/json 설정을 프론트에서 안 하면, body가 비어 있게 됨.
     if (is.emptyObject(req.body)) {
@@ -35,9 +36,10 @@ orderItemRouter.post("/orderitem", loginRequired, async (req, res, next) => {
 });
 
 // 전체 주문아이템 목록은 관리자만 조회 가능함
+// 바꿔야 함
+// adminOnly,
 orderItemRouter.get(
   "/orderitemlist/all",
-  adminOnly,
   async function (req, res, next) {
     try {
       const orderItems = await orderItemService.getItems();
