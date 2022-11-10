@@ -83,7 +83,7 @@
 /*로그인 end*/
 
 
-/* 모달(Modal) 창 관련 */
+/* 모달(Modal) 창 관련
 .modal-background{
   position: fixed;
   top: 0;
@@ -93,7 +93,7 @@
   background-color: rgba(0, 0, 0, 0.3);
   z-index: 1000;
 
-   /* 숨기기 */
+   숨기기
    z-index: -1;
    opacity: 0;
 }
@@ -102,7 +102,7 @@
   position: relative;
   width: 100%;
   height: 100%;
-}
+} */
 
 .box{
   position: absolute;
