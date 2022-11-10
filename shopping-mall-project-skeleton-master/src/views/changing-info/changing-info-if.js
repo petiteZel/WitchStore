@@ -46,6 +46,7 @@ let userData;
 async function insertUserData() {
   //api/users/abc12345 로 요청 필요..?
   userData = await Api.get("/api/users");
+  
   console.log("get완료")
 
   // 객체 destructuring

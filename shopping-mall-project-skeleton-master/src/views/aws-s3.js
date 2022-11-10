@@ -4,6 +4,7 @@ import { randomId } from "./useful-functions.js";
 const s3BucketName = "witchstore";
 const bucketRegion = "ap-northeast-2"; // 한국은 항상 ap-northeast-2임.
 const IdentityPoolId = "ap-northeast-2:fba201fa-3ca4-4ed2-b9bb-7f250432abbf";
+// ap-northeast-2:e328a1b0-7264-4923-8606-a8f0a5dbc995
 
 // aws 공식문서 그대로 가져옴
 AWS.config.update({
