@@ -5,13 +5,10 @@ async function addCategory(){
     submitBtn.addEventListener('click',async (e)=>{
         e.preventDefault()
         const categoryName = document.querySelector('.info-content').value;
-        const data = {categoryName: categoryName, imageUrl:''}
+        const data = {categoryName: categoryName, imageUrl:'something'}
 
-        const categoryApi = await Api.post('/api/register',data)
+        const categoryApi = await Api.post('/api/category',data)
 
-
-
-        console.log(data)
     })
     
     
