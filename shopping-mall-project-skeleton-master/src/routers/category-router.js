@@ -7,8 +7,8 @@ import { categoryService } from '../services';
 const categoryRouter = Router();
 
 // 1. 카테고리등록 api (아래는 /register이지만, 실제로는 /api/register로 요청해야 함.)
-// categoryRouter.post('/', adminOnly, async (req, res, next) => {
-categoryRouter.post('/', async (req, res, next) => {
+categoryRouter.post('/', adminOnly, async (req, res, next) => {
+// categoryRouter.post('/', async (req, res, next) => {
   try {
     // 1-1. Content-Type: application/json 설정을 안 한 경우, 에러를 만들도록 함.
     // 1-2. application/json 설정을 프론트에서 안 하면, body가 비어 있게 됨.
