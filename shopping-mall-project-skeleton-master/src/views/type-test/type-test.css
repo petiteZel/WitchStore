@@ -33,29 +33,27 @@
   }
   
   
-  /*정보 넣는 곳*/
-  .control .input{
-    width: 400px;
-    height: 66px;
-    background-color: #F7F7FF;
-    border-radius: 9px;
-    padding-left: 10px;
-    
-   font-family: 'Ultra';
-   font-style: normal;
-   font-weight: 400;
-   font-size: 20px;
-   line-height: 26px;
-  }
   
-  
-  .box {
-    width: 187px;
-    height: 51px;
+  .select-a-box {
+    width: 272px;
+    height: 276px;
     margin-top: 30px;
     margin-left: 110px;
     border-radius: 81px;
     background-color: #FFD84B;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    color: black;
+  }
+
+  .select-b-box {
+    width: 272px;
+    height: 276px;
+    margin-top: 30px;
+    margin-left: 110px;
+    border-radius: 81px;
+    background-color: #454DBC;
     text-align: center;
     font-weight: bold;
     font-size: 20px;
