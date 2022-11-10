@@ -37,7 +37,7 @@ function addAllEvents() {
 let userData;
 async function insertUserData() {
   //api/users/abc12345 로 요청 필요..?
-  userData = await Api.get("/api/users");
+  userData = await Api.get("/api/user");
   console.log("get완료")
 
   // 객체 destructuring
@@ -133,7 +133,7 @@ async function saveUserData(e) {
   try {
     const { _id } = userData;
     // db에 수정된 정보 저장
-    await Api.patch("/api/users", _id, data);
+    await Api.patch("/api/user", _id, data);
 
     alert("회원정보가 안전하게 저장되었습니다.");
     disableForm();
