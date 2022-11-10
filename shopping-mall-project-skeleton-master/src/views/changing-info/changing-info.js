@@ -99,7 +99,9 @@ async function saveUserData(e) {
   const isAddressChanged = isPostalCodeChanged || isAddress1Changed;
 
 //확인필요!
-  const data = { emailInput};
+  // const data = { emailInput };
+  const data = {};
+  data['emailInput'] = emailInput.value;
 
   // 초기값과 다를 경우 api 요청에 사용할 data 객체에 넣어줌
   if (fullName !== userData.fullName) {
