@@ -10,28 +10,34 @@
   
   /*심리테스트*/
   
-  .question-title .question{
+  .question-title {
+    width: 100%;
+    margin:100px auto 50px auto;
+    padding-top: 20px;
     text-align: center;
+
     margin-bottom: 35px;
     color: #FFD84B;
     font-family: 'Ultra';
     font-style: normal;
-    font-size: 30px;
+    line-height: 38px;
+  }
+
+  .question{
+    width: 100%;
+    margin:100px auto 50px auto;
+    padding-top: 20px;
+    text-align: center;
+
+    margin-bottom: 35px;
+    color: #FFD84B;
+    font-family: 'Ultra';
+    font-style: normal;
     line-height: 38px;
   }
   
   /*정보*/
-  .field {
-  
-    padding-bottom: 20px;
-  
-    font-family: 'Ultra';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 26px;
-  }
-  
+
   
   
   .select-a-box {
