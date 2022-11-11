@@ -26,7 +26,11 @@ const UserSchema = new Schema(
       type: String,
       required: false,
     },
-
+    role: {
+      type: String,
+      required: false,
+      default: "basic-user",
+    }
   // {
   //   collection: "users",
   //   timestamps: true,
