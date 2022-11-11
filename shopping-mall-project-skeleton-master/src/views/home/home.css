@@ -117,7 +117,7 @@ body{
 
 /* 심리테스트 활성화 -> none 제거 */
 #test-btn{
-  display: none;
+  display: block;
   background-color: #FFD74B;
   color: black;
   margin-right: 5%;
