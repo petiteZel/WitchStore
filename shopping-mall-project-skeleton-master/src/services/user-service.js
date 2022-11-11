@@ -35,6 +35,7 @@ class UserService {
     return createdNewUser;
   }
 
+  
   // 로그인
   async getUserToken(loginInfo) {
     // 객체 destructuring
@@ -139,6 +140,20 @@ class UserService {
 
     return user;
   }
+
+
+  async deleteUserData(userId) {
+    const { deletedCount } = await this.userModel.deleteById(userId);
+
+    // 삭제에 실패한 경우, 에러 메시지 반환
+    if (deletedCount === 0) {
+      throw new Error(`${userId} 사용자 데이터의 삭제에 실패하였습니다.`);
+    }
+
+    return { result: "success" };
+  }
+
+
 }
 
 const userService = new UserService(userModel);
