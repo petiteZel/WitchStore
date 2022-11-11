@@ -24,11 +24,12 @@
 
 .register-user-form-box {
   width: 400px;
+  height:100px;
   margin: auto;
 }
 
 /*welcome*/
-.register-user-form-box .title {
+ .title {
   text-align: center;
   margin-bottom: 35px;
   color: #FFD84B;
@@ -71,6 +72,7 @@
   width: 187px;
   height: 51px;
   margin:auto;
+  margin-bottom:10px;
   display:block;
   border-radius: 81px;
   background-color: #FFD84B;
@@ -79,41 +81,25 @@
   color: black;
 }
 
-
-/*로그인 end*/
-
-
-/* 모달(Modal) 창 관련
-.modal-background{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.3);
-  z-index: 1000;
-
-   숨기기
-   z-index: -1;
-   opacity: 0;
+.deleteCancelButton {
+  width: 187px;
+  height: 51px;
+  margin:auto;
+  display:block;
+  border-radius: 81px;
+  background-color: #D9D9D9;
+  text-align: center;
+  font-size: 15px;
+  color: black;
 }
 
-.modal-content{
-  position: relative;
-  width: 100%;
-  height: 100%;
-} */
 
 .box{
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #ffffff;
-  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.3);
-  
-  /* 임시 지정 */
-  width: 500px;
+
   height: 500px;
 
   /* 초기에 약간 아래에 배치 */

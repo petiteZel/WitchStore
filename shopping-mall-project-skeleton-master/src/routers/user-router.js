@@ -90,7 +90,7 @@ userRouter.get("/user", loginRequired, async function (req, res, next) {
 
 // 사용자 정보 수정
 // (예를 들어 /api/users/abc12345 로 요청하면 req.params.userId는 'abc12345' 문자열로 됨)
-userRouter.put(
+userRouter.patch(
   "/users/:userId",
   loginRequired,
   async (req, res, next) => {
@@ -113,12 +113,12 @@ userRouter.put(
       const role = req.body.role;
 
       // body data로부터, 확인용으로 사용할 현재 비밀번호를 추출함.
-      // const currentPassword = req.body.currentPassword;
+      const currentPassword = req.body.currentPassword;
 
       // currentPassword 없을 시, 진행 불가
-      // if (!currentPassword) {
-      //  throw new Error("정보를 변경하려면, 현재의 비밀번호가 필요합니다.");
-      // }
+      if (!currentPassword) {
+       throw new Error("정보를 변경하려면, 현재의 비밀번호가 필요합니다.");
+      }
 
       const userInfoRequired = { userId };
 

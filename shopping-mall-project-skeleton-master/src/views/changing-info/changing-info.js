@@ -22,11 +22,6 @@ function addAllElements() {
 
 // 여러 개의 addEventListener들을 묶어주어서 코드를 깔끔하게 하는 역할임.
 function addAllEvents() {
-  // searchAddressButton.addEventListener("click", searchAddress);
-  // saveButton.addEventListener("click", openModal);
-  // modalBackground.addEventListener("click", closeModal);
-  // modalCloseButton.addEventListener("click", closeModal);
-  // document.addEventListener("keydown", keyDownCloseModal);
   saveCompleteButton.addEventListener("click", saveUserData);
 }
 
@@ -43,14 +38,17 @@ async function insertUserData() {
   // 객체 destructuring
   const { fullName, email, address, phoneNumber } = userData;
 
-  // 서버에서 온 비밀번호는 해쉬 문자열인데, 이를 빈 문자열로 바꿈
-  // 나중에 사용자가 비밀번호 변경을 위해 입력했는지 확인하기 위함임.
-  // userData.password = "";
-
   //확인필요!
   // securityTitle.innerText = `회원정보 관리 (${email})`;
   emailInput.value = email;
   fullNameInput.value = fullName;
+
+  // if(phoneNumber = undefined){
+  //   phoneNumberInput.value = "- 없이 입력해 주세요."
+  // }
+  phoneNumberInput.value = phoneNumber;
+
+
 
 
   if (address) {
@@ -67,11 +65,6 @@ async function insertUserData() {
     phoneNumberInput.value = phoneNumber;
   }
 
-  // 크롬 자동완성 삭제함.
-  // passwordInput.value = "";
-
-  // 기본적으로 disabled 상태로 만듦
-  // disableForm();
 }
 
 function disableForm() {
@@ -99,8 +92,7 @@ async function saveUserData(e) {
   const isAddressChanged = isPostalCodeChanged || isAddress1Changed;
 
 //확인필요!
-  // const data = { emailInput };
-  const data = {};
+const data = {};
   data['emailInput'] = emailInput.value;
 
   // 초기값과 다를 경우 api 요청에 사용할 data 객체에 넣어줌

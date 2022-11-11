@@ -1,5 +1,5 @@
-import * as Api from "../../api.js";
 import { createNavbar } from "../../useful-functions.js";
+import * as Api from "../../api.js";
 
 // 요소(element), input 혹은 상수
 const passwordInput = document.querySelector("#passwordInput");
@@ -16,10 +16,8 @@ async function addAllElements() {
 
 // 여러 개의 addEventListener들을 묶어주어서 코드를 깔끔하게 하는 역할임.
 function addAllEvents() {
-  submitButton.addEventListener("click", openModal);
-  document.addEventListener("keydown", keyDownCloseModal);
   deleteCompleteButton.addEventListener("click", deleteUserData);
-  deleteCancelButton.addEventListener("click", closeModal);
+
 }
 
 // db에서 회원정보 삭제
