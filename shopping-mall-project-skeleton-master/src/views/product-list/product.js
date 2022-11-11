@@ -39,7 +39,12 @@ async function productList() {
   
 
   if(categoryId){
-    const categoryProducts = products.filter(cat => cat.category===categoryId);
+    const categoryProducts = []
+    products.forEach(product=>{
+      if(product.category==categoryId){
+        categoryProducts.push(product)
+      }
+    })
     rending(categoryProducts)
     category.innerHTML = `<h2>${categoryId}</h2>`
   }
@@ -68,11 +73,11 @@ async function sidBar(){
       categories.innerHTML += `<li><a href="/product-list/product.html?category=${e.categoryName}">${e.categoryName}</a></li>`
     })
   }catch(err){
-    // alert("너니?",err.message)
+    alert(err.message)
   }
 };
 
-sidBar();
+setTimeout(()=>sidBar(),500)
 
 try{
   productList();
