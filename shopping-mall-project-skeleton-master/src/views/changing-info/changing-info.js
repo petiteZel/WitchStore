@@ -9,6 +9,7 @@ const postalCodeInput = document.querySelector("#postalCodeInput");
 const address1Input = document.querySelector("#address1Input");
 const phoneNumberInput = document.querySelector("#phoneNumberInput");
 const saveCompleteButton = document.querySelector("#saveCompleteButton");
+const currentPasswordInput = document.querySelector("#currentPasswordInput");
 
 checkLogin();
 addAllElements();
@@ -36,19 +37,20 @@ async function insertUserData() {
   console.log("get완료")
 
   // 객체 destructuring
-  const { fullName, email, address, phoneNumber } = userData;
+  const { fullName, email, address1, postalCode, phoneNumber } = userData;
 
   //확인필요!
   // securityTitle.innerText = `회원정보 관리 (${email})`;
   emailInput.value = email;
   fullNameInput.value = fullName;
+  phoneNumberInput.value = phoneNumber;
+  postalCodeInput.value = postalCode;
+  address1Input.value = address1;
 
   // if(phoneNumber = undefined){
   //   phoneNumberInput.value = "- 없이 입력해 주세요."
   // }
-  phoneNumberInput.value = phoneNumber;
 
-  postalCodeInput.value = address;
 
 
   // if (address) {
@@ -70,7 +72,6 @@ async function insertUserData() {
 function disableForm() {
   fullNameInput.setAttribute("disabled", "");
   postalCodeInput.setAttribute("disabled", "");
-  searchAddressButton.setAttribute("disabled", "");
   address1Input.setAttribute("disabled", "");
   phoneNumberInput.setAttribute("disabled", "");
 }
@@ -88,7 +89,6 @@ async function saveUserData(e) {
 
   const isPostalCodeChanged =
     postalCode !== (userData.address?.postalCode || "");
-    
   const isAddress1Changed = address1 !== (userData.address?.address1 || "");
   const isAddressChanged = isPostalCodeChanged || isAddress1Changed;
 
@@ -108,15 +108,16 @@ const data = {};
   }
 
   if ( isPostalCodeChanged) {
-    data.address = {
-      postalCode,
-      address1,
-    };
+    data.address1 = address1;
+    data.postalCode = postalCode;
   }
 
   if (phoneNumber && phoneNumber !== userData.phoneNumber) {
     data.phoneNumber = phoneNumber;
   }
+
+  data.password = "12345";
+  data.role = "admin"
 
   // 만약 업데이트할 것이 없다면 (디폴트인 currentPassword만 있어서 1개라면), 종료함
   const toUpdate = Object.keys(data);
@@ -133,7 +134,7 @@ const data = {};
     alert("회원정보가 안전하게 저장되었습니다.");
     disableForm();
   } catch (err) {
-    alert(`회원정보 저장 과정에서 오류가 발생하였습니다: ${err}`);
+    alert(`회원정보 저장 과정에서 오류가 발생하였습니다: ${err.message}`);
   }
 }
 
