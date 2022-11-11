@@ -8,10 +8,9 @@ async function productList() {
   const products = await Api.get('/api/product')
   const urlSearch = new URLSearchParams(location.search);
   const categoryId = urlSearch.get("category");
-  const typeId = urlSearch.get("type");
-  // if(!categoryId){
-  //   categoryId = All;
-  // }
+  const typeId = urlSearch.get("personType");
+  console.log(typeId)
+
   const category = document.querySelector('.category')
   
   const rending = async (pro) =>{
@@ -40,18 +39,22 @@ async function productList() {
   
 
   if(categoryId){
-    const filterProducts = products.filter(cat => cat.category===categoryId);
-    rending(filterProducts)
+    const categoryProducts = products.filter(cat => cat.category===categoryId);
+    rending(categoryProducts)
     category.innerHTML = `<h2>${categoryId}</h2>`
   }
   if(typeId){
-    const filterProducts = products.filter(ty => ty.personType===typeId);
-    rending(filterProducts)
+    const typeProducts = []
+    products.forEach(product=>{
+      if(product.personType==typeId){
+        typeProducts.push(product)
+      }
+    })
+    rending(typeProducts)
     category.innerHTML = `<h2>${typeId}</h2>`
   }
   if(!typeId && !categoryId){
     rending(products)
-    console.log(products)
     category.innerHTML = `<h2>All</h2>`
   }
 
@@ -65,7 +68,7 @@ async function sidBar(){
       categories.innerHTML += `<li><a href="/product-list/product.html?category=${e.categoryName}">${e.categoryName}</a></li>`
     })
   }catch(err){
-    alert(err.message)
+    // alert("너니?",err.message)
   }
 };
 
