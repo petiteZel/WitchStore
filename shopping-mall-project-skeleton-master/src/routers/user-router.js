@@ -162,6 +162,25 @@ userRouter.delete(
   }
 );
 
+//회원탈퇴
+userRouter.delete(
+  "/users/delete/:userId",
+  loginRequired,
+  async function (req, res, next) {
+    try {
+      // params로부터 id를 가져옴
+      const userId = req.params.userId;
+
+      const deleteResult = await userService.deleteUserData(userId);
+
+      res.status(200).json(deleteResult);
+    } catch (error) {
+      next(error);
+    }
+  }
+);
+
+
 // 관리자 토큰 유무 확인
 userRouter.get("/admin/check", adminOnly, async function (req, res, next) {
   try {
