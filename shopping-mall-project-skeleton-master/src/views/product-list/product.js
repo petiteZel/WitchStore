@@ -51,19 +51,28 @@ async function productList() {
   }
   if(!typeId && !categoryId){
     rending(products)
+    console.log(products)
     category.innerHTML = `<h2>All</h2>`
   }
 
 }
 
 async function sidBar(){
-  const api = await Api.get('/api/category/categories')
-  api.forEach((e)=>{
-    const categories = document.querySelector('#submenu1')
-    categories.innerHTML += `<li><a href="/product-list/product.html?category=${e.categoryName}">${e.categoryName}</a></li>`
-  })
-  
+  try{
+    const api = await Api.get('/api/category/categories')
+    api.forEach((e)=>{
+      const categories = document.querySelector('#submenu1')
+      categories.innerHTML += `<li><a href="/product-list/product.html?category=${e.categoryName}">${e.categoryName}</a></li>`
+    })
+  }catch(err){
+    alert(err.message)
+  }
 };
 
 sidBar();
-productList();
+
+try{
+  productList();
+}catch(err){
+  alert('불러오기: ',err.message)
+}
