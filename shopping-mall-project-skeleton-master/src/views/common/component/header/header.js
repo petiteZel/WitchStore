@@ -1,7 +1,4 @@
-import * as Api from "../../../api.js";
-
 function logout(){
-  console.log("hi");
   const logoutBtn = document.querySelector("#logoutBtn")
   logoutBtn.addEventListener('click',()=>{
     sessionStorage.clear()

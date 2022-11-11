@@ -1,17 +1,22 @@
 import { randomId } from "./useful-functions.js";
 
 // aws-s3 사이트에서의 설정값들
-const s3BucketName = "witchstore";
+const s3BucketName = "witchstore-item";
 const bucketRegion = "ap-northeast-2"; // 한국은 항상 ap-northeast-2임.
-const IdentityPoolId = "ap-northeast-2:fba201fa-3ca4-4ed2-b9bb-7f250432abbf";
+const IdentityPoolId = 'ap-northeast-2:62094d9b-160f-47c3-b2cc-ac6c3adfd507';
+
 
 // aws 공식문서 그대로 가져옴
+try{
 AWS.config.update({
   region: bucketRegion,
   credentials: new AWS.CognitoIdentityCredentials({
     IdentityPoolId: IdentityPoolId,
   }),
-});
+});}catch(err){
+  alert(`${err.message}`)
+}
+
 
 // aws 공식문서 그대로 가져옴
 const s3 = new AWS.S3({
