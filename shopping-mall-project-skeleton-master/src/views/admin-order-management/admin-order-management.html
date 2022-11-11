@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="admin-order-management.css">
+    <link rel="stylesheet" href="../common/component/header/common-header.css">
+    <link rel="stylesheet" href="../common/component/footer/footer.css">
+    <script defer src="../common/component/common-include.js"></script>
+    <script defer src="https://kit.fontawesome.com/d1371e05f7.js" crossorigin="anonymous"></script>
+    <title>The Witch Store</title>
+
+    <!-- js -->
+    <script
+      src="./admin-order-management.js"
+      type="module"
+      defer
+    ></script>
+    <script
+      src="../common/component/header/header.js"
+      type="module"
+      defer
+    ></script>
+
+</head>
+<body>
+
+    <header common-include="../common/component/header/common-header.html"></header>
+
+    <section class="admin-order-management">
+        <div class="container">
+
+            <div class="title">
+                <h3 class="title__txt">주문관리</h3>
+            </div>
+
+            <div class="info-container">
+                <div class="order-total">
+                    <div class="item">
+                        <p class="item__title">총 주문수</p>
+                        <p class="item__count" id="total-count">0</p>
+                    </div>
+                    <div class="item">
+                        <p class="item__title">상품 준비중</p>
+                        <p class="item__count" id="ready-count">0</p>
+                    </div>
+                    <div class="item">
+                        <p class="item__title">상품 배송중</p>
+                        <p class="item__count" id="delivery-count">0</p>
+                    </div>
+                    <div class="item">
+                        <p class="item__title">배송완료</p>
+                        <p class="item__count" id="end-count">0</p>
+                    </div>
+                </div>
+                
+                <div class="orders-info">
+                    <div class="orders-info__row orders-info__title">
+                        <div class="orders-info__column"><p>날짜</p></div>
+                        <div class="orders-info__column"><p>주문정보</p></div>
+                        <div class="orders-info__column"><p>주문총액</p></div>
+                        <div class="orders-info__column"><p>상태관리</p></div>
+                        <div class="orders-info__column"><p>취소</p></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    
+
+    <footer common-include="../common/component/footer/footer.html"></footer>
+    
+</body>
+</html>

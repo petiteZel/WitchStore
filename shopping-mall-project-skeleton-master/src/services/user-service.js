@@ -71,7 +71,21 @@ class UserService {
     // 2개 프로퍼티를 jwt 토큰에 담음
     const token = jwt.sign({ userId: user._id, role: user.role }, secretKey);
 
-    return { token };
+    const isAdmin = user.role === "admin";
+
+    return { token, isAdmin };
+  }
+
+  // 특정 사용자 정보 조회
+  async getUserData(userId) {
+    const user = await this.userModel.findById(userId);
+
+    // db에서 찾지 못한 경우, 에러 메시지 반환
+    if (!user) {
+      throw new Error("가입 내역이 없습니다. 다시 한 번 확인해 주세요.");
+    }
+
+    return user;
   }
 
   // 사용자 목록을 받음.
@@ -83,48 +97,40 @@ class UserService {
   // 유저정보 수정, 현재 비밀번호가 있어야 수정 가능함.
   async setUser(userInfoRequired, toUpdate) {
     // 객체 destructuring
-    const { userId, currentPassword } = userInfoRequired;
+    try {
+      const { userId, currentPassword } = userInfoRequired;
 
-    // 우선 해당 id의 유저가 db에 있는지 확인
-    let user = await this.userModel.findById(userId);
+      const user = await this.userModel.update({
+        userId,
+        update: toUpdate,
+      });
+
+      return user;
+    } catch (err) {
+      console.log("err", err);
+    }
+  }
+
+  // 관리자 - 전체 유저 목록 불러오기
+  async getUserData(userId) {
+    const user = await this.userModel.findById(userId);
 
     // db에서 찾지 못한 경우, 에러 메시지 반환
     if (!user) {
       throw new Error("가입 내역이 없습니다. 다시 한 번 확인해 주세요.");
     }
-
-    // 이제, 정보 수정을 위해 사용자가 입력한 비밀번호가 올바른 값인지 확인해야 함
-
-    // 비밀번호 일치 여부 확인
-    const correctPasswordHash = user.password;
-    const isPasswordCorrect = await bcrypt.compare(
-      currentPassword,
-      correctPasswordHash
-    );
-
-    if (!isPasswordCorrect) {
-      throw new Error(
-        "현재 비밀번호가 일치하지 않습니다. 다시 한 번 확인해 주세요."
-      );
-    }
-
-    // 이제 드디어 업데이트 시작
-
-    // 비밀번호도 변경하는 경우에는, 회원가입 때처럼 해쉬화 해주어야 함.
-    const { password } = toUpdate;
-
-    if (password) {
-      const newPasswordHash = await bcrypt.hash(password, 10);
-      toUpdate.password = newPasswordHash;
-    }
-
-    // 업데이트 진행
-    user = await this.userModel.update({
-      userId,
-      update: toUpdate,
-    });
-
     return user;
+  }
+
+  // 관리자 - 특정 유저 삭제
+  async deleteUserData(userId) {
+    const { deletedCount } = await this.userModel.deleteById(userId);
+
+    // 삭제에 실패한 경우, 에러 메시지 반환
+    if (deletedCount === 0) {
+      throw new Error(`${userId} 사용자 데이터의 삭제에 실패하였습니다.`);
+    }
+    return { result: "success" };
   }
 }
 

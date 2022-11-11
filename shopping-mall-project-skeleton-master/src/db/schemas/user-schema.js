@@ -18,29 +18,23 @@ const UserSchema = new Schema(
       type: String,
       required: false,
     },
-    address: {
-      type: new Schema(
-        {
-          postalCode: String,
-          address1: String,
-          address2: String,
-        },
-        {
-          _id: false,
-        }
-      ),
+    address1: {
+      type: String,
+      required: false,
+    },
+    postalCode: {
+      type: String,
       required: false,
     },
     role: {
       type: String,
       required: false,
       default: "basic-user",
-    },
-  },
-  {
-    collection: "users",
-    timestamps: true,
-  }
-);
+    }
+  // {
+  //   collection: "users",
+  //   timestamps: true,
+  // }
+  });
 
 export { UserSchema };

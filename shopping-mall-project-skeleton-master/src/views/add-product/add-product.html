@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- aws -->
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.410.0.min.js"></script>
+
+    <!-- js -->
+    <script
+      src="..\common\component\common-include.js"
+      type="module"
+      defer
+    ></script>
+    <script src="./add-product.js" type="module" defer></script>
+    <script
+      src="../common/component/header/header.js"
+      type="module"
+      defer
+    ></script>
+
+    <!-- css -->
+    <link rel="stylesheet" href="../add-category/add-category.css" />
+    <link rel="stylesheet" href="./add-product.css" />
+    <link
+      rel="stylesheet"
+      href="../common/component/header/common-header.css"
+    />
+    <link rel="stylesheet" href="../common/component/footer/footer.css" />
+
+    <!-- icon -->
+    <script
+      defer
+      src="https://kit.fontawesome.com/9daa42bcef.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header
+      common-include="../common/component/header/common-header.html"
+    ></header>
+    <div class="main">
+      <div class="container-form">
+        <form class="addbox category">
+          <div class="contents-box">
+            <p>제품을 판매해 보세요</p>
+            <div class="field">
+              <label for="content-productName" class="info-title"
+                >제품 이름</label
+              >
+              <div>
+                <input
+                  class="info-content"
+                  id="content-productName"
+                  placeholder="승연 인형"
+                  autocomplete="on"
+                />
+              </div>
+            </div>
+            <div class="field">
+              <label for="content-category" class="info-title">카테고리</label>
+              <div class="select-box">
+                <select class="select-content" id="content-category">
+                  <option>선택</option>
+                </select>
+                <i class="fa-solid fa-chevron-down"></i>
+              </div>
+            </div>
+            <div class="field">
+              <label for="content-type" class="info-title">유형</label>
+              <div class="select-box">
+                <select class="select-content" id="content-type">
+                  <option>선택</option>
+                  <option value="1유형">1유형</option>
+                  <option value="2유형">2유형</option>
+                  <option value="3유형">3유형</option>
+                  <option value="4유형">4유형</option>
+                </select>
+                <i class="fa-solid fa-chevron-down"></i>
+              </div>
+            </div>
+            <div class="field">
+              <label for="content-brandName" class="info-title">브랜드명</label>
+              <div>
+                <input
+                  class="info-content"
+                  id="content-brandName"
+                  placeholder="THE WITCH STORE"
+                  autocomplete="on"
+                />
+              </div>
+            </div>
+            <div class="field">
+              <label for="content-shortDescription" class="info-title"
+                >한 줄 소개</label
+              >
+              <div>
+                <input
+                  class="info-content"
+                  id="content-shortDescription"
+                  placeholder="한 줄 소개"
+                  autocomplete="on"
+                />
+              </div>
+            </div>
+            <div class="field">
+              <label for="content-description" class="info-title"
+                >상세설명</label
+              >
+              <div>
+                <textarea
+                  class="info-content textarea"
+                  id="content-description"
+                  placeholder="이 제품은 어쩌구 저쩌구 뭐가 좋고 나쁜건 없고 그렇고 말고."
+                  autocomplete="on"
+                ></textarea>
+              </div>
+            </div>
+            <div class="field">
+              <label for="uploading" class="info-title">제품 사진</label>
+              <div>
+                <label class="image-upload-label">
+                  <input
+                    class="image-upload"
+                    id="uploading"
+                    type="file"
+                    accept=".png, .jpeg, .jpg"
+                  />
+
+                  <div class="upload-box">
+                    <div class="upload-icon"><i class="fas fa-upload"></i></div>
+                    <div class="upload-button">사진업로드</div>
+                  </div>
+                  <div class="upload-content">사진파일 (png, jpg, jpeg)</div>
+                </label>
+              </div>
+            </div>
+            <div class="field">
+              <label for="content-price" class="info-title">가격</label>
+              <div>
+                <input
+                  class="info-content"
+                  id="content-price"
+                  placeholder="18,000"
+                  autocomplete="on"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="button-space">
+            <button type="submit" class="submit-button">제품 판매하기</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <footer common-include="../common/component/footer/footer.html"></footer>
+  </body>
+</html>

@@ -31,6 +31,16 @@ export class UserModel {
     const updatedUser = await User.findOneAndUpdate(filter, update, option);
     return updatedUser;
   }
+
+  async deleteById(userId) {
+    const deleteUser = await User.findOneAndDelete({ _id: userId });
+    return deleteUser;
+  }
+
+  async deleteByUserId(userId) {
+    const result = await User.deleteOne({ _id: userId });
+    return result;
+  }
 }
 
 const userModel = new UserModel();

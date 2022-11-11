@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>탈퇴 페이지</title>
+    <!-- 아이콘 -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/elice-rabbit-favicon.png"
+    />
+    <!-- 폰트 어썸: 아이콘 -->
+    <script
+      defer
+      src="https://kit.fontawesome.com/9daa42bcef.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- 커스텀 css, js -->
+    <link rel="stylesheet" href="account-signout.css" />
+    <script src="account-signout.js" type="module" defer></script>
+    <script
+      src="../common/component/header/header.js"
+      type="module"
+      defer
+      ></script>
+   
+    <!--header,footer css-->
+    <link rel="stylesheet" href="../common/component/header/common-header.css">
+    <link rel="stylesheet" href="../common/component/footer/footer.css">
+    <script defer src="../common/component/common-include.js"></script>
+
+    
+    <!--common css-->
+    <link rel="stylesheet" href="../common/component/css/common.css">
+  </head>
+  <body>
+
+    <header common-include="../common/component/header/common-header.html"></header>
+  </header>
+
+  <main id="login-area">
+    <!-- 배경 별 -->
+    <div class="background-image">
+     <div class="register-user-form-container">
+      <form class="box register-user-form-box" id="registerUserForm">
+        <p class="title">삭제를 진행합니다</p>
+
+        <div class="field">
+          <label class="label" for="passwordInput">현재 비밀번호</label>
+          <div class="control">
+            <input
+              class="input"
+              id="passwordInput"
+              type="password"
+              autocomplete="off"
+            />
+          </div>
+        </div>
+
+        <button class="button-delete " id="deleteCompleteButton">
+          회원정보 안전하게 삭제하기
+        </button>
+
+        <button
+        class="button deleteCancelButton"
+        id="deleteCancelButton"
+        aria-label="close"
+      >
+        삭제 취소
+      </button>
+
+      </form>
+     </div>
+  </div>
+</main>
+ <!-- main end -->
+
+ <footer common-include="../common/component/footer/footer.html"></footer>
+
+  </body>
+  <script src="account-signout.js"></script>
+</html>
