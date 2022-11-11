@@ -41,11 +41,11 @@ async function insertUserData() {
 
   //확인필요!
   // securityTitle.innerText = `회원정보 관리 (${email})`;
-  emailInput.value = email;
-  fullNameInput.value = fullName;
-  phoneNumberInput.value = phoneNumber;
-  postalCodeInput.value = postalCode;
-  address1Input.value = address1;
+  emailInput.value = email || "";
+  fullNameInput.value = fullName || "";
+  phoneNumberInput.value = phoneNumber || "";
+  postalCodeInput.value = postalCode || "";
+  address1Input.value = address1 || "";
 
   // if(phoneNumber = undefined){
   //   phoneNumberInput.value = "- 없이 입력해 주세요."
