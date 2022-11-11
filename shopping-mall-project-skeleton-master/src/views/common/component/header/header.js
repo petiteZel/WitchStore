@@ -37,7 +37,7 @@ async function header(callback) {
         </div>
               
               </div>
-              <a href="../shopping-cart/shopping-cart.html" class="user-cart-btn"><i class="fa-solid fa-cart-shopping"></i></a>`;
+              <a href="../cart/cart.html" class="user-cart-btn"><i class="fa-solid fa-cart-shopping"></i></a>`;
               callback();
             }else{
               header.innerHTML = `<div class="user-info-box"> 
@@ -48,7 +48,7 @@ async function header(callback) {
                         </div>
                         <div class="user-menu-box">
                           <ul class="user-menu">
-                              <li><a href="/admin-main/admin-main.html">페이지 관리</a></li>
+                              <li><a href="/admin-main/admin-webservice.html">페이지 관리</a></li>
                               <li><a href="/changing-info/changing-info.html">계정관리</a></li>
                               <li><a href='/' id ="logoutBtn">로그아웃</a></li>
                           </ul>
@@ -56,7 +56,7 @@ async function header(callback) {
                     </div>
                     
                     </div>
-                    <a href="../shopping-cart/shopping-cart.html" class="user-cart-btn"><i class="fa-solid fa-cart-shopping"></i></a>`;
+                    <a href="../cart/cart.html" class="user-cart-btn"><i class="fa-solid fa-cart-shopping"></i></a>`;
                     callback()
             }
             
@@ -68,7 +68,7 @@ async function header(callback) {
       <button class="login-btn en"><a href="/login">login</a></button>
       <button class="signup-btn en"><a href="/register">sign up</a></button>
     </div>
-    <a href="../shopping-cart/shopping-cart.html" class="user-cart-btn"><i class="fa-solid fa-cart-shopping"></i></a>`;
+    <a href="../cart/cart.html" class="user-cart-btn"><i class="fa-solid fa-cart-shopping"></i></a>`;
     },200);
   }
 }
