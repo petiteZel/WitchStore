@@ -162,6 +162,10 @@
   height:40px;
 }
 
+.select-a-box.select{
+  background-color: beige;
+}
+
 .try-again-btn{
   background-color: #D9D9D9;
   text-align: center;
@@ -171,6 +175,7 @@
   height:40px;
 }
   
-.button.disabled{
+/* .button.disabled{
   background-color: #666;
-}
+} */
+

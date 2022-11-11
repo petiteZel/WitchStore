@@ -9,6 +9,8 @@ const showResultBtn=document.querySelector('#show-result-btn');
 
 
 
+
+
 //결과 페이지 보이게
 async function doDisplay(){ 	
 
@@ -58,6 +60,8 @@ async function calType() {
         e.addEventListener('click', ()=>{
             const resultValue = e.value;
             const [ type, category ] = resultValue.split("_");
+            //클릭했을 때 
+            e.classList.add("select");
             
             e.disabled = true;
             if(type == "A") {
