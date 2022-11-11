@@ -175,16 +175,13 @@ if (amount ===0){
 }
 
 async function sidBar(){
-    const api = Api.get('/api/category/categories')
-    setTimeout(()=>{
-    api.then(data=>data.forEach(e=>{
+    const api = await Api.get('/api/category/categories')
+    api.forEach((e)=>{
         const categories = document.querySelector('#submenu1')
         categories.innerHTML += `<li><a href="/product-list/product.html?category=${e.categoryName}">${e.categoryName}</a></li>`
-    }))
-  }
-  ,1000)
+    })
     
-  };
+};
 
 
 
