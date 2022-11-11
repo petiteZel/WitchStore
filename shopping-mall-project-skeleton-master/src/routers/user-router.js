@@ -1,7 +1,7 @@
 import { Router } from "express";
 import is from "@sindresorhus/is";
 // 폴더에서 import하면, 자동으로 폴더의 index.js에서 가져옴
-import { loginRequired } from "../middlewares";
+import { adminOnly, loginRequired } from "../middlewares";
 import { userService } from "../services";
 
 
@@ -62,7 +62,7 @@ userRouter.post("/login", async function (req, res, next) {
   }
 });
 
-// 전체 유저 목록을 가져옴 (배열 형태임)
+// 관리자 - 전체 유저 목록을 가져옴 (배열 형태임)
 // 미들웨어로 loginRequired 를 썼음 (이로써, jwt 토큰이 없으면 사용 불가한 라우팅이 됨)
 userRouter.get("/users", loginRequired, async function (req, res, next) {
   try {
@@ -76,7 +76,7 @@ userRouter.get("/users", loginRequired, async function (req, res, next) {
   }
 });
 
-// 특정 사용자 정보 조회
+// 회원 본인 정보 조회
 userRouter.get("/user", loginRequired, async function (req, res, next) {
   try {
     const userId = req.currentUserId;
@@ -88,7 +88,7 @@ userRouter.get("/user", loginRequired, async function (req, res, next) {
   }
 });
 
-// 사용자 정보 수정
+// 회원 정보 수정
 // (예를 들어 /api/users/abc12345 로 요청하면 req.params.userId는 'abc12345' 문자열로 됨)
 userRouter.patch(
   "/users/:userId",
@@ -150,9 +150,11 @@ userRouter.patch(
   }
 );
 
+
+// 관리자 - 특정 유저 삭제
 userRouter.delete(
   "/users/:userId",
-  loginRequired,
+  loginRequired, adminOnly,
   async function (req, res, next) {
     try {
       // params로부터 id를 가져옴
@@ -166,5 +168,15 @@ userRouter.delete(
     }
   }
 );
+
+// 관리자 토큰 유무 확인
+userRouter.get("/admin/check", adminOnly, async function (req, res, next) {
+  try {
+    // 미들웨어 adminOnly 를 통과했다는 것은, 관리자 토큰을 가진 것을 의미함.
+    res.status(200).json({ result: "success" });
+  } catch (error) {
+    next(error);
+  }
+});
 
 export { userRouter };
