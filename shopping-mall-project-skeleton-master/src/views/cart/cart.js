@@ -1,16 +1,9 @@
 import * as Api from "../api.js"
-// import { orders } from "./cart-data.js";
-
-
-const allSelectCheckbox = document.querySelector("#allSelectCheckbox");
-const partialDeleteLabel = document.querySelector("#partialDeleteLabel");
-const orderTotalElem = document.querySelector("#orderTotal");
 
 async function insertProductsfromCart(){
-  // const products = await getFromDb("cart");
-  // const { selectedIds } = await getFromDb("order", "summary");
   const localLength = localStorage.length;
   const orders = []
+
   for(let i=1;i<localLength+1;i++){
     if(localStorage.getItem(String(i))){
         orders.push(JSON.parse(localStorage.getItem(String(i))))
@@ -18,19 +11,12 @@ async function insertProductsfromCart(){
   }
   
   const cartProductsContainer = document.querySelector("#cartProductsContainer");
-  const purchaseButton = document.querySelector("#purchaseButton");
-
+  
   orders.forEach(async (product) => {
-      const {
-        _id,
-        productName,
-        amount,
-        price,
-        image,
-      } = product
+    const {  _id, productName, amount, price, image } = product
 
-      cartProductsContainer.innerHTML += 
-        `<div class="cart-product" id="productItem-${_id}">
+    cartProductsContainer.insertAdjacentHTML("beforeend", 
+    `<div class="cart-product" id="productItem-${_id}">
           <label class="checkbox select-btn" >
               <input type="checkbox" id="checkbox-${_id}" />
           </label>
@@ -41,52 +27,105 @@ async function insertProductsfromCart(){
   
           <div class="count-box">
               <button 
-                  type="button" 
-                  class="minus-btn"  
-                  id="minus-btn" 
+              class="minus-btn"  
+                  id="minus-btn-${_id}" 
               >
                   <i class="fa-solid fa-circle-minus"></i>
               </button>
               <input
                   class="count-number"
-                  id="amount"
+                  id="amount-${_id}"
                   value="${amount}"
               />
               <button 
                   type="button" 
                   class="plus-btn"
-                  id="plus-btn"
+                  id="plus-btn-${_id}"
               >
                   <i class="fa-solid fa-circle-plus"></i>
               </button>
           </div>
           
-          <p class="product-price" id="product-price">${price}</p>
-          <button type="button" class="deleteBtn" id="delete-btn"><i class="fa-solid fa-x"></i></button>
+          <p class="product-price" id="product-price-${_id}">${(price*amount)}</p>
+          <button type="button" class="deleteBtn" id="delete-btn-${_id}"><i class="fa-solid fa-x"></i></button>
           </div>`
+    )
 
-  const cartBtn = document.querySelector('.cart-btn')
-  const plusBtn = document.querySelector('#plus-btn')
-  const minusBtn = document.querySelector('#minus-btn')
-  const amountTxt = document.querySelector('#amount')
-  const productPrice = document.querySelector('#product-price')
+    const plusBtn = document.querySelector(`#plus-btn-${_id}`)
+    const minusBtn = document.querySelector(`#minus-btn-${_id}`)
+    const amountValue = document.querySelector(`#amount-${_id}`)
+    const productPrice = document.querySelector(`#product-price-${_id}`)
+    const deleteBtn = document.querySelector(`#delete-btn-${_id}`)
+    const productItem = document.querySelector(`#productItem-${_id}`)
+    
+    plusBtn.addEventListener('click',()=>{
+        amountValue.value = Number(amountValue.value)+1;
+        productPrice.innerHTML = (price * Number(amountValue.value))
+    });
 
-  
-  plusBtn.addEventListener('click',()=>{
-      amountTxt.value = Number(amountTxt.value)+1;
-      productPrice.innerHTML = (price * Number(amountTxt.value)).toLocaleString('ko-KR')
+    minusBtn.addEventListener('click',()=>{
+        amountValue.value = Number(amountValue.value)-1;
+        productPrice.innerHTML = (price * Number(amountValue.value)).toLocaleString('ko-KR')
+    });
+
+    deleteBtn.addEventListener('click', () => {
+        const key = localStorage.key(_id)
+        localStorage.removeItem(key);
+        productItem.remove();
+        console.log(key)
+    })
+
+    const orderTotal = document.querySelector('#orderTotal')
+    const purchaseButton = document.querySelector("#purchaseButton");
+    purchaseButton.addEventListener("click", () => {
+        for(let i = 1; i <= localStorage.length; i++){
+            const data = JSON.parse(localStorage.getItem(String(i)));
+            data.price = String(productPrice.innerHTML)
+            data.amount = String(amountValue.value);
+            console.log(data)
+            
+            localStorage.setItem(i, JSON.stringify(data))
+        }
+        return location.href = "/order/order.html";
+    });
+
   });
 
-  minusBtn.addEventListener('click',()=>{
-      amountTxt.value = Number(amountTxt.value)-1;
-      productPrice.innerHTML = (price * Number(amountTxt.value)).toLocaleString('ko-KR')
-  });
-//   cartBtn.addEventListener('click',()=>cartIn(selectItem,amountTxt.innerHTML))
-});
+    //const checkbox = document.querySelector(`checkbox-${_id}`)
+    const allSelectCheckbox = document.querySelector("#allSelectCheckbox");
+    const allDeleteBtn = document.querySelector("#allDeleteBtn");
+    const selectDeleteBtn = document.querySelector("#selectDeleteBtn");
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    const checkedboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+    
+    allSelectCheckbox.addEventListener("click", () => {
+        checkboxes.forEach((checkbox) => {
+            checkbox.checked = allSelectCheckbox.checked
+          });
+    });
 
-  purchaseButton.addEventListener("click", () => {
-    return location.href = "/order/order.html";
-  });
+    // checkedboxes.addEventListener("click", () => {
+    //     if(allSelectCheckbox.length === checkedboxes.length)  {
+    //         allSelectCheckbox.checked = true;
+    //       }else {
+    //         allSelectCheckbox.checked = false;
+    //       }
+    // });
+
+    allDeleteBtn.addEventListener("click", () => {
+
+    });
+
+    selectDeleteBtn.addEventListener("click", () => {
+
+    });
+
+    
+
+     //    const data = JSON.parse(localStorage.getItem("1"));
+    //    console.log(data.price)
+
+        //
   
 }
 
