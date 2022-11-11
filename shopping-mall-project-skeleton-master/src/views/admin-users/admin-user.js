@@ -2,29 +2,40 @@ import * as Api from "../../api.js";
 
 async function showUser(){
     const api = await Api.get('/api/users')
+    console.log(api)
     const infoBox = document.querySelector('.orders-info')
     let count = 0
     api.forEach(e=>{
         count+=1
         infoBox.innerHTML += `<div class="orders-info__row">
-        <div class="orders-info__column">${e.createdAt.split('T')[0]}</div>
-        <div class="orders-info__column">${e.email}</div>
-        <div class="orders-info__column">${e.fullName}</div>
+        <div class="orders-info__column">${e.createdAt?e.createdAt.split('T')[0] : ""}</div>
+        <div class="orders-info__column">${e.email || ""}</div>
+        <div class="orders-info__column">${e.fullName || ""}</div>
         <div class="orders-info__column">
-          <select id="" class="orders-info__column member-select">
+          <select value="${e._id}" class="orders-info__column member-select">
             <option value="관리자" ${e.role==='admin'?"selected":""} >관리자</option>
             <option value="일반 사용자" ${e.role!=='admin'?"selected":""}>일반 사용자</option>
           </select>
         </div>
         <div class="orders-info__column">
-          <button type="button" class="member-delete__btn" id="memeber-del-btn-${count}">
+          <button type="button" class="member-delete__btn" value="${e._id}">
             회원정보 삭제
           </button>
         </div>
       </div>`
-      
-      const delBtns = document.querySelectorAll(`#memeber-del-btn-${count}`)
+
+
     })
+    console.log(count)
+    const delBtns = document.querySelectorAll('.member-delete__btn')
+    delBtns.forEach(delBtn=>{
+        delBtn.addEventListener('click',()=>{
+            Api.delete(`/api/users`,delBtn.value)
+        })
+        
+    })
+    
+    const changeRole = document.querySelectorAll()
 
 }
 

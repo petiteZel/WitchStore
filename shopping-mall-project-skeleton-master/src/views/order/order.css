@@ -91,9 +91,9 @@ body {
     align-items: center;
     margin-bottom: 20px;
 }
-.pay-container .pay-info-box .info:first-child{
+/* .pay-container .pay-info-box .info:first-child{
     align-items: flex-start;
-}
+} */
 .pay-container .pay-info-box .info .product-list > p{
     margin-bottom: 10px;
 }

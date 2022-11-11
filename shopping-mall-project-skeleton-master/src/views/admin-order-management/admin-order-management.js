@@ -30,25 +30,17 @@ async function callOrderApi(){
     const deliveryCount = document.querySelector(`#delivery-count`)
     const endCount = document.querySelector(`#end-count`)
 
-    for(let i=1;i<orderApi.length+1;i++){
+    for(let i=1;i<orderApi.length;i++){
         const order = orderApi[i]
         
-        if(order.status==='상품 준비중'){
-            readyCount.innerHTML += 1;
-        }
-        else if(order.status==='상품 배송중'){
-            deliveryCount.innerHTML += 1;
-        }
-        else if(order.status==='배송 완료'){
-            endCount.innerHTML += 1;
-        }
         
-        totalCount.innerHTML += 1;
+        
+        
         
         ordersBox.innerHTML += `<div class="orders-info__row">
         <div class="orders-info__column">${i}</div>
-        <div class="orders-info__column">${order.productId} / ${order.quantity}개</div>
-        <div class="orders-info__column">${order.totalPrice}</div>
+        <div class="orders-info__column">${order.productName} / ${order.quantity}개</div>
+        <div class="orders-info__column">${(Number(order.quantity)*Number(order.price)).toLocaleString('ko-KR')}</div>
         <div class="orders-info__column">
             <select id="status_box_${order.orderId}" class="orders-info__column shipment-select">
                 <option value="상품 준비중" ${order.status === "상품 준비중" ? "selected" : ""} >상품 준비중</option>
@@ -61,9 +53,21 @@ async function callOrderApi(){
         </div>
     </div>`
 
+    if(order.status==='상품 준비중'){
+        readyCount.innerHTML = Number(readyCount.innerHTML) + 1;
+    }
+    else if(order.status==='상품 배송중'){
+        deliveryCount.innerHTML = Number(deliveryCount.innerHTML) + 1;
+    }
+    else if(order.status==='배송 완료'){
+        endCount.innerHTML = Number(endCount.innerHTML) + 1;
+    }
+    totalCount.innerHTML = Number(totalCount.innerHTML) + 1;
+
     const statusBox = document.querySelector(`#status_box_${order.orderId}`)
     statusBox.addEventListener("change", async () => {
-        const newStatus = statusSelectBox.value;
+        // const statusBox = document.querySelector(`#status_box_${order.orderId}`)
+        const newStatus = statusBox.value;
         const data = { status: newStatus };
   
         // api 요청

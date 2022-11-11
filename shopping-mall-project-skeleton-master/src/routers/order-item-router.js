@@ -34,9 +34,12 @@ orderItemRouter.post("/orderitem",loginRequired, adminOnly, async (req, res, nex
 });
 
 // 전체 주문아이템 목록은 관리자만 조회 가능함
+// orderItemRouter.get(
+//   "/orderitemlist/all",
+//   adminOnly,
+//   async function (req, res, next) {
 orderItemRouter.get(
   "/orderitemlist/all",
-  adminOnly,
   async function (req, res, next) {
     try {
       const orderItems = await orderItemService.getItems();
