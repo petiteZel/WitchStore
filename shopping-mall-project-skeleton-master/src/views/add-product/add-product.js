@@ -1,6 +1,7 @@
 import { addImageToS3, getImageUrl } from "../awsS3.js"
 import * as Api from "../api.js"
 
+
 async function rending(){
     const api = await Api.get('/api/category/categories')
     const categoryBox = document.querySelector('#content-category')
