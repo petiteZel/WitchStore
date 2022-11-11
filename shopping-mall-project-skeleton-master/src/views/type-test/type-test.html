@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>회원가입</title>
+    <title>나에게 필요한 위로는?</title>
     
     <!-- 폰트 어썸: 아이콘 -->
     <script
@@ -11,13 +11,10 @@
       src="https://kit.fontawesome.com/9daa42bcef.js"
       crossorigin="anonymous"
     ></script>
-    <!-- 구글 OAuth -->
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
-    <!-- 카카오 OAuth -->
-    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+
     <!-- 커스텀 css, js -->
     <link rel="stylesheet" href="type-test.css" />
-    <script src="type-test.js" type="module" defer></script>
+    <script src="type-test.js?ver=1" type="module" defer></script>
 
     <!--header,footer css-->
     <link rel="stylesheet" href="../common/component/header/common-header.css">
@@ -50,7 +47,7 @@
 
 
   <div class="main-page" id="main-page">
-      <!-- 첫번째 질문 -->
+      <!-- 첫번째 질문, 카테고리1 -->
     <div class="question-box first-question">
       <div class="question">
         <h2>Q1. 좋아하는 TV 프로그램은?</h2>
@@ -134,7 +131,7 @@
             </div>
           </div>
 
-          <!-- 네번째 질문 -->
+          <!-- 네번째 질문 , 카테고리2-->
           <div class="question-box fourth-question">
             <div class="question">
               <h2>Q4. 상대에게 받고 싶은 위로는?</h2>
@@ -229,7 +226,7 @@
     
     <div class="result-page" id="result-page">
 
-      <div class="result-title">
+      <div class="result-title" id="result-title">
         <h1>당신은 아이돌 타입!</h1>
       </div>
 
@@ -261,9 +258,8 @@
    </div>
  </main>
  <!-- main end -->
-     <!-- main end -->
 
-     <footer common-include="../common/component/footer/footer.html"></footer>
+     <!-- <footer common-include="../common/component/footer/footer.html"></footer> -->
 
   </body>
 </html>

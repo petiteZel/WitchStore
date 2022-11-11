@@ -42,13 +42,17 @@
   /*정보*/
 
   .select-box{
-    margin: 0 auto;
+    margin: auto;
     display:flex;
     justify-content: space-around;
     width: 50%;
     height: 30%;
 
   
+  }
+
+  .question-box{
+    margin-bottom: 100px;
   }
   
   .select-a-box {
@@ -89,13 +93,13 @@
 
 
   .show-result-btn{
-    background-color: #FFD74B;
+    background-color: #4bffb2;
     text-align: center;
     font-size: 1em;
     font-weight: bold;
     color: black;
     height:60px;
-    width: 100px;
+    width: 60%;
     margin:100px auto 50px auto;
     border-radius: 81px;
     border: none;
@@ -105,6 +109,10 @@
   
  /*결과*/
  
+.result-page{
+  display:none;
+}
+
  .result-answer{
   width: 70%;
   margin:auto;
