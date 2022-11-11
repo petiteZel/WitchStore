@@ -4,7 +4,7 @@ import { adminOnly, loginRequired } from "../middlewares";
 import { orderItemService } from "../services";
 
 const orderItemRouter = Router();
-orderItemRouter.post("/orderitem",loginRequired, async (req, res, next) => {
+orderItemRouter.post("/orderitem",loginRequired, adminOnly, async (req, res, next) => {
   try {
     // application/json 설정을 프론트에서 안 하면, body가 비어 있게 됨.
     if (is.emptyObject(req.body)) {
