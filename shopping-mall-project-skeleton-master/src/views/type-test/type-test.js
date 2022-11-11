@@ -10,6 +10,8 @@ const showResultBtn=document.querySelector('#show-result-btn');
 
 
 
+// calType();
+doDisplay();
 
 //결과 페이지 보이게
 async function doDisplay(){ 	
@@ -25,10 +27,69 @@ async function doDisplay(){
    
 }
 
+function calType() {
+    const select = document.querySelectorAll('.box');
+    let firstCount = 0;
+    let secondCount = 0;
+    
+    select.forEach(async (e)=>{
+        e.addEventListener('click', ()=>{
+            const resultValue = e.value;
+            const [ type, category ] = resultValue.split("_");
+            //클릭했을 때 
+            e.classList.add("select");
+            
+            e.disabled = true;
+            if(type == "A") {
+                e.nextSibling.disabled = true;
+                if(category == 1){
+                    firstCount += 1;
+                    // console.log(firstCount + "first");
+                }else{
+                    secondCount +=1;
+                    // console.log(secondCount);
+                }
+                calScore(firstCount, secondCount)
+            }else{
+                calScore(firstCount, secondCount)
+                e.previousSibling.disabled = true;
+            }
+            
+        })
+        
+    })
+    
+}
+calType()
 
 
-//결과값 바꾸기
-function setInnerHTML(typeId)  {
+
+async function calScore(firstCount, secondCount){
+    let typeId = 0;
+    // console.log(firstCount + "계산중1");
+    // console.log(secondCount + "계산중2");
+    if(firstCount >= 2){
+        if(secondCount >= 2){
+            typeId = 1;
+        }else{
+            typeId = 2;
+        }
+        
+    }else{
+        if(secondCount >= 2){
+            typeId = 3;
+        }else{
+            typeId = 4;
+        }
+    }
+    // console.log(typeId +"typeID");
+    // return typeId;
+    setInnerHTML(typeId)
+}
+
+
+// //결과값 바꾸기
+async function setInnerHTML(typeId)  {
     const title = document.getElementById('result-title');
     const answer = document.getElementById('result-answer');
     const resultArray = 
@@ -48,62 +109,12 @@ function setInnerHTML(typeId)  {
     //출처 : https://post.naver.com/viewer/postView.naver?volumeNo=34267779&memberNo=8164145
 }
 
-calType();
-doDisplay();
-
-async function calType() {
-    const select = document.querySelectorAll('.box');
-    let firstCount = 0;
-    let secondCount = 0;
-    
-    select.forEach((e)=>{
-        e.addEventListener('click', ()=>{
-            const resultValue = e.value;
-            const [ type, category ] = resultValue.split("_");
-            //클릭했을 때 
-            e.classList.add("select");
-            
-            e.disabled = true;
-            if(type == "A") {
-                e.nextSibling.disabled = true;
-                if(category == 1){
-                    firstCount += 1;
-                    console.log(firstCount + "first");
-                }else{
-                    secondCount +=1;
-                    console.log(secondCount);
-                }
-            }else{
-                e.previousSibling.disabled = true;
-            }
-            
-        })
-       
-        
-    })
-calScore(firstCount, secondCount)
-
-}
+// calType()
+//     .then((firstCount,secondCount)=>calScore(firstCount,secondCount))
+//     .then(typeId => setInnerHTML(typeId))
 
 
-function calScore(firstCount, secondCount){
-    let typeId = 0;
-    console.log(firstCount + "계산중1");
-    console.log(secondCount + "계산중2");
-    if(firstCount >= 2){
-        if(secondCount >= 2){
-            typeId = 1;
-        }else{
-            typeId = 2;
-        }
-        
-    }else{
-        if(secondCount >= 2){
-            typeId = 3;
-        }else{
-            typeId = 4;
-        }
-    }
-    console.log(typeId +"typeID");
-    setInnerHTML(typeId)
-}
+
+
+
+
