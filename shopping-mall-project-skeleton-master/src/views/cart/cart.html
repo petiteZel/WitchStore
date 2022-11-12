@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cart.css">
+    <!--header,footer css-->
+    <link rel="stylesheet" href="../common/component/header/common-header.css">
+    <link rel="stylesheet" href="../common/component/footer/footer.css">
+    <script defer src="../common/component/common-include.js"></script>
+    <script
+      src="../common/component/header/header.js"
+      type="module"
+      defer
+      ></script>
+    <!-- header, footer css -->
+    <script src="https://kit.fontawesome.com/d1371e05f7.js" crossorigin="anonymous"></script>
+    <script type="module" src="cart.js" defer></script>
+    <title>The Witch Store</title>
+</head>
+<body>
+    
+    <header common-include="../common/component/header/common-header.html"></header>
+    
+    <main class="shopping-cart">
+
+        <section class="cart">
+            <div class="cart-container">
+                <h3 class="cart-title">장바구니</h3>
+                
+                <div class="cart-list-box" id="cartProductsContainer">
+                    <!-- 장바구니에 담긴 상품들의 html 요소(카드 형태)가 주입되는 곳 -->
+                    
+                </div>
+
+                <div class="cart-edit-box">
+                    <div class="cart-edit-btn">
+                        <input type="checkbox" class="all-select-check" id="allSelectCheckbox" />
+                        <button type="button" class="all-delete-btn" id="allDeleteBtn" >전체 삭제</button>
+                        <button type="button" class="select-delete-btn" id="selectDeleteBtn">선택 삭제</button>
+                    </div>
+    
+                    <div class="cart-price">
+                        <span>합계</span>
+                        <span id="orderTotal"></span>
+                    </div>
+                </div>
+
+            </div>
+        </section><!-- cart end -->
+
+        <section class="order-btn">
+            <button type="button" class="member-order-btn" id="purchaseButton">주문하기</button>
+        </section>
+        
+    </main><!-- shopping cart end -->
+    
+    <footer common-include="../common/component/footer/footer.html"></footer>
+    
+
+</body>
+</html>

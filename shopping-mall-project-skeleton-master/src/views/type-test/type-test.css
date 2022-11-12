@@ -1,0 +1,185 @@
+
+/* 배경 - 시간되면 넓게 이미지 만들기*/
+.background-image{
+    background-image: url("../image/stars.png");
+    width: 100%;
+    height: 688px;
+    
+  }
+  
+  
+  /*심리테스트*/
+  
+  .question-title {
+    width: 100%;
+    margin:100px auto 50px auto;
+    text-align: center;
+    /* display:flex; */
+
+    margin-bottom: 35px;
+    color: #FFD84B;
+    font-style: normal;
+    line-height: 38px;
+  }
+
+  .moon-img{
+    width:100px;
+    height:100px;
+    margin-left: 100px
+  }
+
+  .question{
+    width: 100%;
+    margin:auto;
+    text-align: center;
+
+    margin-bottom: 35px;
+    color: #FFD84B;
+    font-style: normal;
+    line-height: 38px;
+  }
+  
+  /*정보*/
+
+  .select-box{
+    margin: auto;
+    display:flex;
+    justify-content: space-around;
+    width: 50%;
+    height: 30%;
+
+  
+  }
+
+  .question-box{
+    margin-bottom: 100px;
+  }
+  
+  .select-a-box {
+    width: 272px;
+    height: 276px;
+    margin-top: 30px;
+    border-radius: 81px;
+    background-color: #FFD84B;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    color: black;
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.3);
+  }
+
+  .select-b-box {
+    width: 272px;
+    height: 276px;
+    margin-top: 30px;
+    border-radius: 81px;
+    background-color: #454DBC;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    color: black;
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.3);
+  }
+  
+  .show-result-box{
+    margin: 0 auto;
+    display:flex;
+    justify-content: space-around;
+    width: 50%;
+    height: 30%;
+    text-align: center;
+
+  }
+
+
+  .show-result-btn{
+    background-color: #4bffb2;
+    text-align: center;
+    font-size: 1em;
+    font-weight: bold;
+    color: black;
+    height:60px;
+    width: 60%;
+    margin:100px auto 50px auto;
+    border-radius: 81px;
+    border: none;
+
+  }
+  
+  
+ /*결과*/
+ 
+.result-page{
+  display:none;
+}
+
+ .result-answer{
+  width: 70%;
+  margin:auto;
+  text-align: center;
+
+  margin-bottom: 35px;
+  color: #FFD84B;
+  font-style: normal;
+  line-height: 38px;
+}
+
+
+ .result-title {
+  width: 70%;
+  margin:100px auto 50px auto;
+  text-align: center;
+  /* display:flex; */
+
+  margin-bottom: 35px;
+  font-style: normal;
+  line-height: 38px;
+}
+.result-select-box{
+  margin: 0 auto;
+  display:flex;
+  justify-content: space-around;
+  width: 50%;
+  height: 30%;
+  text-align: center;
+}
+
+
+.result-box{
+  margin:50px auto 150px auto;
+  border-radius: 81px;
+  border: none;
+  width: 200px;
+  height: 30%;
+}
+
+.shopping-btn{
+  background-color: #FFD74B;
+  text-align: center;
+  font-size: 1em;
+  font-weight: bold;
+  color: black;
+  height:40px;
+}
+
+.select-a-box.select{
+  background-color: beige;
+}
+
+
+.select-b-box.select{
+  background-color: beige;
+}
+.try-again-btn{
+  background-color: #D9D9D9;
+  text-align: center;
+  font-size: 1em;
+  font-weight: bold;
+  color: black;
+  height:40px;
+}
+  
+/* .button.disabled{
+  background-color: #666;
+} */
+

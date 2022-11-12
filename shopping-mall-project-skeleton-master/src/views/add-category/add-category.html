@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- font -->
+    <script
+      defer
+      src="https://kit.fontawesome.com/9daa42bcef.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- js -->
+    <script
+      src="..\common\component\common-include.js"
+      type="module"
+      defer
+    ></script>
+    <script src="./add-category.js" type="module" defer></script>
+    <script
+      src="../common/component/header/header.js"
+      type="module"
+      defer
+    ></script>
+
+    <!-- css -->
+    <link rel="stylesheet" href="add-category.css" />
+    <link
+      rel="stylesheet"
+      href="../common/component/header/common-header.css"
+    />
+    <link rel="stylesheet" href="../common/component/footer/footer.css" />
+  </head>
+  <body>
+    <header
+      common-include="../common/component/header/common-header.html"
+    ></header>
+    <div class="main">
+      <div class="container-form">
+        <form class="addbox category">
+          <div class="contents-box">
+            <p>카테고리 추가하기</p>
+            <div class="field">
+              <label for="content" class="info-title">카테고리 이름</label>
+              <div>
+                <input
+                  class="info-content"
+                  id="content"
+                  placeholder="인형"
+                  autocomplete="on"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="button-space">
+            <button type="submit" class="submit-button">
+              카테고리 추가하기
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <footer common-include="../common/component/footer/footer.html"></footer>
+  </body>
+</html>
