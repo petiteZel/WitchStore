@@ -1,7 +1,7 @@
 
 /* 배경 - 시간되면 넓게 이미지 만들기*/
 .backgroundImage{
-    backgroundImage: url("../image/stars.png");
+    background-image: url("../image/stars.png");
     width: 100%;
     height: 688px;
     
@@ -10,7 +10,7 @@
   
   /*심리테스트*/
   
-  .question-title {
+  .questionTitle {
     width: 100%;
     margin:100px auto 50px auto;
     text-align: center;
@@ -22,7 +22,7 @@
     line-height: 38px;
   }
 
-  .moon-img{
+  .moonImg{
     width:100px;
     height:100px;
     margin-left: 100px
@@ -41,7 +41,7 @@
   
   /*정보*/
 
-  .select-box{
+  .selectBox{
     margin: auto;
     display:flex;
     justify-content: space-around;
@@ -51,11 +51,11 @@
   
   }
 
-  .question-box{
+  .questionBox{
     margin-bottom: 100px;
   }
   
-  .select-a-box {
+  .selectAbox {
     width: 272px;
     height: 276px;
     margin-top: 30px;
@@ -68,7 +68,7 @@
     box-shadow: 0 2px 7px rgba(0, 0, 0, 0.3);
   }
 
-  .select-b-box {
+  .selectBbox {
     width: 272px;
     height: 276px;
     margin-top: 30px;
@@ -81,7 +81,7 @@
     box-shadow: 0 2px 7px rgba(0, 0, 0, 0.3);
   }
   
-  .show-result-box{
+  .show-ResultBox{
     margin: 0 auto;
     display:flex;
     justify-content: space-around;
@@ -92,7 +92,7 @@
   }
 
 
-  .show-result-btn{
+  .showResultBtn{
     background-color: #4bffb2;
     text-align: center;
     font-size: 1em;
@@ -109,11 +109,11 @@
   
  /*결과*/
  
-.result-page{
+.resultPage{
   display:none;
 }
 
- .result-answer{
+ .resultAnswer{
   width: 70%;
   margin:auto;
   text-align: center;
@@ -125,7 +125,7 @@
 }
 
 
- .result-title {
+ .resultTitle {
   width: 70%;
   margin:100px auto 50px auto;
   text-align: center;
@@ -135,7 +135,7 @@
   font-style: normal;
   line-height: 38px;
 }
-.result-select-box{
+.resultSelectBox{
   margin: 0 auto;
   display:flex;
   justify-content: space-around;
@@ -145,7 +145,7 @@
 }
 
 
-.result-box{
+.resultBox{
   margin:50px auto 150px auto;
   border-radius: 81px;
   border: none;
@@ -153,7 +153,7 @@
   height: 30%;
 }
 
-.shopping-btn{
+.shoppingBtn{
   background-color: #FFD74B;
   text-align: center;
   font-size: 1em;
@@ -162,15 +162,15 @@
   height:40px;
 }
 
-.select-a-box.select{
+.selectBbox.select{
   background-color: beige;
 }
 
 
-.select-b-box.select{
+.selectBbox.select{
   background-color: beige;
 }
-.try-again-btn{
+.tryAgainBtn{
   background-color: #D9D9D9;
   text-align: center;
   font-size: 1em;
