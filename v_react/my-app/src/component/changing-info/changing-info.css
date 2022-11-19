@@ -1,0 +1,145 @@
+
+/* common property */
+
+/*계정관리*/
+
+#administer{
+  margin: 0 auto;
+  max-width: 1240px;
+}
+.information{
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.change-user-form-container {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+    padding: 20px 40px;
+    border-top: 1px solid #454DBC;
+
+
+}
+
+
+.change-user-form-box {
+  width: 700px;
+  margin: auto;
+}
+
+
+/*정보*/
+.field {
+
+    display: flex;
+    justify-content: space-between;
+    white-space:nowrap;
+    align-items: center;
+    margin: 15px 0;
+
+  padding-bottom: 20px;
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 27px;
+}
+
+/*정보 넣는 곳*/
+.control .input{
+  
+  width: 657px;
+  height: 52px;
+  background-color: #F7F7FF;
+  border-radius: 9px;
+  margin-left: 20px;
+  padding-left: 10px;
+  
+ font-family: 'Ultra';
+ font-style: normal;
+ font-weight: 400;
+ font-size: 20px;
+ line-height: 26px;
+}
+
+.label{
+  min-width: 100px;
+}
+
+
+.field-second {
+  margin-bottom: 10px;
+  padding-bottom: 3px;
+}
+
+.button-address {
+  align-items: center;
+  background-color: #454DBC;
+  border-radius: 4px;
+  box-shadow: none;
+  display: inline-flex;
+  font-size: 1rem;
+  height: 52px;
+  position: relative;
+  vertical-align: top;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#addressInput {
+  display: inline-flex;
+  width: 550px;
+  margin-right: 25px;
+  margin-bottom: 0px;
+}
+
+.address1Input {
+  margin-left:100px;
+}
+
+
+.change-user-form-box .button{
+  width: 187px;
+  height: 51px;
+  margin-top: 30px;
+  margin-left: 110px;
+  border-radius: 81px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  color: black;
+}
+
+#exitButton{
+   background-color: #D9D9D9;
+}
+
+.saveCompleteButton{
+    background-color: #FFD84B;
+ }
+
+
+.change-user-form-box .input:focus {
+  border-color: #00d1b2;
+  box-shadow: 0 0 0 0.125em rgba(0, 209, 178, 0.25);
+}
+
+/* 모달(Modal) 창 관련 */
+.modal-content button.delete {
+  position: absolute;
+  right: 3px;
+  top: 3px;
+  background: transparent;
+}
+
+.modal-content button.delete::before,
+.modal-content button.delete::after {
+  background-color: black;
+}
+

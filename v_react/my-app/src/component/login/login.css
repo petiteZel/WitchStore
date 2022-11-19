@@ -1,0 +1,84 @@
+
+/* common property */
+
+/* 배경 - 시간되면 넓게 이미지 만들기*/
+.background-image{
+  background-image: url("../image/stars.png");
+  width: 100%;
+  height: 688px;
+  
+}
+
+/* 로그인 */
+
+.login-form-container {
+  display: flex;
+  border-radius: 81px;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  height: 502px;
+  background-color: #454DBC;
+  box-shadow: #454ebc 0px 6px 24px 2px;
+  margin: auto;
+}
+
+.login-form-box {
+  width: 400px;
+  margin: auto;
+}
+
+/*welcome*/
+.login-form-box .title {
+  text-align: center;
+  margin-bottom: 35px;
+  color: #FFD84B;
+  font-family: 'Ultra';
+  font-style: normal;
+  font-size: 30px;
+  line-height: 38px;
+
+}
+
+/*아이디, 비번*/
+.field {
+
+  padding-bottom: 40px;
+
+  font-family: 'Ultra';
+  font-style: normal;
+  font-size: 20px;
+  line-height: 26px;
+}
+
+/*아이디, 비번 넣는 곳*/
+.control .input{
+  width: 400px;
+  height: 66px;
+  background-color: #F7F7FF;
+  border-radius: 9px;
+  padding-left: 10px;
+
+  
+ font-family: 'Ultra';
+ font-style: normal;
+ font-weight: 400;
+ font-size: 20px;
+ line-height: 26px;
+}
+
+/*로그인 버튼*/
+.login-form-box .button {
+  width: 187px;
+  height: 51px;
+  margin-top: 30px;
+  margin-left: 110px;
+  border-radius: 81px;
+  background-color: #FFD84B;
+  text-align: center;
+  font-size: 20px;
+  color: black;
+}
+
+
+/*로그인 end*/

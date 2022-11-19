@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>심리 테스트</title>
+    
+    <!-- 폰트 어썸: 아이콘 -->
+    <script
+      defer
+      src="https://kit.fontawesome.com/9daa42bcef.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- 구글 OAuth -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <!-- 카카오 OAuth -->
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <!-- 커스텀 css, js -->
+    <link rel="stylesheet" href="register.css" />
+    <script src="register.js" type="module" defer></script>
+
+    <!--header,footer css-->
+    <link rel="stylesheet" href="../common/component/header/common-header.css">
+    <link rel="stylesheet" href="../common/component/footer/footer.css">
+    <script defer src="../common/component/common-include.js"></script>
+    <script src="../common/component/header/header.js" type="module" defer></script>
+
+    
+    <!--common css-->
+    <link rel="stylesheet" href="../common/component/css/common.css">
+    
+  </head>
+  <body>
+    <header common-include="../common/component/header/common-header.html"></header>
+
+      </div> 
+  </header><!-- header end -->
+
+  <main id="login-area">
+      <!-- 배경 별 -->
+    <div class="background-image">
+    <!-- 회원가입 폼(Form) -->
+    <div class="register-user-form-container">
+      <form class="box register-user-form-box" id="registerUserForm">
+        <p class="title en">Welcome!</p>
+        <div class="field">
+          <label class="label en" for="fullNameInput">name</label>
+          <div class="control">
+            <input
+              class="input"
+              id="fullNameInput"
+              type="text"
+              placeholder="유재석"
+              autocomplete="on"
+            />
+          </div>
+        </div>
+        
+        <div class="field">
+          <label class="label en" for="emailInput">email</label>
+          <div class="control">
+            <input
+              class="input"
+              id="emailInput"
+              type="email"
+              placeholder="abc@example.com"
+              autocomplete="on"
+            />
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label en" for="passwordInput">password</label>
+          <div class="control">
+            <input
+              class="input"
+              id="passwordInput"
+              type="password"
+              placeholder="********"
+              autocomplete="off"
+            />
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label en" for="passwordConfirmInput">password confirm</label>
+          <div class="control">
+            <input
+              class="input"
+              id="passwordConfirmInput"
+              type="password"
+              placeholder="********"
+              autocomplete="off"
+            />
+          </div>
+        </div>
+        <!--회원가입 완료 정상적으로 되면 login 페이지로 이동-->
+        <button class="button en" id="submitButton">
+          sign up!
+        </button>
+      </form>
+      </div>
+
+   </div>
+ </main>
+ <!-- main end -->
+     <!-- main end -->
+
+     <footer common-include="../common/component/footer/footer.html"></footer>
+
+  </body>
+</html>
