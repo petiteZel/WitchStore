@@ -1,0 +1,87 @@
+
+/* 배경 - 시간되면 넓게 이미지 만들기*/
+.background-image{
+  background-image: url("../image/stars.png");
+  width: 100%;
+  height: 688px;
+  
+}
+
+
+/*회원가입*/
+
+.register-user-form-container {
+  display: flex;
+  border-radius: 81px;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  height: 675px;
+  background-color: #454DBC;
+  box-shadow: #454ebc 0px 6px 24px 2px;
+  margin: auto;
+}
+
+.register-user-form-box {
+  width: 400px;
+  margin: auto;
+}
+
+.register-user-form-box .title {
+  text-align: center;
+  margin-bottom: 35px;
+  color: #FFD84B;
+  font-family: 'Ultra';
+  font-style: normal;
+  font-size: 30px;
+  line-height: 38px;
+}
+
+/*정보*/
+.field {
+
+  padding-bottom: 20px;
+
+  font-family: 'Ultra';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 26px;
+}
+
+
+/*정보 넣는 곳*/
+.control .input{
+  width: 400px;
+  height: 66px;
+  background-color: #F7F7FF;
+  border-radius: 9px;
+  padding-left: 10px;
+  
+ font-family: 'Ultra';
+ font-style: normal;
+ font-weight: 400;
+ font-size: 20px;
+ line-height: 26px;
+}
+
+
+.register-user-form-box .button {
+  width: 187px;
+  height: 51px;
+  margin-top: 30px;
+  margin-left: 110px;
+  border-radius: 81px;
+  background-color: #FFD84B;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  color: black;
+}
+
+.register-user-form-box .input:focus {
+  border-color: #00d1b2;
+  box-shadow: 0 0 0 0.125em rgba(0, 209, 178, 0.25);
+}
+
+/*회원가입 end*/
