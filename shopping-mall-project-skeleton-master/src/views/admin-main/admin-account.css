@@ -1,0 +1,77 @@
+
+/* common property */
+
+/* main(container) */
+
+.admin-webservice-main{
+    margin: 0 auto;
+    max-width: 1240px;
+  }
+  
+  .admin-webservice{
+    display: block;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: #454DBC 1px solid;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+  
+  
+  /* 계정관리 관련 메뉴 */
+  .menu-container {
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  .fa-solid, .fas {
+    font-weight: 900;
+    color: #FFD84B;
+  }
+  
+  .menu-card {
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    font-size: 1.25rem;
+    padding: 0.5rem;
+    background-color: #454DBC;
+  
+  }
+  
+  .menu-card:hover {
+    background-color: #edf7f7;
+  
+  }
+  
+  .menu-body:hover {
+    color: #454DBC;
+  }
+  
+  .menu-icon {
+    margin: 0 2rem;
+    padding: 1rem;
+    font-size: 3.5rem;
+  }
+  
+  .menu-body {
+    border-radius: 6px;
+    color: #edf7f7;;
+    font-size: 1.25em;
+    padding: 1em;
+    flex-grow: 1;
+  }
+  
+  .menu-body .title {
+    margin-bottom: 1rem;
+  }
+  
+  .title:not(.is-spaced) + .subtitle {
+    margin-top: 1rem;
+  }
+    
+    
+      

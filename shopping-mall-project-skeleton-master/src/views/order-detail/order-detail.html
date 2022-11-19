@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="order-detail.css">
+    <!-- header, footer css -->
+    <link rel="stylesheet" href="../common/component/header/common-header.css">
+    <link rel="stylesheet" href="../common/component/footer/footer.css">
+    <script defer src="../common/component/common-include.js"></script>
+    <script
+      src="../common/component/header/header.js"
+      type="module"
+      defer
+      ></script>
+    <!-- header, footer css -->
+    <script defer src="order-detail.js"></script>
+    <script defer src="https://kit.fontawesome.com/d1371e05f7.js" crossorigin="anonymous"></script>
+    <title>The Witch Store</title>
+</head>
+<body>
+
+    <header common-include="../common/component/header/common-header.html"></header>
+
+    <main class="order-detail">
+        <section class="track-package">
+            <div class="track-package-container">
+
+                <h2 class="track-package-title">상품 현황</h2>
+
+                <div class="track-package-icons">
+                    <i class="fa-solid fa-box-open yellow"></i>
+                    <i class="fa-solid fa-truck-fast yellow"></i>
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+
+                <div class="track-package-bar">
+                    <div class="basic-bar"></div>
+                    <div class="progress-bar"></div>
+                </div>
+
+                <div class="track-package-contents">
+                    <p>상품 준비중</p>
+                    <p>배송 중</p>
+                    <p>배송 완료</p>
+                </div>
+
+            </div>
+        </section>
+        
+        <section class="order-detail-list">
+            <div class="order-detail-list-container">
+    
+                <h3 class="order-detail-list-title">주문내역</h3>
+    
+                <div class="order-product-box" id="ordersContainer">
+                        <!-- 결제한 상품들의 html 요소(카드 형태)가 주입되는 곳 -->
+                    <div class="order-product" id="productItem-${_id}">
+                        <figure class="product-img">
+                            <img id="image-${_id}" src="${imageUrl}"alt="product-image"/>
+                        </figure>
+
+                        <p class="product-name" id="title-${_id}">${compressString(title)}</p>
+                        <p class="count-number" id="quantityInput-${_id}">1</p>
+                        <p class="product-price" id="total-${_id}">${addCommas(quantity * price)}원</p>
+                    </div>
+                </div>
+
+                <div class="order-detail-price">
+                    <span>합계</span>
+                    <span class="sum-price">54,000</span>
+                </div>
+
+            </div>
+        </section><!-- cart end -->
+
+        <section class="orderer-info">
+            <div class="orderer-info-container">
+    
+                <h3 class="orderer-info-title">주문자 정보</h3>
+    
+                <div class="oderer-info-box">
+                    <div class="orderer-info-list-box">
+    
+                        <div class="orderer-info-title">
+                            <p>이름</p>
+                            <p>전화번호</p>
+                            <p>주소</p>
+                        </div>
+    
+                        <div class="orderer-info-contetns">
+                            <p class="name">User</p>
+                            <p class="phon-number">010-0000-0000</p>
+                            <p class="adress">서울 성동구 아차산로 17길 48 성수낙낙</p>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+        </section><!-- oderer info end -->
+    
+        <section class="order-cancle">
+            <button class="order-cancle-btn">주문 취소하기</button>
+        </section>
+
+    </main>
+
+    <footer common-include="../common/component/footer/footer.html"></footer>
+    
+</body>
+</html>

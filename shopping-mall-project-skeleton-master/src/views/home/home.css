@@ -1,0 +1,199 @@
+
+
+html{
+  width: 100%;
+}
+body{
+  font-family: 'Noto Sans',sans-serif;
+  color: #FFD74B;
+
+  background-color: #454DBC;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.header{
+  width: 100%;
+}
+
+
+
+
+
+.div-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100vw;
+  height: 700px;
+  
+  font-family: "Ultra", serif;
+  font-weight: lighter;
+
+}
+.background {
+  background-image: url("../image/bg_unit.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 690px;
+  
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome-box{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  
+  font-size: 35px;
+  
+  height: 50%;
+  color:#FFD84B;
+  margin-bottom: 5%;
+}
+
+.home-title-first{
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  margin: 0;
+  padding: 0;
+  
+}
+.home-title-first-text{
+  display: flex;
+  margin: 0;
+  padding: 0;
+  
+}
+.home-title-first-text > h1{
+  line-height:130%;
+  font-weight: lighter;
+  
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+}
+
+.welcome-img{
+  display: flex;
+  height: 90%;
+}
+.home-title-second{
+  margin: 0;
+}
+
+.btn-box{
+  display: flex;
+  justify-content: center;
+  
+  width: 60%;
+  height: 15%;
+}
+
+.btn{
+  border-radius: 81px;
+  border: none;
+  width: 30%;
+  height: 80%;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* 심리테스트 활성화 -> none 제거 */
+#test-btn{
+  display: block;
+  background-color: #FFD74B;
+  color: black;
+  margin-right: 5%;
+}
+#test-btn:hover{
+  background-color: black;
+  color: #FFD74B;
+}
+
+
+#shop-btn{
+  color: #1E1E1E;
+  background-color: #D9D9D9;
+}
+#shop-btn:hover{
+  background-color: black;
+  color: #d9d9d9;
+}
+
+.div-footer{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+
+/*
+헤더 애니메이션 (삭제 예정)
+
+a{
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+}
+
+.navbar-item{
+  color: #FFD74B;
+}
+.navbar{
+  font-size: 20px;
+  background-color:transparent;
+  width: 100%;
+  position: absolute;
+  top: 0;
+}
+
+.container.mt-3{
+  color: #FFD74B;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 100px;
+}
+
+#navbar{
+  font-size: 20px;
+  color: white;
+  display: flex;
+  width: 300px;
+  justify-content: space-between;
+  list-style: none;
+}
+
+
+
+
+.navbar.drop{
+  position: fixed;
+  animation: dropfix 0.3;
+}
+
+@keyframes dropfix {
+  0% {
+    top: -5rem;
+  }
+  100% {
+    top : 0;
+  }
+} */

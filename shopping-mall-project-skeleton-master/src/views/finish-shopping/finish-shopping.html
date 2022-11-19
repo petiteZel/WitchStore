@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+   
+    <link rel="stylesheet" href="finish-shopping.css" />
+    <!-- 폰트어썸 -->
+    <script src="https://kit.fontawesome.com/b541613f7c.js" crossorigin="anonymous"></script>
+
+     <!--header,footer css-->
+     <link rel="stylesheet" href="../common/component/header/common-header.css">
+     <link rel="stylesheet" href="../common/component/footer/footer.css">
+     <script defer src="../common/component/common-include.js"></script>
+     <script src="../common/component/header/header.js" type="module" defer></script>
+
+    <!--common css-->
+    <link rel="stylesheet" href="../common/component/css/common.css">
+
+    <title>주문완료</title>
+  </head>
+  <body>
+   
+    <header common-include="../common/component/header/common-header.html"></header>
+
+     <!-- 중앙페이지-->
+        <div class="main"> <!-- main 간격 조정하면 finish text도 조정됨.-->
+          <div class="finish_text">
+              <h1> 주문이 정상적으로 완료되었습니다!</h1>
+              <i class="fa-solid fa-basket-shopping fa-11x" ></i>
+          </div>
+          <div class="btn-box">
+            <button class="check-btn btn-second" id="check-btn" onclick="location.href='/order-detail/order-detail.html';">주문 조회 바로가기</button>
+            <button class="main-btn btn-second" id="home-btn" onclick="location.href='/product-list/product.html';">메인 홈으로 이동</button>
+        </div>
+        </div>
+      </div>
+      
+      <footer common-include="../common/component/footer/footer.html"></footer>
+      
+  </body> 
+</html>

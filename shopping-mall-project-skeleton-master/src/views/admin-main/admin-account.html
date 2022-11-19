@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+   
+    <link rel="stylesheet" href="admin-webservice.css" />
+    <!-- 폰트어썸 -->
+    <script src="https://kit.fontawesome.com/b541613f7c.js" crossorigin="anonymous"></script>
+
+     <!--header,footer css-->
+     <link rel="stylesheet" href="../common/component/header/common-header.css">
+     <link rel="stylesheet" href="../common/component/footer/footer.css">
+     <script defer src="../common/component/common-include.js"></script>
+     <script src="../common/component/header/header.js" type="module" defer></script>
+
+    <!--common css-->
+    <link rel="stylesheet" href="../common/component/css/common.css">
+    <script defer src="admin-main.js"></script>
+
+    <title>관리자 계정관리</title>
+  </head>
+  <body>
+   
+    <header common-include="../common/component/header/common-header.html"></header>
+
+    <main class="admin-webservice-main">
+     <!-- 중앙페이지-->
+        <div class="main"> <!-- main 간격 조정하면 finish text도 조정됨.-->
+          <div class="admin-webservice">
+              <h3> 계정관리 </h3>
+          </div>
+
+          <div class="menu-container">
+            <!-- 주문조회 -->
+            <a class="menu-card" href="/admin-order-check/admin-order-check.html">
+              <div class="menu-icon">
+                <span class="icon has-text-info">
+                  <i class="fa-solid fa-credit-card"></i>
+                </span>
+              </div>
+              <div class="menu-body">
+                <p class="title">주문조회</p>
+                <p class="subtitle">
+                  지난 주문 내역을 확인, 취소할 수 있습니다.
+                </p>
+              </div>
+            </a>
+  
+            <!-- 회원정보관리 -->
+            <a class="menu-card" href="/admin-users/admin-users.html">
+              <div class="menu-icon">
+                <span class="icon has-text-info">
+                  <i class="fa-solid fa-address-book"></i>
+                </span>
+              </div>
+              <div class="menu-body">
+                <p class="title">회원정보 관리</p>
+                <p class="subtitle">
+                  모든 회원 정보를 확인 및 수정할 수 있습니다.
+                </p>
+              </div>
+            </a>
+  
+            <!-- 제품판매 -->
+            <a class="menu-card" href="/add-product/add-product.html">
+              <div class="menu-icon">
+                <span class="icon has-text-info">
+                  <i class="fa-solid fa-table-list"></i>
+                </span>
+              </div>
+              <div class="menu-body">
+                <p class="title">제품판매</p>
+                <p class="subtitle">
+                  제품 정보를 등록하여, 판매를 시작할 수 있습니다.
+                </p>
+              </div>
+            </a>
+          </div>
+      
+      <footer common-include="../common/component/footer/footer.html"></footer>
+    </main>
+  </body> 
+</html>
