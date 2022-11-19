@@ -1,0 +1,54 @@
+.sideBar {
+    width: 18%;
+    min-height: 1000px;
+    border-right: 1px solid #454dbc;
+  
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 54px;
+  }
+  
+  .menu {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+  }
+  
+  .menu > li {
+    margin-bottom: 50px;
+  }
+  
+  .menuBtn {
+    display: none;
+  }
+  .labelBtn {
+    cursor: pointer;
+  }
+  
+  .submenu {
+    display: none;
+    list-style: none;
+  
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 24px;
+    line-height: 33px;
+  }
+  
+  .submenu > li {
+    margin-top: 50px;
+  }
+  
+  /* 메뉴 카테고리 클릭시 애니메이션 */
+  #menuBtn1:checked ~ #submenu1 {
+    display: block;
+  }
+  #menuBtn1:checked ~ .labelBtn > i {
+    transform: rotate(90deg);
+  }
+  #menuBtn2:checked ~ #submenu2 {
+    display: block;
+  }
+  #menuBtn2:checked ~ .labelBtn > i {
+    transform: rotate(90deg);
+  }

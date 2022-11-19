@@ -2,6 +2,7 @@ import * as Api from "../api.js"
 
 import React from "react";
 import style from "./product-detail.module.css"
+import SideBar from '../side-bar/side-bar';
 
 function ProductDetail(){
     return (
@@ -11,7 +12,7 @@ function ProductDetail(){
 					</div>
 					
 					<div className={style.container}>
-						{/* <div className="sideBar" commonInclude="../common/component/sideBar/sideBar.html"></div> */}
+						<SideBar />
 
 						<div className={style.productList}>
 							<div className={style.detailItemContainer}>

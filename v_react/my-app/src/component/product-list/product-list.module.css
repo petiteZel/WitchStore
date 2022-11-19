@@ -61,7 +61,7 @@ header {
 
 /*side-bar*/
 
-.side-bar {
+/* .side-bar {
   width: 18%;
   min-height: 1000px;
   border-right: 1px solid #454dbc;
@@ -102,7 +102,7 @@ header {
   margin-top: 50px;
 }
 
-/* 메뉴 카테고리 클릭시 애니메이션 */
+/* 메뉴 카테고리 클릭시 애니메이션 
 #menu-btn1:checked ~ #submenu1 {
   display: block;
 }
@@ -114,7 +114,7 @@ header {
 }
 #menu-btn2:checked ~ .label-btn > i {
   transform: rotate(90deg);
-}
+} */
 
 /* footer */
 /* .footer {
