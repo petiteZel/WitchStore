@@ -1,0 +1,90 @@
+footer {
+  height: 0;
+}
+
+.main {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+
+  background-image: url("../image/stars.png");
+}
+
+.main .container-form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main .container-form .addbox {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+
+  background-color: #454dbc;
+  box-shadow: #454ebc 0px 6px 24px 2px;
+  border-radius: 50px;
+  padding: 10px;
+}
+
+.main .container-form .addbox .contents-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 50px;
+}
+
+.main .container-form .addbox .contents-box P {
+  color: #ffd84b;
+  font-weight: 700;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.main .container-form .addbox .contents-box .field {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  margin: 10px;
+}
+
+.main .container-form .addbox .contents-box .field .info-content {
+  width: 100%;
+  height: 50px;
+  background-color: #f7f7f7;
+  margin-top: 10px;
+  padding: 15px;
+
+  border-radius: 9px;
+  border: none;
+}
+
+.main .container-form .addbox .contents-box .field .info-content.textarea {
+  min-height: 200px;
+  resize: none;
+}
+
+.main .container-form .addbox .button-space {
+  background-color: #ffd84b;
+  height: 51px;
+  border-radius: 81px;
+  margin: 0 50px 50px 50px;
+  text-align: center;
+  color: #272727;
+}
+
+.main .container-form .addbox .button-space .submit-button {
+  width: 100%;
+  height: 100%;
+  font-size: 20px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.main .container-form .addbox .button-space:hover {
+  color: #ffd84b;
+  background-color: #272727;
+}
