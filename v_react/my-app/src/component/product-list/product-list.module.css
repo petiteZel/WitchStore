@@ -44,7 +44,7 @@ header {
 
 /* main(container) */
 
-.product-list {
+.productList {
   width: 100%;
   min-height: 1000px;
 }
@@ -165,13 +165,13 @@ header {
   font-size: 20px;
 }
 
-.product-item-container {
+.productItemContainer {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
 }
 
-.product-item {
+.productItem {
   margin-top: 3%;
   padding-top: 2%;
   margin-left: 3%;
@@ -181,7 +181,7 @@ header {
   text-align: center;
 }
 
-.product-item-img {
+.productItemImg {
   width: 90%;
   height: 230px;
 
@@ -193,6 +193,6 @@ img {
   height: 100%;
 }
 
-.product-item-info {
+.productItemInfo {
   margin-top: 5%;
 }

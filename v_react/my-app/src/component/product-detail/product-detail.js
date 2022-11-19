@@ -1,9 +1,88 @@
 import * as Api from "../api.js"
 
-async function productDetail(){
+import React from "react";
+import style from "./product-detail.module.css"
+
+function ProductDetail(){
+    return (
+        <div className={style.containerBox}>
+					<div className={`${style.brandTitle} ${style.en}`}>
+						<a className={style.brandLogo} href='../home/home.html'>THE WITCH STORE</a>
+					</div>
+					
+					<div className={style.container}>
+						{/* <div className="sideBar" commonInclude="../common/component/sideBar/sideBar.html"></div> */}
+
+						<div className={style.productList}>
+							<div className={style.detailItemContainer}>
+
+								<div className={style.detailItemImg}>
+									<img src="" />
+								</div>
+								<div className={style.detailItemInfo}>
+									<div className={style.store}><h3>brand</h3></div>
+									
+									<div className={style.itemInfo}>
+											<div className={style.infoBox} id={style.itemName}>
+													<div className={style.infoTitle}>상품명</div>
+													<div className={style.infoContent}>productName</div>
+											</div>
+
+											<div className={style.infoBox} id={style.itemInfoDetail}>
+													<div className={style.infoTitle}>한 줄 소개</div>
+													<div className={style.infoContent}>
+															shortDescription
+													</div>
+											</div>
+											<div className={style.infoBox}>
+													<div className={style.infoTitle}>상세 설명</div>
+													<div className={style.infoContent}>
+															detailDescription
+													</div>
+											</div>
+									</div>
+									
+									<div className={style.itemInfo}>
+											<div className={style.infoBox} id={style.itemPrice}>
+													<div className={style.infoTitle}>가격</div>
+													<div className={style.infoContent}>price</div>
+											
+													<div className={style.count}>
+															<button className={style.plusBtn}>
+																	<i className="fa-solid fa-circle-plus" id={style.plus}></i>
+																	</button>
+																	<div id={style.countNumber}> 0 </div>
+																	<button className={style.minusBtn}>
+																	<i className="fa-solid fa-circle-minus"></i>
+															</button>
+													</div>
+											</div>
+									</div>
+									
+									<div className={style.itemInfo}>
+											<div className={style.infoBox} id={style.totalPrice}>
+													<div className={style.infoTitle}>합계</div>
+													<div className={`${style.infoContent} ${style.totalPrice}`}> 0 </div>
+											</div>
+									</div>
+									
+									<div className={style.cartBtnBox}>
+											<button className={style.cartBtn}>장바구니 담기</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+        </div>
+    )
+}
+
+export default ProductDetail;
+
+async function rendingDetail(){
     const products = await Api.get('/api/product');
-    const detailContainer = document.querySelector('.detail-item-container');
-    const urlSearch = new URLSearchParams(location.search);
+    const detailContainer = document.querySelector('.detailItemContainer');
+    const urlSearch = new URLSearchParams(window.location.search);
     const itemId = urlSearch.get("productId")
     
     function findData(it,itemId){
@@ -24,65 +103,65 @@ async function productDetail(){
         personType,
     } = selectItem
     
-    detailContainer.innerHTML = `<div class="detail-item-img">
+    detailContainer.innerHTML = `<div className={style.detailItemImg}>
     <img src="${image}" />
   </div>
-  <div class="detail-item-info">
-    <div class="store"><h3>${brand}</h3></div>
+  <div className={style.detailItemInfo}>
+    <div className={style.store}><h3>${brand}</h3></div>
     
-    <div class="item-info">
-        <div class="info-box" id="item-name">
-            <div class="info-title">상품명</div>
-            <div class="info-content">${productName}</div>
+    <div className={style.itemInfo}>
+        <div className={style.infoBox} id={style.itemName}>
+            <div className={style.infoTitle}>상품명</div>
+            <div className={style.infoContent}>${productName}</div>
         </div>
 
-        <div class="info-box" id="item-info-detail">
-            <div class="info-title">한 줄 소개</div>
-            <div class="info-content">
+        <div className={style.infoBox} id={style.itemInfoDetail}>
+            <div className={style.infoTitle}>한 줄 소개</div>
+            <div className={style.infoContent}>
                 ${shortDescription}
             </div>
         </div>
-        <div class="info-box">
-            <div class="info-title">상세 설명</div>
-            <div class="info-content">
+        <div className={style.infoBox}>
+            <div className={style.infoTitle}>상세 설명</div>
+            <div className={style.infoContent}>
                 ${detailDescription}
             </div>
         </div>
     </div>
     
-    <div class="item-info">
-        <div class="info-box" id="item-price">
-            <div class="info-title">가격</div>
-            <div class="info-content">${price.toLocaleString('ko-KR')}</div>
+    <div className={style.itemInfo}>
+        <div className={style.infoBox} id={style.itemPrice}>
+            <div className={style.infoTitle}>가격</div>
+            <div className={style.infoContent}>${price.toLocaleString('ko-KR')}</div>
         
-            <div class="count">
-                <button class="plus-btn">
-                    <i class="fa-solid fa-circle-plus" id='plus'></i>
+            <div className={style.count}>
+                <button className="plusBtn">
+                    <i className="fa-solid faCirclePlus" id={style.plus}></i>
                     </button>
-                    <div id="count-number"> 0 </div>
-                    <button class="minus-btn">
-                    <i class="fa-solid fa-circle-minus"></i>
+                    <div id={style.countNumber}> 0 </div>
+                    <button className={style.minusBtn}>
+                    <i className="fa-solid faCircle-minus"></i>
                 </button>
             </div>
         </div>
     </div>
     
-    <div class="item-info">
-        <div class="info-box" id="total-price">
-            <div class="info-title">합계</div>
-            <div class="info-content total-price"> 0 </div>
+    <div className={style.itemInfo}>
+        <div className={style.infoBox} id={style.totalPrice}>
+            <div className={style.infoTitle}>합계</div>
+            <div className={${style.infoContent} ${style.totalPrice}}> 0 </div>
         </div>
     </div>
     
-    <div class="cart-btn-box">
-        <button class="cart-btn">장바구니 담기</button>
+    <div className={style.cartBtnBox}>
+        <button className={style.cartBtn}>장바구니 담기</button>
     </div>`
 
-    const cartBtn = document.querySelector('.cart-btn')
-    const plusBtn = document.querySelector('.plus-btn')
-    const minusBtn = document.querySelector('.minus-btn')
-    const amount = document.querySelector('#count-number')
-    const totalPrice = document.querySelector('.total-price')
+    const cartBtn = document.querySelector('.cartBtn')
+    const plusBtn = document.querySelector('.plusBtn')
+    const minusBtn = document.querySelector('.minusBtn')
+    const amount = document.querySelector('#countNumber')
+    const totalPrice = document.querySelector('.totalPrice')
 
     if (amount.innerHTML == 0){
         minusBtn.disabled = true;
@@ -168,8 +247,8 @@ if (amount ===0){
         alert(`물건을 수량을 선택해주세요`)
     }else{
         localStorage.setItem(index, JSON.stringify(value)); 
-        if(confirm("장바구니로 이동하시겠습니까?")){
-            location.href='/cart/cart.html'
+        if(window.confirm("장바구니로 이동하시겠습니까?")){
+            window.location.href='/cart/cart.html'
         }
     }
 }
@@ -185,5 +264,5 @@ async function sidBar(){
 
 
 
-productDetail();
-sidBar();
+// rendingDetail();
+// sidBar();
