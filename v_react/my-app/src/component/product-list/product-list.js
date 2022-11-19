@@ -2,14 +2,15 @@ import * as Api from "../api.js";
 
 import React from "react";
 import style from "./product-list.module.css"
+import SideBar from '../side-bar/side-bar';
 
 function ProductList() {
   return(
     <div className={style.containerBox}>
-      <div className={`${style.brandTitle} ${style.en}`}><a className={style.brandLogo} href='../home/home.html'>THE WITCH STORE</a></div>
+      <div className={`${style.brandTitle} ${style.en}`}><a className={style.brandLogo} href='/'>THE WITCH STORE</a></div>
 
       <div className={style.container}>
-        {/* <div className="side-bar" common-include="../common/component/side-bar/side-bar.html"></div> */}
+        <SideBar />
         
         {/* <!-- db 받아와야함 --> */}
         <div className={style.productList}>
