@@ -1,22 +1,63 @@
 import * as Api from "../api.js";
-// import { products } from "./product-data.js"
+
 import React from "react";
 import style from "./product-list.module.css"
+import SideBar from '../side-bar/side-bar';
 
 function ProductList() {
   return(
-    <div class="containerBox">
-      <div class="brandTitle en"><a class="brandLogo" href='../home/home.html'>THE WITCH STORE</a></div>
+    <div className={style.containerBox}>
+      <div className={`${style.brandTitle} ${style.en}`}><a className={style.brandLogo} href='/'>THE WITCH STORE</a></div>
 
-      <div class="container">
-        {/* <div class="side-bar" common-include="../common/component/side-bar/side-bar.html"></div> */}
+      <div className={style.container}>
+        <SideBar />
         
         {/* <!-- db 받아와야함 --> */}
-        <div class="product-list">
+        <div className={style.productList}>
 
-          <div class="category"></div>
+          <div className={style.category}></div>
           
-          <div class="product-item-container">
+          <div className={style.productItemContainer}>
+
+
+            {/*  */}
+            <div className={style.productItem}>
+              <a>
+                <div className={style.productItemImg}><img src="..\image\pilot.png" /></div>
+                <div className={style.productItemInfo}>
+                  <div className={style.productItemName}>productName</div>
+                  <div className={style.productItemPrice}>price</div>
+                </div>
+              </a>
+            </div>
+            <div className={style.productItem}>
+              <a>
+                <div className={style.productItemImg}><img src="..\image\pilot.png" /></div>
+                <div className={style.productItemInfo}>
+                  <div className={style.productItemName}>productName</div>
+                  <div className={style.productItemPrice}>price</div>
+                </div>
+              </a>
+            </div>
+            <div className={style.productItem}>
+              <a>
+                <div className={style.productItemImg}><img src="..\image\pilot.png" /></div>
+                <div className={style.productItemInfo}>
+                  <div className={style.productItemName}>productName</div>
+                  <div className={style.productItemPrice}>price</div>
+                </div>
+              </a>
+            </div>
+            <div className={style.productItem}>
+              <a>
+                <div className={style.productItemImg}><img src="..\image\pilot.png" /></div>
+                <div className={style.productItemInfo}>
+                  <div className={style.productItemName}>productName</div>
+                  <div className={style.productItemPrice}>price</div>
+                </div>
+              </a>
+            </div>
+            {/*  */}
           </div>
 
 
@@ -31,7 +72,7 @@ export default ProductList;
 async function productList() {
   const productContainer = document.querySelector(".product-item-container");
   const products = await Api.get('/api/product')
-  const urlSearch = new URLSearchParams(location.search);
+  const urlSearch = new URLSearchParams(window.location.search);
   const categoryId = urlSearch.get("category");
   const typeId = urlSearch.get("personType");
   console.log(typeId)
@@ -50,12 +91,12 @@ async function productList() {
         description,
         personType,
       } = product;
-      productContainer.innerHTML += `<div class="product-item">
+      productContainer.innerHTML += `<div className="productItem">
                 <a href="../product-detail/product-detail.html?productId=${_id}">
-                  <div class="product-item-img"><img src="${image}" /></div>
-                  <div class="product-item-info">
-                  <div class="product-item-name">${productName}</div>
-                    <div class="product-item-price">${price}</div>
+                  <div className="productItemImg"><img src="${image}" /></div>
+                  <div className="productItemInfo">
+                  <div className="productItemName">${productName}</div>
+                    <div className="productItemPrice">${price}</div>
                   </div>
                   </a>
                   </div>`;
@@ -102,10 +143,10 @@ async function sidBar(){
   }
 };
 
-setTimeout(()=>sidBar(),500)
+// setTimeout(()=>sidBar(),500)
 
-try{
-  productList();
-}catch(err){
-  alert('불러오기: ',err.message)
-}
+// try{
+//   productList();
+// }catch(err){
+//   alert('불러오기: ',err.message)
+// }
