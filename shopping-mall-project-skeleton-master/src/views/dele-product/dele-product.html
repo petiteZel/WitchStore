@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../admin-users/admin-users.css" />
+    <link
+      rel="stylesheet"
+      href="../common/component/header/common-header.css"
+    />
+    <link rel="stylesheet" href="../common/component/footer/footer.css" />
+    <!-- js -->
+    <script defer src="../common/component/common-include.js"></script>
+    <script
+      src="../common/component/header/header.js"
+      type="module"
+      defer
+    ></script>
+    <script src="./dele-product.js" type="module" defer></script>
+    <script
+      defer
+      src="https://kit.fontawesome.com/d1371e05f7.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>The Witch Store</title>
+  </head>
+  <body>
+    <header
+      common-include="../common/component/header/common-header.html"
+    ></header>
+
+    <section class="admin-order-management">
+      <div class="container">
+        <div class="title">
+          <h3 class="title__txt">상품 관리</h3>
+        </div>
+
+        <div class="info-container">
+          <div class="order-total">
+            <div class="item">
+              <p class="item__title" >총 상품 수</p>
+              <p class="item__count" id="item_total_count">56</p>
+            </div>
+
+          </div>
+
+          <div class="orders-info">
+            <div class="orders-info__row orders-info__title">
+                <div class="orders-info__column"><p>번호</p></div>
+              <div class="orders-info__column"><p>카테고리</p></div>
+              <div class="orders-info__column"><p>타입</p></div>
+              <div class="orders-info__column"><p>이름</p></div>
+              <div class="orders-info__column"><p>관리</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer common-include="../common/component/footer/footer.html"></footer>
+  </body>
+</html>
