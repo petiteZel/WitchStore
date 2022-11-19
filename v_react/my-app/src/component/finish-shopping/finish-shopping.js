@@ -16,8 +16,8 @@ function finishShopping() {
              <div className={style.finishText}>
                 <h1> 주문이 정상적으로 완료되었습니다!</h1>
             </div>
-         {/* <i class="fa-solid fa-basket-shopping fa-11x" ></i> */}
-         <FontAwesomeIcon icon="fa-solid fa-basket-shopping" />
+         <i class="fa-solid fa-basket-shopping fa-11x" ></i>
+         {/* <FontAwesomeIcon icon="fa-solid fa-basket-shopping" /> */}
        
          <div className={style.btnBox}>
        <button className={`${style.checkBtn} ${style.btnSecond}`} id={style.checkBtn} onclick="location.href='/order-detail/order-detail.html'">주문 조회 바로가기</button>
