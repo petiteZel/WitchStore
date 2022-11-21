@@ -6,6 +6,11 @@ import Header from './component/header/header';
 import ProductList from './component/product-list/product-list';
 import ProductDetail from './component/product-detail/product-detail';
 import FinishShopping from './component/finish-shopping/finish-shopping';
+import Cart from './component/cart/cart';
+import Order from './component/order/order';
+import OrderDetail from './component/order-detail/order-detail';
+import AdminOrderManagement from './component/admin-order-management/admin-order-management';
+import AdminOrderCheck from './component/admin-order-check/admin-order-check';
 
 function App() {
   return(
@@ -17,6 +22,11 @@ function App() {
         <Route path="/product-list" element={<ProductList />} />
         <Route path="/product-detail" element={<ProductDetail />} />
         <Route path="/finish-shopping" element={<FinishShopping />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/order" element={<Order />} />
+        <Route path="/order-detail" element={<OrderDetail />} />
+        <Route path="/admin-order-management" element={<AdminOrderManagement />} />
+        <Route path="/admin-order-check" element={<AdminOrderCheck />} />
       </Routes>
       
   </BrowserRouter>

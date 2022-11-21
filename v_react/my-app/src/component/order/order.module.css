@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Ultra&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box;}
+ol, ul, dl { list-style: none;}
+a { text-decoration: none; color: #FFFFFF; cursor: pointer;}
+button{ all: unset; cursor: pointer;}
+.en{ 
+    font-family: 'Ultra', serif; 
+}
+
+body {
+    background: #0E1335;
+    font-family: 'Roboto', sans-serif;
+    color: #FFFFFF;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+/* common property */
+
+.Order{
+    margin: 0 auto;
+    max-width: 1240px;
+}
+.container{
+    margin: 40px 0;
+    padding: 0 100px;
+}
+.ListBox{
+    margin: 20px 0 80px 0;
+    padding: 100px 0;
+    border-top: 1px solid #454DBC;
+    border-bottom: 1px solid #454DBC;
+}
+/* order common end  */
+
+
+.infoList{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.infoList > div{
+    display: flex;
+    align-items: center;
+}
+.infoList > div:nth-child(1),
+.infoList > div:nth-child(2){
+    margin-bottom: 40px;
+}
+.DeliveryInfoBox > label{
+    display:inline-block;
+    width: 100px;
+    font-size: 18px;
+}
+.DeliveryInfoBox > input{
+    display:inline-block;
+    padding: 8px;
+    width: 400px;
+    height: 40px;
+    border-radius: 6px;
+}
+.DeliveryInfoBox > input:focus{
+    outline: 1px solid #FFD84B;
+}
+/* order-info end */
+
+
+.payInfoBox{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.productList > p{
+    margin-bottom: 10px;
+}
+.total > p{
+    font-weight: 700;
+    font-size: 24px;
+}
+/* pay info end */
+
+.payBtnBox{
+    margin: 80px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+.payBtn{
+    width: 190px;
+    height: 60px;
+    border-radius: 100px;
+    background-color: #FFD84B;
+}
+.payBtn > a{
+    font-weight: 700;
+    color: #0E1335;
+}
+/* pay btn end */

@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Ultra&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box;}
+ol, ul, dl { list-style: none;}
+a { text-decoration: none; color: #FFFFFF; cursor: pointer;}
+button{ all: unset; cursor: pointer;}
+.en{ 
+    font-family: 'Ultra', serif; 
+}
+
+body {
+    background: #0E1335;
+    font-family: 'Roboto', sans-serif;
+    color: #FFFFFF;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+/* common property */
+
+
+.center{
+    margin: 0 auto;
+    max-width: 1240px;
+}
+.container{
+    margin: 40px 0 100px 0;
+    padding: 0 20px;
+}
+/* admin order management common end */
+
+.orderManagementBox{
+    padding: 0 80px;
+}
+/* orderManagementBox end */
+
+.titleBox{
+    padding: 20px 0;
+    border-bottom: 1px solid #454DBC;
+}
+/* title end */
+
+.totalList{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    margin: 40px;
+}
+.totalTitle{
+    font-weight: 700;
+}
+.totalCount{
+    font-size: 30px;
+    font-weight: 700;
+}
+/* totalList end */
+
+.ordersInfoTitle{
+    background-color: #454DBC;
+}
+.ordersInfoRow{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
+    align-items: center;
+    text-align: center;
+    padding: 16px 0;
+    border-bottom: 1px solid #454DBC;
+}
+.ordersInfoColumn{
+    padding: 0 10px;
+}
+/* ordersInfoTitle end */
+
+.shipment-select{
+    padding: 6px 10px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.order-cancel__btn{
+    padding: 6px 16px;
+    border: 1px solid #454DBC;
+    border-radius: 6px;
+    font-size: 14px;
+}
+.order-cancel__btn:hover{
+    background-color: #454DBC;
+}

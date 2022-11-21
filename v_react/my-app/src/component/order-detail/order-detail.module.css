@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Ultra&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box;}
+ol, ul, dl { list-style: none;}
+a { text-decoration: none; color: #FFFFFF; cursor: pointer;}
+button{ all: unset; cursor: pointer;}
+.en{ 
+    font-family: 'Ultra', serif; 
+}
+
+body {
+    background: .0E1335;
+    font-family: 'Roboto', sans-serif;
+    color: #FFFFFF;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+/* common property */
+
+
+.center{
+    margin: 0 auto;
+    max-width: 1240px;
+}
+.container{
+    margin-top: 40px;
+    margin-bottom: 160px;
+    padding: 0 20px;
+}
+/* order-detail common end  */
+
+
+.trackPackageTitle{
+    margin-bottom: 88px;
+    font-size: 32px;
+    text-align: center;
+    color: #FFD84B;
+}
+.IconBox{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+    padding: 0 200px;
+}
+.IconBox > i{
+    font-size: 80px;
+    color: #454DBC;
+}
+.IconBox  > .yellow{
+    color: #FFD84B;
+}
+.progressBarBox{
+    position: relative;
+    padding: 0 180px;
+    margin-bottom: 25px;
+}
+.basicBar{
+    width: 100%;
+    height: 14px;
+    border-radius: 100px;
+    background-color: #454DBC;
+}
+.progressBar{
+    position: absolute;
+    top: 0;
+    width: 40%;
+    height: 14px;
+    border-radius: 100px;
+    background-color: #FFD84B;
+}
+.trackPackageTxt{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 150px;
+}
+/* track-package end */
+
+
+.orderProductBox{
+    margin: 20px 0;
+    padding: 20px 40px;
+    border-top: 1px solid #454DBC;
+    border-bottom: 1px solid #454DBC;
+}
+.orderProduct{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0;
+}
+.productImg{
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    background-color: #D9D9D9;
+    color: #0E1335;
+}
+.totalPriceBox{
+    padding: 0 40px;
+    text-align: right;
+}
+.totalPrice span:first-child{
+    margin-right: 80px;
+}
+/* order-detail-list end */
+
+
+.ordererInfoContainer{
+    margin: 40px 0;
+    padding: 0 30px;
+}
+.ordererInfoBox{
+    margin: 20px 0;
+    padding: 50px 40px;
+    border-top: 1px solid #454DBC;
+    border-bottom: 1px solid #454DBC;
+}
+/* .ordererInfoList{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+} */
+.info{
+    display: flex;
+    margin-bottom: 40px;
+}
+.infoTitle{
+    width: 100px;
+    margin-right: 80px;
+}
+/* orderer-info end */
+
+
+.calcleBtnBox{
+    margin: 80px auto;
+    margin-bottom: 100px;
+    padding: 0 20px;
+    text-align: center;
+}
+.cancleBtn{
+    width: 190px;
+    height: 60px;
+    font-weight: 700;
+    border-radius: 100px;
+    background-color: #D9D9D9;
+    color: #0E1335;
+}
+/* order-cancle end */
