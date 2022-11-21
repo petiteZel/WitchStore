@@ -43,8 +43,6 @@ localStorage.setItem('1', JSON.stringify({ image: "없음", productName: "인형
 
 async function insertProductsfromCart(){
 
-    
-
     const localLength = localStorage.length;
     const orders = []
 

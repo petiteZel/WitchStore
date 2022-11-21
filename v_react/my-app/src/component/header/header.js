@@ -1,19 +1,20 @@
 import React from "react";
-import style from "./header.module.css"
+import style from "./header.module.css";
+import logo from "../image/logo.png";
 
 function Header(){
   return(
-    <header id="header">
-    <div class="header-container">
+    <header className={style.center}>
+      <div className={style.container}>
 
-        <h1 class="logo">
-            <a href="/home"></a>
-        </h1>
+          <h1 className={style.logo}>
+              <a href="/home"><img src={logo} alt='logo'/></a>
+          </h1>
 
-        <nav class="nav" id="selectNav">
-        </nav>
+          <nav className={style.nav} id="selectNav">
+          </nav>
 
-    </div>
+      </div>
     </header>
   )
 }
@@ -39,7 +40,7 @@ async function header(callback) {
     setTimeout(() => {
       const header = document.querySelector("#selectNav");
       if(!admin){
-        header.innerHTML = `<div class="user-info-box">    
+        header.innerHTML = `<div class="userInfoBox">    
           <div class="user-info">
             <div class="user-name-container">
               <label for="user-name" class="user-name en">${userId}</label>
