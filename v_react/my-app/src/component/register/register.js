@@ -1,3 +1,6 @@
+import React from "react";
+import style from "./register.module.module.css"
+
 import * as Api from "/api.js";
 import { validateEmail } from "/useful-functions.js";
 
@@ -61,3 +64,85 @@ async function handleSubmit(e) {
     alert(`문제가 발생하였습니다. 확인 후 다시 시도해 주세요: ${err.message}`);
   }
 }
+
+//react-js
+
+function register () {
+
+  return(
+    <div classNameName={style.main}> 
+     <div classNameName={style.registerContainer}>
+        <form classNameName={style.registerForm}>
+          <div classNameName={style.title}>
+            <h1> Welcome! </h1>
+          </div>
+                {/* 입력칸 */}
+          <div className={style.field}>
+
+            <label className={style.label} htmlFor="fullNameInput">name</label>
+            <div className={style.control}>
+              <input
+                className={style.input}
+                id="fullNameInput"
+                type="text"
+                placeholder="유재석"
+                autocomplete="on"
+              />
+             </div>
+          </div>
+
+        <div className={style.field}>
+          <label className={style.label} htmlFor="emailInput">email</label>
+          <div className={style.control}>
+            <input
+              classNameName={style.input}
+              id="emailInput"
+              type="email"
+              placeholder="abc@example.com"
+              autocomplete="on"
+            />
+          </div>
+        </div>
+
+        <div className={style.field}>
+          <label className={style.label} htmlFor="passwordInput">password</label>
+          <div className={style.control}>
+            <input
+              className={style.input}
+              id="passwordInput"
+              type="password"
+              placeholder="********"
+              autocomplete="off"
+            />
+          </div>
+        </div>
+
+        <div className={style.field}>
+          <label className={style.label} htmlFor="passwordConfirmInput">password confirm</label>
+          <div className={style.control}>
+            <input
+              className={style.input}
+              id="passwordConfirmInput"
+              type="password"
+              placeholder="********"
+              autocomplete="off"
+            />
+          </div>
+        </div>
+
+        <button className={style.button} id={style.submitButton}>
+          sign up!
+        </button>
+
+      </form>
+        
+    </div>
+
+</div>
+
+
+
+)
+
+}
+export default register;

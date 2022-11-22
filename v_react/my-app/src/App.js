@@ -15,6 +15,8 @@ import AdminOrderCheck from './component/admin-order-check/admin-order-check';
 import AdminUsers from './component/admin-users/admin-users';
 import AddCategory from './component/add-category/add-category';
 import AddProduct from './component/add-product/add-product';
+// import register from './component/register/register';
+
 
 function App() {
   return(
@@ -34,6 +36,7 @@ function App() {
         <Route path="/admin-users" element={<AdminUsers />} />
         <Route path="/add-category" element={<AddCategory />} />
         <Route path="/add-product" element={<AddProduct />} />
+        {/* <Route path="/register" element={<register />} /> */}
       </Routes>
       {/* footer */}
   </BrowserRouter>
