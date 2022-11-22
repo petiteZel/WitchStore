@@ -22,8 +22,8 @@ function ProductList() {
 
             {/*  */}
             <div className={style.productItem}>
-              <a href="/">
-                <div className={style.productItemImg}><img src="..\image\pilot.png" alt='product' /></div>
+              <a href="/product-detail/?id=productName">
+                <div className={style.productItemImg}><img src='https://witchstore-item.s3.ap-northeast-2.amazonaws.com/defuser/defuser_1.png' alt='productImage' /></div>
                 <div className={style.productItemInfo}>
                   <div className={style.productItemName}>productName</div>
                   <div className={style.productItemPrice}>price</div>
@@ -31,8 +31,8 @@ function ProductList() {
               </a>
             </div>
             <div className={style.productItem}>
-              <a href="/">
-                <div className={style.productItemImg}><img src="..\image\pilot.png" alt='product'/></div>
+              <a href="/product-detail/?id=productName">
+                <div className={style.productItemImg}><img src='https://witchstore-item.s3.ap-northeast-2.amazonaws.com/defuser/defuser_1.png' alt='productImage'/></div>
                 <div className={style.productItemInfo}>
                   <div className={style.productItemName}>productName</div>
                   <div className={style.productItemPrice}>price</div>
@@ -40,8 +40,8 @@ function ProductList() {
               </a>
             </div>
             <div className={style.productItem}>
-              <a href="/">
-                <div className={style.productItemImg}><img src="..\image\pilot.png" alt='product'/></div>
+              <a href="/product-detail/?id=productName">
+                <div className={style.productItemImg}><img src='https://witchstore-item.s3.ap-northeast-2.amazonaws.com/defuser/defuser_1.png' alt='productImage'/></div>
                 <div className={style.productItemInfo}>
                   <div className={style.productItemName}>productName</div>
                   <div className={style.productItemPrice}>price</div>
@@ -49,8 +49,8 @@ function ProductList() {
               </a>
             </div>
             <div className={style.productItem}>
-              <a>
-                <div className={style.productItemImg}><img src="..\image\pilot.png" alt='product'/></div>
+              <a href="/product-detail/?id=productName">
+                <div className={style.productItemImg}><img src='https://witchstore-item.s3.ap-northeast-2.amazonaws.com/defuser/defuser_1.png' alt='productImage'/></div>
                 <div className={style.productItemInfo}>
                   <div className={style.productItemName}>productName</div>
                   <div className={style.productItemPrice}>price</div>
@@ -71,7 +71,7 @@ export default ProductList;
 
 async function productList() {
   const productContainer = document.querySelector(".product-item-container");
-  const products = await Api.get('/api/product')
+  const products = Api.get('/api/product')
   const urlSearch = new URLSearchParams(window.location.search);
   const categoryId = urlSearch.get("category");
   const typeId = urlSearch.get("personType");

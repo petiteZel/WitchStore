@@ -11,6 +11,10 @@ body {
   font-family: "Noto Sans", sans-serif;
   color: white;
 }
+.en {
+  font-family: 'Ultra', serif;
+  font-weight: 100;
+}
 
 header {
   margin-bottom: 0;
