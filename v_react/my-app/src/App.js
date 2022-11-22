@@ -12,6 +12,7 @@ import Order from './component/order/order';
 import OrderDetail from './component/order-detail/order-detail';
 import AdminOrderManagement from './component/admin-order-management/admin-order-management';
 import AdminOrderCheck from './component/admin-order-check/admin-order-check';
+import AdminUsers from './component/admin-users/admin-users';
 import AddCategory from './component/add-category/add-category';
 import AddProduct from './component/add-product/add-product';
 import register from './component/register/register';
@@ -32,6 +33,7 @@ function App() {
         <Route path="/order-detail" element={<OrderDetail />} />
         <Route path="/admin-order-management" element={<AdminOrderManagement />} />
         <Route path="/admin-order-check" element={<AdminOrderCheck />} />
+        <Route path="/admin-users" element={<AdminUsers />} />
         <Route path="/add-category" element={<AddCategory />} />
         <Route path="/add-product" element={<AddProduct />} />
         <Route path="/register" element={<register />} />

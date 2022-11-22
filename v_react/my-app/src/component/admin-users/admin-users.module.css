@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Ultra&display=swap');
+
+/* common property */
+
+
+.adminOrderManagement{
+    margin: 0 auto;
+    max-width: 1240px;
+}
+.container{
+    margin: 40px 0 100px 0;
+    padding: 0 20px;
+}
+/* common end */
+
+.infoContainer{
+    padding: 0 80px;
+}
+
+.title{
+    padding: 20px 0;
+    border-bottom: 1px solid #454DBC;
+}
+/* title end */
+
+.orderTotal{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    margin: 40px;
+}
+.itemTitle{
+    font-weight: 700;
+}
+.itemCount{
+    font-size: 30px;
+    font-weight: 700;
+}
+/* oders-total end */
+
+.ordersInfoRow{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
+    align-items: center;
+    text-align: center;
+    padding: 16px 0;
+    border-bottom: 1px solid #454DBC;
+}
+.ordersInfoColumn{
+    padding: 0 10px;
+}
+.ordersInfoTitle{
+    background-color: #454DBC;
+}
+.memberSelect{
+    padding: 6px 10px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.memberDeleteBtn{
+    padding: 6px 16px;
+    border: 1px solid #454DBC;
+    border-radius: 6px;
+    font-size: 14px;
+}
+.memberDeleteBtn:hover{
+    background-color: #454DBC;
+}
