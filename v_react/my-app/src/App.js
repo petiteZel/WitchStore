@@ -1,8 +1,9 @@
 import './App.css';
-import { BrowserRouter,Routes, Route, Link,Switch } from "react-router-dom";
+import { BrowserRouter,Routes, Route } from "react-router-dom";
 import Home from './component/home/home';
 import Type from './component/type-test/type-test';
 import Header from './component/header/header';
+// footer import 할것
 import ProductList from './component/product-list/product-list';
 import ProductDetail from './component/product-detail/product-detail';
 import FinishShopping from './component/finish-shopping/finish-shopping';
@@ -28,7 +29,7 @@ function App() {
         <Route path="/admin-order-management" element={<AdminOrderManagement />} />
         <Route path="/admin-order-check" element={<AdminOrderCheck />} />
       </Routes>
-      
+      {/* footer */}
   </BrowserRouter>
   )
 }
