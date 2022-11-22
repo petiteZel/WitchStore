@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./finish-shopping.module.css"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBasket } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faBasket } from "@fortawesome/free-solid-svg-icons";
 
 
 // import { checkAdmin, createNavbar } from "../useful-functions.js";

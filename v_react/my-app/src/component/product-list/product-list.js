@@ -22,8 +22,26 @@ function ProductList() {
 
             {/*  */}
             <div className={style.productItem}>
-              <a>
-                <div className={style.productItemImg}><img src="..\image\pilot.png" /></div>
+              <a href="/">
+                <div className={style.productItemImg}><img src="..\image\pilot.png" alt='product' /></div>
+                <div className={style.productItemInfo}>
+                  <div className={style.productItemName}>productName</div>
+                  <div className={style.productItemPrice}>price</div>
+                </div>
+              </a>
+            </div>
+            <div className={style.productItem}>
+              <a href="/">
+                <div className={style.productItemImg}><img src="..\image\pilot.png" alt='product'/></div>
+                <div className={style.productItemInfo}>
+                  <div className={style.productItemName}>productName</div>
+                  <div className={style.productItemPrice}>price</div>
+                </div>
+              </a>
+            </div>
+            <div className={style.productItem}>
+              <a href="/">
+                <div className={style.productItemImg}><img src="..\image\pilot.png" alt='product'/></div>
                 <div className={style.productItemInfo}>
                   <div className={style.productItemName}>productName</div>
                   <div className={style.productItemPrice}>price</div>
@@ -32,25 +50,7 @@ function ProductList() {
             </div>
             <div className={style.productItem}>
               <a>
-                <div className={style.productItemImg}><img src="..\image\pilot.png" /></div>
-                <div className={style.productItemInfo}>
-                  <div className={style.productItemName}>productName</div>
-                  <div className={style.productItemPrice}>price</div>
-                </div>
-              </a>
-            </div>
-            <div className={style.productItem}>
-              <a>
-                <div className={style.productItemImg}><img src="..\image\pilot.png" /></div>
-                <div className={style.productItemInfo}>
-                  <div className={style.productItemName}>productName</div>
-                  <div className={style.productItemPrice}>price</div>
-                </div>
-              </a>
-            </div>
-            <div className={style.productItem}>
-              <a>
-                <div className={style.productItemImg}><img src="..\image\pilot.png" /></div>
+                <div className={style.productItemImg}><img src="..\image\pilot.png" alt='product'/></div>
                 <div className={style.productItemInfo}>
                   <div className={style.productItemName}>productName</div>
                   <div className={style.productItemPrice}>price</div>
