@@ -10,14 +10,15 @@ footer {
   background-image: url("../image/stars.png");
 }
 
-.main .container-form {
+.main .containerForm {
+  margin-top: 100px;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.main .container-form .addbox {
+.main .containerForm .addbox {
   width: 500px;
   display: flex;
   flex-direction: column;
@@ -28,7 +29,7 @@ footer {
   padding: 10px;
 }
 
-.main .container-form .addbox .contents-box {
+.main .containerForm .addbox .contentsBox {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -36,14 +37,14 @@ footer {
   margin: 50px;
 }
 
-.main .container-form .addbox .contents-box P {
+.main .containerForm .addbox .contentsBox P {
   color: #ffd84b;
   font-weight: 700;
   font-size: 30px;
   margin-bottom: 10px;
 }
 
-.main .container-form .addbox .contents-box .field {
+.main .containerForm .addbox .contentsBox .field {
   display: flex;
   flex-direction: column;
 
@@ -51,7 +52,7 @@ footer {
   margin: 10px;
 }
 
-.main .container-form .addbox .contents-box .field .info-content {
+.main .containerForm .addbox .contentsBox .field .infoContent {
   width: 100%;
   height: 50px;
   background-color: #f7f7f7;
@@ -62,12 +63,12 @@ footer {
   border: none;
 }
 
-.main .container-form .addbox .contents-box .field .info-content.textarea {
+.main .containerForm .addbox .contentsBox .field .infoContent.textarea {
   min-height: 200px;
   resize: none;
 }
 
-.main .container-form .addbox .button-space {
+.main .containerForm .addbox .buttonSpace {
   background-color: #ffd84b;
   height: 51px;
   border-radius: 81px;
@@ -76,7 +77,8 @@ footer {
   color: #272727;
 }
 
-.main .container-form .addbox .button-space .submit-button {
+.main .containerForm .addbox .buttonSpace .submitButton {
+
   width: 100%;
   height: 100%;
   font-size: 20px;
@@ -84,7 +86,7 @@ footer {
   font-size: 20px;
 }
 
-.main .container-form .addbox .button-space:hover {
+.main .containerForm .addbox .buttonSpace:hover {
   color: #ffd84b;
   background-color: #272727;
 }

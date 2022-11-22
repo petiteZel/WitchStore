@@ -1,0 +1,192 @@
+footer {
+  height: 0;
+}
+
+.main {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+
+  background-image: url("../image/stars.png");
+}
+
+.main .containerForm {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main .containerForm .addbox {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+
+  background-color: #454dbc;
+  box-shadow: #454ebc 0px 6px 24px 2px;
+  border-radius: 50px;
+  padding: 10px;
+}
+
+.main .containerForm .addbox .contentsBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 50px;
+}
+
+.main .containerForm .addbox .contentsBox P {
+  color: #ffd84b;
+  font-weight: 700;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.main .containerForm .addbox .contentsBox .field {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  margin: 10px;
+}
+
+.main .containerForm .addbox .contentsBox .field .infoContent {
+  width: 100%;
+  height: 50px;
+  background-color: #f7f7f7;
+  margin-top: 10px;
+  padding: 15px;
+
+  border-radius: 9px;
+  border: none;
+}
+
+.main .containerForm .addbox .contentsBox .field .infoContent.textarea {
+  min-height: 200px;
+  resize: none;
+}
+
+.main .containerForm .addbox .buttonSpace {
+  background-color: #ffd84b;
+  height: 51px;
+  border-radius: 81px;
+  margin: 0 50px 50px 50px;
+  text-align: center;
+  color: #272727;
+}
+
+.main .containerForm .addbox .buttonSpace .submitButton {
+
+  width: 100%;
+  height: 100%;
+  font-size: 20px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.main .containerForm .addbox .buttonSpace:hover {
+  color: #ffd84b;
+  background-color: #272727;
+}
+
+
+
+
+
+
+.main .containerForm .addbox .contentsBox .field .selectBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffd84b;
+  width: 100%;
+  height: 50px;
+  margin-top: 10px;
+
+  position: relative;
+  border: none;
+}
+.main .containerForm .addbox .contentsBox .field .selectBox i {
+  position: absolute;
+  right: 15px;
+}
+.main .containerForm .addbox .contentsBox .field select {
+  padding: 0 20px;
+  -webkit-appearance: none;
+  background-color: #f7f7f7;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 9px;
+  color: #808080;
+}
+.main
+  .containerForm
+  .addbox
+  .contentsBox
+  .field
+  .imageUploadLabel
+  .imageUpload {
+  display: none;
+}
+
+.main .containerForm .addbox .contentsBox .field .imageUploadLabel {
+  display: flex;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.main
+  .containerForm
+  .addbox
+  .contentsBox
+  .field
+  .imageUploadLabel
+  .uploadBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 5px;
+  background-color: #ffd84b;
+  color: #272727;
+  width: 30%;
+  height: 40px;
+
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border: none;
+
+  cursor: pointer;
+}
+.main
+  .containerForm
+  .addbox
+  .contentsBox
+  .field
+  .imageUploadLabel
+  .uploadBox:hover {
+  color: #ffd84b;
+  background-color: #272727;
+  width: 30%;
+  height: 40px;
+}
+
+.main
+  .containerForm
+  .addbox
+  .contentsBox
+  .field
+  .imageUploadLabel
+  .uploadContent {
+  align-items: center;
+  padding: 10px;
+  background-color: #f7f7f7;
+  color: #818181;
+  width: 70%;
+  height: 40px;
+
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border: none;
+}
