@@ -1,14 +1,17 @@
 
 /* 배경 - 시간되면 넓게 이미지 만들기*/
-.backgroundImage{
+/* .backgroundImage{
   background-image: url("../image/stars.png");
   width: 100%;
   height: 688px;
   
-}
+} */
 
 
 /*회원가입*/
+.test{
+  background-color: red;
+}
 
 .registerContainer {
   display: flex;
