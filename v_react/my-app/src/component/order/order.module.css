@@ -89,6 +89,9 @@ body {
     width: 190px;
     height: 60px;
     border-radius: 100px;
+    background-color: #D9D9D9;
+}
+.payBtn:hover{
     background-color: #FFD84B;
 }
 .payBtn > a{

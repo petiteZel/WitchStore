@@ -147,4 +147,7 @@ body {
     background-color: #D9D9D9;
     color: #0E1335;
 }
+.cancleBtn:hover{
+    background-color: #FFD84B;
+}
 /* order-cancle end */

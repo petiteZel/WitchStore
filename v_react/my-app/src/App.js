@@ -3,6 +3,7 @@ import { BrowserRouter,Routes, Route } from "react-router-dom";
 import Home from './component/home/home';
 import Type from './component/type-test/type-test';
 import Header from './component/header/header';
+import Footer from './component/footer/footer';
 // footer import 할것
 import ProductList from './component/product-list/product-list';
 import ProductDetail from './component/product-detail/product-detail';
@@ -44,7 +45,7 @@ function App() {
         <Route path="/changing-info" element={<ChangingInfo />} />
         <Route path="/login" element={<Login />} />
       </Routes>
-      {/* footer */}
+      <Footer />
   </BrowserRouter>
   )
 }

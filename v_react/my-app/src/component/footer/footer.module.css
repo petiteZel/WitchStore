@@ -1,0 +1,28 @@
+#footer{
+  background-color: #060a1f;
+}
+#footer .footerContainer{
+  margin: 0 auto;
+  max-width: 1240px;
+}
+#footer .footerContainer .footerBox{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 40px;
+  padding: 60px 20px;
+}
+#footer .footerContainer .footerCopyBox p{
+  font-size: 12px;
+  line-height: 24px;
+  color: #8d8d8d;
+}
+#footer .footerContainer .footerSnsBox a i{
+  margin-left: 10px;
+  font-size: 24px;
+  text-align: right;
+  color: #8d8d8d;
+}
+#footer .footerContainer .footerSnsBox a i:hover{
+  color: #FFD84B;
+}

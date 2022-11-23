@@ -2,6 +2,7 @@
 // import { validateEmail } from "/useful-functions.js";
 import React from "react";
 import style from "./type-test.module.css"
+import gameImgRoot from "../image/video_game.png"
 
 function Type() {
     return(
@@ -12,7 +13,7 @@ function Type() {
     {/* <!-- 심리테스트 질문 --> */}
     <div className={style.questionTitle}>
       <div className={`${style.icon} ${style.moonImg}`}> 
-        <img id={style.moonImg} src="v_react\my-app\src\component\image\moon.png" />
+        {/* <img id={style.moonImg} src="v_react\my-app\src\component\image\moon.png" /> */}
       </div>
       <h2>나에게 필요한 위로는?</h2>
     </div>
@@ -30,7 +31,7 @@ function Type() {
         <button className={`${style.box} ${style.selectAbox}`} value="A_1">
           <div className={style.selectA}>
             <div className={style.icon}> 
-              <img id={style.gameImg} src="../image/video_game.png" />
+              <img id={style.gameImg} src={gameImgRoot} />
             </div>
             <p>예능, 오락</p>
           </div>

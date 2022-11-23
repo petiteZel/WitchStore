@@ -1,8 +1,11 @@
 import React from "react";
 import style from "./home.module.css"
 import witchImage from "../image/witch.gif";
+import * as Api from "../api.js";
 
 function Home() {
+  const api = Api.get("/api/category/categories")
+  console.log(api)
   return (
     <div className={style.divContainer}>
     <div className={style.background}>
