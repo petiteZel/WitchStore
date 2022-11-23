@@ -3,17 +3,7 @@
 import React from "react";
 import style from "./type-test.module.css";
 import gameImgRoot from "../image/video_game.png";
-import newsImg from "../image/newspaper.png";
-import bowingImg from "../image/woman-bowing.png";
-import facepalmingImg from "../image/man-facepalming.png";
-import pilotImg from "../image/pilot.png";
-import mapImg from "../image/world-map.png";
-import holdingImg from "../image/woman-and-man-holding-hands.png";
-import pleadingImg from "../image/pleading-face.png";
-import zipperImg from "../image/zipper-mouth-face.png";
-import smileImg from "../image/smiling-face-with-hearts.png";
-import earImg from "../image/ear.png";
-import bubbleImg from "../image/right-anger-bubble.png";
+
 
 function Type() {
   return (
