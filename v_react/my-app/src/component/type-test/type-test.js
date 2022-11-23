@@ -3,17 +3,29 @@
 import React from "react";
 import style from "./type-test.module.css"
 import gameImgRoot from "../image/video_game.png"
+import newImgRoot from "../image/newspaper.png"
+import womanImgRoot from "../image/woman-bowing.png"
+import palmingImgRoot from "../image/man-facepalming.png"
+import pilotImgRoot from "../image/pilot.png"
+import mapImgRoot from "../image/world-map.png"
+import pleadingImgRoot from "../image/pleading-face.png"
+import zipperImgRoot from "../image/zipper-mouth-face.png"
+import handsImgRoot from "../image/woman-and-man-holding-hands.png"
+import heartsImgRoot from "../image/smiling-face-with-hearts.png"
+import earImgRoot from "../image/ear.png"
+import bubbleImgRoot from "../image/right-anger-bubble.png"
+import moonImgRoot from '../image/moon.png'
 
 function Type() {
     return(
-        <main id={style.loginArea}>
+  <main id={style.loginArea}>
       {/* <!-- 배경 별 --> */}
     <div className={style.backgroundImage}>
 
     {/* <!-- 심리테스트 질문 --> */}
     <div className={style.questionTitle}>
       <div className={`${style.icon} ${style.moonImg}`}> 
-        {/* <img id={style.moonImg} src="v_react\my-app\src\component\image\moon.png" /> */}
+        <img id={style.moonImg} src={moonImgRoot} />
       </div>
       <h2>나에게 필요한 위로는?</h2>
     </div>
@@ -40,7 +52,7 @@ function Type() {
         <button className={`${style.box} ${style.selectBbox}`} value="B_1">
             <div className={style.selectB}>
                 <div className={style.icon}>
-                  <img id={style.newsImg} src="../image/newspaper.png" />
+                  <img id={style.newsImg} src={newImgRoot} />
                 </div>
                 <p>뉴스, 시사, 퀴즈</p>
               </div>
@@ -59,7 +71,7 @@ function Type() {
           <button className={`${style.box} ${style.selectAbox}`} value="A_1">
             <div className={style.selectA}>
               <div className={style.icon}> 
-                <img id={style.bowingImg} src="../image/woman-bowing.png" />
+                <img id={style.bowingImg} src={womanImgRoot} />
               </div>
               <p>바로 사과하고 화해한다</p>
             </div>
@@ -68,7 +80,7 @@ function Type() {
           <button className={`${style.box} ${style.selectBbox}`} value="B_1">
               <div className={style.selectB}>
                   <div className={style.icon}>
-                    <img id={style.facepalmingImg} src="../image/man-facepalming.png" />
+                    <img id={style.facepalmingImg} src={palmingImgRoot} />
                   </div>
                   <p>진정한 뒤 다시 이야기한다</p>
                 </div>
@@ -87,7 +99,7 @@ function Type() {
               <button className={`${style.box} ${style.selectAbox}`} value="A_1">
                 <div className={style.selectA}>
                   <div className={style.icon}> 
-                    <img id={style.pilotImg} src="../image/pilot.png" />
+                    <img id={style.pilotImg} src={pilotImgRoot} />
                   </div>
                   <p>역무원</p>
                 </div>
@@ -96,7 +108,7 @@ function Type() {
               <button className={`${style.box} ${style.selectBbox}`} value="B_1">
                   <div className={style.selectB}>
                       <div className={style.icon}>
-                        <img id={style.mapImg} src="../image/world-map.png" />
+                        <img id={style.mapImg} src={mapImgRoot} />
                       </div>
                       <p>구내지도 또는 안내표지</p>
                     </div>
@@ -115,7 +127,7 @@ function Type() {
               <button className={`${style.box} ${style.selectAbox}`} value="A_2">
                 <div className={style.selectA}>
                   <div className={style.icon}> 
-                    <img id={style.pleadingImg} src="../image/pleading-face.png" />
+                    <img id={style.pleadingImg} src={pleadingImgRoot} />
                   </div>
                   <p>"무슨 일 있었어?"라고 신경써서 말 걸어주기</p>
                 </div>
@@ -124,7 +136,7 @@ function Type() {
               <button className={`${style.box} ${style.selectBbox}`} value="B_2">
                   <div className={style.selectB}>
                       <div className={style.icon}>
-                        <img id={style.zipper_img} src="../image/zipper-mouth-face.png" />
+                        <img id={style.zipper_img} src={zipperImgRoot} />
                       </div>
                       <p>내 기분이 나아질때까지 조용히 기다려주기</p>
                     </div>
@@ -143,7 +155,7 @@ function Type() {
               <button className={`${style.box} ${style.selectAbox}`} value="A_2">
                 <div className={style.selectA}>
                   <div className={style.icon}> 
-                    <img id={style.holdingImg} src="../image/woman-and-man-holding-hands.png" />
+                    <img id={style.holdingImg} src={handsImgRoot} />
                   </div>
                   <p>가능하다면 상대방에게 맞추려고 한다</p>
                 </div>
@@ -152,7 +164,7 @@ function Type() {
               <button className={`${style.box} ${style.selectBbox}`} value="B_2">
                   <div className={style.selectB}>
                       <div className={style.icon}>
-                        <img id={style.smileImg} src="../image/smiling-face-with-hearts.png" />
+                        <img id={style.smileImg} src={heartsImgRoot} />
                       </div>
                       <p>나 스스로가 즐거워야 같이 즐거울 수 있다고 생각한다</p>
                     </div>
@@ -171,7 +183,7 @@ function Type() {
               <button className={`${style.box} ${style.selectAbox}`} value="A_2">
                 <div className={style.selectA}>
                   <div className={style.icon}> 
-                    <img id={style.ear_img} src="../image/ear.png" />
+                    <img id={style.ear_img} src={earImgRoot} />
                   </div>
                   <p>주로 상대방의 이야기를 듣는 역할</p>
                 </div>
@@ -180,7 +192,7 @@ function Type() {
               <button className={`${style.box} ${style.selectBbox}`} value="B_2">
                   <div className={style.selectB}>
                       <div className={style.icon}>
-                        <img id={style.bubble_img} src="../image/rightTnger-bubble.png" />
+                        <img id={style.bubble_img} src={bubbleImgRoot} />
                       </div>
                       <p>적극적으로 말하는 스타일</p>
                     </div>
@@ -197,29 +209,29 @@ function Type() {
 
     </div>
    
-    <div className={style.resultAge} id={style.resultAge}>
+    <div className={style.resultPage} id={style.resultPage}>
 
       <div className={style.resultTitle} id={style.resultTitle}>
-        {/* <!-- <h1>당신은 아이돌 타입!</h1> --> */}
+        <h1>당신은 아이돌 타입!</h1>
       </div>
 
     <div className={style.resultAnswer} id={style.resultAnswer}>
-      {/* <!-- <h3>타고난 밝음과 상냥함으로 상대에게 활력을 불어넣는 아이돌 타입이라고 할 수 있습니다. 
+      <h3>타고난 밝음과 상냥함으로 상대에게 활력을 불어넣는 아이돌 타입이라고 할 수 있습니다. 
         우울할 때일수록 기분을 빨리 전환하고 싶은 경향이 강해,
     친구에게 상담하거나 다른 일을 함으로써 리프레쉬하려고 하는 경우가 많습니다. 
 아이돌 타입은 상대를 기쁘게 하는 것에 보람을 느끼기 때문에,우울할 때일수록 사람들과의 교류가 필요합니다.
-</h3> --> */}
+</h3> 
     </div>
     
 
     <div className={style.resultTeletTox}>
       {/* <button className={`${style.resultBox} ${style.tryAgainBtn}`} id={style.tryAgainBtn} onClick={window.location.reload()}> */}
-      <button className={`${style.resultBox} ${style.tryAgainBtn}`} id={style.tryAgainBtn}>
+      <button className={`${style.resultBox} ${style.tryAgainBtn}`} id={style.tryAgainBtn} onClick={()=>window.location.reload()}>
         테스트 다시 하기
       </button>
   
       {/* <button className={`${style.resultBox} ${style.shoppingBtn}`} id={style.shoppingBtn}  onclick={window.location.href='/productTist/product.html'}> */}
-      <button className={`${style.resultBox} ${style.shoppingBtn}`} id={style.shoppingBtn}>
+      <button className={`${style.resultBox} ${style.shoppingBtn}`} id={style.shoppingBtn} onClick={()=>window.location.href='/product-list'}>
         다른 제품 보러가기
         </button>
 
