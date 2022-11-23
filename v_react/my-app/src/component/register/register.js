@@ -11,7 +11,7 @@ function Register () {
      <div className={style.registerContainer}>
         <form className={style.registerForm}>
           <div className={style.title}>
-            <h1> Welcome! </h1>
+            <span> Welcome! </span>
           </div>
                 {/* 입력칸 */}
           <div className={style.field}>

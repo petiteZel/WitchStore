@@ -18,7 +18,7 @@ function Login() {
               className={style.input}
               id="emailInput"
               type="email"
-              placeholder="abc@example.com"
+              placeholder="이메일을 입력해주세요"
               autocomplete="on"
             />
           </div>

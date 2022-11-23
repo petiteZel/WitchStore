@@ -29,7 +29,7 @@
   text-decoration: none;
 }
 
-.fa-solid, .fas {
+.icon > i {
   font-weight: 900;
   color: #FFD84B;
 }
@@ -74,6 +74,9 @@
 .title:not(.is-spaced) + .subtitle {
   margin-top: 1rem;
 }
-  
+
+.subtitle{
+  min-height: 100px;
+}
   
     
