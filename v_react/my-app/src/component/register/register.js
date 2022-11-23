@@ -5,9 +5,12 @@ import style from "./register.module.css"
 
 function Register () {
   return(
-     <div classNameName={style.registerContainer}>
-        <form classNameName={style.registerForm}>
-          <div classNameName={style.title}>
+<div id={style.loginArea}>
+    {/* <!-- 배경 별 --> */}
+  <div className={style.backgroundImage}>
+     <div className={style.registerContainer}>
+        <form className={style.registerForm}>
+          <div className={style.title}>
             <h1> Welcome! </h1>
           </div>
                 {/* 입력칸 */}
@@ -70,6 +73,8 @@ function Register () {
 
       </form>
         
+      </div>
+     </div>
     </div>
 )
 
