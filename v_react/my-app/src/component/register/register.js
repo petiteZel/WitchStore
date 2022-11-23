@@ -3,7 +3,7 @@ import style from "./register.module.css"
 
 //react-js
 
-function register () {
+function Register () {
   return(
      <div classNameName={style.registerContainer}>
           <div className={style.test}>
@@ -77,7 +77,7 @@ function register () {
 )
 
 }
-export default register;
+export default Register;
 
 // import * as Api from "/api.js";
 // import { validateEmail } from "/useful-functions.js";
