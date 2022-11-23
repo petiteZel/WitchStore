@@ -18,6 +18,7 @@ import AddProduct from './component/add-product/add-product';
 import AdminMain from './component/admin-main/admin-main';
 import Register from './component/register/register';
 import ChangingInfo from './component/changing-info/changing-info';
+import Login from './component/login/login';
 
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
         <Route path="/admin-main" element={<AdminMain />} />
         <Route path="/register" element={<Register />} />
         <Route path="/changing-info" element={<ChangingInfo />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
       {/* footer */}
   </BrowserRouter>
