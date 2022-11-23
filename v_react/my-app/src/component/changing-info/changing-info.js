@@ -18,7 +18,7 @@ function ChangingInfo() {
           <label className={style.label} htmlFor="emailInput">이메일</label>
           <div className={style.control}>
             <input
-              className={style.intput}
+              className={style.input}
               id="emailInput"
               type="email"
               placeholder="abc@example.com"
@@ -32,7 +32,7 @@ function ChangingInfo() {
           <label className={style.label} htmlFor="fullNameInput">이름</label>
           <div className={style.control}>
             <input
-              className={style.intput}
+              className={style.input}
               id="fullNameInput"
               type="text"
               placeholder="유재석"
@@ -46,7 +46,7 @@ function ChangingInfo() {
           <label className={style.label} htmlFor="phoneNumberInput">전화번호</label>
           <div className={style.control}>
             <input
-              className={style.intput}
+              className={style.input}
               id="phoneNumberInput"
               type="tel"
               placeholder="- 없이 입력해 주세요."
@@ -59,7 +59,7 @@ function ChangingInfo() {
           <label className={style.label} htmlFor="postalCodeInput">주소</label>
           <div className={style.control}>
             <input
-              className={style.intput}
+              className={style.input}
               id="postalCodeInput"
               type="address"
               placeholder="주소를 입력해주세요"
@@ -74,7 +74,7 @@ function ChangingInfo() {
         </div>
         <div className={`${style.field} ${style.address1Input}`}>
           <div className={style.control}>
-            <input className={style.intput} 
+            <input className={style.input} 
             id="address1Input" 
             type="text"
             placeholder="상세주소" 

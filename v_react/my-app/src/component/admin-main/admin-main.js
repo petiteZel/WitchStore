@@ -8,7 +8,7 @@ import style from "./admin-webservice.module.css"
 
 function AdminMain() {
     return(
-
+    <div className={style.adminMain}>
         <div className={style.main}> 
             <div className={style.adminWebservice}>
                 <h3> 웹 서비스 관리 </h3>
@@ -72,6 +72,7 @@ function AdminMain() {
                     </div>
                 </a>
             </div>
+        </div>
         </div>
 
     )
