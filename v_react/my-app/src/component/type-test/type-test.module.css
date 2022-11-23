@@ -1,9 +1,10 @@
 
 /* 배경 - 시간되면 넓게 이미지 만들기*/
 .backgroundImage{
+    height: auto;
     background-image: url("../image/stars.png");
     width: 100%;
-    height: 688px;
+    /* height: 688px; */
     
   }
   
@@ -86,7 +87,7 @@
     box-shadow: 0 2px 7px rgba(0, 0, 0, 0.3);
   }
   
-  .show-ResultBox{
+  .showResultBox{
     margin: 0 auto;
     display:flex;
     justify-content: space-around;
