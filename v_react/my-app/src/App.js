@@ -17,6 +17,7 @@ import AddCategory from './component/add-category/add-category';
 import AddProduct from './component/add-product/add-product';
 import AdminMain from './component/admin-main/admin-main';
 import Register from './component/register/register';
+import ChangingInfo from './component/changing-info/changing-info';
 
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
         <Route path="/add-product" element={<AddProduct />} />
         <Route path="/admin-main" element={<AdminMain />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/changing-info" element={<ChangingInfo />} />
       </Routes>
       {/* footer */}
   </BrowserRouter>

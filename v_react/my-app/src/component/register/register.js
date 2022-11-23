@@ -6,15 +6,12 @@ import style from "./register.module.css"
 function Register () {
   return(
      <div classNameName={style.registerContainer}>
-          <div className={style.test}>
-      <div>123</div>
-    </div>
         <form classNameName={style.registerForm}>
           <div classNameName={style.title}>
             <h1> Welcome! </h1>
           </div>
                 {/* 입력칸 */}
-          {/* <div className={style.field}>
+          <div className={style.field}>
 
             <label className={style.label} htmlFor="fullNameInput">name</label>
             <div className={style.control}>
@@ -32,7 +29,7 @@ function Register () {
           <label className={style.label} htmlFor="emailInput">email</label>
           <div className={style.control}>
             <input
-              classNameName={style.input}
+              className={style.input}
               id="emailInput"
               type="email"
               placeholder="abc@example.com"
@@ -65,7 +62,7 @@ function Register () {
               autocomplete="off"
             />
           </div>
-        </div> */}
+        </div>
 
         <button className={style.button} id={style.submitButton}>
           sign up!

@@ -3,12 +3,12 @@
 
 /* main(container) */
 
-.admin-webservice-main{
+.adminWebservice{
   margin: 0 auto;
   max-width: 1240px;
 }
 
-.admin-webservice{
+.adminWebservice{
   display: block;
   justify-content: space-between;
   align-items: center;
@@ -19,7 +19,9 @@
 
 
 /* 계정관리 관련 메뉴 */
-.menu-container {
+.menuContainer {
+  max-width: 1240px;
+  align-items: center;
   display: grid;
   grid-gap: 2rem;
   grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
@@ -32,7 +34,7 @@
   color: #FFD84B;
 }
 
-.menu-card {
+.menuCard {
   border-radius: 6px;
   display: flex;
   align-items: center;
@@ -42,22 +44,22 @@
 
 }
 
-.menu-card:hover {
+.menuCard:hover {
   background-color: #edf7f7;
 
 }
 
-.menu-body:hover {
+.menuBody:hover {
   color: #454DBC;
 }
 
-.menu-icon {
+.menuIcon {
   margin: 0 2rem;
   padding: 1rem;
   font-size: 3.5rem;
 }
 
-.menu-body {
+.menuBody {
   border-radius: 6px;
   color: #edf7f7;;
   font-size: 1.25em;
@@ -65,7 +67,7 @@
   flex-grow: 1;
 }
 
-.menu-body .title {
+.menuBody .title {
   margin-bottom: 1rem;
 }
 

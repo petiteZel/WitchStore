@@ -15,7 +15,7 @@
 }
 
 
-.change-user-form-container {
+.changeContainer {
 
     display: flex;
     justify-content: space-between;
@@ -28,7 +28,7 @@
 }
 
 
-.change-user-form-box {
+.boxForm {
   width: 700px;
   margin: auto;
 }
@@ -73,12 +73,12 @@
 }
 
 
-.field-second {
+.fieldSecond {
   margin-bottom: 10px;
   padding-bottom: 3px;
 }
 
-.button-address {
+.buttonAddress {
   align-items: center;
   background-color: #454DBC;
   border-radius: 4px;
@@ -104,7 +104,7 @@
 }
 
 
-.change-user-form-box .button{
+.boxForm .button{
   width: 187px;
   height: 51px;
   margin-top: 30px;
@@ -125,12 +125,12 @@
  }
 
 
-.change-user-form-box .input:focus {
+.boxForm .input:focus {
   border-color: #00d1b2;
   box-shadow: 0 0 0 0.125em rgba(0, 209, 178, 0.25);
 }
 
-/* 모달(Modal) 창 관련 */
+/* 모달(Modal) 창 관련
 .modal-content button.delete {
   position: absolute;
   right: 3px;
@@ -141,5 +141,5 @@
 .modal-content button.delete::before,
 .modal-content button.delete::after {
   background-color: black;
-}
+} */
 
