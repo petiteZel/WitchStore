@@ -15,7 +15,7 @@ function AdminMain() {
             </div>
             <div className={style.menuContainer}>
                 {/* <!-- 주문관리 --> */}
-                <a className={style.menuCard} href="/admin-order-management/admin-order-management.html">
+                <a className={style.menuCard} href="/admin-order-management">
                     <div className={style.menuIcon}>
                         <span className={style.icon}>
                             <i className="fa-solid fa-credit-card"></i>
@@ -30,7 +30,7 @@ function AdminMain() {
                 </a>
 
                 {/* <!-- 회원관리 --> */}
-                <a className={style.menuCard} href="/admin-users/admin-users.html">
+                <a className={style.menuCard} href="/admin-users">
                     <div className={style.menuIcon}>
                         <span className={style.icon}>
                             <i className="fa-solid fa-address-book"></i>
@@ -45,7 +45,7 @@ function AdminMain() {
                 </a>
 
                 {/* <!-- 카테고리 추가하기 --> */}
-                <a className={style.menuCard} href="/add-category/add-category.html">
+                <a className={style.menuCard} href="/add-category">
                     <div className={style.menuIcon}>
                         <span className={style.icon}>
                             <i className="fa-solid fa-table-list"></i>
@@ -60,7 +60,7 @@ function AdminMain() {
                 </a>
 
                 {/* <!-- 제품 추가하기 --> */}
-                <a className={style.menuCard} href="/add-product/add-product.html">
+                <a className={style.menuCard} href="/add-product">
                     <div className={style.menuIcon}>
                         <span className={style.icon}>
                             <i className="fa-solid fa-gift"></i>

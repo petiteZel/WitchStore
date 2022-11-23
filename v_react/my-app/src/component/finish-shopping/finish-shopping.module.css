@@ -22,7 +22,7 @@
       margin:30px auto 70px auto;
   }
   
-  .fa-basket-shopping {
+  .icon > i {
   
       font-size: 10rem;
       color: #FFD84B;
@@ -38,27 +38,24 @@
     }
     
     .btnSecond{
-      margin:50px auto 150px auto;
+      width: 187px;
+      height: 51px;
+      margin-top: 30px;
       border-radius: 81px;
-      border: none;
-      width: 200px;
-      height: 30%;
+      text-align: center;
+      font-weight: bold;
+      font-size: 20px;
+      color: black;
     }
     
     .checkBtn{
       background-color: #FFD74B;
-      text-align: center;
-      font-size: 1em;
-      font-weight: bold;
-      color: black;
+ 
     }
     
     .mainBtn{
       background-color: #D9D9D9;
-      text-align: center;
-      font-size: 1em;
-      font-weight: bold;
-      color: black;
+
     }
   
   
