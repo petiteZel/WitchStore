@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Ultra&display=swap');
 
-* { margin: 0; padding: 0; box-sizing: border-box;}
+* { margin: 0; padding: 0; box-sizing: borderBox;}
 ol, ul, dl { list-style: none;}
 a { text-decoration: none; color: #FFFFFF; cursor: pointer;}
 button{ all: unset; cursor: pointer;}
@@ -41,21 +41,21 @@ body {
 /* common end */
 
 
-#header .header-container .nav .login-signup-box{
+.nav .loginSignupBox{
     margin-right: 40px;
 }
 
-#header .header-container .nav .login-signup-box button:first-child{
+.nav .loginSignupBox button:first-child{
     margin-right: 20px;
 }
-#header .header-container .nav .login-signup-box .login-btn,
-#header .header-container .nav .login-signup-box .signup-btn{
+.nav .loginSignupBox .loginBtn,
+.nav .loginSignupBox .signupBtn{
     font-size: 18px;
 }
-#header .header-container .nav .login-signup-box > button a:hover{
+.nav .loginSignupBox > button a:hover{
     color: #FFD84B;
 }
-/* login-signup end */
+/* loginSignup end */
 
 
 .userInfoBox{
@@ -63,35 +63,35 @@ body {
     margin-right: 20px;
     display: flex;
 }
-#header .header-container .nav .user-info:hover .user-menu-box{
+.nav .userInfo:hover .userMenuBox{
     display: block;
 }
 
-#header .header-container .nav .user-info-box .user-info{
+.nav .userInfoBox .userInfo{
     display: flex;
     align-items: center;
 }
-#header .header-container .nav .user-info-box .user-name{
+.nav .userInfoBox .userName{
     margin-right: 14px;
     color: #FFFFFF;
 }
 
-#header .header-container .nav .user-info-box .user-name-container{
+.nav .userInfoBox .userName-container{
     display: flex;
     align-items: center;
     margin: 0 20px;
 }
 
 
-#header .header-container .nav .user-info-box .user-info-btn i{
+.nav .userInfoBox .userInfoBtn i{
     font-size: 26px;
     color: #D9D9D9;
 }
 
-#header .header-container .nav .user-info-box .user-info-btn i:hover{
+.nav .userInfoBox .userInfoBtn i:hover{
     color: #FFD84B;
 }
-#header .header-container .nav .user-menu-box{
+.nav .userMenuBox{
     position: absolute;
     right: 0;
     margin-top: 134px;
@@ -102,20 +102,20 @@ body {
     z-index: 100;
     display: none;
 }
-#header .header-container .nav .user-menu-box .user-menu li{
+.nav .userMenuBox .userMenu li{
     margin-bottom: 8px;
     text-align: center;
 }
-#header .header-container .nav .user-menu-box .user-menu li:hover{
+.nav .userMenuBox .userMenu li:hover{
     background-color: #2b3075;
 }
-/* user-menu end */
+/* userMenu end */
 
 
-#header .header-container .nav .user-cart-btn i{
+.nav .userCartBtn i{
     font-size: 20px;
 }
-#header .header-container .nav .user-cart-btn i:hover{
+.nav .userCartBtn i:hover{
     color: #FFD84B;
 }
 /* cart class  */

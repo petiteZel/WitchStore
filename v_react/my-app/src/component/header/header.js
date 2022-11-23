@@ -1,98 +1,211 @@
-import React from "react";
+import React, { useState } from "react";
 import style from "./header.module.css";
 import logo from "../image/logo.png";
 
-function Header(){
-  return(
+function Header() {
+  function logout() {
+    const logoutBtn = document.querySelector("#logoutBtn");
+    logoutBtn.addEventListener("click", () => {
+      sessionStorage.clear();
+      alert(`로그아웃 되었습니다.`);
+      window.location.reload();
+    });
+  }
+  const [loginInfo, setLoginInfo] = useState("");
+
+  async function callLogIn() {
+    const token = sessionStorage.getItem("token");
+    const admin = sessionStorage.getItem("admin");
+
+    if (token) {
+      const email = sessionStorage.getItem("email");
+      const userId = email.split("@")[0];
+
+      if (!admin) {
+        setTimeout(()=>{setLoginInfo(
+          <nav className={style.nav} id="selectNav">
+            <div className={style.userInfoBox}>
+              <div className={style.userInfo}>
+                <div className={style.userNameContainer}>
+                  <label for="userName" className={`${style.userName} ${style.en}`}>
+                    ${userId}
+                  </label>
+                  <button id="userName" className={style.userInfoBtn}>
+                    <i className="fa-solid fa-caret-down"></i>
+                  </button>
+                </div>
+                <div className={style.userMenuBox}>
+                  <ul className={style.userMenu}>
+                    <li>
+                      <a href="/order-detail">주문내역</a>
+                    </li>
+                    <li>
+                      <a href="/changingInfo">계정관리</a>
+                    </li>
+                    <li>
+                      <a href="/" id="logoutBtn">
+                        로그아웃
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <a href="../cart" className={style.userCartBtn}>
+              <i className="fa-solid fa-cart-shopping"></i>
+            </a>
+          </nav>
+        );},200)
+        logout();
+      } else {
+        setTimeout(()=>{
+          setLoginInfo(
+          <nav className={style.nav} id="selectNav">
+            <div className={style.userInfoBox}>
+              <div className={style.userInfo}>
+                <div className={style.userNameContainer}>
+                  <label for="userName" className={`${style.userName} ${style.en}`}>
+                    Admin
+                  </label>
+                  <button id="userName" className={style.userInfoBtn}>
+                    <i className="fa-solid fa-caret-down"></i>
+                  </button>
+                </div>
+                <div className={style.userMenuBox}>
+                  <ul className={style.userMenu}>
+                    <li>
+                      <a href="/admin-main">페이지 관리</a>
+                    </li>
+                    <li>
+                      <a href="/changingInfo">계정관리</a>
+                    </li>
+                    <li>
+                      <a href="/" id="logoutBtn">
+                        로그아웃
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <a href="../cart" className={style.userCartBtn}>
+              <i className="fa-solid fa-cart-shopping"></i>
+            </a>
+          </nav>
+        );},200)
+        logout();
+      }
+    } else {
+      setTimeout(()=>{
+        setLoginInfo(
+          <nav className={style.nav} id="selectNav">
+            <div className={style.loginSignupBox}>
+              <button className={`${style.loginBtn} ${style.en}`}>
+                <a href="/login">login</a>
+              </button>
+              <button className={`${style.signupBtn} ${style.en}`}>
+                <a href="/register">sign up</a>
+              </button>
+            </div>
+            <a href="../cart" className={style.userCartBtn}>
+              <i className="fa-solid fa-cart-shopping"></i>
+            </a>
+          </nav>
+        );},200)
+    }
+  }
+
+  callLogIn()
+  
+  const headerFirst = (
     <header className={style.center}>
       <div className={style.container}>
-
-          <h1 className={style.logo}>
-              <a href="/home"><img src={logo} alt='logo'/></a>
-          </h1>
-
-          <nav className={style.nav} id="selectNav">
-          </nav>
-
+        <h1 className={style.logo}>
+          <a href="/home">
+            <img src={logo} alt="logo" />
+          </a>
+        </h1>
+        {loginInfo}
       </div>
     </header>
-  )
+  );
+
+  return headerFirst;
 }
 
+// function logout(){
+//   const logoutBtn = document.querySelector("#logoutBtn")
+//   logoutBtn.addEventListener('click',()=>{
+//     sessionStorage.clear()
+//     alert(`로그아웃 되었습니다.`)
+//     window.location.reload()
+//   });
+// }
 
-function logout(){
-  const logoutBtn = document.querySelector("#logoutBtn")
-  logoutBtn.addEventListener('click',()=>{
-    sessionStorage.clear()
-    alert(`로그아웃 되었습니다.`)
-    window.location.reload()
-  });
-}
+// async function header(callback) {
+//   const token = sessionStorage.getItem("token");
+//   const admin = sessionStorage.getItem("admin");
+//   let loginInfo;
 
-async function header(callback) {
-  const token = sessionStorage.getItem("token");
-  const admin = sessionStorage.getItem("admin");
+//   if (token) {
+//     const email = sessionStorage.getItem("email");
+//     const userId = email.split('@')[0]
 
-  if (token) {
-    const email = sessionStorage.getItem("email");
-    const userId = email.split('@')[0]
+//     setTimeout(() => {
+//       const header = document.querySelector("#selectNav");
+//       if(!admin){
+//         loginInfo = `<div className={style.userInfoBox}>
+//           <div className={style.userInfo}>
+//             <div className={style.userNameContainer}>
+//               <label for="userName" className={`${style.userName} ${style.en}`}>${userId}</label>
+//               <button id='userName' className="userInfoBtn"><i className="fa-solid fa-caret-down"></i></button>
+//             </div>
+//             <div className="userMenuBox">
+//               <ul className="userMenu">
+//                   <li><a href="/order-detail">주문내역</a></li>
+//                   <li><a href="/changingInfo">계정관리</a></li>
+//                   <li><a href='/' id="logoutBtn">로그아웃</a></li>
+//               </ul>
+//             </div>
+//         </div>
 
-    setTimeout(() => {
-      const header = document.querySelector("#selectNav");
-      if(!admin){
-        header.innerHTML = `<div class="userInfoBox">    
-          <div class="user-info">
-            <div class="user-name-container">
-              <label for="user-name" class="user-name en">${userId}</label>
-              <button id='user-name' class="user-info-btn"><i class="fa-solid fa-caret-down"></i></button>  
-            </div>
-            <div class="user-menu-box">
-              <ul class="user-menu">
-                  <li><a href="/order-detail/order-detail.html">주문내역</a></li>
-                  <li><a href="/changing-info/changing-info.html">계정관리</a></li>
-                  <li><a href='/' id="logoutBtn">로그아웃</a></li>
-              </ul>
-            </div>
-        </div>
-              
-              </div>
-              <a href="../cart/cart.html" class="user-cart-btn"><i class="fa-solid fa-cart-shopping"></i></a>`;
-              callback();
-            }else{
-              header.innerHTML = `<div class="user-info-box"> 
-                <div class="user-info">
-                        <div class="user-name-container">
-                          <label for="user-name" class="user-name en">Admin</label>
-                          <button id='user-name' class="user-info-btn"><i class="fa-solid fa-caret-down"></i></button>  
-                        </div>
-                        <div class="user-menu-box">
-                          <ul class="user-menu">
-                              <li><a href="/admin-main/admin-webservice.html">페이지 관리</a></li>
-                              <li><a href="/changing-info/changing-info.html">계정관리</a></li>
-                              <li><a href='/' id ="logoutBtn">로그아웃</a></li>
-                          </ul>
-                        </div>
-                    </div>
-                    
-                    </div>
-                    <a href="../cart/cart.html" class="user-cart-btn"><i class="fa-solid fa-cart-shopping"></i></a>`;
-                    callback()
-            }
-            
-          },200);
-        } else {
-    setTimeout(() => {
-      const header = document.querySelector("#selectNav");
-      header.innerHTML = `<div class="login-signup-box"> 
-      <button class="login-btn en"><a href="/login">login</a></button>
-      <button class="signup-btn en"><a href="/register">sign up</a></button>
-    </div>
-    <a href="../cart/cart.html" class="user-cart-btn"><i class="fa-solid fa-cart-shopping"></i></a>`;
-    },200);
-  }
-}
+//               </div>
+//               <a href="../cart" className={style.userCartBtn}><i className="fa-solid fa-cart-shopping"></i></a>`;
+//               callback();
+//             }else{
+//               loginInfo = `<div className={style.userInfoBox}>
+//                 <div className={style.userInfo}>
+//                         <div className={style.userNameContainer}>
+//                           <label for="userName" className={`${style.userName} ${style.en}`}>Admin</label>
+//                           <button id='userName' className="userInfoBtn"><i className="fa-solid fa-caret-down"></i></button>
+//                         </div>
+//                         <div className="userMenuBox">
+//                           <ul className="userMenu">
+//                               <li><a href="/admin-main">페이지 관리</a></li>
+//                               <li><a href="/changingInfo">계정관리</a></li>
+//                               <li><a href='/' id ="logoutBtn">로그아웃</a></li>
+//                           </ul>
+//                         </div>
+//                     </div>
 
+//                     </div>
+//                     <a href="../cart" className={style.userCartBtn}><i className="fa-solid fa-cart-shopping"></i></a>`;
+//                     callback()
+//             }
 
-header(logout);
+//           },200);
+//         } else {
+//     setTimeout(() => {
+//       loginInfo = `<div className="loginSignupBox">
+//       <button className="loginBtn en"><a href="/login">login</a></button>
+//       <button className="signupBtn en"><a href="/register">sign up</a></button>
+//     </div>
+//     <a href="../cart" className={style.userCartBtn}><i className="fa-solid fa-cart-shopping"></i></a>`;
+//     },200);
+//   }
+//   return loginInfo;
+// }
+
+// header(logout);
 
 export default Header;
