@@ -2,6 +2,8 @@
 // import { validateEmail } from "/useful-functions.js";
 import React from "react";
 import style from "./type-test.module.css"
+import { useState } from 'react';
+
 import gameImgRoot from "../image/video_game.png"
 import newImgRoot from "../image/newspaper.png"
 import womanImgRoot from "../image/woman-bowing.png"
@@ -16,7 +18,15 @@ import earImgRoot from "../image/ear.png"
 import bubbleImgRoot from "../image/right-anger-bubble.png"
 import moonImgRoot from '../image/moon.png'
 
+
+
 function Type() {
+
+  const [Style2,setStyle] = useState({display: 'none'})
+  //https://stackoverflow.com/questions/24502898/show-or-hide-element-in-react
+
+
+
     return(
   <main id={style.loginArea}>
       {/* <!-- 배경 별 --> */}
@@ -201,7 +211,11 @@ function Type() {
           </div>
 
           <div className={style.showResultBox} id={style.showResultBox}>
-            <button className={style.showResultBtn} id={style.showResultBtn}>
+            <button className={style.showResultBtn} id={style.showResultBtn}
+            onClick={e => {
+              setStyle({display:'block'})
+            }}
+            >
               결과 보기
             </button>
           </div>
@@ -212,15 +226,11 @@ function Type() {
     <div className={style.resultPage} id={style.resultPage}>
 
       <div className={style.resultTitle} id={style.resultTitle}>
-        <h1>당신은 아이돌 타입!</h1>
+        <h1></h1>
       </div>
 
     <div className={style.resultAnswer} id={style.resultAnswer}>
-      <h3>타고난 밝음과 상냥함으로 상대에게 활력을 불어넣는 아이돌 타입이라고 할 수 있습니다. 
-        우울할 때일수록 기분을 빨리 전환하고 싶은 경향이 강해,
-    친구에게 상담하거나 다른 일을 함으로써 리프레쉬하려고 하는 경우가 많습니다. 
-아이돌 타입은 상대를 기쁘게 하는 것에 보람을 느끼기 때문에,우울할 때일수록 사람들과의 교류가 필요합니다.
-</h3> 
+      <h3></h3> 
     </div>
     
 
@@ -249,7 +259,7 @@ function Type() {
 
 
 
-// 요소(element), input 혹은 상수
+// //요소(element), input 혹은 상수
 // const resultTitle= document.querySelector("#resultTitle");
 // const resultAnswer = document.querySelector("#resultAnswer");
 // const resultPage =document.querySelector('#resultAge');
