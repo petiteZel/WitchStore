@@ -160,6 +160,10 @@
   height: 40px;
 }
 
+.select{
+  background-color: black;
+}
+
 .selectBbox.select {
   background-color: beige;
 }
