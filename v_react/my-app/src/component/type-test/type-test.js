@@ -24,8 +24,14 @@ function Type() {
 
   const [Style2,setStyle] = useState({display: 'none'})
   //https://stackoverflow.com/questions/24502898/show-or-hide-element-in-react
+  const [ addStyle, setAddStyle ] = useState(style.select)
+
+  const handleClick = (e)=>{
+    const btnVal = e.currentTarget.value
+    const [ type, category ] = btnVal.split("_")
 
 
+  }
 
     return(
   <main id={style.loginArea}>
@@ -50,7 +56,7 @@ function Type() {
       
   
       <div className={style.selectBox}>
-        <button className={`${style.box} ${style.selectAbox}`} value="A_1">
+        <button className={`${style.box} ${style.selectAbox} ${addStyle}`} value="A_1" onClick={handleClick}>
           <div className={style.selectA}>
             <div className={style.icon}> 
               <img id={style.gameImg} src={gameImgRoot} />
@@ -223,7 +229,7 @@ function Type() {
 
     </div>
    
-    <div className={style.resultPage} id={style.resultPage}>
+    <div className={style.resultPage} id={style.resultPage} style={Style2}>
 
       <div className={style.resultTitle} id={style.resultTitle}>
         <h1></h1>
@@ -254,6 +260,7 @@ function Type() {
 
    </div>
  </main>
+
     )
 }
 
