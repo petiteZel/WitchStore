@@ -21,16 +21,25 @@ import moonImgRoot from '../image/moon.png'
 
 
 function Type() {
-
   const [Style2,setStyle] = useState({display: 'none'})
   //https://stackoverflow.com/questions/24502898/show-or-hide-element-in-react
   const [ addStyle, setAddStyle ] = useState(style.select)
+  const [ btnAble, setBtnAble ] = useState({
+    first:false,
+    second:false,
+    three:false,
+    four:false,
+    five:false,
+    six:false
+  })
 
+  
   const handleClick = (e)=>{
     const btnVal = e.currentTarget.value
     const [ type, category ] = btnVal.split("_")
-
-
+    console.log(e)
+    e.currentTarget.disabled=true;
+    e.currentTarget.nextSibling.disabled = true;
   }
 
     return(
@@ -65,7 +74,7 @@ function Type() {
           </div>
         </button>
     
-        <button className={`${style.box} ${style.selectBbox}`} value="B_1">
+        <button className={`${style.box} ${style.selectBbox}`} value="B_1" onClick={handleClick}>
             <div className={style.selectB}>
                 <div className={style.icon}>
                   <img id={style.newsImg} src={newImgRoot} />

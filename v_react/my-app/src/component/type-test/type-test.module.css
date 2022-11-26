@@ -161,16 +161,9 @@
 }
 
 .select{
-  background-color: black;
-}
-
-.selectBbox.select {
   background-color: beige;
 }
 
-.selectBbox.select {
-  background-color: beige;
-}
 .tryAgainBtn {
   background-color: #d9d9d9;
   text-align: center;

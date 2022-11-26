@@ -5,6 +5,7 @@ import style from "./product-detail.module.css";
 import SideBar from "../side-bar/side-bar";
 
 function ProductDetail() {
+
   return (
     <div className={style.containerBox}>
       <div className={`${style.brandTitle} ${style.en}`}>
