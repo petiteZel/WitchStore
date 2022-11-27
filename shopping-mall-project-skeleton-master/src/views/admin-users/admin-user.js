@@ -21,8 +21,6 @@ async function showUser(){
             </button>
             </div>
         </div>`
-
-
         })
         const delBtns = document.querySelectorAll('.member-delete__btn')
         const changeRoles = document.querySelectorAll('.orders-info__column.member-select')
