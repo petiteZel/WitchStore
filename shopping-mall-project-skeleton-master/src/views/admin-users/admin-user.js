@@ -28,9 +28,9 @@ async function showUser(){
             delBtn.addEventListener('click',async ()=>{
                 try{
                     await Api.delete(`/api/users`,delBtn.value)
-                alert(`사용자가 삭제되었습니다.`)
-                location.reload();
-            }
+                    alert(`사용자가 삭제되었습니다.`)
+                    location.reload();
+                }
                 catch(err){
                     alert(`err: ${err}`)
                 }
