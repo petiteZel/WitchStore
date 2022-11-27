@@ -4,15 +4,22 @@ async function showUser(){
     try{
         const api = await Api.get('/api/users')
         const infoBox = document.querySelector('.orders-info')
+        const usersCount = document.querySelector('.usersCount')
+        const adminCount = document.querySelector('.adminCount')
+        let count=0
+        usersCount.innerHTML = api.length
         api.forEach(e=>{
+            if(e.role==='admin'){
+                count+=1;
+            }
             infoBox.innerHTML += `<div class="orders-info__row">
             <div class="orders-info__column">${e.createdAt?e.createdAt.split('T')[0] : ""}</div>
             <div class="orders-info__column">${e.email}</div>
             <div class="orders-info__column">${e.fullName}</div>
             <div class="orders-info__column">
             <select value="${e._id}" class="orders-info__column member-select">
-                <option value="관리자" ${e.role==='admin'?"selected":""} >관리자</option>
-                <option value="일반 사용자" ${e.role!=='admin'?"selected":""}>일반 사용자</option>
+                <option value="${e._id}" ${e.role==='admin'?"selected":""}>관리자</option>
+                <option value="${e._id}" ${e.role!=='admin'?"selected":""}>일반 사용자</option>
             </select>
             </div>
             <div class="orders-info__column">
@@ -21,7 +28,10 @@ async function showUser(){
             </button>
             </div>
         </div>`
+
+
         })
+        adminCount.innerHTML = count;
         const delBtns = document.querySelectorAll('.member-delete__btn')
         const changeRoles = document.querySelectorAll('.orders-info__column.member-select')
         delBtns.forEach(delBtn=>{
@@ -37,12 +47,15 @@ async function showUser(){
             })
             
         })
-        
+
         changeRoles.forEach((select)=>{
-            select.addEventListener('chage',()=>{
+            select.style.backgroundColor = select.options[select.selectedIndex].text == '관리자'?'yellow':false;
+            select.addEventListener('change',(e)=>{
                 try{
                     const statusValue = select.options[select.selectedIndex].text == '관리자'?'admin':"basic-user"
-                    Api.patch("/api/users", select.value, {status:statusValue})
+                    Api.patch("/api/users", select.value, {role:statusValue})
+                    alert('계정 권한이 변경되었습니다.')
+                    location.reload()
                 }catch(err){
                     alert(`patch err: ${err}`)
                 }
