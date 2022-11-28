@@ -192,3 +192,14 @@
   margin:100px auto 50px auto;
 }
 
+/* .recommend-item{
+  float: right;
+} */
+
+.r-item-box{
+  float: right;
+  background-color:aqua;
+  Width :100px;
+  height : 100px;
+  margin : 20px 10px 20px 10px;
+}

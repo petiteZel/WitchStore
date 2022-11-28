@@ -130,9 +130,7 @@ async function setInnerHTML(typeId)  {
     ]
     
     //if 카테고리1 a2개 이상, 카테고리2 a2개 이상
-    title.innerHTML = resultArray[typeId-1].title;
-    
-    
+    title.innerHTML = resultArray[typeId-1].title; 
     answer.innerHTML = resultArray[typeId-1].answer;
     
     
