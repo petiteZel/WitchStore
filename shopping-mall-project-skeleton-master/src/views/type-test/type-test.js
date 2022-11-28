@@ -12,7 +12,7 @@ const tryAginBtn=document.querySelector('#try-again-btn');
 
 // calType();
 doDisplay();
-refreshScroll();
+// refreshScroll();
 
 //결과 페이지 보이게
 async function doDisplay(){ 	
@@ -36,15 +36,21 @@ async function doDisplay(){
 }
 
 //초기화 할 때 스크롤 맨 위로
-async function refreshScroll(){
-    tryAginBtn.addEventListener("click", ()=> {
+// async function refreshScroll(){
+//     tryAginBtn.addEventListener("click", ()=> {
         
-        window.scrollTo({ top: 20, behavior: "smooth" });
-        console.log("다시!")
+//         window.onload = function(){
+//             setTimeout(function (){
+//                 scrollTo(0,0);
+//             },100);
+//             console.log("다시!")
+//         }      
 
-    });
+//     });
+// }
+function goTop(){
+	document.documentElement.scrollTop = 0;
 }
-
 
 function calType() {
     const select = document.querySelectorAll('.box');
