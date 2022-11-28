@@ -22,9 +22,16 @@ async function doDisplay(){
         }else{ 		
             resultPage.style.display = 'none'; 	
         } 
+
+        //결과보기 클릭 후 스크롤 이동
+        var location = document.querySelector("#result-page").offsetTop;
+        console.log(location);
+        window.scrollTo({ top: location, behavior: "smooth" });
+        console.log("move");
+
     });
 
-   
+
 }
 
 function calType() {
@@ -38,6 +45,10 @@ function calType() {
             const [ type, category ] = resultValue.split("_");
             //클릭했을 때 
             e.classList.add("select");
+
+            var location2 = document.querySelector("#question-box second-question").offsetTop;
+            console.log(location2);
+            window.scrollTo({ top: location, behavior: "smooth" });
             
             e.disabled = true;
             if(type == "A") {
