@@ -23,10 +23,11 @@ async function doDisplay(){
             resultPage.style.display = 'none'; 	
         } 
 
-        //결과보기 클릭 후 스크롤 이동
-        var location = document.querySelector("#result-page").offsetTop;
+        // //결과보기 클릭 후 스크롤 이동
+        // var location = document.querySelector("#result-page").offsetTop;
+        var location = window.scrollY
         console.log(location);
-        window.scrollTo({ top: location, behavior: "smooth" });
+        window.scrollTo({ top: location+600, behavior: "smooth" });
         console.log("move");
 
     });
@@ -38,7 +39,7 @@ function calType() {
     const select = document.querySelectorAll('.box');
     let firstCount = 0;
     let secondCount = 0;
-    
+    var location2 = 0;
     select.forEach(async (e)=>{
         e.addEventListener('click', ()=>{
             const resultValue = e.value;
@@ -46,13 +47,15 @@ function calType() {
             //클릭했을 때 
             e.classList.add("select");
 
-            var location2 = document.querySelector("#question-box second-question").offsetTop;
+
+            location2 += 500;
             console.log(location2);
-            window.scrollTo({ top: location, behavior: "smooth" });
+            window.scrollTo({ top: location2, behavior: "smooth" });
             
             e.disabled = true;
             if(type == "A") {
-                e.nextSibling.disabled = true;
+                e.nextElementSibling.disabled = true;
+
                 if(category == 1){
                     firstCount += 1;
                     // console.log(firstCount + "first");
@@ -77,8 +80,7 @@ calType()
 
 async function calScore(firstCount, secondCount){
     let typeId = 0;
-    // console.log(firstCount + "계산중1");
-    // console.log(secondCount + "계산중2");
+
     if(firstCount >= 2){
         if(secondCount >= 2){
             typeId = 1;
