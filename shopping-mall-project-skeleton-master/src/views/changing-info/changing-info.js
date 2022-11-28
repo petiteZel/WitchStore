@@ -5,7 +5,7 @@ import * as Api from "../../api.js";
 const securityTitle = document.querySelector("#securityTitle");
 const fullNameInput = document.querySelector("#fullNameInput");
 const emailInput = document.querySelector("#emailInput");
-const postalCodeInput = document.querySelector("#postalCodeInput");
+// const postalCodeInput = document.querySelector("#postalCodeInput");
 const address1Input = document.querySelector("#address1Input");
 const phoneNumberInput = document.querySelector("#phoneNumberInput");
 const saveCompleteButton = document.querySelector("#saveCompleteButton");
@@ -37,14 +37,14 @@ async function insertUserData() {
   console.log("get완료")
 
   // 객체 destructuring
-  const { fullName, email, address1, postalCode, phoneNumber } = userData;
+  const { fullName, email, address1,  phoneNumber } = userData;
 
   //확인필요!
   // securityTitle.innerText = `회원정보 관리 (${email})`;
   emailInput.value = email || "";
   fullNameInput.value = fullName || "";
   phoneNumberInput.value = phoneNumber || "";
-  postalCodeInput.value = postalCode || "";
+  // postalCodeInput.value = postalCode || "";
   address1Input.value = address1 || "";
 
   // if(phoneNumber = undefined){
@@ -71,7 +71,7 @@ async function insertUserData() {
 
 function disableForm() {
   fullNameInput.setAttribute("disabled", "");
-  postalCodeInput.setAttribute("disabled", "");
+  // postalCodeInput.setAttribute("disabled", "");
   address1Input.setAttribute("disabled", "");
   phoneNumberInput.setAttribute("disabled", "");
 }
@@ -82,15 +82,15 @@ async function saveUserData(e) {
   e.preventDefault();
 
   const fullName = fullNameInput.value;;
-  const postalCode = postalCodeInput.value;
+  // const postalCode = postalCodeInput.value;
   const address1 = address1Input.value;
   const phoneNumber = phoneNumberInput.value;
 
 
-  const isPostalCodeChanged =
-    postalCode !== (userData.address?.postalCode || "");
+  // const isPostalCodeChanged =
+  //   postalCode !== (userData.address?.postalCode || "");
   const isAddress1Changed = address1 !== (userData.address?.address1 || "");
-  const isAddressChanged = isPostalCodeChanged || isAddress1Changed;
+  // const isAddressChanged = isPostalCodeChanged || isAddress1Changed;
 
 //확인필요!
 const data = {};
@@ -103,14 +103,14 @@ const data = {};
 
 
   // 주소를 변경했는데, 덜 입력한 경우
-  if (isAddressChanged && !address1) {
-    return alert("주소를 모두 입력해 주세요.");
-  }
+  // if (isAddress1Changed && !address1) {
+  //   return alert("주소를 모두 입력해 주세요.");
+  // }
 
-  if ( isPostalCodeChanged) {
-    data.address1 = address1;
-    data.postalCode = postalCode;
-  }
+  // if ( isPostalCodeChanged) {
+  //   data.address1 = address1;
+  //   // data.postalCode = postalCode;
+  // }
 
   if (phoneNumber && phoneNumber !== userData.phoneNumber) {
     data.phoneNumber = phoneNumber;
