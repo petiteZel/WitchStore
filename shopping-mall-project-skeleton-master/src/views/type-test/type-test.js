@@ -6,12 +6,13 @@ const resultTitle= document.querySelector("#result-title");
 const resultAnswer = document.querySelector("#result-answer");
 const resultPage =document.querySelector('#result-page');
 const showResultBtn=document.querySelector('#show-result-btn');
-
+const tryAginBtn=document.querySelector('#try-again-btn');
 
 
 
 // calType();
 doDisplay();
+refreshScroll();
 
 //결과 페이지 보이게
 async function doDisplay(){ 	
@@ -26,14 +27,24 @@ async function doDisplay(){
         // //결과보기 클릭 후 스크롤 이동
         // var location = document.querySelector("#result-page").offsetTop;
         var location = window.scrollY
-        console.log(location);
-        window.scrollTo({ top: location+600, behavior: "smooth" });
+        window.scrollTo({ top: location+400, behavior: "smooth" });
         console.log("move");
 
     });
 
 
 }
+
+//초기화 할 때 스크롤 맨 위로
+async function refreshScroll(){
+    tryAginBtn.addEventListener("click", ()=> {
+        
+        window.scrollTo({ top: 20, behavior: "smooth" });
+        console.log("다시!")
+
+    });
+}
+
 
 function calType() {
     const select = document.querySelectorAll('.box');
