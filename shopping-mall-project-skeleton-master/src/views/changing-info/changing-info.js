@@ -107,10 +107,10 @@ const data = {};
   //   return alert("주소를 모두 입력해 주세요.");
   // }
 
-  // if ( isPostalCodeChanged) {
-  //   data.address1 = address1;
-  //   // data.postalCode = postalCode;
-  // }
+  if ( isAddress1Changed) {
+    data.address1 = address1;
+    // data.postalCode = postalCode;
+  }
 
   if (phoneNumber && phoneNumber !== userData.phoneNumber) {
     data.phoneNumber = phoneNumber;
