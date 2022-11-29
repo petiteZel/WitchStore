@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { productService } from '../services/product-service';
-import { loginRequired } from '../middlewares'
+import { adminOnly, loginRequired } from '../middlewares'
 
 const productRouter = Router();
 
@@ -86,7 +86,7 @@ productRouter.patch('/update/:productId',
 
 // 6.상품 정보 삭제 (/api/product/:productId) ⇒ admin 한정
 
-productRouter.delete('/', 
+productRouter.delete('/:productId', adminOnly, loginRequired,  
 async function (req, res, next) {
   try {
     // params로부터 id를 가져옴
