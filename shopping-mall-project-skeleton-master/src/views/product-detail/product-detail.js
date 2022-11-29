@@ -86,13 +86,11 @@ async function productDetail(){
 
     if (amount.innerHTML == 0){
         minusBtn.disabled = true;
-        // cartBtn.disabled = true;
     }
     
     plusBtn.addEventListener('click',()=>{
         if(amount.innerHTML==0){
             minusBtn.disabled=false;
-            // cartBtn.disabled=false;
         }
         amount.innerHTML = Number(amount.innerHTML)+1;
         totalPrice.innerHTML = (price * Number(amount.innerHTML)).toLocaleString('ko-KR')
@@ -100,7 +98,6 @@ async function productDetail(){
     minusBtn.addEventListener('click',()=>{
         if(amount.innerHTML==1){
             minusBtn.disabled = true;
-            // cartBtn.disabled = true;
         }
         amount.innerHTML = Number(amount.innerHTML)-1;
         totalPrice.innerHTML = (price * Number(amount.innerHTML)).toLocaleString('ko-KR')
