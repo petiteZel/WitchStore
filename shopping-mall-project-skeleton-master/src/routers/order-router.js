@@ -5,7 +5,7 @@ import { orderService } from "../services";
 
 const orderRouter = Router();
 
-orderRouter.post("/order", loginRequired, async (req, res, next) => {
+orderRouter.post("/", loginRequired, async (req, res, next) => {
   try {
     // application/json 설정을 프론트에서 안 하면, body가 비어 있게 됨.
     if (is.emptyObject(req.body)) {
@@ -16,20 +16,22 @@ orderRouter.post("/order", loginRequired, async (req, res, next) => {
 
     // req (request) 에서 데이터 가져오기
     const userId = req.currentUserId;
-    const summaryTitle = req.body.summaryTitle;
     const totalPrice = req.body.totalPrice;
     const address = req.body.address;
-    const request = req.body.request;
+    const status = req.body.status;
 
-    // 위 데이터를 제품 db에 추가하기
-    const newOrder = await orderService.addOrder({
-      userId,
-      summaryTitle,
-      totalPrice,
-      address,
-      request,
-    });
+    // 생성할 객체 설정함
+    const orderInfo = {
+			...(userId && { userId }),
+			...(totalPrice && { totalPrice }),
+			...(address && { address }),
+			...(status && { status }),
+    };
 
+    // 위 데이터를 order DB에 추가하기
+    const newOrder = await orderService.addOrder(orderInfo)
+
+    // 추가된 데이터 반환
     res.status(201).json(newOrder);
   } catch (error) {
     next(error);
