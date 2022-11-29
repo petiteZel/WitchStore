@@ -1,4 +1,6 @@
 import * as Api from "../api.js"
+import App from '..src/app.js';
+const app = new App(document.querySelector('.app'));
 
 async function insertProductsfromOder(){
   const localLength = localStorage.length;
@@ -27,7 +29,10 @@ async function insertProductsfromOder(){
     
     }
     await Api.post("/api/order/",data)
-    const orderApi = await Api.get("")
+    const orderApi = await Api.get(
+    userId = "",
+    totalPrice = 222,
+    address = "")
     console.log(orderApi)
   }catch(err){
     alert(`err: ${err.message}`)
