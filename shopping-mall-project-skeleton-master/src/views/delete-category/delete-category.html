@@ -19,7 +19,7 @@
       type="module"
       defer
     ></script>
-    <script src="./add-category.js" type="module" defer></script>
+    <script src="./delete-category.js" type="module" defer></script>
     <script
       src="../common/component/header/header.js"
       type="module"
@@ -27,7 +27,7 @@
     ></script>
 
     <!-- css -->
-    <link rel="stylesheet" href="add-category.css" />
+    <link rel="stylesheet" href="delete-category.css" />
     <link
       rel="stylesheet"
       href="../common/component/header/common-header.css"
@@ -42,24 +42,19 @@
       <div class="container-form">
         <div class="addbox category">
           <div class="contents-box">
-            <a href="/delete-category/delete-category.html">* 카테고리 삭제하러 가기</a>
-            <p>카테고리 추가하기</p>
+            <p>카테고리 삭제하기</p>
             <div class="field">
-              <label for="content" class="info-title">카테고리 이름</label>
-              <div>
-                <input
-                  class="info-content"
-                  id="content"
-                  placeholder="인형"
-                  autocomplete="on"
-                />
+              <label for="content" class="info-title">카테고리 선택</label>
+              <div class="select-box">
+                <select class="select-content" id="content-category">
+                  <option>선택</option>
+                </select>
+                <i class="fa-solid fa-chevron-down"></i>
               </div>
             </div>
           </div>
           <div class="button-space">
-            <button type="submit" class="submit-button">
-              카테고리 추가하기
-            </button>
+            <button type="submit" class="submit-button">삭제하기</button>
           </div>
         </div>
       </div>
