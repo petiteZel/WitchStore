@@ -27,7 +27,8 @@ async function insertProductsfromOder(){
     
     }
     await Api.post("/api/order/",data)
-    console.log("성공")
+    const orderApi = await Api.get("")
+    console.log(orderApi)
   }catch(err){
     alert(`err: ${err.message}`)
   }
