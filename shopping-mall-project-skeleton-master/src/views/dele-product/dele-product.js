@@ -29,7 +29,7 @@ async function showUser(){
         delBtns.forEach(delBtn=>{
             delBtn.addEventListener('click',async ()=>{
                 try{
-                    await Api.delete(`/api/product`,delBtn.value)
+                    await Api.delete(`/api/product`,delBtn.value,{productId:delBtn.value})
                     alert(`상품이 삭제되었습니다.`)
                     location.reload();
                 }
