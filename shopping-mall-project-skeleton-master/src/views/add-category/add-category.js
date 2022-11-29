@@ -6,9 +6,13 @@ async function addCategory(){
         e.preventDefault()
         const categoryName = document.querySelector('.info-content').value;
         const data = {categoryName: categoryName, imageUrl:'something'}
-
-        const categoryApi = await Api.post('/api/category',data)
-
+        try{
+            await Api.post('/api/category',data)
+            alert("카테고리가 추가되었습니다.")
+            location.reload()
+        }catch(err){
+            alert(err.message)
+        }
     })
     
     

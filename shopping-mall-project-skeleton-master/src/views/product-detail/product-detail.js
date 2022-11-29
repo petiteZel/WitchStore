@@ -56,12 +56,12 @@ async function productDetail(){
             <div class="info-content">${price.toLocaleString('ko-KR')}</div>
         
             <div class="count">
+                <button class="minus-btn">
+                    <i class="fa-solid fa-circle-minus"></i>
+                </button>
+                <div id="count-number"> 0 </div>
                 <button class="plus-btn">
                     <i class="fa-solid fa-circle-plus" id='plus'></i>
-                    </button>
-                    <div id="count-number"> 0 </div>
-                    <button class="minus-btn">
-                    <i class="fa-solid fa-circle-minus"></i>
                 </button>
             </div>
         </div>
