@@ -1,4 +1,4 @@
-// import * as Api from "../api.js"
+import * as Api from "../api.js"
 
 async function insertProductsfromOder(){
   const localLength = localStorage.length;
