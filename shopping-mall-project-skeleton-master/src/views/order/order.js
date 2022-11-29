@@ -22,8 +22,15 @@ async function insertProductsfromOder(){
   orderTotal.insertAdjacentHTML("beforeend", `<p class="total-price" >${Number(price)+3000}</p>`);
   });
 
-  
-
+  try{
+    const data ={
+    
+    }
+    await Api.post("/api/order/",data)
+    console.log("성공")
+  }catch(err){
+    alert(`err: ${err.message}`)
+  }
   
 }
 
