@@ -1,4 +1,3 @@
-// import { orderService } from "../../services";
 import * as Api from "../api.js"
 
 async function insertProductsfromOder(){
@@ -30,19 +29,8 @@ async function insertProductsfromOder(){
 
   });
 
-  const checkoutButton = document.querySelector("#checkoutButton")
+  
 
-  checkoutButton.addEventListener('click', () => {
-
-    try{
-      orders.forEach((order) => {
-        Api.post('/api/order/order', order);
-        alert('성공')
-      })
-    }catch(err){
-      alert(err);
-    }
-  });
   
 }
 

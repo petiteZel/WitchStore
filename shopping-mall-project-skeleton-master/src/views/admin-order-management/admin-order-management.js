@@ -2,25 +2,6 @@ import * as Api from "../../api.js";
 
 
 async function callOrderApi(){
-    // const data = {
-    //     orderId: '1',
-    //     productId: '33',
-    //     quantity: 2,
-    //     totalPrice: 15000
-    // }
-    // const data = {
-    //     userId : "636c7ad0efac70dd96963f78",
-    //     summaryTitle : '소제목',
-    //     totalPrice : 15000,
-    //     address : {
-    //         postalCode: '우편번호',
-    //         address1: '주소1',
-    //         address2: '주소2',
-    //         receiverName: '사람이름',
-    //         receiverPhoneNumber: '전화번호',
-    //     },
-    //     request : '얜뭥미'
-    // }
     // // await Api.post('/api/orderitem/orderitem',data)
     // await Api.post('/api/order/order',data)
     try{

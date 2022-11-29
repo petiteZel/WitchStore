@@ -24,8 +24,8 @@ function Type() {
   const [Style2,setStyle] = useState({display: 'none'})
   //https://stackoverflow.com/questions/24502898/show-or-hide-element-in-react
   const [ addStyle, setAddStyle ] = useState("")
-  
-  
+
+
   const handleClick = (e)=>{
     const btnVal = e.currentTarget.value
     const [ type, category ] = btnVal.split("_")
@@ -230,7 +230,7 @@ function Type() {
 
     </div>
    
-    <div className={style.resultPage} id={style.resultPage} style={Style2}>
+    <div className={style.resultPage} id={style.resultPage}>
 
       <div className={style.resultTitle} id={style.resultTitle}>
         <h1></h1>

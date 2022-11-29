@@ -6,12 +6,13 @@ const resultTitle= document.querySelector("#result-title");
 const resultAnswer = document.querySelector("#result-answer");
 const resultPage =document.querySelector('#result-page');
 const showResultBtn=document.querySelector('#show-result-btn');
-
+const tryAginBtn=document.querySelector('#try-again-btn');
 
 
 
 // calType();
 doDisplay();
+// refreshScroll();
 
 //결과 페이지 보이게
 async function doDisplay(){ 	
@@ -22,26 +23,56 @@ async function doDisplay(){
         }else{ 		
             resultPage.style.display = 'none'; 	
         } 
+
+        // //결과보기 클릭 후 스크롤 이동
+        // var location = document.querySelector("#result-page").offsetTop;
+        var location = window.scrollY
+        window.scrollTo({ top: location+400, behavior: "smooth" });
+        console.log("move");
+
     });
 
-   
+
+}
+
+//초기화 할 때 스크롤 맨 위로
+// async function refreshScroll(){
+//     tryAginBtn.addEventListener("click", ()=> {
+        
+//         window.onload = function(){
+//             setTimeout(function (){
+//                 scrollTo(0,0);
+//             },100);
+//             console.log("다시!")
+//         }      
+
+//     });
+// }
+function goTop(){
+	document.documentElement.scrollTop = 0;
 }
 
 function calType() {
     const select = document.querySelectorAll('.box');
     let firstCount = 0;
     let secondCount = 0;
-    
+    var location2 = 0;
     select.forEach(async (e)=>{
         e.addEventListener('click', ()=>{
             const resultValue = e.value;
             const [ type, category ] = resultValue.split("_");
             //클릭했을 때 
             e.classList.add("select");
+
+
+            location2 += 500;
+            console.log(location2);
+            window.scrollTo({ top: location2, behavior: "smooth" });
             
             e.disabled = true;
             if(type == "A") {
-                e.nextSibling.disabled = true;
+                e.nextElementSibling.disabled = true;
+
                 if(category == 1){
                     firstCount += 1;
                     // console.log(firstCount + "first");
@@ -66,8 +97,7 @@ calType()
 
 async function calScore(firstCount, secondCount){
     let typeId = 0;
-    // console.log(firstCount + "계산중1");
-    // console.log(secondCount + "계산중2");
+
     if(firstCount >= 2){
         if(secondCount >= 2){
             typeId = 1;
@@ -100,9 +130,7 @@ async function setInnerHTML(typeId)  {
     ]
     
     //if 카테고리1 a2개 이상, 카테고리2 a2개 이상
-    title.innerHTML = resultArray[typeId-1].title;
-    
-    
+    title.innerHTML = resultArray[typeId-1].title; 
     answer.innerHTML = resultArray[typeId-1].answer;
     
     

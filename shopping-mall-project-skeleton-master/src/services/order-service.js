@@ -5,29 +5,9 @@ class OrderService {
     this.orderModel = orderModel;
   }
 
-  // 1. 주문 입력
-  async putOrder(orderInfo) {
-    const newOrderInfo = {
-    // 1-1. 주문자
-      orderer: {
-        userId: orderInfo.ordererUserId,
-      },
-    // 1-2. 수령자 정보
-      recipient: {
-        fullName: orderInfo.recipientFullName,
-        phoneNumber: orderInfo.recipientPhoneNumber,
-        address: orderInfo.recipientAddress,
-      },
-    // 1-3. 주문 정보
-      order: {
-        orderList: orderInfo.orderList,
-        request: orderInfo.orderRequest,
-        status: orderInfo.orderStatus,
-      },
-    };
-    // 1-4. db에 저장
-    const createdNewOrder = await this.orderModel.create(newOrderInfo);
-    return createdNewOrder;
+  // 1. 주문 생성
+  async addOrder(orderInfo) {
+		return await this.orderModel.create(orderInfo);
   }
 
   // 2. 전체 주문 목록 조회

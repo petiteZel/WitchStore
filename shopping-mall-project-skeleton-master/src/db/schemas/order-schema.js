@@ -7,33 +7,16 @@ const OrderSchema = new Schema(
       ref: "users",
       required: true,
     },
-    summaryTitle: {
-      type: String,
-      required: true,
-    },
     totalPrice: {
       type: Number,
       required: true,
     },
-    address: {
-      type: new Schema(
-        {
-          postalCode: String,
-          address1: String,
-          address2: String,
-          receiverName: String,
-          receiverPhoneNumber: String,
-        },
-        {
+    address: new Schema({
+          receiverName: { type: String, required: true },
+          receiverPhoneNumber: { type: String, required: true},
+          receiverAddress: { type: String, required: true },
           _id: false,
-        }
-      ),
-      required: true,
-    },
-    request: {
-      type: String,
-      required: true,
-    },
+      }),    
     status: {
       type: String,
       required: false,
