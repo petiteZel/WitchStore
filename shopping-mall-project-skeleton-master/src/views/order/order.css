@@ -88,12 +88,15 @@ body {
 .pay-container .pay-info-box .info{
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     margin-bottom: 20px;
 }
 /* .pay-container .pay-info-box .info:first-child{
     align-items: flex-start;
 } */
+.pay-container .pay-info-box .info .product-list {
+    text-align: right;
+}
 .pay-container .pay-info-box .info .product-list > p{
     margin-bottom: 10px;
 }

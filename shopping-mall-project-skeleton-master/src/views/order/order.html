@@ -15,7 +15,7 @@
       defer
       ></script>
     <!--header,footer css-->
-    <script defer src="order.js"></script>
+    <script defer type="module" src="order.js"></script>
     <script src="https://kit.fontawesome.com/d1371e05f7.js" crossorigin="anonymous"></script>
     <title>The Witch Store</title>
 </head>
@@ -63,9 +63,9 @@
                         <!-- 상품명 들어가는 곳 -->
                     </div>
                 </div>
-                <div class="info" id="productsTotal">
+                <div class="info" >
                     <p class="info-title" >상품 금액</p>
-                    <!-- 상품 금액 들어가는 곳 -->
+                    <p id="productsTotal"></p><!-- 상품 금액 들어가는 곳 -->
                 </div>
                 <div class="info">
                     <p class="info-title">배송비</p>
@@ -74,7 +74,7 @@
 
                 <div class="total info" id="orderTotal">
                     <p >총 결제금액</p>
-                    <!-- 총 결제  -->
+                    <p id="total"></p>
                 </div>
             </div>
 

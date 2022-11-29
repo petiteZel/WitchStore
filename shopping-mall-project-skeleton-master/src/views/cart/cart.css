@@ -60,21 +60,16 @@ body {
     font-size: 24px;
     color: #454DBC;
 }
-.count-box .minus-btn i{
-    margin-right: 10px;
-}
-.count-box .plus-btn i{
-    margin-left: 10px;
+.count-box .minus-btn i,
+.count-box .plus-btn i {
+    margin: 0 10px;
 }
 .count-box .count-number{
+    margin: 0 10px;
     text-align: center;
     border: none;
     background-color:#0E1335;
     color: #D9D9D9;
-}
-.count-box .count-number::-webkit-outer-spin-button,
-.count-box .count-number::-webkit-inner-spin-button {
-    -webkit-appearance: none;
 }
 
 
