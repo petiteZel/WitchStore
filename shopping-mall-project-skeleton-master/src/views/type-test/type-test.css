@@ -193,11 +193,11 @@
 }
 
 /* .recommend-item{
-  float: right;
+  margin: auto;
 } */
 
 .r-item-box{
-  float: right;
+  float: left;
   background-color:aqua;
   Width :100px;
   height : 100px;

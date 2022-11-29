@@ -1,4 +1,4 @@
-// import * as Api from "/api.js";
+import * as Api from "../api.js";
 // import { validateEmail } from "/useful-functions.js";
 
 // 요소(element), input 혹은 상수
@@ -7,6 +7,7 @@ const resultAnswer = document.querySelector("#result-answer");
 const resultPage =document.querySelector('#result-page');
 const showResultBtn=document.querySelector('#show-result-btn');
 const tryAginBtn=document.querySelector('#try-again-btn');
+const itemBox=document.querySelectorAll('.r-item-box')
 
 
 
@@ -17,12 +18,16 @@ doDisplay();
 //결과 페이지 보이게
 async function doDisplay(){ 	
 
-    showResultBtn.addEventListener("click", ()=> {
+    showResultBtn.addEventListener("click", async()=> {
         if(resultPage.style.display=='none'){ 		
             resultPage.style.display = 'block'; 	
         }else{ 		
             resultPage.style.display = 'none'; 	
         } 
+
+        
+
+
 
         // //결과보기 클릭 후 스크롤 이동
         // var location = document.querySelector("#result-page").offsetTop;
@@ -48,9 +53,10 @@ async function doDisplay(){
 
 //     });
 // }
-function goTop(){
-	document.documentElement.scrollTop = 0;
-}
+// function goTop(){
+// 	document.documentElement.scrollTop = 0;
+//     console.log("위로");
+// }
 
 function calType() {
     const select = document.querySelectorAll('.box');
@@ -112,6 +118,11 @@ async function calScore(firstCount, secondCount){
             typeId = 4;
         }
     }
+
+
+
+
+
     // console.log(typeId +"typeID");
     // return typeId;
     setInnerHTML(typeId)
@@ -122,6 +133,7 @@ async function calScore(firstCount, secondCount){
 async function setInnerHTML(typeId)  {
     const title = document.getElementById('result-title');
     const answer = document.getElementById('result-answer');
+    const products = await Api.get('/api/product');
     const resultArray = 
     [ {title: `<h1>당신은 아이돌 타입!</h1>`, answer: `<h3>타고난 밝음과 상냥함으로 상대에게 활력을 불어넣는 아이돌 타입이라고 할 수 있습니다. 우울할 때일수록 기분을 빨리 전환하고 싶은 경향이 강해,친구에게 상담하거나 다른 일을 함으로써 리프레쉬하려고 하는 경우가 많습니다. 아이돌 타입은 상대를 기쁘게 하는 것에 보람을 느끼기 때문에,우울할 때일수록 사람들과의 교류가 필요합니다.</h3>`},
         {title: `<h1>당신은 찐우정 타입!</h1>`, answer:   `<h3>자신보다 타인을 우선시하고, 곤란한 사람 특히 주변 사람이 곤란할 때에는 모든 걸 제처 두고 달려가는 타입입니다.기본적으로 부탁을 잘 거절하지 못하고 상대방이 힘들어 하면 적극적으로 격려하거나 지키려고 하는데요. 자신이 좋아서 하는 일이지만 감사의 인사나 확실한 피드백을 받으면 아주 기뻐합니다. 이런 타입은 남들 걱정하느라 자신은 우울함에 빠져있을 틈이 없습니다.</h3>`},
@@ -133,13 +145,23 @@ async function setInnerHTML(typeId)  {
     title.innerHTML = resultArray[typeId-1].title; 
     answer.innerHTML = resultArray[typeId-1].answer;
     
-    
+    //물품추천
+    const typeProduct = products.filter((e)=>{
+       return e.personType == `${typeId}유형`;
+    })
+    console.log(typeProduct);
+
+    for (let i = 0; i<4 ; i++){
+        itemBox[i].innerHTML = `<img src="${typeProduct[i].image}" 
+        alt="recommendItem"></img>`
+    }
+
+
+
+
     //출처 : https://post.naver.com/viewer/postView.naver?volumeNo=34267779&memberNo=8164145
 }
 
-// calType()
-//     .then((firstCount,secondCount)=>calScore(firstCount,secondCount))
-//     .then(typeId => setInnerHTML(typeId))
 
 
 
