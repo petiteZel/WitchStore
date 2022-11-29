@@ -7,10 +7,6 @@ const OrderSchema = new Schema(
       ref: "users",
       required: true,
     },
-    summaryTitle: {
-      type: String,
-      required: true,
-    },
     totalPrice: {
       type: Number,
       required: true,
@@ -20,7 +16,6 @@ const OrderSchema = new Schema(
         {
           postalCode: String,
           address1: String,
-          address2: String,
           receiverName: String,
           receiverPhoneNumber: String,
         },
