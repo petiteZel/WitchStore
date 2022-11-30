@@ -107,17 +107,17 @@ const data = {};
   //   return alert("주소를 모두 입력해 주세요.");
   // }
 
-  // if ( isPostalCodeChanged) {
-  //   data.address1 = address1;
-  //   // data.postalCode = postalCode;
-  // }
+  if ( isPostalCodeChanged) {
+    data.address1 = address1;
+    // data.postalCode = postalCode;
+  }
 
   if (phoneNumber && phoneNumber !== userData.phoneNumber) {
     data.phoneNumber = phoneNumber;
   }
 
-  data.password = "12345";
-  data.role = "admin"
+  // data.password = "12345";
+  // data.role = "admin"
 
   // 만약 업데이트할 것이 없다면 (디폴트인 currentPassword만 있어서 1개라면), 종료함
   const toUpdate = Object.keys(data);
