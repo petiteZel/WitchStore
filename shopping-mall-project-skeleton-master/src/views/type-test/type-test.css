@@ -194,6 +194,9 @@
 
 .recommend-item-box{
   margin: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .item-title {
@@ -206,12 +209,12 @@
 
 .item-img{
   background-color: #FFD84B;
-  width: 20%;
-  height: 20%;
-  display: inlie-flex;
-  float: left;
-  margin : 20px 20px 20px 20px;
-  text-align: center;
+  /* width: 20%;
+  height: 20%; */
+  /* display: inlie-flex;
+  float: left; */
+  margin : 0 20px;
+  /* text-align: center; */
 }
 
 .item-img img{
