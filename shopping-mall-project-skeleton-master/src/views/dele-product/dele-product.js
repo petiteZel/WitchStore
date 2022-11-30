@@ -25,31 +25,20 @@ async function showUser(){
         const totalCoulnt = document.querySelector('#item_total_count')
         totalCoulnt.innerHTML=api.length
         const delBtns = document.querySelectorAll('.member-delete__btn')
-        // const changeRoles = document.querySelectorAll('.orders-info__column.member-select')
+        console.log(delBtns)
         delBtns.forEach(delBtn=>{
             delBtn.addEventListener('click',async ()=>{
                 try{
-                    await fetch(`/api/product`,delBtn.value)
-                alert(`상품이 삭제되었습니다.`)
-                location.reload();
-            }
+                    await Api.delete(`/api/product`,delBtn.value,{productId:delBtn.value})
+                    alert(`상품이 삭제되었습니다.`)
+                    location.reload();
+                }
                 catch(err){
                     alert(`err: ${err}`)
                 }
             })
             
         })
-        
-        // changeRoles.forEach((select)=>{
-        //     select.addEventListener('chage',()=>{
-        //         try{
-        //             const statusValue = select.options[select.selectedIndex].text == '관리자'?'admin':"basic-user"
-        //             Api.patch("/api/users", select.value, {status:statusValue})
-        //         }catch(err){
-        //             alert(`patch err: ${err}`)
-        //         }
-        //     })
-        // })
     }
     catch(err){
         alert(err.message)

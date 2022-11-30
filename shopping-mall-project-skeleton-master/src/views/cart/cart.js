@@ -103,8 +103,6 @@ async function insertProductsfromCart(){
 
     }); //forEach end
 
-    
-
     const allSelectCheckbox = document.querySelector("#allSelectCheckbox");
     const allDeleteBtn = document.querySelector("#allDeleteBtn");
     const selectDeleteBtn = document.querySelector("#selectDeleteBtn");
@@ -130,10 +128,11 @@ async function insertProductsfromCart(){
         id.forEach((id) => {
             const amountValue = document.querySelector(`#amount-${id}`)
             const productPrice = document.querySelector(`#product-price-${id}`)
-            for(let i=0; i<localLength ;i++){
+            for(let i=0; i<orders.length ;i++){
                 if(orders[i]._id == id){
                     orders[i].price = convertToNumber(productPrice.innerHTML);
                     orders[i].amount = convertToNumber(amountValue.innerHTML);
+                    localStorage.setItem(i+1, JSON.stringify(orders[i]));
                 }
             }
         })
@@ -141,27 +140,6 @@ async function insertProductsfromCart(){
     });
 
     
-
-    // id.forEach(() => {
-    //     const amountValue = document.querySelector(`#amount-${id}`)
-    //     const productPrice = document.querySelector(`#product-price-${id}`)
-    //     const checkbox = document.querySelector(`#checkbox-${id}`)
-    //     const checkedboxes = document.querySelectorAll('input[type="checkbox"]:checked')
-
-    //     checkbox.addEventListener('click', () => {
-    //         if(checkedboxes.length -1 == orders.length){
-    //             allSelectCheckbox.checked = true;
-    //         }else if(checkboxes.length - 1 !== orders.length){
-    //             allSelectCheckbox.checked = false;
-    //         }
-    //     })
-        
-    // })
-
-    // checkboxes.addEventListener("click", () => {
-    //     if()
-    // })
-
     allDeleteBtn.addEventListener("click", () => {
 
     });
@@ -169,13 +147,6 @@ async function insertProductsfromCart(){
     selectDeleteBtn.addEventListener("click", () => {
 
     });
-
-    
-
-     //    const data = JSON.parse(localStorage.getItem("1"));
-    //    console.log(data.price)
-
-        //
   
 }
 
