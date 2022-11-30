@@ -21,7 +21,7 @@ async function InsertOrderItemData(){
 
     const products = await Api.get("/api/product");
     // console.log(products)
-
+    let realSum = 0;
     currOrderItem.forEach((e)=>{
         console.log(e.productId)
         const findItem = products.filter((item)=>{return item._id == e.productId})
@@ -36,7 +36,8 @@ async function InsertOrderItemData(){
     <p class="product-price" id="total-{_id}">${e.totalPrice}원</p>
     </div>   
     `);
-        sumPrice.innerHTML = e.totalPrice.toLocaleString("ko-KR");
+        realSum += e.totalPrice
+        sumPrice.innerHTML = realSum.toLocaleString("ko-KR");
 
     })
     // const findItem = products.filter((item) => {
