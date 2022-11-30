@@ -119,9 +119,10 @@ async function orderInfoSubmit(){
     }
 
     try {
-      await Api.post("/api/orderitem", data2);
+      const newOrder = await Api.post("/api/orderitem", data2);
+      sessionStorage.setItem("orderId",newOrder.orderId)
 
-      window.location.href = "/finish-shopping/finish-shopping.html";
+      // window.location.href = "/finish-shopping/finish-shopping.html";
     } catch (err) {
       console.error(err.stack);
       alert(`문제가 발생하였습니다. 확인 후 다시 시도해 주세요: ${err.message}`);

@@ -1,5 +1,6 @@
 import * as Api from "../../api.js";
-
+import { exportOrder } from "../order/order.js";
+console.log(exportOrder)
 const ordersContainer = document.querySelector('#ordersContainer');
 const sumPrice = document.querySelector('#sum-price');
 const orderInfo = document.querySelector('#orderInfo')

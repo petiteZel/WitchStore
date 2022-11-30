@@ -12,12 +12,14 @@ const itemBox=document.querySelectorAll('.r-item-box')
 
 refresh();
 doDisplay();
+calType();
 
 //결과 페이지 보이게
-function doDisplay(countClick){ 	
-    console.log(countClick)
-    showResultBtn.addEventListener("click", async()=> {
-        if(countClick<6){
+function doDisplay(){ 	
+    showResultBtn.addEventListener("click",()=> {
+        const count = sessionStorage.getItem("count")
+        console.log(count)
+        if(count<6){
             alert('선택지를 모두 완료해주세요');
             resultPage.style.display = 'none'; 	
         }else{
@@ -25,7 +27,8 @@ function doDisplay(countClick){
                 resultPage.style.display = 'block'; 	
             }else{ 		
                 resultPage.style.display = 'none'; 	
-            } 
+            }
+            sessionStorage.setItem("count",0)
         }
         
         // //결과보기 클릭 후 스크롤 이동
@@ -69,7 +72,7 @@ function calType() {
 
             //count
             countClick++;
-            console.log(countClick);
+            sessionStorage.setItem("count",countClick);
 
             
             e.disabled = true;
@@ -89,13 +92,8 @@ function calType() {
             
         })
     }
-    console.log(countClick)
-    return countClick
-    
     
 }
-doDisplay(calType())
-// calType()
 
 
 

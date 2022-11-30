@@ -30,7 +30,6 @@ orderRouter.post("/order", loginRequired, async (req, res, next) => {
 
     // 위 데이터를 order DB에 추가하기
     const newOrder = await orderService.addOrder(orderInfo)
-    console.log(newOrder)
 
     // 추가된 데이터 반환
     res.status(201).json(newOrder);
@@ -73,7 +72,7 @@ orderRouter.get(
   async function (req, res, next) {
     try {
       const orderId = req.params.orderId;
-      const orderData = await orderService.getOrderData(orderId);
+      const orderData = await orderService.getOrdersByOrderId(orderId);
 
       res.status(200).json(orderData);
     } catch (error) {
