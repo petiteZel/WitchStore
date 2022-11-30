@@ -170,10 +170,10 @@ function cartIn(selectItem, amountText) {
 
 async function sidBar() {
   const api = await Api.get("/api/categories");
-  api.forEach((e) => {
-    const categories = document.querySelector("#submenu1");
+  const categories = document.querySelector("#submenu1");
+  setTimeout(()=>{api.forEach((e) => {
     categories.innerHTML += `<li><a href="/product-list/product.html?category=${e.categoryName}">${e.categoryName}</a></li>`;
-  });
+  });},1000)
 }
 
 productDetail();

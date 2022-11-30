@@ -141,8 +141,9 @@ async function setInnerHTML(typeId)  {
     })
 
     for (let i = 0; i<3 ; i++){
+        // product-detail/product-detail.html?productId=636a89cab28360ed5b069429
         itemBox[i].innerHTML = `<div class="item-img"><img src="${typeProduct[i].image}" 
-        alt="추천상품" onclick="location.href='/product-list/product.html?personType=${typeId}유형';"></img></div>`
+        alt="추천상품" onclick="location.href='/product-detail/product-detail.html?productId=${typeProduct[i]._id}';"></img></div>`
     }
 
 
