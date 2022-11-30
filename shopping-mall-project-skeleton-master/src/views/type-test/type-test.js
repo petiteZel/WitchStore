@@ -10,11 +10,8 @@ const tryAginBtn=document.querySelector('#try-again-btn');
 const itemBox=document.querySelectorAll('.r-item-box')
 
 
-
-// calType();
-
-// refreshScroll();
-
+refresh();
+doDisplay();
 //결과 페이지 보이게
 async function doDisplay(countClick){ 	
 
@@ -42,22 +39,14 @@ async function doDisplay(countClick){
 }
 
 //초기화 할 때 스크롤 맨 위로
-// async function refreshScroll(){
-//     tryAginBtn.addEventListener("click", ()=> {
-        
-//         window.onload = function(){
-//             setTimeout(function (){
-//                 scrollTo(0,0);
-//             },100);
-//             console.log("다시!")
-//         }      
+async function refresh(){
+    window.onbeforeunload = function() {
+        window.scrollTo(0, 0);
+    }
+}
 
-//     });
-// }
-// function goTop(){
-// 	document.documentElement.scrollTop = 0;
-//     console.log("위로");
-// }
+
+
 
 function calType() {
     const select = document.querySelectorAll('.box');
@@ -99,8 +88,8 @@ function calType() {
         })
         
     })
-    console.log(countClick+"두")
-    doDisplay(countClick);
+    // console.log(countClick+"두")
+    // doDisplay(countClick);
     
 }
 calType()
