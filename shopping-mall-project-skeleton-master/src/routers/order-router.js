@@ -67,12 +67,11 @@ orderRouter.get(
 );
 
 orderRouter.get(
-  "/orders/:orderId",
-  loginRequired,
+  "/orders/:orderId", loginRequired,
   async function (req, res, next) {
     try {
       const orderId = req.params.orderId;
-      const orderData = await orderService.getOrderData(orderId);
+      const orderData = await orderService.getOrdersByOrderId(orderId);
 
       res.status(200).json(orderData);
     } catch (error) {

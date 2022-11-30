@@ -94,13 +94,10 @@ body {
     align-items: center;
     margin: 30px 0;
 }
-.order-product .product-img{
+.order-product .product-img img{
     width: 100px;
     height: 100px;
     line-height: 100px;
-    text-align: center;
-    background-color: #D9D9D9;
-    color: #0E1335;
 }
 .order-detail-price{
     padding: 0 40px;

@@ -74,20 +74,18 @@ async function orderInfoSubmit(){
     }
   }
 
-  // try {
-  //   await Api.post("/api/order", data1);
-  //   alert(`정상적으로 주문이 완료되었습니다.`);
+  try {
+    const orderId1 = await Api.post("/api/order", data1);
+    sessionStorage.setItem("orderId1", orderId1._id)
+    alert(`정상적으로 주문이 완료되었습니다.`);
 
-  //   window.location.href = "/finish-shopping/finish-shopping.html";
-  // } catch (err) {
-  //   console.error(err.stack);
-  //   alert(`문제가 발생하였습니다. 확인 후 다시 시도해 주세요: ${err.message}`);
-  // }
+  } catch (err) {
+    console.error(err.stack);
+    alert(`문제가 발생하였습니다. 확인 후 다시 시도해 주세요: ${err.message}`);
+  }
 
  //submit order-item
   const products = await Api.get("/api/product");
-  const orderedData = await Api.get("/api/orderlist/user");
-  console.log(orderedData)
 
   const orderName = []
   for(let i=0; i<localLength ;i++){
@@ -109,7 +107,7 @@ async function orderInfoSubmit(){
 
     const quantity = (orderAmount.reduce((n1, n2) => n1 + n2))
     const productId = String(Id)
-    const orderId = String(orderedData[0]._id)
+    const orderId = sessionStorage.getItem("orderId1")
 
     const data2 = {
       orderId,
@@ -119,14 +117,16 @@ async function orderInfoSubmit(){
     }
 
     try {
-      await Api.post("/api/orderitem", data2);
-
-      window.location.href = "/finish-shopping/finish-shopping.html";
+      const orderId2 = await Api.post("/api/orderitem", data2);
+      sessionStorage.setItem("orderId2", orderId2._id)
+      
     } catch (err) {
       console.error(err.stack);
       alert(`문제가 발생하였습니다. 확인 후 다시 시도해 주세요: ${err.message}`);
     }
   }
   
+  window.location.href = "/finish-shopping/finish-shopping.html";
 
 };
+
