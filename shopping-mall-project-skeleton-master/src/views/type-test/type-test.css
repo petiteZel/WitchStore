@@ -144,15 +144,9 @@
   text-align: center;
 }
 
-/* .icon {
-  width: 60%;
-  height: 60%;
-  margin: auto;
-} */
-
 
 .result-box{
-  margin:50px auto 150px auto;
+  margin:50px 20px 150px 20px;
   border-radius: 81px;
   border: none;
   width: 200px;
@@ -169,13 +163,14 @@
 }
 
 .select-a-box.select{
-  background-color: beige;
+  background-color: #4bffb2;
 }
 
 
 .select-b-box.select{
-  background-color: beige;
+  background-color: #4bffb2;
 }
+
 .try-again-btn{
   background-color: #D9D9D9;
   text-align: center;
@@ -186,7 +181,6 @@
 }
   
 .recommend-item{
-  /* background-color: pink; */
   width: 80%;
   height: 20%;
   margin:100px auto 50px auto;
@@ -207,14 +201,15 @@
   text-align: center;
 }
 
+.r-item-box{
+  width:30%;
+  height:30%;
+}
+
 .item-img{
   background-color: #FFD84B;
-  /* width: 20%;
-  height: 20%; */
-  /* display: inlie-flex;
-  float: left; */
   margin : 0 20px;
-  /* text-align: center; */
+
 }
 
 .item-img img{
