@@ -93,17 +93,14 @@ async function orderInfoSubmit(){
   for(let i=0; i<localLength ;i++){
     orderName.push(orders[i].productName)
   }
-  
 
-  for(let i=0; i < orderName.length-1 ; i++){
+  for(let i=0; i < orderName.length ; i++){
     const Id = []
-    for(let i = 0; i < products.length; i++){
-      if(products[i].productName == name){
-        Id.push(products[i]._id)
+    for(let j = 0; j < products.length; j++){
+      if(products[j].productName == orderName[i]){
+        Id.push(products[j]._id)
       }
     }
-
-    console.log(products.length)
    
     const orderAmount = []
     for(let i=0; i<localLength ;i++){
@@ -121,14 +118,14 @@ async function orderInfoSubmit(){
       totalPrice
     }
 
-    // try {
-    //   await Api.post("/api/orderitem", data2);
+    try {
+      await Api.post("/api/orderitem", data2);
 
-    //   window.location.href = "/finish-shopping/finish-shopping.html";
-    // } catch (err) {
-    //   console.error(err.stack);
-    //   alert(`문제가 발생하였습니다. 확인 후 다시 시도해 주세요: ${err.message}`);
-    // }
+      window.location.href = "/finish-shopping/finish-shopping.html";
+    } catch (err) {
+      console.error(err.stack);
+      alert(`문제가 발생하였습니다. 확인 후 다시 시도해 주세요: ${err.message}`);
+    }
   }
   
 
