@@ -47,16 +47,13 @@ async function refresh(){
 }
 
 
-
-
 function calType() {
     const select = document.querySelectorAll('.box');
     let firstCount = 0;
     let secondCount = 0;
     var location2 = 0;
     let countClick = 0;
-    for(let i = 0; i<select.length;i++){
-        const e = select[i]
+    select.forEach(async (e)=>{
         e.addEventListener('click', ()=>{
             const resultValue = e.value;
             const [ type, category ] = resultValue.split("_");
@@ -88,14 +85,13 @@ function calType() {
             }
             
         })
-    }
-    console.log(countClick)
-    return countClick
-    
+        
+    })
+    // console.log(countClick+"두")
+    // doDisplay(countClick);
     
 }
-doDisplay(calType())
-// calType()
+calType()
 
 
 
@@ -146,8 +142,9 @@ async function setInnerHTML(typeId)  {
 
     for (let i = 0; i<3 ; i++){
         itemBox[i].innerHTML = `<div class="item-img"><img src="${typeProduct[i].image}" 
-        alt="추천상품"></img></div>`
+        alt="추천상품" onclick="location.href='/product-list/product.html?personType=${typeId}유형';"></img></div>`
     }
+
 
 
 
