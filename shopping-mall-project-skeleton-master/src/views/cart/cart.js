@@ -2,9 +2,9 @@ import * as Api from "../api.js"
 import { convertToNumber } from "../useful-functions.js"
 
 async function insertProductsfromCart(){
+    const cartProductsContainer = document.querySelector("#cartProductsContainer");
     const localLength = localStorage.length;
     const orders = []
-    const cartProductsContainer = document.querySelector("#cartProductsContainer");
     const orderTotal = document.querySelector('#orderTotal')
 
     for(let i=1; i<localLength+1; i++){

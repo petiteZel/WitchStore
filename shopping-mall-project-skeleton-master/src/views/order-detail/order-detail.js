@@ -10,33 +10,54 @@ InsertOrderItemData();
 InsertOrderData();
 
 async function InsertOrderItemData(){
-    const orderId2 = sessionStorage.getItem("orderId2")
-    const orderitemData = await Api.get(`/api/orderitems/${orderId2}`);
-    const { orderId, productId, quantity, totalPrice } = orderitemData
+    const orderId1 = sessionStorage.getItem("orderId1")
+    const orderitemData = await Api.get("/api/orderitemlist");
+    // const { orderId, productId, quantity, totalPrice } = orderitemData
     console.log(orderitemData)
+    const currOrderItem = orderitemData.filter((e)=>{
+        return e.orderId == orderId1
+    })
+    console.log(currOrderItem)
 
     const products = await Api.get("/api/product");
-    const findItem = products.filter((item) => {
-        if(item._id == productId){
-            return item
-        }
-    })
+    // console.log(products)
 
-    console.log(findItem[0].image)
-
-    orderItemInfo.insertAdjacentHTML("beforeend", `
+    currOrderItem.forEach((e)=>{
+        console.log(e.productId)
+        const findItem = products.filter((item)=>{return item._id == e.productId})
+        orderItemInfo.insertAdjacentHTML("beforeend", `
     <div class="order-product" id="productItem-{_id}">
     <figure class="product-img">
         <img id="image-{_id}" src="${findItem[0].image}"alt="product-image"/>
     </figure>
 
     <p class="product-name" id="title-{_id}">${findItem[0].productName}</p>
-    <p class="count-number" id="quantityInput-{_id}">${quantity}</p>
-    <p class="product-price" id="total-{_id}">${totalPrice}원</p>
+    <p class="count-number" id="quantityInput-{_id}">${e.quantity}</p>
+    <p class="product-price" id="total-{_id}">${e.totalPrice}원</p>
     </div>   
     `);
+        sumPrice.innerHTML = e.totalPrice.toLocaleString("ko-KR");
 
-    sumPrice.innerHTML = totalPrice.toLocaleString("ko-KR");
+    })
+    // const findItem = products.filter((item) => {
+    //     return item._id == currOrderItem.productId
+    // })
+
+    // console.log(findItem)
+
+    // orderItemInfo.insertAdjacentHTML("beforeend", `
+    // <div class="order-product" id="productItem-{_id}">
+    // <figure class="product-img">
+    //     <img id="image-{_id}" src="${findItem[0].image}"alt="product-image"/>
+    // </figure>
+
+    // <p class="product-name" id="title-{_id}">${findItem[0].productName}</p>
+    // <p class="count-number" id="quantityInput-{_id}">${quantity}</p>
+    // <p class="product-price" id="total-{_id}">${totalPrice}원</p>
+    // </div>   
+    // `);
+
+    // sumPrice.innerHTML = totalPrice.toLocaleString("ko-KR");
 }
 
 async function InsertOrderData(){
