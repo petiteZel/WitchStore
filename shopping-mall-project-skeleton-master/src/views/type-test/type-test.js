@@ -123,6 +123,7 @@ async function setInnerHTML(typeId)  {
     const answer = document.getElementById('result-answer');
     const item = document.getElementById('item-title');
     const products = await Api.get('/api/product');
+    console.log(products)
     const resultArray = 
     [ {title: `<h1>당신은 아이돌 타입!</h1>`, answer: `<h3>타고난 밝음과 상냥함으로 상대에게 활력을 불어넣는 아이돌 타입이라고 할 수 있습니다. 우울할 때일수록 기분을 빨리 전환하고 싶은 경향이 강해,친구에게 상담하거나 다른 일을 함으로써 리프레쉬하려고 하는 경우가 많습니다. 아이돌 타입은 상대를 기쁘게 하는 것에 보람을 느끼기 때문에,우울할 때일수록 사람들과의 교류가 필요합니다.</h3>`, item:`<h2>아이돌 타입인 당신에게 필요한 아이템!</h2>`},
         {title: `<h1>당신은 찐우정 타입!</h1>`, answer:   `<h3>자신보다 타인을 우선시하고, 곤란한 사람 특히 주변 사람이 곤란할 때에는 모든 걸 제처 두고 달려가는 타입입니다.기본적으로 부탁을 잘 거절하지 못하고 상대방이 힘들어 하면 적극적으로 격려하거나 지키려고 하는데요. 자신이 좋아서 하는 일이지만 감사의 인사나 확실한 피드백을 받으면 아주 기뻐합니다. 이런 타입은 남들 걱정하느라 자신은 우울함에 빠져있을 틈이 없습니다.</h3>`, item:`<h2>찐우정 타입인 당신에게 필요한 아이템!</h2>`},
@@ -130,14 +131,23 @@ async function setInnerHTML(typeId)  {
         {title: `<h1>당신은 오아시스 타입!</h1>`, answer:  `<h3>조용하고 부드럽지만 어딘가 무게감이 있어 함께 있는 것만으로도 안정을 주는 타입입니다. 이 유형은 상대를 적극적으로 돌보려고는 하지 않지만, 상대의 마음이 돌아올 때까지 옆에서 지켜봐 줍니다. 즉, 매우 상냥하고 상대의 의사를 존중하는 매력을 가지고 있죠. 이런 타입이 우울함에 빠졌을 때에는 동굴을 파고 들어가는 경향이 강합니다.</h3>` , item:`<h2>오아시스 타입인 당신에게 필요한 아이템!</h2>`}, 
     ]
     
+   
     //if 카테고리1 a2개 이상, 카테고리2 a2개 이상
     title.innerHTML = resultArray[typeId-1].title; 
     answer.innerHTML = resultArray[typeId-1].answer;
     item.innerHTML = resultArray[typeId-1].item;
-    
+
     //물품추천
     const typeProduct = products.filter((e)=>{
-       return e.personType == `${typeId}유형`;
+        if(typeId == 1){
+            return e.personType == "아이돌"
+        }else if(typeId == 2){
+            return e.personType == "찐우정"
+        }else if(typeId == 3){
+            return e.personType == "컨설팅"
+        }else if(typeId == 4){
+            return e.personType == "오아시스"
+        }
     })
 
     for (let i = 0; i<3 ; i++){
@@ -145,9 +155,6 @@ async function setInnerHTML(typeId)  {
         itemBox[i].innerHTML = `<div class="item-img"><img src="${typeProduct[i].image}" 
         alt="추천상품" onclick="location.href='/product-detail/product-detail.html?productId=${typeProduct[i]._id}';"></img></div>`
     }
-
-
-
 
     //출처 : https://post.naver.com/viewer/postView.naver?volumeNo=34267779&memberNo=8164145
 }
