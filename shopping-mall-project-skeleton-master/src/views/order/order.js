@@ -84,50 +84,6 @@ async function orderInfoSubmit(){
     alert(`문제가 발생하였습니다. 확인 후 다시 시도해 주세요: ${err.message}`);
   }
 
- //submit order-item
-  // const products = await Api.get("/api/product");
-
-  // const orderName = []
-  // for(let i=0; i<localLength ;i++){
-  //   orderName.push(orders[i].productName)
-  // }
-
-  // for(let i=0; i < orderName.length ; i++){
-  //   const Id = []
-  //   for(let j = 0; j < products.length; j++){
-  //     if(products[j].productName == orderName[i]){
-  //       Id.push(products[j]._id)
-  //     }
-  //   }
-  //   // console.log(Id)
-   
-  //   const orderAmount = []
-  //   for(let i=0; i<localLength ;i++){
-  //     orderAmount.push(orders[i].amount)
-  //   }
-
-  //   const quantity = (orderAmount.reduce((n1, n2) => n1 + n2))
-  //   const productId = String(Id)
-  //   const orderId = sessionStorage.getItem("orderId1")
-
-  //   const data2 = {
-  //     orderId,
-  //     productId, 
-  //     quantity,
-  //     totalPrice
-  //   }
-
-  //   try {
-  //     const orderId2 = await Api.post("/api/orderitem", data2);
-  //     sessionStorage.setItem("orderId2", orderId2._id)
-      
-  //   } catch (err) {
-  //     console.error(err.stack);
-  //     alert(`문제가 발생하였습니다. 확인 후 다시 시도해 주세요: ${err.message}`);
-  //   }
-  // }
-  
-  // window.location.href = "/finish-shopping/finish-shopping.html";
   orders.forEach(async (e)=>{
     try{
       const orderId = sessionStorage.getItem("orderId1")
@@ -146,21 +102,6 @@ async function orderInfoSubmit(){
       alert(`문제가 발생하였습니다. 확인 후 다시 시도해 주세요: ${err.message}`);
     }
   })
-  // try {
-  //   console.log(orders)
-        // const data2 = {
-        //       orderId,
-        //       productId, 
-        //       quantity,
-        //       totalPrice
-        //     }
-        // const orderId2 = await Api.post("/api/orderitem", data2);
-        // sessionStorage.setItem("orderId2", orderId2._id)
-        
-      // } catch (err) {
-      //   console.error(err.stack);
-      //   alert(`문제가 발생하였습니다. 확인 후 다시 시도해 주세요: ${err.message}`);
-      // }
       window.location.href = "/finish-shopping/finish-shopping.html";
 
 };
