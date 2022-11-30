@@ -89,6 +89,7 @@ function calType() {
             
         })
     }
+    )
     
 }
 
