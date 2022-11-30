@@ -2,12 +2,28 @@ import * as Api from "../../api.js";
 
 const ordersContainer = document.querySelector('#ordersContainer');
 const sumPrice = document.querySelector('#sum-price');
-const name = document.querySelector("#name");
-const phoneNumber = document.querySelector("#phon-number");
-const address = document.querySelector("#address");
+const orderInfo = document.querySelector('#orderInfo')
 
-const orderData = await Api.get("/api/orderlist/user");
-console.log(orderData);
+InsertOrderData();
+
+const orderData = await Api.get("/api/order/orderlist/user");
+const { userId, totalPrice, address, createdAt, status, updateAt, __v, _id} = orderData;
+
+console.log(orderData)
+
+async function InsertOrderData(){
+
+    orderInfo.insertAdjacentHTML("beforeend", `
+        <p class="name" id="name">${receiverName}</p>
+        <p class="phon-number" id="phon-number">${receiverPhoneNumber}</p>
+        <p class="adress" id="address">${receiverAddress}</p>
+    `);
+}
+
+
+
+
+
 // const { } = orderData;
 
 // async function insertProductsfromOder(){
