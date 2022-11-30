@@ -54,8 +54,9 @@ async function InsertOrderData(){
 cancleBtn.addEventListener("click", () => {
     if(confirm("주문을 취소하시겠습니까?")){
         localStorage.clear();
-        sessionStorage.clear();
-        
+        sessionStorage.removeItem('orderId1');
+        sessionStorage.removeItem('orderId2');
+        window.location.reload();
     }
 })
 
