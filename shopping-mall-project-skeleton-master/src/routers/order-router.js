@@ -30,6 +30,7 @@ orderRouter.post("/", loginRequired, async (req, res, next) => {
 
     // 위 데이터를 order DB에 추가하기
     const newOrder = await orderService.addOrder(orderInfo)
+    console.log(newOrder)
 
     // 추가된 데이터 반환
     res.status(201).json(newOrder);

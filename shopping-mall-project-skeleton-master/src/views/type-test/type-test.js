@@ -16,8 +16,8 @@ const itemBox=document.querySelectorAll('.r-item-box')
 // refreshScroll();
 
 //결과 페이지 보이게
-async function doDisplay(countClick){ 	
-
+function doDisplay(countClick){ 	
+    console.log(countClick)
     showResultBtn.addEventListener("click", async()=> {
         if(countClick<6){
             alert('선택지를 모두 완료해주세요');
@@ -65,7 +65,8 @@ function calType() {
     let secondCount = 0;
     var location2 = 0;
     let countClick = 0;
-    select.forEach(async (e)=>{
+    for(let i = 0; i<select.length;i++){
+        const e = select[i]
         e.addEventListener('click', ()=>{
             const resultValue = e.value;
             const [ type, category ] = resultValue.split("_");
@@ -97,13 +98,14 @@ function calType() {
             }
             
         })
-        
-    })
-    console.log(countClick+"두")
-    doDisplay(countClick);
+    }
+    console.log(countClick)
+    return countClick
+    
     
 }
-calType()
+doDisplay(calType())
+// calType()
 
 
 
