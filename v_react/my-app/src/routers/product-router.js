@@ -5,7 +5,7 @@ import { loginRequired } from '../middlewares'
 const productRouter = Router();
 
 // 1. 전체 상품 목록
-productRouter.get('/', async (req, res, next) => {
+productRouter.get('/product', async (req, res, next) => {
     try {
         const findAll = await productService.findAllProducts()
 
@@ -16,7 +16,7 @@ productRouter.get('/', async (req, res, next) => {
 });
 
 // 2. 카테고리별 상품 조회
-productRouter.get('/:category', async (req, res, next) => {
+productRouter.get('/product/:category', async (req, res, next) => {
     try {
         const category = req.params.category;
         const findByCategory = await productService.findByCategory(category)
@@ -30,7 +30,7 @@ productRouter.get('/:category', async (req, res, next) => {
 
 
 // 3. 상품 상세 정보
-productRouter.get('/:productId', async (req, res, next) => {
+productRouter.get('/product/:productId', async (req, res, next) => {
     try {
         const productId = req.params.productId;
         console.log(productId);
@@ -43,7 +43,7 @@ productRouter.get('/:productId', async (req, res, next) => {
 });
 
  // 4. 상품 등록
- productRouter.post('/register', async (req, res, next) => {
+ productRouter.post('/product/register', async (req, res, next) => {
     try {
 
         const {category, personType, brand, productName, image, price, shortDescription, detailDescription} = req.body;
@@ -57,7 +57,7 @@ productRouter.get('/:productId', async (req, res, next) => {
 });
 
 //5. 상품 수정 admin 한정
-productRouter.patch('/update/:productId',
+productRouter.patch('/product/update/:productId',
     loginRequired,
     async (req, res, next) => {
         try {
@@ -86,7 +86,7 @@ productRouter.patch('/update/:productId',
 
 // 6.상품 정보 삭제 (/api/product/:productId) ⇒ admin 한정
 
-productRouter.delete('/', 
+productRouter.delete('/product/:productId', adminOnly, loginRequired,
 async function (req, res, next) {
   try {
     // params로부터 id를 가져옴
