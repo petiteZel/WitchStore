@@ -11,6 +11,10 @@ InsertOrderData();
 async function InsertOrderData(){
     const orderData = await Api.get("/api/order/orderlist/user");
     const { userId, totalPrice, address, createdAt, status, updateAt, __v, _id} = orderData;
+    console.log(orderData)
+
+    const itemData = await Api.get("api/orderitemlist/all");
+    console.log(itemData)
 
     // const data1 = { 
     //     userId, 
@@ -22,7 +26,7 @@ async function InsertOrderData(){
     //     }
     //   }
 
-    console.log(orderData["address"])
+    
 
     // orderInfo.insertAdjacentHTML("beforeend", `
     //     <p class="name" id="name">${address.receiverName}</p>

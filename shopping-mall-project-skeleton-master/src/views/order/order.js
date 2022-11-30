@@ -20,23 +20,6 @@ for(let i=1;i<localLength+1;i++){
   }
 }
 
-const products = await Api.get("/api/product");
-
-const orderName = []
-for(let i=0; i<localLength ;i++){
-  orderName.push(orders[i].productName)
-}
-
-const Id = []
-orderName.forEach((name) => {
-  for(let i=0; i < products.length; i++){
-    if(products[i].productName == name){
-      Id.push(products[i]._id)
-    }
-  }
-})
-
-
 addAllElements()
 addAllEvents()
 
@@ -91,40 +74,66 @@ async function orderInfoSubmit(){
     }
   }
 
-  try {
-    await Api.post("/api/order", data1);
-    alert(`정상적으로 주문이 완료되었습니다.`);
+  // try {
+  //   await Api.post("/api/order", data1);
+  //   alert(`정상적으로 주문이 완료되었습니다.`);
 
-    window.location.href = "/finish-shopping/finish-shopping.html";
-  } catch (err) {
-    console.error(err.stack);
-    alert(`문제가 발생하였습니다. 확인 후 다시 시도해 주세요: ${err.message}`);
-  }
-
+  //   window.location.href = "/finish-shopping/finish-shopping.html";
+  // } catch (err) {
+  //   console.error(err.stack);
+  //   alert(`문제가 발생하였습니다. 확인 후 다시 시도해 주세요: ${err.message}`);
+  // }
 
  //submit order-item
- const orderAmount = []
- for(let i=0; i<localLength ;i++){
-   orderAmount.push(orders[i].amount)
- }
+  const products = await Api.get("/api/product");
+  const orderedData = await Api.get("/api/order/orderlist/user");
 
- const quantity = (orderAmount.reduce((n1, n2) => n1 + n2))
- const productId = String(Id)
- const orderId = 1;
+  
 
-  const data2 = { 
-    orderId, 
-    productId, 
-    quantity,
-    totalPrice
+  const orderName = []
+  for(let i=0; i<localLength ;i++){
+    orderName.push(orders[i].productName)
   }
+  
 
-  try {
-    await Api.post("/api/order/orderitem", data2);
+  for(let i=0; i < orderName.length-1 ; i++){
+    const Id = []
+    for(let i = 0; i < products.length; i++){
+      if(products[i].productName == name){
+        Id.push(products[i]._id)
+      }
+    }
 
-    window.location.href = "/finish-shopping/finish-shopping.html";
-  } catch (err) {
-    console.error(err.stack);
-    alert(`문제가 발생하였습니다. 확인 후 다시 시도해 주세요: ${err.message}`);
+    console.log(products.length)
+   
+    const orderAmount = []
+    for(let i=0; i<localLength ;i++){
+      orderAmount.push(orders[i].amount)
+    }
+
+    const quantity = (orderAmount.reduce((n1, n2) => n1 + n2))
+    const productId = String(Id)
+    const orderId = String(orderedData[0]._id)
+    console.log(productId)
+
+    const data2 = {
+      orderId,
+      productId, 
+      quantity,
+      totalPrice
+    }
+
+
+
+    // try {
+    //   await Api.post("/api/orderitem", data2);
+
+    //   window.location.href = "/finish-shopping/finish-shopping.html";
+    // } catch (err) {
+    //   console.error(err.stack);
+    //   alert(`문제가 발생하였습니다. 확인 후 다시 시도해 주세요: ${err.message}`);
+    // }
   }
+  
+
 };
