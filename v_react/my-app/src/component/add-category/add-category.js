@@ -9,7 +9,7 @@ import style from './add-category.module.css'
 //     const categoryName = document.querySelector(".info-content").value;
 //     const data = { categoryName: categoryName, imageUrl: "something" };
 
-//     const categoryApi = await Api.post("/api/category", data);
+//     const categoryApi = await Api.post("/api/category/register", data);
 //   });
 function AddCategory() {
     return (

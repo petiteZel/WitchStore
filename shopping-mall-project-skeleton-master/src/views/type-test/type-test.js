@@ -12,7 +12,7 @@ const itemBox=document.querySelectorAll('.r-item-box')
 
 
 // calType();
-doDisplay();
+
 // refreshScroll();
 
 //결과 페이지 보이게
@@ -99,6 +99,8 @@ function calType() {
         })
         
     })
+    console.log(countClick+"두")
+    doDisplay(countClick);
     
 }
 calType()

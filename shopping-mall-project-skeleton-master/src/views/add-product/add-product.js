@@ -3,7 +3,7 @@ import * as Api from "../api.js"
 
 
 async function rending(){
-    const api = await Api.get('/api/category/categories')
+    const api = await Api.get('/categories')
     const categoryBox = document.querySelector('#content-category')
     api.forEach(e=>{
         categoryBox.innerHTML += `<option value="${e.categoryName}">${e.categoryName}</option>`

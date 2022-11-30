@@ -4,7 +4,7 @@ import witchImage from "../image/witch.gif";
 import * as Api from "../api.js";
 
 function Home() {
-  const api = Api.get("/api/category/categories")
+  const api = Api.get("/api/categories")
   console.log(api)
   return (
     <div className={style.divContainer}>
