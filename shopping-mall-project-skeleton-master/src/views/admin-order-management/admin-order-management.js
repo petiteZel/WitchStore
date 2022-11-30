@@ -2,10 +2,10 @@ import * as Api from "../../api.js";
 
 
 async function callOrderApi(){
-    // // await Api.post('/api/orderitem/orderitem',data)
-    // await Api.post('/api/order/order',data)
+    // // await Api.post('/api/orderitem',data)
+    // await Api.post('/api/order',data)
     try{
-    const orderApi = await Api.get("/api/orderitem/orderitemlist/all")
+    const orderApi = await Api.get("/api/orderitemlist")
     const ordersBox = document.querySelector('.orders-info')
     const totalCount = document.querySelector(`#total-count`)
     const readyCount = document.querySelector(`#ready-count`)
@@ -51,7 +51,7 @@ async function callOrderApi(){
             const data = { status: newStatus };
     
             // api 요청
-            await Api.patch(`/api/orderitem/orderitems`, select.id, data);
+            await Api.patch(`/api/orderitems`, select.id, data);
             alert(`배송정보가 변경되었습니다.`)
             location.reload()
         })  
@@ -60,7 +60,7 @@ async function callOrderApi(){
     cancleBtn.forEach(delBtn=>{
         delBtn.addEventListener('click',async ()=>{
             try{
-                await Api.delete(`/api/orderitem/orderitems`,delBtn.value)
+                await Api.delete(`/api/orderitems`,delBtn.value)
                 alert(`상품정보가 삭제되었습니다.`)
                 location.reload();
             }

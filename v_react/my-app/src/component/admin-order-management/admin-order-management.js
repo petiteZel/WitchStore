@@ -70,9 +70,9 @@ async function callOrderApi(){
     //     },
     //     request : '얜뭥미'
     // }
-    // // await Api.post('/api/orderitem/orderitem',data)
-    // await Api.post('/api/order/order',data)
-    const orderApi = await Api.get("/api/orderitem/orderitemlist/all")
+    // // await Api.post('/api/orderitem',data)
+    // await Api.post('/api/order',data)
+    const orderApi = await Api.get("/api/orderitemlist")
     const ordersBox = document.querySelector('.orders-info')
     const totalCount = document.querySelector(`#total-count`)
     const readyCount = document.querySelector(`#ready-count`)
@@ -120,10 +120,10 @@ async function callOrderApi(){
         const data = { status: newStatus };
   
         // api 요청
-        await Api.patch(`/api/orderitem/orderitems/${order.orderId}`, order.orderId, data);
+        await Api.patch(`/api/orderitems/${order.orderId}`, order.orderId, data);
       })
     const cancleBtn = document.querySelector(`#order-cancel__btn_${order.orderId}`)
-    cancleBtn.addEventListener('click', async ()=>await Api.delete(`/api/orderitem/orderitems/${order.orderId}`,order.orderId))
+    cancleBtn.addEventListener('click', async ()=>await Api.delete(`/api/orderitems/${order.orderId}`,order.orderId))
     }
 
 
