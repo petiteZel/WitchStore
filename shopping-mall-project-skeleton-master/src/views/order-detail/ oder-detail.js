@@ -6,18 +6,29 @@ const orderInfo = document.querySelector('#orderInfo')
 
 InsertOrderData();
 
-const orderData = await Api.get("/api/order/orderlist/user");
-const { userId, totalPrice, address, createdAt, status, updateAt, __v, _id} = orderData;
 
-console.log(orderData)
 
 async function InsertOrderData(){
+    const orderData = await Api.get("/api/order/orderlist/user");
+    const { userId, totalPrice, address, createdAt, status, updateAt, __v, _id} = orderData;
 
-    orderInfo.insertAdjacentHTML("beforeend", `
-        <p class="name" id="name">${receiverName}</p>
-        <p class="phon-number" id="phon-number">${receiverPhoneNumber}</p>
-        <p class="adress" id="address">${receiverAddress}</p>
-    `);
+    // const data1 = { 
+    //     userId, 
+    //     totalPrice, 
+    //     address: {
+    //       receiverName,
+    //       receiverPhoneNumber,
+    //       receiverAddress
+    //     }
+    //   }
+
+    console.log(orderData["address"])
+
+    // orderInfo.insertAdjacentHTML("beforeend", `
+    //     <p class="name" id="name">${address.receiverName}</p>
+    //     <p class="phon-number" id="phon-number">${address.receiverPhoneNumber}</p>
+    //     <p class="adress" id="address">${address.receiverAddress}</p>
+    // `);
 }
 
 
