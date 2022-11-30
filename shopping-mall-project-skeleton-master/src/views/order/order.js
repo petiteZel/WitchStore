@@ -87,8 +87,7 @@ async function orderInfoSubmit(){
  //submit order-item
   const products = await Api.get("/api/product");
   const orderedData = await Api.get("/api/order/orderlist/user");
-
-  
+  console.log(orderedData)
 
   const orderName = []
   for(let i=0; i<localLength ;i++){
@@ -114,7 +113,6 @@ async function orderInfoSubmit(){
     const quantity = (orderAmount.reduce((n1, n2) => n1 + n2))
     const productId = String(Id)
     const orderId = String(orderedData[0]._id)
-    console.log(productId)
 
     const data2 = {
       orderId,
@@ -122,8 +120,6 @@ async function orderInfoSubmit(){
       quantity,
       totalPrice
     }
-
-
 
     // try {
     //   await Api.post("/api/orderitem", data2);

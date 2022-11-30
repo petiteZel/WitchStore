@@ -5,7 +5,7 @@ import style from "./add-product.module.css"
 
 function AddProduct() {
   // async function rending() {
-  //   const api = await Api.get("/api/category/categories");
+  //   const api = await Api.get("/api/categories");
   //   const categoryBox = document.querySelector("#contentCategory");
   //   api.forEach((e) => {
   //     categoryBox.innerHTML += `<option value="${e.categoryName}">${e.categoryName}</option>`;

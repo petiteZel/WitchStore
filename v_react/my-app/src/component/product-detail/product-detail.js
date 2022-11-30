@@ -258,7 +258,7 @@ function cartIn(selectItem, amountText) {
 }
 
 async function sidBar() {
-  const api = await Api.get("/api/category/categories");
+  const api = await Api.get("/api/categories");
   api.forEach((e) => {
     const categories = document.querySelector("#submenu1");
     categories.innerHTML += `<li><a href="/product-list/product.html?category=${e.categoryName}">${e.categoryName}</a></li>`;
