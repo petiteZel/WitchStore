@@ -9,7 +9,7 @@ InsertOrderData();
 
 
 async function InsertOrderData(){
-    const orderData = await Api.get("/api/order/orderlist/user");
+    const orderData = await Api.get("/api/orderlist/user");
     const { userId, totalPrice, address, createdAt, status, updateAt, __v, _id} = orderData;
     console.log(orderData)
 

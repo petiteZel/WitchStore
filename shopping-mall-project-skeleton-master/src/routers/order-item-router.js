@@ -39,7 +39,7 @@ orderItemRouter.post("/orderitem",loginRequired, adminOnly, async (req, res, nex
 //   adminOnly,
 //   async function (req, res, next) {
 orderItemRouter.get(
-  "/orderitemlist/all",
+  "/orderitemlist",
   async function (req, res, next) {
     try {
       const orderItems = await orderItemService.getItems();

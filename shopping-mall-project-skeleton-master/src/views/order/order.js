@@ -86,7 +86,7 @@ async function orderInfoSubmit(){
 
  //submit order-item
   const products = await Api.get("/api/product");
-  const orderedData = await Api.get("/api/order/orderlist/user");
+  const orderedData = await Api.get("/api/orderlist/user");
   console.log(orderedData)
 
   const orderName = []
