@@ -77,6 +77,7 @@ async function orderInfoSubmit(){
   try {
     const orderId1 = await Api.post("/api/order", data1);
     sessionStorage.setItem("orderId1", orderId1._id)
+    localStorage.clear();
     alert(`정상적으로 주문이 완료되었습니다.`);
 
   } catch (err) {
@@ -97,7 +98,7 @@ async function orderInfoSubmit(){
         totalPrice
       }
       const orderId2 = await Api.post("/api/orderitem", data2);
-      localStorage.clear();
+      
     }catch (err) {
       console.error(err.stack);
       alert(`문제가 발생하였습니다. 확인 후 다시 시도해 주세요: ${err.message}`);
