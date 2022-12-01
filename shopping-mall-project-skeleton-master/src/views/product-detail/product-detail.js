@@ -169,11 +169,13 @@ function cartIn(selectItem, amountText) {
 }
 
 async function sidBar() {
-  const api = await Api.get("/api/categories");
   const categories = document.querySelector("#submenu1");
-  setTimeout(()=>{api.forEach((e) => {
+  await Api.get("/api/categories").then(data.forEach((e) => {
     categories.innerHTML += `<li><a href="/product-list/product.html?category=${e.categoryName}">${e.categoryName}</a></li>`;
-  });},1000)
+  }))
+  // setTimeout(()=>{api.forEach((e) => {
+  //   categories.innerHTML += `<li><a href="/product-list/product.html?category=${e.categoryName}">${e.categoryName}</a></li>`;
+  // });},1000)
 }
 
 productDetail();
