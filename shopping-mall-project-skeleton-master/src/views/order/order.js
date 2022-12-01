@@ -36,7 +36,7 @@ async function insertProductsfromOder(){
 
   const orderPrice = []
   for(let i=0; i<localLength ;i++){
-          orderPrice.push(orders[i].price)
+          orderPrice.push((orders[i].price*orders[i].amount))
   }
 
   const total = (orderPrice.reduce((n1, n2) => n1 + n2))
