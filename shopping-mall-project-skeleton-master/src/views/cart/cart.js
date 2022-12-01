@@ -130,7 +130,7 @@ async function insertProductsfromCart(){
             const productPrice = document.querySelector(`#product-price-${id}`)
             for(let i=0; i<orders.length ;i++){
                 if(orders[i]._id == id){
-                    orders[i].price = convertToNumber(productPrice.innerHTML);
+                    // orders[i].price = convertToNumber(productPrice.innerHTML);
                     orders[i].amount = convertToNumber(amountValue.innerHTML);
                     localStorage.setItem(i+1, JSON.stringify(orders[i]));
                 }
