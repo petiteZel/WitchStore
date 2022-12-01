@@ -116,8 +116,6 @@ const data = {};
     data.phoneNumber = phoneNumber;
   }
 
-  data.password = "12345";
-  data.role = "admin"
 
   // 만약 업데이트할 것이 없다면 (디폴트인 currentPassword만 있어서 1개라면), 종료함
   const toUpdate = Object.keys(data);
