@@ -15,7 +15,7 @@ async function insertProductsfromCart(){
 
     const orderPrice = []
     for(let i=0; i<localLength ;i++){
-            orderPrice.push(orders[i].price)
+            orderPrice.push((orders[i].price*orders[i].amount))
     }
     const total = (orderPrice.reduce((n1, n2) => n1 + n2))
     orderTotal.innerHTML = total.toLocaleString('ko-KR')
@@ -52,7 +52,7 @@ async function insertProductsfromCart(){
                 </button>
             </div>
             
-            <p class="product-price" id="product-price-${_id}">${price.toLocaleString('ko-KR')}</p>
+            <p class="product-price" id="product-price-${_id}">${(price*amount).toLocaleString('ko-KR')}</p>
             <button type="button" class="deleteBtn" id="delete-btn-${_id}"><i class="fa-solid fa-x"></i></button>
             </div>`
         )
