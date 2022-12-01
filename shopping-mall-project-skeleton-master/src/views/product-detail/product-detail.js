@@ -168,15 +168,23 @@ function cartIn(selectItem, amountText) {
   }
 }
 
-async function sidBar() {
-  const categories = document.querySelector("#submenu1");
-  await Api.get("/api/categories").then(data => data.forEach((e) => {
-    categories.innerHTML += `<li><a href="/product-list/product.html?category=${e.categoryName}">${e.categoryName}</a></li>`;
-  }))
-  // setTimeout(()=>{api.forEach((e) => {
-  //   categories.innerHTML += `<li><a href="/product-list/product.html?category=${e.categoryName}">${e.categoryName}</a></li>`;
-  // });},1000)
+async function sidBar(){
+  try{
+    const api = await Api.get('/api/categories')
+    api.forEach((e)=>{
+      const categories = document.querySelector('#submenu1')
+      categories.innerHTML += `<li><a href="/product-list/product.html?category=${e.categoryName}">${e.categoryName}</a></li>`
+    })
+  }catch(err){
+    alert(err.message)
+  }
+};
+
+setTimeout(()=>sidBar(),500)
+
+try{
+  productDetail();
+}catch(err){
+  alert('불러오기: ',err.message)
 }
 
-sidBar();
-productDetail();
